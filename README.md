@@ -1,12 +1,23 @@
-# Product Design Skills for Claude
+# Skills for Product Builders
 
-A library of skills that teaches Claude to shape, design and build products the way I do: problems worth solving and outcomes worth measuring, calm, simple and honest interfaces, one clear action per screen, precise words, visual structure, smooth and well-timed motion, and AI features people can trust. Every skill applies equally to iPhone, iPad, Mac and the web.
+Twenty-one Agent Skills that help Claude shape, design, build and ship excellent products: problems worth solving, outcomes worth measuring, calm and honest interfaces, precise words, well-timed motion, AI features people can trust, and experiences broken on purpose before anyone else meets them. Every skill applies equally to iPhone, iPad, Mac and the web, and works in Claude Code and Codex.
 
-The bar is Apple's restraint and Linear's discipline. The motion work builds on Emil Kowalski's skills and Apple's fluid-interface guidance.
+The bar is Apple's restraint and Linear's discipline, grounded in the public work of product leaders such as Marty Cagan, Teresa Torres and Katie Dill.
+
+## Who it's for
+
+People who want to build excellent things, whatever their title.
+
+| You are | Start with | What you get |
+| --- | --- | --- |
+| **Product manager or leader** | `shaping-direction`, `defining-outcomes`, `sequencing-bets`, `writing-specs` | A direction tested against all four risks, outcomes that measure behaviour, a roadmap of bets, and specs builders can act on |
+| **Design engineer** | `designing-visuals`, `designing-flows`, `designing-motion`, `writing-ux-copy` | Screens with one clear action, flows that never overwhelm, motion that feels native, and words that get to the point |
+| **Engineer** | `breaking-experiences`, `diagnosing-feel`, `unifying-patterns`, `writing-specs` | Edge cases found and kept as tests, "it feels off" turned into a measured fix, and one answer per pattern with a guard |
+| **Founder or solo builder** | `crafting-products`, then whichever skill the work calls for | A shared quality bar and a team of specialists that hands work to each other |
 
 ## Why this exists
 
-Good product work depends on hundreds of small decisions made the same way every time: one focal point, the shortest words that stay true, a transition that lands softly, an empty state that tells the truth. Without a shared standard, every session starts from zero and the same corrections get repeated. These skills write that standard down once, so Claude applies it every time without being reminded.
+Good products depend on hundreds of small decisions made the same way every time: the right problem, one focal point, the shortest words that stay true, a transition that lands softly, an empty state that tells the truth, an edge case caught before launch. Without a shared standard, every session starts from zero and the same corrections get repeated. These skills write that standard down once, so Claude applies it every time without being reminded.
 
 ## What it stands for
 
@@ -34,14 +45,14 @@ The skills work as a team. `crafting-products` is the foundation: the shared bar
 flowchart TB
     CP["crafting-products<br/>the shared bar, terms and team map"]
 
-    subgraph SHAPE [Shape]
+    subgraph SHAPE [1 · Shape]
         SD[shaping-direction]
         DO[defining-outcomes]
         SB[sequencing-bets]
         WS[writing-specs]
     end
 
-    subgraph DES [Design]
+    subgraph DES [2 · Design]
         VD[designing-visuals]
         UX[writing-ux-copy]
         FD[designing-flows]
@@ -51,14 +62,14 @@ flowchart TB
         ED[exploring-directions]
     end
 
-    subgraph REV [Review]
+    subgraph REV [3 · Review]
         AC[auditing-consistency]
         WP[walking-personas]
         DF[diagnosing-feel]
         BE[breaking-experiences]
     end
 
-    subgraph SHIP [Decide and ship]
+    subgraph SHIP [4 · Decide and ship]
         GS[getting-sign-off]
         SE[settling-decisions]
         UP[unifying-patterns]
@@ -70,9 +81,23 @@ flowchart TB
     CP --> DES
     CP --> REV
     CP --> SHIP
-    SHAPE --> DES
-    DES --> REV
-    REV --> SHIP
+
+    classDef base fill:#1C1C1E,stroke:#8E8E93,color:#F5F5F7
+    classDef shape fill:#FFFFFF,stroke:#7C83FD,color:#2E2A6B
+    classDef design fill:#FFFFFF,stroke:#34C38F,color:#0F4D36
+    classDef review fill:#FFFFFF,stroke:#F5A524,color:#6B3E00
+    classDef ship fill:#FFFFFF,stroke:#EC6FA8,color:#6E1D45
+
+    class CP base
+    class SD,DO,SB,WS shape
+    class VD,UX,FD,MS,AI,DC,ED design
+    class AC,WP,DF,BE review
+    class GS,SE,UP,SF,WB ship
+
+    style SHAPE fill:#F0F1FF,stroke:#C9CCFF,color:#2E2A6B
+    style DES fill:#EEFAF4,stroke:#B8E8D2,color:#0F4D36
+    style REV fill:#FFF7E8,stroke:#F8DCA6,color:#6B3E00
+    style SHIP fill:#FFF0F6,stroke:#F6C5DB,color:#6E1D45
 ```
 
 ### Common plays
