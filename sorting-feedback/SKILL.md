@@ -17,7 +17,7 @@ This skill covers deciding what to act on, and why. The changes are shown for si
 
 ## Rules
 
-1. **Decode the ask first:** who is speaking and their expertise; what they actually asked, in their own words; what they need (a change, an answer, a document, a decision). A specialist's word weighs most in their own field: a commercial lead on products and pricing, a partner on its own rules, a usability participant on their own confusion, not on the solution.
+1. **Decode the ask first:** who is speaking and their expertise, and whether they pay for the product, use it, or both; what they actually asked, in their own words; what they need (a change, an answer, a document, a decision). A specialist's word weighs most in their own field: a commercial lead on products and pricing, a partner on its own rules, a usability participant on their own confusion, not on the solution.
 2. **Quote the line behind every item,** briefly, so it can be found again.
 3. **Ground every item before sorting it:** in the running product (already true or already fixed?), the specification and decisions log (already decided, or contradicting a decision?), the outside world (the partner's real products, the provider's documentation, the rules that apply), and the scope.
 4. **Sort into five groups,** each item with a one-line reason:
@@ -27,8 +27,9 @@ This skill covers deciding what to act on, and why. The changes are shown for si
    - **Not doing:** said but not agreed, out of scope, or contradicting the product's truth.
    - **Already handled:** where it is true today.
 5. **Small changes beat redesigns** unless a redesign was asked for: the change that clears the confusion with the least new surface.
-6. **Align with a provider only where it holds for any provider.** When grounding in a vendor not yet contracted, change only what would be true of every vendor of that kind.
-7. **Write for someone in a hurry:** plain words, short lines, no system language. The reader may skim it on the way into a call.
+6. **Count independent voices, and protect the people doing the work.** Note how many separate people raised each item; one loud voice is a lead, not a pattern. A request from a buyer or manager that makes the everyday user's work worse goes to Not doing or Ask, whoever asked.
+7. **Align with a provider only where it holds for any provider.** When grounding in a vendor not yet contracted, change only what would be true of every vendor of that kind.
+8. **Write for someone in a hurry:** plain words, short lines, no system language. The reader may skim it on the way into a call.
 
 ## Method
 

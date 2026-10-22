@@ -3,9 +3,13 @@
   "evals": [
     {
       "id": "crafting-products-1",
-      "skills": ["crafting-products"],
+      "skills": [
+        "crafting-products"
+      ],
       "query": "Here's the Save recipe screen from our recipe app (HTML attached). Something about it feels off and cheap. Review it against a world-class bar and tell me what to fix.",
-      "files": ["evals/fixtures/crafting-products-1-recipe-save.html"],
+      "files": [
+        "evals/fixtures/crafting-products-1-recipe-save.html"
+      ],
       "expected_behavior": [
         "Opens with a one-line verdict or headline before any detail, and groups findings under High, Medium and Low headings",
         "Flags the 'Saved by 2,400 cooks this week' badge as a claim the data cannot back (the app does not record who saved a recipe or when) and ranks it at the highest severity, above the visual clutter",
@@ -17,7 +21,9 @@
     },
     {
       "id": "crafting-products-2",
-      "skills": ["crafting-products"],
+      "skills": [
+        "crafting-products"
+      ],
       "query": "Our notes app is iPhone-only. We want an iPad version by next month. Plan is to just scale the iPhone layout up so it ships fast and stays consistent. Good plan?",
       "files": [],
       "expected_behavior": [
@@ -31,7 +37,9 @@
     },
     {
       "id": "crafting-products-3",
-      "skills": ["crafting-products"],
+      "skills": [
+        "crafting-products"
+      ],
       "query": "We're adding shared lists to our grocery app on iPhone, Mac and the web. The team's excited. Where do we start, which skills should lead each part, and what bar should we hold it to?",
       "files": [],
       "expected_behavior": [
@@ -45,11 +53,32 @@
     }
   ],
   "trigger_checks": [
-    { "query": "This settings screen in our journaling app feels cluttered and off. Make it world-class.", "should_trigger": true },
-    { "query": "What quality bar should we hold our new habit tracker to on iPhone, iPad and Mac before we start designing?", "should_trigger": true },
-    { "query": "We're about to build a workout logger. Which of the design and product skills should lead each part of the work?", "should_trigger": true },
-    { "query": "Pick the duration and easing for the sheet that slides up in our podcast app.", "should_trigger": false, "belongs_to": "designing-motion" },
-    { "query": "Write the empty-state message for the plant list in our plant care app.", "should_trigger": false, "belongs_to": "writing-ux-copy" },
-    { "query": "How should we measure whether the new onboarding in our language app worked?", "should_trigger": false, "belongs_to": "defining-outcomes" }
+    {
+      "query": "Something about the settings screen in our journaling app feels off and a bit cheap. Hold it to a world-class bar.",
+      "should_trigger": true
+    },
+    {
+      "query": "What quality bar should we hold our new habit tracker to on iPhone, iPad and Mac before we start designing?",
+      "should_trigger": true
+    },
+    {
+      "query": "We're about to build a workout logger. Which of the design and product skills should lead each part of the work?",
+      "should_trigger": true
+    },
+    {
+      "query": "Pick the duration and easing for the sheet that slides up in our podcast app.",
+      "should_trigger": false,
+      "belongs_to": "designing-motion"
+    },
+    {
+      "query": "Write the empty-state message for the plant list in our plant care app.",
+      "should_trigger": false,
+      "belongs_to": "writing-ux-copy"
+    },
+    {
+      "query": "How should we measure whether the new onboarding in our language app worked?",
+      "should_trigger": false,
+      "belongs_to": "defining-outcomes"
+    }
   ]
 }

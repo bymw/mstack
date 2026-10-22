@@ -17,13 +17,14 @@ This skill covers turning open questions into recorded decisions. It does not in
 
 ## Rules
 
-1. **Check before asking.** If the answer is in the spec, code, decisions log, design system or this conversation, it is not a question. Ask only what is the user's to decide.
+1. **Check before asking.** If the answer is in the spec, code, decisions log, design system or this conversation, it is not a question. Ask only what is the user's to decide. A question that belongs to someone else (legal, privacy, security, finance) is named with its owner for the user to take to them, not answered here.
 2. **One question at a time** with the AskUserQuestion tool. Up to four short, independent questions may share one call; a question whose answer changes the others goes alone, first.
 3. **Two to four real options,** each a genuine alternative whose description states its consequence. Options that differ only in wording are one option.
 4. **Exactly one "(Recommended)",** placed first, with its reason in one sentence. A recommendation is a commitment: say what you would do and why, without hedging.
 5. **Record each answer before acting on it,** where the work lives, noting when it went against the recommendation.
 6. **Locking, approving or merging is the user's call,** asked last as its own question and never inferred from enthusiasm.
 7. **Read free-text answers carefully.** "Other" answers often reshape the question or add a constraint; ask one short follow-up if one is ambiguous. An answer that contradicts an earlier one may be a mistap: ask again.
+8. **Match the weight to the stakes.** A choice that is hard to undo and costly if wrong gets full options and the evidence behind each; a reversible, low-stakes one gets a default the user can accept in one word. Why: many choices that look reversible are not once people rely on them, and the rest should not slow the work.
 
 ## Method
 

@@ -28,15 +28,16 @@ This skill covers the behaviour, interface and quality gate of AI features. Labe
 **Feel**
 7. **Answer in the first 100 ms** with an honest signal that work has started, then stream the result as stable text that fades in rather than flickers. Waits are honest, never a fake percentage.
 8. **Pressing again gives a fresh result.** Regenerate is one press, never a dead end such as "This already reads well".
+9. **Design the conversation, not just the reply.** An empty prompt offers a few concrete starting points; a long task shows its plan before acting and an activity view the person can watch, stop and take over; follow-up suggestions are few and specific; generated text follows a written voice and format, like any interface text.
 
 **Quality**
-9. **Every AI feature passes an exam before it ships.** Pass marks are written before results exist, against a held-out set of real and adversarial cases, with blind old-versus-new comparisons judged by the owner. A feature that fails stays hidden; shipping below the bar is an explicit, written product decision. Every correction a person makes becomes a new test case.
-10. **Autonomy is earned.** Roll out as drafts and suggestions first and widen autonomy only as evidence supports it. A confidence score is not proof.
+10. **Every AI feature passes an exam before it ships, built from real outputs.** First read a sample of real outputs, note the first thing that went wrong in each, and group and count the failure types; then write pass-or-fail checks for the most common ones. Pass marks are fixed before each new round of results, against a held-out set of real and adversarial cases, with blind old-versus-new comparisons judged by the owner. An AI judge is trusted only once it agrees with the owner's own labels where they differ, and real use is sampled again after launch. A feature that fails stays hidden; shipping below the bar is an explicit, written product decision. Every correction a person makes becomes a new test case.
+11. **Autonomy is earned, and accuracy sets the interaction.** Often wrong: a suggestion. Usually right: a draft to review. Almost always right: an action with Undo. Roll out as drafts first, log every accept, edit and reject, and widen autonomy only as that evidence supports it. A confidence score is not proof.
 
 **Engineering**
-11. **Start from the workflow, not the model.** A rule sometimes beats an agent: cheaper, predictable and auditable. Use AI where it clearly does better.
-12. **The simplest model that passes,** one narrow job each where possible, measured for latency and cost on the oldest supported hardware and slowest realistic network.
-13. **Keys never live in the client.** Model calls go through the product's server with per-person limits and abuse protection, tester builds included.
+12. **Start from the workflow, not the model.** A rule sometimes beats an agent: cheaper, predictable and auditable. Use AI where it clearly does better.
+13. **The simplest model that passes,** one narrow job each where possible, measured for latency and cost on the oldest supported hardware and slowest realistic network.
+14. **Keys never live in the client.** Model calls go through the product's server with per-person limits and abuse protection, tester builds included.
 
 ## Method
 

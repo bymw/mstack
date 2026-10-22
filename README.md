@@ -224,7 +224,7 @@ skills/
 
 Every skill has three test scenarios and six trigger checks in [`evals/`](evals/), in the structure Anthropic recommends: a realistic request, any input files, and the behaviours a good answer must show. Each scenario runs with the skill and without it, and the output is graded against those behaviours. The trigger checks confirm each description picks its own requests and leaves its neighbours' alone. See [evals/README.md](evals/README.md) to run them.
 
-**Latest results** ([full table](evals/RESULTS.md)): with the skills, answers showed 91% of the expected behaviours, against 36% without, and all 121 trigger checks picked the right skill.
+**Latest results** ([full table](evals/RESULTS.md)): with the skills, answers showed 92% of the expected behaviours, against 36% without, and 120 of 121 trigger checks picked the right skill.
 
 ## How the skills are written
 

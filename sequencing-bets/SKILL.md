@@ -17,17 +17,18 @@ This skill covers order and size. Shaping any one bet is `shaping-direction`; wh
 
 ## Rules
 
-1. **Problems first, then items.** The strategy is a short ranked list of problems to solve, and for whom. If it does not exist, write it and get it agreed before ordering anything. Why: with an agreed list most ordering becomes obvious; without one, every request is a debate.
+1. **Problems first, then items.** The strategy is a one-line diagnosis of what is really in the way ("not growing fast enough" is a wish, not a diagnosis), then a short ranked list of problems to solve, and for whom, with the order of growth, engagement and monetisation made explicit. If it does not exist, write it and get it agreed before ordering anything. Why: with an agreed list most ordering becomes obvious; without one, every request is a debate.
 2. **Opportunity cost, not return.** Ask whether this is the best use of the time against the alternatives, not whether it pays back. Why: return per week favours quick small work and starves the bets that matter.
 3. **Set the mix before ranking.** Decide roughly what share goes to improving what exists, to new bets, and to a small speculative slice, then rank within each. Why: a big uncertain bet loses every head-to-head comparison with a sure small one.
-4. **Confidence comes from evidence.** Score each item by its strongest evidence, not by conviction (the grading in `shaping-direction`). A high-impact, low-confidence item gets a cheap test before it gets a slot. Why: confidence without evidence is opinion with a number on it.
+4. **Confidence comes from evidence, across all four risks.** Score each item by its evidence on value, usability, feasibility and viability (the grading in `shaping-direction`), not by conviction; an item is only as confident as its weakest risk, so untested viability caps it. A high-impact, low-confidence item gets a cheap test before it gets a slot. Why: confidence without evidence is opinion with a number on it.
 5. **Size by appetite, not estimate.** For each bet, the most time it is worth; scope bends to fit, the time does not. Why: estimates grow, while an appetite forces the trade-offs early.
 6. **Order by learning and the critical path.** First comes what unblocks the most: the answer that settles other questions, the piece others depend on, a working version in people's hands early. Why: the first real use says what to build next better than any plan.
 7. **Further out, less detail.** Now is committed and specific, Next is likely and outlined, Later is direction only. Dates appear only where the world sets one. When someone asks for a date on every item, say in one sentence why that backfires, then still give Now, Next and Later; offer a date range for Now only if a date is truly required. Why: detail far out hardens into commitment, and commitment makes stopping hard.
 8. **Every committed bet has a stop rule:** the signal and the checkpoint at which it ends or changes. Why: people stop too late, after the cost is sunk.
 9. **Hand teams problems, not features.** Each bet names the problem and the outcome; finding the solution is the team's work. Why: a team handed features measures itself on shipping them.
-10. **Say no out loud.** Keep a Not doing list with reasons, and answer requests with a trade-off ("this, if that waits") rather than a flat refusal. Why: a request that is neither done nor declined comes back every week.
-11. **Finish before re-ranking.** Change the order when evidence changes, not every week, and follow each shipped bet to its result. Why: constant reordering means nothing finishes, and value lands in finishing.
+10. **Count what each feature costs to keep.** Every shipped feature carries support, maintenance and complexity; list features that serve few people and nothing on the problem list as candidates to retire. Why: a product that only adds becomes one where only small work is possible.
+11. **Say no out loud.** Keep a Not doing list with reasons, and answer requests with a trade-off ("this, if that waits") rather than a flat refusal. Why: a request that is neither done nor declined comes back every week.
+12. **Finish before re-ranking.** Change the order when evidence changes, not every week, and follow each shipped bet to its result. Why: constant reordering means nothing finishes, and value lands in finishing.
 
 ## Method
 
@@ -56,6 +57,7 @@ This skill covers order and size. Shaping any one bet is `shaping-direction`; wh
 **Next:** bet · what it waits for.
 **Later:** direction only.
 **Not doing:** item · reason.
+**To retire:** feature · who it serves · what keeping it costs.
 **Mix:** improving what exists, new bets, speculative, as rough shares.
 
 ## Gotchas

@@ -21,7 +21,7 @@ This skill covers diverging honestly and recommending one. It does not choose fo
 2. **Today is the first panel,** captured at the same size, persona, data, state, theme and reading direction as every direction.
 3. **Two to four directions, each on a named axis** (structure, ground and material, density and disclosure, position and reach, interaction model, signal, motion). Two directions at the same position on every axis are one direction.
 4. **Every direction is the real interface:** the running product edited in place or its real components rendered, at true device size. If the screen does not exist yet, render it from the product's real tokens and components and say so on the panel.
-5. **Every direction meets the bar** in `crafting-products` and could be defended as shipped. If the best existing answer elsewhere in the product fits, it is one of the directions.
+5. **Every direction meets the bar** in `crafting-products` and could be defended as shipped. If the best existing answer elsewhere in the product fits, it is one of the directions. Before the directions, a round of deliberate extremes (the fastest and the safest version of one trait, or the ideal end-to-end journey) may be built to find the edges; label it as probes, never offer a probe as a pick.
 6. **A letter to answer with and a name for the idea,** such as "D · Split view".
 7. **One trade-off each,** from the person's side, and **exactly one recommended,** with its reason in one sentence. "Keep today" is always a valid answer.
 8. **Show the hardest context** the choice depends on: a dark ground, the smallest phone or window, the largest display, long names, the mirror.

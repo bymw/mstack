@@ -24,13 +24,15 @@ This skill covers the document builders work from. The direction comes from `sha
 5. **Every state and edge case,** per place: empty, first run, partial, error, offline, permission off, the longest content, the largest number, a slow network, undo. Why: edge cases are most of the build, and leaving them out leaves the hardest parts to guesswork.
 6. **Name the rabbit holes and the no-gos:** where the work could sink time, the decision that avoids it, and what is explicitly not being built. Why: a risk named before the build costs a sentence; found during it, a week.
 7. **Shape it with a builder.** Someone who will build it checks the riskiest part against the real code before the definition is final. Why: one look at the code can turn one step into three, and it is cheaper to learn that now.
-8. **Success is the outcome, not usage:** the change and its metrics from `defining-outcomes`. Why: "people use the feature" teaches to the test.
-9. **For AI behaviour, examples are the spec.** A set of real inputs, each with its expected result or pass mark, serves as acceptance and grows as real data arrives. Why: a feature that is right 60% of the time is a different product from one right 99% of the time. (`building-ai-features`)
-10. **Give builders the contracts, not just the behaviour.** When people or agents build from it, sketch the technical shape: the data model (entities, fields, ownership), the interfaces or API surface (each call, its input, its result, its errors), the rules for sync, permissions and conflicts, and the analytics events. Use code blocks and tables, and mark names as sketches to map to the codebase's own conventions. Why: behaviour without contracts leaves every builder to invent the model, and two builders invent two.
-11. **Write checks a builder or agent can verify.** Each part has a test that says it is done; standards (the design system, existing flows, the project's rules) are referenced, not restated. Why: agents follow a plan they can verify and drift from one they cannot.
-12. **Numbers over adjectives.** No "seamless", "intuitive" or "great"; say what, and how much. Why: adjectives hide the trade-offs.
-13. **Size the document to the work, and keep it complete for builders.** A small change (days) gets a few lines. A feature gets as much as builders need and no more: brevity means no restated context, method or prose padding, never a missing contract, state or check. The opening lines and the summary of what ships must stand on their own, so a reader can stop there. Why: process heavier than the work gets skipped, and a gap in the contracts costs more than a page of tables.
-14. **Open questions and decisions live in the document.** Each open question names who decides; each decision is written "X, not Y, because Z". Why: the document is where the next person looks for why.
+8. **Say where each of the four risks stands.** Value, usability, feasibility and viability: which were tested and how, and which are still open. Every viability row from `shaping-direction` marked Consult becomes an open question with its owner (legal, privacy, security, finance, support, sales). Why: a spec that hides an untested risk hands it to the builders, who are the last people able to settle it.
+9. **Plan the rollout to learn.** Release in widening circles (the team, then trusted users, then everyone), each with who gets it, what lets it widen, a holdback for comparison where traffic allows, and a kill switch; and say who is ready to explain, sell and support it on launch day. Why: real use finds what a lab misses, and a wide launch with no way back turns a fixable fault into a public one.
+10. **Success is the outcome, not usage:** the change and its metrics from `defining-outcomes`. Why: "people use the feature" teaches to the test.
+11. **For AI behaviour, examples are the spec.** A set of real inputs, each with its expected result or pass mark, serves as acceptance and grows as real data arrives. Why: a feature that is right 60% of the time is a different product from one right 99% of the time. (`building-ai-features`)
+12. **Give builders the contracts, not just the behaviour.** When people or agents build from it, sketch the technical shape: the data model (entities, fields, ownership), the interfaces or API surface (each call, its input, its result, its errors), the rules for sync, permissions and conflicts, and the analytics events. Use code blocks and tables, and mark names as sketches to map to the codebase's own conventions. Why: behaviour without contracts leaves every builder to invent the model, and two builders invent two.
+13. **Write checks a builder or agent can verify.** Each part has a test that says it is done; standards (the design system, existing flows, the project's rules) are referenced, not restated. Why: agents follow a plan they can verify and drift from one they cannot.
+14. **Numbers over adjectives.** No "seamless", "intuitive" or "great"; say what, and how much. Why: adjectives hide the trade-offs.
+15. **Size the document to the work, and keep it complete for builders.** A small change (days) gets a few lines. A feature gets as much as builders need and no more: brevity means no restated context, method or prose padding, never a missing contract, state or check. The opening lines and the summary of what ships must stand on their own, so a reader can stop there. Why: process heavier than the work gets skipped, and a gap in the contracts costs more than a page of tables.
+16. **Open questions and decisions live in the document.** Each open question names who decides; each decision is written "X, not Y, because Z". Why: the document is where the next person looks for why.
 
 ## Method
 
@@ -40,26 +42,28 @@ This skill covers the document builders work from. The direction comes from `sha
 4. **Sketch the flow:** places, controls, connections. Detailed step design goes to `designing-flows`.
 5. **List every state and edge case,** place by place.
 6. **Sketch the technical shape:** the data model, interfaces, rules and events the states imply.
-7. **Review with a builder:** the riskiest part against the code, then the rabbit holes and no-gos.
+7. **Review with a builder:** the riskiest part against the code, then the rabbit holes and no-gos. Record where each of the four risks stands, and plan the rollout.
 8. **Add the checks** (or the example set for AI behaviour), the open questions and the decision log.
 9. **Edit:** cut adjectives and system words, and make sure the first paragraph stands on its own. When others review it, ask them to read it fully before commenting, and to mark each comment as a note, a suggestion or a must.
 
 ## Output
 
-A small change keeps sections 1, 3 and 8. A feature that builders or agents will build gets all ten. The opening lines say what ships in one sentence, so a builder knows the shape before the detail.
+A small change keeps sections 1, 3 and 10. A feature that builders or agents will build gets all twelve. The opening lines say what ships in one sentence, so a builder knows the shape before the detail.
 
 The definition holds what builders would otherwise guess: scope, behaviour, states and checks. Interface copy, visual detail and motion are not written out here; they come from `writing-ux-copy`, `designing-visuals` and `designing-motion` when the screens are designed. Cut any sentence a builder would not miss.
 
 1. **Problem:** who, the moment, the cost today.
 2. **Outcome:** the change, the primary metric and its countermetric.
 3. **Perimeter:** in, out, devices, trade-off principles, defined nouns.
-4. **Flow:** places, controls and connections, at sketch level.
-5. **States and edge cases,** per place.
-6. **Technical shape:** data model, interfaces or API surface, sync, permission and conflict rules, events, as code blocks and tables.
-7. **Appetite, rabbit holes and no-gos.**
-8. **Checks:** what proves each part is done; the example set for AI behaviour.
-9. **Open questions:** question · who decides · what it blocks.
-10. **Decision log:** X, not Y, because Z.
+4. **Risks:** the four risks, each tested (and how) or open, with every viability owner to consult.
+5. **Flow:** places, controls and connections, at sketch level.
+6. **States and edge cases,** per place.
+7. **Technical shape:** data model, interfaces or API surface, sync, permission and conflict rules, events, as code blocks and tables.
+8. **Appetite, rabbit holes and no-gos.**
+9. **Rollout and launch:** the circles, what widens each, holdback, kill switch, and who is ready to explain, sell and support it.
+10. **Checks:** what proves each part is done; the example set for AI behaviour.
+11. **Open questions:** question · who decides · what it blocks.
+12. **Decision log:** X, not Y, because Z.
 
 ## Gotchas
 
@@ -75,6 +79,8 @@ The definition holds what builders would otherwise guess: scope, behaviour, stat
 | A full document for a small fix | A few lines: problem, perimeter, checks |
 | Writing out every label, message and animation | Behaviour and states here; copy and motion from their own skills |
 | Behaviour with no data model or API | The technical shape sketched in code blocks and tables |
+| A spec silent on legal, privacy or support | The four risks with each open viability owner named |
+| "Launch to everyone" | Widening circles with a holdback and a kill switch |
 | "Seamless", "intuitive", "great" | What exactly, and how much |
 | Decisions made in chat and lost | The decision log, in the document |
 

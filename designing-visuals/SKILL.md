@@ -49,6 +49,7 @@ This skill covers how a screen looks and reads at a glance, and the check that i
 17. **Empty states give a head start.** Beside the one primary action, offer a quiet second way in: a template, an example, an import or a short list of starting points. The screen should feel like an invitation, not a dead end.
 18. **Show the real surroundings.** A screen is designed and judged inside the product as it would be: navigation, sidebars and neighbouring areas populated with realistic content, not left as a wireframe around the part being designed.
 19. **Render before done.** Judge the rendered screen on the device size it targets, in light and dark, at the smallest and largest supported size, with real and worst-case content. Code alone cannot show a layout problem.
+20. **Density follows use.** A screen used all day by experts can be dense, as long as it stays aligned and legible; a screen met rarely or by newcomers is sparse, with one focal point. Decide which before setting the spacing.
 
 ## Method
 

@@ -25,6 +25,7 @@ This skill covers the sign-off page and building only what is agreed. The change
 6. **A row that needs a decision says so,** with a recommendation ("Your call: left or right? I recommend left."). Findings with no single screen go in the short list at the end, not on a row.
 7. **Build only agreed rows.** "Agree, but the design is poor" means redesign that row, republish it with its choice cleared, and ask again.
 8. **Recapture after the build,** so the page records what shipped, not what was proposed.
+9. **One editor checks the release.** Before a change goes wide, one named person uses the shipped thing in every state and with the longest content, judges whether it holds together, and may hold it back with the reason ("almost, but not yet"). Done is not the same as good.
 
 ## Method
 

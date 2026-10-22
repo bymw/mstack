@@ -1,6 +1,6 @@
 ---
 name: walking-personas
-description: Walks a flow end to end as worst-case personas (nothing yet, thin, typical, maximum, messy) on every target device, finding empty voids, dead ends, wrong defaults and broken Back paths. Read-only. Use when the user asks what a brand-new user sees, wants every state checked, or before a demo, sign-off or usability round. Not for a fault felt on the device (diagnosing-feel).
+description: Walks a flow end to end as worst-case personas (nothing yet, thin, typical, maximum, messy) on every target device, finding empty voids, dead ends, wrong defaults and broken Back paths. Read-only. Use when the user asks what a brand-new user sees, wants every state checked or a critical journey scored, or before a demo, sign-off or usability round. Not for a fault felt on the device (diagnosing-feel).
 license: MIT
 ---
 
@@ -19,12 +19,13 @@ This skill covers walking a flow as a small set of worst-case personas and repor
 
 1. **Pick the few personas that matter:** nothing yet, thin, typical, maximum, messy where things can fail, plus the one just reported. Add a lifecycle or edge persona only where the flow meets it.
 2. **Every persona is a link.** Record exactly how each was set up, as an address or settings anyone can reopen, and confirm it on the first screen (a name, a total, a count).
-3. **Walk end to end at true size on every target device:** from the entry the person would use, through every branch, to the screen after the flow ends, then Back out again.
+3. **Walk end to end at true size on every target device:** from the entry the person would really use (for a whole journey that may be a search, the website, an email or the docs, not the product's first screen), through every branch, to the screen after the flow ends, then Back out again.
 4. **Ask the same questions on every screen,** not only the first (PERSONAS.md): would they know what this is; is anything shown they could not have; is off drawn as empty; is something preselected the system cannot know; does the next step exist; does Back go where they came from; does anything overflow at maximum.
 5. **Check failure before empty.** A list that failed to load never reads as "nothing here".
 6. **Ground every finding in the specification.** Where it is silent, the finding is a question, not a bug.
 7. **A persona the product cannot reach is a finding,** reported as a simulation gap. Never hand-edit state to get there.
 8. **Read-only.** Probe scripts and notes are fine; product source is not touched.
+9. **A critical journey is scored and walked again.** When asked to check a journey rather than one flow, score each step as works, easy and error-free, or surprisingly great, and say when to walk it again (after nearby areas ship), because quality decays as the rest of the product changes.
 
 ## Method
 

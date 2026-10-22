@@ -37,6 +37,7 @@ Walk these for any flow that holds a person's data, history or settings. Each ca
 8. **Does anything overflow at maximum?** Truncated names, wrapped chips, a list with no count, a cap with no explanation.
 9. **Is every figure in the right form?** Number format, units, sign, the decimals the context needs.
 10. **Is every string true for this person?** A sentence written for the established person may be false for the new one.
+11. **Where would this person feel unsafe, anxious, embarrassed or behind?** A moment of doubt is a finding even when everything works.
 
 ## A walk record
 

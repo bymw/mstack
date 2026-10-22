@@ -28,6 +28,7 @@ This skill covers proposing a simpler version of an existing feature, screen by 
 7. **Off is a state, not an empty screen:** a feature not yet turned on shows what it is and how to start it.
 8. **Count before and after:** elements on screen, decisions asked, taps to the main job, words. A proposal without counts is an opinion.
 9. **Respect recorded decisions.** A move that contradicts one names it and becomes a question for `settling-decisions`.
+10. **Simplify for the person who uses it.** A tool used all day keeps the density, shortcuts and bulk actions experts rely on: clear it of noise, not of power. When a whole product is simplified, also count the concepts, settings and object types a person must learn; each new one is a cost.
 
 ## Method
 

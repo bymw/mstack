@@ -17,26 +17,42 @@ This skill covers the direction: who, which moment, which approach, and what wou
 
 ## Rules
 
-1. **Start from a person in a moment, not a feature.** Name who struggles, when, and what they do today instead. A request is a clue to the job behind it: reframe it when the evidence supports that, keep it when it does not. Why: the same request can come from several jobs, and each needs a different answer.
+1. **Start from a person in a moment, not a feature.** Name who struggles, when, and what they do today instead. A request is a clue to the job behind it: reframe it when the evidence supports that, keep it when it does not. Where several moments compete, list three to five as needs (not solutions) and pick one with its reason. Why: the same request can come from several jobs, and each needs a different answer.
 2. **Ask why people leave or never start.** Those who tried and gave up, and those who never began, hold the strongest evidence. Ask "why not?", find the theme, size it, fix the largest, repeat. Why: current users describe the product they have; non-users describe the one that is missing.
 3. **Grade evidence by strength.** What people did beats what they say they would do; a working test beats an interview; opinion, "a competitor has it" and a strategy theme count for almost nothing. Mark every claim as fact, inference or unknown. Why: weak evidence stated with confidence is how plausible and wrong gets built.
 4. **Keep the problem framing short:** hours or days, enough to name the person, the moment and the stakes. Spend the time on approaches. Why: products rarely fail because the problem was unclear; they fail on the solution.
 5. **Compare two or three genuinely different approaches,** each saying what it bets on, then pick a first choice and a named backup. Why: with one option there is no decision, only momentum.
 6. **Beat what people do now, not just the problem.** Say why someone would switch from today's way, including doing nothing, and what anxiety or habit holds them back. Why: an answer that is only somewhat better loses to habit.
-7. **Weigh all four risks.** Value: will they choose it. Usability: can they use it. Feasibility: can it be built, in the time. Viability: does it work for the business, including cost, support, sales, legal, privacy and safety. Why: viability is the risk most often left unexamined, and it kills good ideas late.
+7. **Weigh all four risks, and make viability concrete.** Value: will they choose it, and how many people have this moment. Usability: can they use it, checked with real people on a prototype before anything is built, against a task-success pass mark. Feasibility: can it be built in the time, including third parties and the cost to serve at scale. Viability: does it work for every part of the business, through the viability check below. Why: viability is the risk most often left unexamined, and it kills good ideas late.
 8. **Test the riskiest assumption with the cheapest test that can answer it.** Rank by consequence if wrong and by uncertainty, never by ease. Climb only as high as needed: data you already have, conversations about past behaviour, a prototype or a fake door, a service run by hand, then a build. Why: most ideas fail, and finding out on paper costs least.
 9. **Write the pass mark and its action before the test, and let the test fail clearly.** For each signal, the result that means continue, change course or stop. Why: research that can only confirm is performance, and without a commitment written first, any result reads as encouragement.
 10. **Give it an appetite:** how much time the direction is worth. When it runs out, cut scope or stop; never extend it quietly. Why: the size of a bet should be a decision, not an outcome.
 11. **A point of view, not the category average.** The direction comes from this product's people and what it believes, not the most common answer in the market. Why: an interchangeable product gives nobody a reason to switch.
 
+## The viability check
+
+Every row ends as **Answered** (with the evidence), **Consult** (talk to that owner one-on-one before committing) or **Not relevant** (with the reason). Consult owners one at a time; a room of every stakeholder turns into design by committee.
+
+| Area | The question | Owner to consult |
+| --- | --- | --- |
+| Legal and regulatory | May we offer this, here, to these people? | Legal counsel |
+| Privacy and data | What does it collect, keep or share, and would people expect that? | Privacy or data owner |
+| Security | What new way in does it open? | Security |
+| Safety and ethics | Who could be harmed, misled or left out, including by a wrong AI answer? | Trust and safety |
+| Cost and pricing | What does it cost to serve at scale, and how is it paid for? | Finance |
+| Sales and marketing | Can it be explained, positioned and sold, and does it fit the brand? | Sales and marketing leads |
+| Support and operations | Who helps when it goes wrong, and are they ready? | Support and operations leads |
+| Partners and contracts | Does it depend on, or break, a partner or a contract? | Partnerships |
+
 ## Method
 
+0. **Size the shaping.** A small, reversible change in a familiar pattern needs none: say so in one line and hand it on. Core features, differentiators and anything hard to undo get the full method.
 1. **Frame** in one paragraph: the person, the moment, what they do today, what it costs them, and why it matters to the business now. For a stalled initiative, first ask whether the block is execution or a missing decision about strategy; a fix that keeps falling off points to the second.
 2. **Sort the evidence:** what we know (with its source and strength), what we infer, what we do not know. Never invent a figure, a quote or a customer.
 3. **Draft two or three approaches** that differ in what they bet on, not in detail, each with one line on why someone would switch to it.
 4. **Write the hypothesis** in one sentence: "If we [approach] for [person] when [moment], they will choose it over [what they do now] because [the difference]."
 5. **Run a pre-mortem:** it is six months later and this failed. List the real threats, the feared ones that are not real, and what nobody is saying. Turn the real threats into assumptions.
-6. **Rank the assumptions** by consequence and uncertainty, considering every one of the four risks; keep the top three, and say in one line why any risk without a row is low here.
+6. **Rank the assumptions** by consequence and uncertainty, considering every one of the four risks; keep the top three, and say in one line why any risk without a row is low here. Run the viability check and carry every Consult row into the output.
 7. **Choose the test** for the riskiest one: the cheapest rung that answers it, who it reaches, how long it runs, the pass mark, and the action for each result.
 8. **Recommend** the first choice, the backup, the appetite, and the next decision with who owns it. Open choices the user owns go to `settling-decisions`.
 
@@ -48,7 +64,7 @@ This skill covers the direction: who, which moment, which approach, and what wou
 
 **The person and the moment:** two or three sentences, with the evidence behind them.
 
-| Approach | What it bets on | Why someone would switch | Biggest risk |
+| Approach | What it bets on | Why someone would switch | How it reaches people |
 | --- | --- | --- | --- |
 
 Mark the first choice "(Recommended)" and name the backup.
@@ -56,6 +72,7 @@ Mark the first choice "(Recommended)" and name the backup.
 | Riskiest assumption | Risk | If wrong | Evidence today |
 | --- | --- | --- | --- |
 
+**Viability:** each Consult row, with its owner and the question to ask them.
 **Test:** what, who, how long, pass mark, then continue · change · stop.
 **Appetite and next decision:** how much time, what happens when it runs out (cut scope or stop), what gets decided next, who owns it.
 **Unknowns:** the facts we do not have, marked "to confirm".
@@ -72,7 +89,7 @@ Mark the first choice "(Recommended)" and name the backup.
 | Research after the decision, "to validate" | A test that can fail clearly, while it can still change the decision |
 | Reading the signals after the results | Pass marks and actions written first |
 | Weeks of problem framing | A short framing; the time goes on approaches |
-| Value only | Cost, support, legal and privacy weighed alongside it |
+| Value only | Every row of the viability check, each answered, consulted or ruled out |
 | A test that costs as much as building | The cheapest rung that can answer the question |
 
 ## Works with
@@ -84,4 +101,4 @@ Mark the first choice "(Recommended)" and name the backup.
 - `exploring-directions`: the approaches drawn in the real interface.
 - `settling-decisions`: the choices the user owns.
 - `writing-briefs`: the direction explained to leaders.
-- Outside the set: Marty Cagan (the four risks; confirming the problem is quick and the solution is the work; why people leave or never start), Teresa Torres (continuous discovery and assumption tests), Bob Moesta (jobs to be done and the forces behind switching), Robby Stein (interviews about real moments, and the diagnosis loop), Itamar Gilad (confidence graded by evidence), Shreyas Doshi and Annie Duke (pre-mortems that end in commitments), Ryan Singer (appetite).
+- Outside the set: Marty Cagan (the four risks and the widened viability; confirming the problem is quick and the solution is the work; why people leave or never start), Teresa Torres (continuous discovery and assumption tests), Bob Moesta (jobs to be done and the forces behind switching), Robby Stein (interviews about real moments, and the diagnosis loop), Itamar Gilad (confidence graded by evidence), Shreyas Doshi and Annie Duke (pre-mortems that end in commitments), Ryan Singer (appetite).

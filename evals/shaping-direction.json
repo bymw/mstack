@@ -3,7 +3,9 @@
   "evals": [
     {
       "id": "shaping-direction-1",
-      "skills": ["shaping-direction"],
+      "skills": [
+        "shaping-direction"
+      ],
       "query": "Customers of our team calendar app keep asking for a Gantt chart view. About 15 requests this quarter, mostly from project leads. Should we build it?",
       "files": [],
       "expected_behavior": [
@@ -12,14 +14,18 @@
         "Compares two or three approaches that differ in what they bet on (for example a Gantt view, a lightweight milestones lane, an integration with an existing project tool) in a table, with one marked (Recommended) and a named backup",
         "Says why someone would switch from today's way, including doing nothing or staying in their current project tool, not only why the approach solves the problem",
         "Gives a test with a pass mark written before it runs and an action for each result: continue, change course or stop",
-        "Weighs viability alongside value, naming at least one of cost, support load, sales, legal or privacy as a risk"
+        "Runs a viability check across the business, not only value: names at least three areas (for example cost to serve, support load, sales and positioning, privacy) and marks each answered, to consult one-on-one with a named owner, or not relevant with a reason"
       ]
     },
     {
       "id": "shaping-direction-2",
-      "skills": ["shaping-direction"],
+      "skills": [
+        "shaping-direction"
+      ],
       "query": "Our Weekly Plan feature stalled. Notes attached. Leadership wants a third redesign with AI meal suggestions next quarter. What should we do?",
-      "files": ["evals/fixtures/shaping-direction-2-weekly-plan-notes.md"],
+      "files": [
+        "evals/fixtures/shaping-direction-2-weekly-plan-notes.md"
+      ],
       "expected_behavior": [
         "Grades the evidence: treats the 68% 'would definitely use' survey and the competitor having a planner as weak, and the 11% second-week use as the strongest signal, marking claims as fact, inference or unknown",
         "Points out that all six interviews are current users recruited in-app, and recommends talking to people who opened it once and never returned and to households who never opened it",
@@ -31,7 +37,9 @@
     },
     {
       "id": "shaping-direction-3",
-      "skills": ["shaping-direction"],
+      "skills": [
+        "shaping-direction"
+      ],
       "query": "We run a running and cycling tracker app. Leadership says we need 'something with AI coaching' this year. What should we build?",
       "files": [],
       "expected_behavior": [
@@ -45,11 +53,32 @@
     }
   ],
   "trigger_checks": [
-    { "query": "Is a shared shopping list worth building for our recipe app, or is it a distraction?", "should_trigger": true },
-    { "query": "The streaks feature in our habit app stalled after launch. Why, and what should we do now?", "should_trigger": true },
-    { "query": "Lots of people ask for offline mode in our notes app. What should we actually build?", "should_trigger": true },
-    { "query": "What metric should tell us whether offline mode in our notes app worked?", "should_trigger": false, "belongs_to": "defining-outcomes" },
-    { "query": "We have eight feature ideas for the recipe app and one quarter. What goes first?", "should_trigger": false, "belongs_to": "sequencing-bets" },
-    { "query": "Write the PRD for the shared shopping list we decided to build.", "should_trigger": false, "belongs_to": "writing-specs" }
+    {
+      "query": "Is a shared shopping list worth building for our recipe app, or is it a distraction?",
+      "should_trigger": true
+    },
+    {
+      "query": "The streaks feature in our habit app stalled after launch. Why, and what should we do now?",
+      "should_trigger": true
+    },
+    {
+      "query": "Lots of people ask for offline mode in our notes app. What should we actually build?",
+      "should_trigger": true
+    },
+    {
+      "query": "What metric should tell us whether offline mode in our notes app worked?",
+      "should_trigger": false,
+      "belongs_to": "defining-outcomes"
+    },
+    {
+      "query": "We have eight feature ideas for the recipe app and one quarter. What goes first?",
+      "should_trigger": false,
+      "belongs_to": "sequencing-bets"
+    },
+    {
+      "query": "Write the PRD for the shared shopping list we decided to build.",
+      "should_trigger": false,
+      "belongs_to": "writing-specs"
+    }
   ]
 }

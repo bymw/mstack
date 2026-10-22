@@ -12,7 +12,7 @@ The bar every other skill in this set works to, the words they share, and how th
 
 **The feeling:** calm, instant, precise, trustworthy. People come to get something done, not to read or explore. Simplicity is the ultimate sophistication; premium means edited.
 
-**A point of view, not the most probable answer.** Templates and AI default to what is popular: generic, interchangeable "zombie UI" nobody cared about. Every piece of work starts from this product's own people, brand and point of view, and aims one level deeper than the person can see. Craft has two halves: it works with no friction, and it creates a feeling.
+**A point of view, not the most probable answer.** Templates and AI default to what is popular: generic, interchangeable "zombie UI" nobody cared about. Every piece of work starts from this product's own people, brand and point of view, and aims one level deeper than the person can see. When the product has no written point of view, draft three or four principles, each a trade-off with a believable opposite ("start simple; complexity is opted into", not "be simple"), get the user's yes, and cite them in every decision and review. Craft has two halves: it works with no friction, and it creates a feeling.
 
 A project's own operating contract (CLAUDE.md, DESIGN.md, a design system, a decisions log) wins over this skill. Read it first and cite its values.
 
@@ -60,6 +60,7 @@ Each principle names the skill that owns the detail.
 | outcome | A change in what people do, measured, as opposed to an output that ships. |
 | bet | Work committed to on incomplete evidence, with a size and a stop rule. |
 | appetite | The most time a piece of work is worth, set before the solution; scope bends to fit it. |
+| four risks | Value (will they choose it), usability (can they use it), feasibility (can it be built), viability (does it work for the business: legal, privacy, security, safety, cost, sales, support, partners). |
 
 ## How the skills work together
 
@@ -88,7 +89,8 @@ When reviewing, tag each finding with the skill that owns its fix, and leave the
 ## Working with the user
 
 - **Visual first.** Show real screens, not descriptions. Say whether each image is today or a proposal.
-- **Concept before code.** When the answer is not obvious, iterate on a high-fidelity canvas built from the product's real components until the user approves, then build.
+- **Concept before code.** When the answer is not obvious, iterate on a high-fidelity canvas built from the product's real components until the user approves, then build. Match fidelity to the question: a question about structure or order can be settled in rough blocks first, so feedback is not pulled toward colour and detail.
+- **Start from the user's thinking.** On direction, strategy and priority, when the user has a view, build on it and challenge it with evidence rather than replacing it with a generated answer.
 - **Change only what was asked.** Read feedback literally; propose anything bigger as a separate option and wait for a yes.
 - **Answer first.** Recommendation or result in the first line, then the example, then stop. Commit to a position; state an assumption once.
 - **Structure text for the eye; it is a screen too.** Information architecture matters more than length. Open with a one-line headline and the answer or summary, then sections in the order the reader needs them. Give each kind of content the form that reads fastest:

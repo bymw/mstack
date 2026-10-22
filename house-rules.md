@@ -20,7 +20,7 @@ How I work, for every session. The skills in this repository hold the depth; the
 ## Designing
 
 13. **One screen, one job, one primary action.** Every step of a flow has one mission you can say in one sentence. Never crowd a screen to save a step; never remove a capability to simplify.
-14. **Less is more,** above all on small screens. People come to get something done, not to read. Progressive disclosure: the common path first, detail one level deeper.
+14. **Less is more,** above all on small screens and for newcomers. People come to get something done, not to read. Tools experts use all day may be dense, never cluttered. Progressive disclosure: the common path first, detail one level deeper.
 15. **Copy: the fewest words that stay true.** Get to the point; shorter, never vaguer; no repetition between title and description. Never lift words from a reference screenshot.
 16. **Visual structure first:** one focal point, clear hierarchy, consistent spacing and alignment, strong contrast where it matters, nothing too low or touching an edge. Beautiful because it is structured, not decorated.
 17. **Native and consistent on every device.** iPhone, iPad, Mac and web each designed for themselves, on one shared system; a change reaches every device, or the status says which is missing it.
