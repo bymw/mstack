@@ -1,6 +1,6 @@
 ---
 name: designing-visuals
-description: Gives a screen its visual structure (focal point, hierarchy, spacing, alignment, type, contrast, colour) and checks it rendered on the device. Use whenever a screen, component or layout is designed, built or reviewed, even without a request for polish, or the user says it looks off, cramped, empty or misaligned. Not for words (writing-ux-copy) or flow structure (designing-flows).
+description: "Gives a screen its visual structure (focal point, hierarchy, spacing, alignment, type, contrast, colour) and checks it rendered on the device. Use whenever a screen, component or layout is designed, built or reviewed, even without a request for polish, or the user says it looks off, cramped, empty or misaligned. Not for words (writing-ux-copy) or flow structure (designing-flows)."
 license: MIT
 ---
 

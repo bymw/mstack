@@ -1,8 +1,8 @@
 ---
 name: unifying-patterns
-description: Builds an agreed consolidation so it sticks: the canonical answer goes into the shared kit, every caller moves, old variants are deleted, and a guard is seen failing on the old code first. Writes code. Use when consolidation rows are agreed, the user asks to make something consistent everywhere or delete an old variant, or a fixed inconsistency has returned. Not for finding inconsistencies (auditing-consistency).
+description: "Builds an agreed consolidation so it sticks: the canonical answer goes into the shared kit, every caller moves, old variants are deleted, and a guard is seen failing on the old code first. Writes code. Use when consolidation rows are agreed, the user asks to make something consistent everywhere or delete an old variant, or a fixed inconsistency has returned. Not for finding inconsistencies (auditing-consistency)."
 license: MIT
-compatibility: Reads agreed rows from the review page's store when available, or from the user's answers in chat.
+compatibility: "Reads agreed rows from the review page's store when available, or from the user's answers in chat."
 ---
 
 # Unifying patterns

@@ -1,8 +1,8 @@
 ---
 name: settling-decisions
-description: Settles open choices the user owns, one question at a time, each with two to four real options and one recommendation, recording every answer before anything is built. Use when work is blocked on a product, scope, priority, taste or risk decision, a spec is silent, or the user asks for options or help deciding. Not for generating design directions (exploring-directions).
+description: "Settles open choices the user owns, one question at a time, each with two to four real options and one recommendation, recording every answer before anything is built. Use when work is blocked on a product, scope, priority, taste or risk decision, a spec is silent, or the user asks for options or help deciding. Not for generating design directions (exploring-directions)."
 license: MIT
-compatibility: Uses the host's question tool (AskUserQuestion in Claude Code) when available; otherwise asks in plain text.
+compatibility: "Uses the host's question tool (AskUserQuestion in Claude Code) when available; otherwise asks in plain text."
 ---
 
 # Settling decisions

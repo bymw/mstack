@@ -1,6 +1,6 @@
 ---
 name: writing-ux-copy
-description: Writes and reviews every word in an interface (titles, buttons, labels, errors, empty states, onboarding, permissions, notifications, AI actions) so it is short, precise and consistent. Use whenever interface text is written or changed, even if copy was not mentioned, or the user says copy is too long, vague or unclear. Not for briefs or replies to people (writing-briefs).
+description: "Writes and reviews every word in an interface (titles, buttons, labels, errors, empty states, onboarding, permissions, notifications, AI actions) so it is short, precise and consistent. Use whenever interface text is written or changed, even if copy was not mentioned, or the user says copy is too long, vague or unclear. Not for briefs or replies to people (writing-briefs)."
 license: MIT
 ---
 

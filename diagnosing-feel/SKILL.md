@@ -1,8 +1,8 @@
 ---
 name: diagnosing-feel
-description: Turns a report that something does not feel right (laggy, jumpy, flashing, rushed, a late indicator, a misbehaving swipe) into a measured cause, a fix and a guard. Use when the user shares a screen recording or says it is not smooth, lags, jumps, or feels broken or not native, even without calling it a bug. Not for motion with no reported symptom (designing-motion).
+description: "Turns a report that something does not feel right (laggy, jumpy, flashing, rushed, a late indicator, a misbehaving swipe) into a measured cause, a fix and a guard. Use when the user shares a screen recording or says it is not smooth, lags, jumps, or feels broken or not native, even without calling it a bug. Not for motion with no reported symptom (designing-motion)."
 license: MIT
-compatibility: The frame-measuring script needs macOS with the Swift toolchain; other hosts measure with the browser's or platform's own profiler.
+compatibility: "The frame-measuring script needs macOS with the Swift toolchain; other hosts measure with the browser's or platform's own profiler."
 ---
 
 # Diagnosing feel

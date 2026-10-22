@@ -1,8 +1,8 @@
 ---
 name: getting-sign-off
-description: Builds a sign-off page with one row per proposed change: the same real screen today and proposed, side by side, answered Agree, Not this or Discuss. Only agreed rows get built. Use when a design change, fix list or simplification needs sign-off, or the user asks to see before and after. Not for exploring several directions (exploring-directions).
+description: "Builds a sign-off page with one row per proposed change: the same real screen today and proposed, side by side, answered Agree, Not this or Discuss. Only agreed rows get built. Use when a design change, fix list or simplification needs sign-off, or the user asks to see before and after. Not for exploring several directions (exploring-directions)."
 license: MIT
-compatibility: Publishing the review page uses Claude artifacts with a data store when available; otherwise a local HTML page, with answers given in chat.
+compatibility: "Publishing the review page uses Claude artifacts with a data store when available; otherwise a local HTML page, with answers given in chat."
 ---
 
 # Getting sign-off

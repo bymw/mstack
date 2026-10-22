@@ -1,6 +1,6 @@
 ---
 name: writing-specs
-description: Writes the spec builders and agents work from once a direction is chosen: the problem in numbers, scope, defined nouns, a sketch-level flow, every state, the four risks, the data model and API, rollout, checks and a decision log. Use when the user asks for a PRD, spec, requirements, acceptance criteria or a plan for an agent. Not for choosing the direction (shaping-direction) or visual design (designing-visuals).
+description: "Writes the spec builders and agents work from once a direction is chosen: the problem in numbers, scope, defined nouns, a sketch-level flow, every state, the four risks, the data model and API, rollout, checks and a decision log. Use when the user asks for a PRD, spec, requirements, acceptance criteria or a plan for an agent. Not for choosing the direction (shaping-direction) or visual design (designing-visuals)."
 license: MIT
 ---
 

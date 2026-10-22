@@ -1,6 +1,6 @@
 ---
 name: sorting-feedback
-description: Turns what people said (a transcript, meeting notes, a review, a partner call or a message thread) into a grounded action list in five groups (do now, ask, park, not doing, already handled), each with the line that raised it. Use when the user shares feedback and asks what to do with it or what someone is really asking. Not for designing or building the changes (getting-sign-off).
+description: "Turns what people said (a transcript, meeting notes, a review, a partner call or a message thread) into a grounded action list in five groups (do now, ask, park, not doing, already handled), each with the line that raised it. Use when the user shares feedback and asks what to do with it or what someone is really asking. Not for designing or building the changes (getting-sign-off)."
 license: MIT
 ---
 

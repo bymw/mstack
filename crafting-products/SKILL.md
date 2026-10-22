@@ -1,6 +1,6 @@
 ---
 name: crafting-products
-description: Sets the shared quality bar, vocabulary and team map for product work on iPhone, iPad, Mac and the web, held to Apple's restraint and Linear's discipline. Use before designing, reviewing, building or writing about any product, screen, flow or feature, and when the user asks for world-class work or says something feels off. Points to the specialist skill for each part.
+description: "Sets the shared quality bar, vocabulary and team map for product work on iPhone, iPad, Mac and the web, held to Apple's restraint and Linear's discipline. Use before designing, reviewing, building or writing about any product, screen, flow or feature, and when the user asks for world-class work or says something feels off. Points to the specialist skill for each part."
 license: MIT
 ---
 

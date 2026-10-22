@@ -1,6 +1,6 @@
 ---
 name: building-ai-features
-description: Holds AI features (rewrite, summarise, generate, agents, assistants) to a standard people trust: labels that match results, nothing sent without a yes, honest waits, and an evaluation gate before shipping. Use when an AI feature is designed, built, reviewed or evaluated, or the user asks whether it is ready to ship or which model to use. Not for visual quality (designing-visuals).
+description: "Holds AI features (rewrite, summarise, generate, agents, assistants) to a standard people trust: labels that match results, nothing sent without a yes, honest waits, and an evaluation gate before shipping. Use when an AI feature is designed, built, reviewed or evaluated, or the user asks whether it is ready to ship or which model to use. Not for visual quality (designing-visuals)."
 license: MIT
 ---
 

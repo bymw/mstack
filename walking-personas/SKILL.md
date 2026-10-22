@@ -1,6 +1,6 @@
 ---
 name: walking-personas
-description: Walks a flow end to end as worst-case personas (nothing yet, thin, typical, maximum, messy) on every target device, finding empty voids, dead ends, wrong defaults and broken Back paths. Read-only. Use when the user asks what a new user sees, wants every state checked or a critical journey scored, or before a demo or usability round. Not for a felt fault (diagnosing-feel).
+description: "Walks a flow end to end as worst-case personas (nothing yet, thin, typical, maximum, messy) on every target device, finding empty voids, dead ends, wrong defaults and broken Back paths. Read-only. Use when the user asks what a new user sees, wants every state checked or a critical journey scored, or before a demo or usability round. Not for a felt fault (diagnosing-feel)."
 license: MIT
 ---
 

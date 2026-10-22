@@ -1,6 +1,6 @@
 ---
 name: breaking-experiences
-description: Builds simulation controls that put a product into any state (data at scale, failures, slow networks, time zones, permissions, concurrent edits, every device), hunts edge cases by combining them, and turns each break into an automated check seen failing first. Writes code. Use when the user wants to break a feature, find edge cases, or build a simulator or test harness. Not for read-only walks (walking-personas).
+description: "Builds simulation controls that put a product into any state (data at scale, failures, slow networks, time zones, permissions, concurrent edits, every device), hunts edge cases by combining them, and turns each break into an automated check seen failing first. Writes code. Use when the user wants to break a feature, find edge cases, or build a simulator or test harness. Not for read-only walks (walking-personas)."
 license: MIT
 ---
 
