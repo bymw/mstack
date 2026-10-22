@@ -6,11 +6,6 @@ Twenty-one Agent Skills that help Claude shape, design, build and ship excellent
 
 [Who it's for](#who-its-for) · [The skills](#the-skills) · [Install](#install) · [Inside a skill](#inside-a-skill) · [Evaluations](#evaluations)
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/team-dark.svg">
-  <img src="assets/team-light.svg" alt="The team: crafting-products as the foundation, then four stages. Shape: shaping-direction, defining-outcomes, sequencing-bets, writing-specs. Design: designing-visuals, writing-ux-copy, designing-flows, designing-motion, building-ai-features, decluttering-screens, exploring-directions. Review: auditing-consistency, walking-personas, diagnosing-feel, breaking-experiences. Decide and ship: getting-sign-off, settling-decisions, unifying-patterns, sorting-feedback, writing-briefs." width="100%">
-</picture>
-
 ## Who it's for
 
 People who want to build excellent things, whatever their title.
@@ -101,7 +96,6 @@ skills/
 ├── README.md
 ├── LICENSE
 ├── house-rules.md
-├── assets/                 the team map, light and dark
 ├── evals/                  three scenarios and six trigger checks per skill
 ├── crafting-products/      SKILL.md, PLATFORMS.md, READING.md
 ├── shaping-direction/      SKILL.md
