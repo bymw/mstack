@@ -1,0 +1,55 @@
+{
+  "skill": "breaking-experiences",
+  "evals": [
+    {
+      "id": "breaking-experiences-1",
+      "skills": ["breaking-experiences"],
+      "query": "Before we hand shared lists to engineering for the final push, try to break it. Spec summary and the current sync code are attached. Find what goes wrong and set us up so it can't come back.",
+      "files": ["evals/fixtures/breaking-experiences-1-spec.md", "evals/fixtures/breaking-experiences-1-sync.ts"],
+      "expected_behavior": [
+        "Builds or specifies simulation controls that drive the real code path (for example seeded personas, network faults injected by intercepting requests, an injectable clock), each with a rerun link or command, and gated so they never reach real people",
+        "Plans the hunt as combinations rather than single cases, including at least offline editing combined with another person's change, and a save combined with an expired session",
+        "Finds breaks grounded in the code: the offline queue lives only in memory (lost on reload), retries can duplicate an add because requests carry no idempotency key, a 401 mid-save redirects and loses the edit, and sorting by the device's Date.now() misorders items from devices with wrong clocks",
+        "Records each break with a reproduction (control plus steps), what should happen and a severity, with data loss rated High",
+        "Turns each break into an automated check that drives the same control and states it must be seen failing on today's code first",
+        "Does not rewrite the product sync code unasked, and ends with what was not covered (for example real networks or devices) under a Not covered heading"
+      ]
+    },
+    {
+      "id": "breaking-experiences-2",
+      "skills": ["breaking-experiences"],
+      "query": "Our streak logic in the habit tracker keeps getting bug reports around travel and clock changes. Reports and the code are attached. Build us a way to test this properly.",
+      "files": ["evals/fixtures/breaking-experiences-2-StreakCalculator.swift", "evals/fixtures/breaking-experiences-2-reports.md"],
+      "expected_behavior": [
+        "Introduces an injectable clock and calendar (time zone included) instead of calling Date() and Calendar.current directly, and does not rely on changing the simulator's or device's clock",
+        "Exposes the time controls through debug-only launch arguments or a debug menu, gated out of release builds, with the exact command or argument to rerun each case",
+        "Covers the combinations the reports point to: crossing time zones east and west, the daylight saving switch, a check-in just before midnight, and a long gap since the last open",
+        "Identifies the 86,400-second steps as the cause of breaks around daylight saving (a day is not always 86,400 seconds) and the device time zone as the cause of travel resets",
+        "Turns each reported break into an automated test named after the person's problem, run and seen failing on today's code before any fix",
+        "Presents a Controls table (Control, How to use it, What it varies, Gate) and groups the breaks under High, Medium and Low"
+      ]
+    },
+    {
+      "id": "breaking-experiences-3",
+      "skills": ["breaking-experiences"],
+      "query": "Our persona walk came back with three states we can't simulate. Can you close those gaps so our researcher can test them next week? Report excerpt attached.",
+      "files": ["evals/fixtures/breaking-experiences-3-gaps.md"],
+      "expected_behavior": [
+        "Closes the 'set up, no workouts' gap with a control that drives the real onboarding path (for example a debug flag that skips adding the sample workout), not by deleting the sample from the database or a fake screen",
+        "Produces failed syncs by injecting faults where the app meets the network (for example a debug URLProtocol in SyncService), and an expired Health grant through the real permission path or a simulator privacy command, rather than hand-edited state",
+        "Adds the new presets to the existing sim panel and gives each a rerun link in the same form as the others (for example repwise://sim?preset=empty), confirmed on the first screen it affects",
+        "Keeps every control inside the Debug and TestFlight configurations and says how each is excluded from App Store builds",
+        "Turns at least one gap into an automated check (for example an XCUITest that opens the empty preset and expects the 'Start your first workout' screen), seen failing first",
+        "Hands the newly reachable personas back to the walk, and names anything still not reproducible here (for example real Health data on a device) under Not covered"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    { "query": "Try to break our checkout flow before launch. I want every edge case we can find.", "should_trigger": true },
+    { "query": "Build a simulator so QA can put the app into any state: slow network, expired session, a list with 500 items.", "should_trigger": true },
+    { "query": "Find the edge cases in our offline sync before engineering ships it, and leave tests behind.", "should_trigger": true },
+    { "query": "What does a brand-new user see when they open our app? Just tell me, don't change anything.", "should_trigger": false, "belongs_to": "walking-personas" },
+    { "query": "The list stutters when I scroll on my iPhone. Recording attached.", "should_trigger": false, "belongs_to": "diagnosing-feel" },
+    { "query": "Write the message we show when sync fails.", "should_trigger": false, "belongs_to": "writing-ux-copy" }
+  ]
+}

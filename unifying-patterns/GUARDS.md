@@ -31,10 +31,10 @@ Combine kinds when the fault has more than one way back. A deleted prop (kind 1)
 
 - Never use a bare stash in a shared repository to get back to the old code. Make a scratch worktree of the base (`git worktree add <scratch> origin/main`), copy the new rule into it, and run it there.
 - Remove the scratch worktree when done.
-- Report the count from the old code in the pull request: "fails 16 times on main, passes on this branch".
+- Report the count from the old code in the commit message, and in the pull request once the user says to open one: "fails 16 times on main, passes on this branch".
 
 ## Where a rule goes
 
 Read the project's harness or checks documentation before adding a rule. A new rule goes in the script, and the manual part, that already own that kind of rule. A parallel check is a second answer to one job.
 
-Run every gate (the static checks and the build) before opening the pull request. Never pipe a gate through `tail`, because the pipeline's exit code is then `tail`'s.
+Run every gate (the static checks and the build) before committing. Never pipe a gate through `tail`, because the pipeline's exit code is then `tail`'s.

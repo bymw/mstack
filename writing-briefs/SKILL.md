@@ -4,9 +4,9 @@ description: Explains work to a smart reader who is not technical (a leader, sta
 license: MIT
 ---
 
-# Plain brief
+# Writing briefs
 
-The readers who decide are smart, busy and not engineers. They read the first lines and decide whether the rest matters. A brief that opens with the system, the history or the method loses them before the recommendation; one that leads with what we recommend, and why, in their words, gets an answer. A partnership plan once took three rewrites before it read plainly, and a sign-off deck lost its recap slides because the audience had heard them many times.
+The readers who decide are smart, busy and not engineers. They read the first lines and decide whether the rest matters. A brief that opens with the system, the history or the method loses them before the recommendation; one that leads with what we recommend, and why, in their words, gets an answer. Plain words rarely come in the first draft, and a recap the audience has already heard spends attention the recommendation needs.
 
 This skill covers turning what we know into what the reader needs. It does not decide what to act on (`sorting-feedback`), ask the user's open questions (`settling-decisions`), or design a deck's look: a deck goes inside the user's own template. The three shapes (brief, reply, deck outline) and the word substitutions are in [SHAPES.md](SHAPES.md); read it before writing.
 
@@ -17,7 +17,7 @@ This skill covers turning what we know into what the reader needs. It does not d
 
 ## Rules
 
-1. **Decode the ask first,** in two sentences: who asked, their role, what they actually asked, and what they need (a decision, an answer, a document to forward, a reply). Check it with the user when unsure.
+1. **Decode the ask first** with the method in `sorting-feedback`, in two sentences, and check it with the user when unsure.
 2. **Recommendation first:** the answer and the one reason that matters most to this reader, in the first lines. Then an example, then the principle; background comes last, if at all.
 3. **The reader's words.** No component, token, file, ticket or codename; no acronym they would not use. Plain international English, one idea per sentence, active voice, no intensifiers, no em dashes.
 4. **Titles state the point.** Each title says what the section concludes ("The fix ships next week", "Nobody loses data"), so a reader who scans only the titles gets the story; never a bare label ("The fix") or a clever phrase to decode. An overview is followed by exactly the sections it names, in that order.
@@ -30,7 +30,7 @@ This skill covers turning what we know into what the reader needs. It does not d
 
 ## Method
 
-1. **Decode:** who is asking, their role, what they asked in their own words, what they need; who will read it, what they already know, and what they will do with it.
+1. **Decode** the ask (rule 1); then who will read it, what they already know, and what they will do with it. The first lines must settle what would make them ask again.
 2. **Gather** the facts, each with its source, marking what is unconfirmed. Ask the user for what is missing with `settling-decisions`.
 3. **Write the top:** the answer or recommendation in one or two sentences, then the one reason that matters most to this reader.
 4. **Write the body:** one section per idea, each opening with its point; options in a table with exactly one recommended; risks and what we need from them in plain words.

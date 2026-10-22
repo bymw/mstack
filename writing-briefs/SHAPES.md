@@ -49,7 +49,7 @@ The reply:
 
 ## A deck outline
 
-For a session. The outline is agreed in text before any slide is built, and the slides go inside the person's own template.
+For a session. The outline is agreed in text before any slide is built, and the slides go inside the user's own template.
 
 ```
 Session: [who, when, what they must leave with]
@@ -64,15 +64,6 @@ Parked for the written follow-up:
 ```
 
 **It works when** every title read in order tells the whole story, and nothing on it recaps what the audience already knows.
-
-## Decoding the ask
-
-Before writing anything, answer these four in a line each:
-
-1. **Who is asking, and what is their field?** A specialist's word weighs most in their own field.
-2. **What did they literally ask?** Quote it.
-3. **What do they need?** A decision, an answer, a document to forward, reassurance on a risk, or a reply they can act on.
-4. **What would make them ask again?** That is the thing the first lines must settle.
 
 ## Swap the system word for the reader's
 

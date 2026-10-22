@@ -1,10 +1,10 @@
 ---
 name: building-ai-features
-description: Holds AI features (rewrite, summarise, generate, transcribe, agents, assistants) to a standard people trust: labels that match results, nothing sent without a yes, honest waits, and an evaluation gate before shipping. Use when an AI feature is designed, built, reviewed or evaluated, or the user asks whether it is ready to ship or which model to use. Not for general visual quality (designing-visuals).
+description: Holds AI features (rewrite, summarise, generate, agents, assistants) to a standard people trust: labels that match results, nothing sent without a yes, honest waits, and an evaluation gate before shipping. Use when an AI feature is designed, built, reviewed or evaluated, or the user asks whether it is ready to ship or which model to use. Not for visual quality (designing-visuals).
 license: MIT
 ---
 
-# AI product
+# Building AI features
 
 An AI feature is only as good as the trust people place in it. Trust is earned in small ways: the action called "Simplify" actually simplifies, a rewrite keeps every fact, nothing is sent without a yes, the original is one tap away. It is lost the same way: one dropped fact, one surprise send, one result weaker than its label. AI makes learning fast; what to build, and what to kill, stays human.
 
@@ -26,12 +26,12 @@ This skill covers the behaviour, interface and quality gate of AI features. Labe
 6. **Transparency by default.** Say exactly what leaves the device and where it goes, including the unflattering parts. Access to personal context is earned, scoped and revocable; where it helps, people can see the instructions behind an action.
 
 **Feel**
-7. **Answer in the first 100 ms** with an honest signal that work has started, then stream the result as stable text that fades in rather than flickers. Waits are honest, never a fake percentage.
+7. **Answer at once, then wait honestly.** The pressed control responds instantly in its own state; a working indicator appears only after about 300 ms; the result streams as stable text that fades in rather than flickers. Waits are honest, never a fake percentage.
 8. **Pressing again gives a fresh result.** Regenerate is one press, never a dead end such as "This already reads well".
 9. **Design the conversation, not just the reply.** An empty prompt offers a few concrete starting points; a long task shows its plan before acting and an activity view the person can watch, stop and take over; follow-up suggestions are few and specific; generated text follows a written voice and format, like any interface text.
 
 **Quality**
-10. **Every AI feature passes an exam before it ships, built from real outputs.** First read a sample of real outputs, note the first thing that went wrong in each, and group and count the failure types; then write pass-or-fail checks for the most common ones. Pass marks are fixed before each new round of results, against a held-out set of real and adversarial cases, with blind old-versus-new comparisons judged by the owner. An AI judge is trusted only once it agrees with the owner's own labels where they differ, and real use is sampled again after launch. A feature that fails stays hidden; shipping below the bar is an explicit, written product decision. Every correction a person makes becomes a new test case.
+10. **Every AI feature passes an exam before it ships, built from real outputs.** Start from the spec's example set; after the first build, read a sample of real outputs, note the first thing that went wrong in each, and group and count the failure types; then write pass-or-fail checks for the most common ones. Pass marks are frozen before every later round, against a held-out set of real and adversarial cases, with blind old-versus-new comparisons judged by the owner. An AI judge is trusted only once it agrees with the owner's own labels where they differ, and real use is sampled again after launch. A feature that fails stays hidden; shipping below the bar is an explicit, written product decision. Every correction a person makes becomes a new test case.
 11. **Autonomy is earned, and accuracy sets the interaction.** Often wrong: a suggestion. Usually right: a draft to review. Almost always right: an action with Undo. Roll out as drafts first, log every accept, edit and reject, and widen autonomy only as that evidence supports it. A confidence score is not proof.
 
 **Engineering**
@@ -44,7 +44,7 @@ This skill covers the behaviour, interface and quality gate of AI features. Labe
 1. **Name the job** in the person's words: what they want done and how they would judge it done. Write the label and the promise it makes.
 2. **Design the loop:** input, first-frame signal, streaming, result, accept, regenerate, undo, and the way back to the original. Mark every point where something becomes consequential or visible to others; confirmation goes there.
 3. **Design every state:** first use (what it is, what leaves the device), empty, working, partial, failed (what failed, what to do), offline, limit reached, access declined.
-4. **Write the exam:** pass marks first, then a test set of real cases plus the worst ones (long input, mixed languages, names and numbers, ambiguous requests, input that should be refused). Criteria a human can judge: facts kept, label honoured, voice kept, nothing invented.
+4. **Build the exam in this order:** (1) start from the spec's example set with expected results (`writing-specs`), plus the worst cases (long input, mixed languages, names and numbers, ambiguous requests, input that should be refused); (2) after the first build, read a sample of real outputs and group and count the failure types; (3) write pass-or-fail checks for the most common ones, on criteria a human can judge (facts kept, label honoured, voice kept, nothing invented); (4) freeze pass marks before every later round.
 5. **Run it and decide:** a blind comparison against today or the previous version. Record the result and the decision ("Ship", "Hide", or "Ship below the bar, because…") with the date.
 6. **Group and order the actions:** variants of one action together, ordered by usefulness; actions that build on each other say so; a new action earns its place with evidence, like any setting.
 
@@ -63,9 +63,9 @@ This skill covers the behaviour, interface and quality gate of AI features. Labe
 | Instead of | Do |
 | --- | --- |
 | Changing the person's words without showing it | Show the change; keep the original one tap away |
-| A spinner, then a wall of text | An immediate signal, then streamed, stable text |
+| A spinner, then a wall of text | The control responds at once, then streamed, stable text |
 | "Nothing leaves your device" when something does | Exactly what leaves, and where |
-| Shipping because the demo looked good | Pass marks written first, a blind comparison, a recorded decision |
+| Shipping because the demo looked good | Checks from real failures, frozen pass marks, a blind comparison, a recorded decision |
 | One large model for every job | The smallest model that passes each job |
 | Gradients, glows or sparkles to mark AI | The same calm interface as the rest of the product |
 

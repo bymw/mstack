@@ -22,6 +22,7 @@ Walk these for any flow that holds a person's data, history or settings. Each ca
 - **Lifecycle states.** Restricted, locked, under review, closed. Does the flow stop properly, and does it say how to get access back?
 - **Feature off.** A feature the person never turned on, and one they turned off again. Off is a state with its own content.
 - **Edge content.** Realistic worst cases, never random: a very long name and a two-letter one, a 60-character email, counts of 0, 1 and 1,284, translations about 30% longer, the other reading direction, the largest text size.
+- **Assistive technology.** A screen reader, keyboard only, Switch Control or Voice Control, and the largest text size. Can they reach, hear and finish every step, in order?
 - **Edge devices.** The smallest supported phone, an iPad in split view, a narrow and a very wide Mac window, a 320 px browser, 200% zoom, the oldest supported hardware.
 - **Product stages,** where a product has them: new to it, set up but holding nothing, active.
 

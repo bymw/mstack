@@ -1,14 +1,12 @@
 ---
 name: writing-ux-copy
-description: Writes and reviews every word in an interface (titles, buttons, labels, errors, empty states, onboarding, permissions, notifications, AI actions) so it is short, precise and consistent on every device. Use whenever interface text is written or changed, even if copy was not mentioned, or the user says copy is too long, vague or unclear. Not for briefs or replies to people (writing-briefs).
+description: Writes and reviews every word in an interface (titles, buttons, labels, errors, empty states, onboarding, permissions, notifications, AI actions) so it is short, precise and consistent. Use whenever interface text is written or changed, even if copy was not mentioned, or the user says copy is too long, vague or unclear. Not for briefs or replies to people (writing-briefs).
 license: MIT
 ---
 
-# UX copy
+# Writing UX copy
 
-People do not open a product to read. They come to get one thing done and move on, so every word either helps them do that or slows them down. The copy gets to the point, says exactly what it means, and stops.
-
-It can fail in two opposite directions. **Too long:** a description that repeats the title, a sentence of reassurance, an explanation of what the person can already see. **Too vague:** a line cut so short it no longer says anything, a label only the team understands. The target is the fewest words that stay complete and true.
+People do not open a product to read. They come to get one thing done and move on, so every word either helps them do that or slows them down. The copy gets to the point, says exactly what it means, and stops: the fewest words that stay complete and true.
 
 This skill covers the words on screen. The structure of a flow comes from `designing-flows`, the layout around the words from `designing-visuals`.
 

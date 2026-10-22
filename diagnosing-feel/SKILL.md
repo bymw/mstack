@@ -1,10 +1,11 @@
 ---
 name: diagnosing-feel
-description: Turns a report that something does not feel right (laggy, jumpy, flashing, rushed, a late indicator, a misbehaving swipe) into a measured cause, a fix and a guard, on any device. Use when the user shares a screen recording or says it is not smooth, lags, jumps, or feels broken or not native, even without calling it a bug. Not for motion with no reported symptom (designing-motion).
+description: Turns a report that something does not feel right (laggy, jumpy, flashing, rushed, a late indicator, a misbehaving swipe) into a measured cause, a fix and a guard. Use when the user shares a screen recording or says it is not smooth, lags, jumps, or feels broken or not native, even without calling it a bug. Not for motion with no reported symptom (designing-motion).
 license: MIT
+compatibility: The frame-measuring script needs macOS with the Swift toolchain; other hosts measure with the browser's or platform's own profiler.
 ---
 
-# Feel check
+# Diagnosing feel
 
 These reports come from a person holding the device. They are the most reliable signal a product has about feel, and the hardest to reproduce. Geometry checks cannot see feel, and headless browsers, hidden preview panes and debug builds misreport timing, blur and touch. So this skill starts from what was seen, reproduces it where it is true, and measures before it changes anything.
 
@@ -14,7 +15,7 @@ This skill covers diagnosing and fixing a felt fault. Fixes are held to the voca
 
 ## Two failure modes, and the first is worse
 
-1. **Fixing the guess.** Treating the symptom you imagined rather than the cause you measured, often by adding a delay, fade, dim or spinner on top. It hides the fault in one place and adds one elsewhere. A press probe that dragged the page between taps once made a working press look broken and led to a needless dim that later had to be reverted.
+1. **Fixing the guess.** Treating the symptom you imagined rather than the cause you measured, often by adding a delay, fade, dim or spinner on top. It hides the fault in one place and adds one elsewhere. A faulty probe can make working code look broken, so check the measurement before trusting the fault.
 2. **Declaring it fixed in the wrong place.** A screenshot, a headless run, a debug build or a fast desktop that cannot show the problem is no proof the fix worked.
 
 ## Rules
@@ -34,7 +35,7 @@ This skill covers diagnosing and fixing a felt fault. Fixes are held to the voca
 | Feels rushed or hectic | Transitions shortened to feel fast; several elements moving independently; a stagger with no cap; ease-in or linear curves | Full duration on `ease-out` or a critically damped spring; one calm sequence; stagger capped |
 | A flash between states | A spinner shown for a split second; a hard cut from placeholder to content; a remount by identity; a colour that cannot interpolate | Nothing under about 300 ms, at least about 500 ms once shown; crossfade in place; one stable identity |
 | Content appears, then jumps | Placeholder sizes differ from the loaded ones; fake loading over data already held | Placeholder in the exact shape of what arrives; never reload what is held |
-| An indicator, dots or title update after the swipe settles | State derived from a scroll-end or settle event, which fires late (450 ms measured on mobile Safari) | Derive it during the gesture or at finger lift |
+| An indicator, dots or title update after the swipe settles | State derived from a scroll-end or settle event, which fires late (about 450 ms in one observed case on mobile Safari) | Derive it during the gesture or at finger lift |
 | A delay after a tap or click | Main-thread work before the first visual change; a double-tap recogniser waiting; a cold route | Answer on the first frame, then do the work; drop double-tap where none exists; warm the route |
 | A sheet or panel cannot be grabbed while it moves | A non-interruptible animation or input locked during the transition | A spring from the value on screen; never lock input |
 | Only part of a sheet responds to a drag | The handler is on the grabber; the inner scroll captures the touch | Drag from anywhere until raised, then hand over to the inner scroll |
@@ -51,9 +52,9 @@ This skill covers diagnosing and fixing a felt fault. Fixes are held to the voca
 
 ## Method
 
-1. **Watch.** Extract the frames around the moment with [frames.swift](frames.swift), which needs no ffmpeg:
+1. **Watch.** Extract the frames around the moment with [frames.swift](frames.swift), which needs no ffmpeg (macOS only; elsewhere, step through the recording in the platform's profiler or a video player). Run it from this skill's folder, or give `<this skill's folder>/frames.swift`:
    ```bash
-   swift ~/.claude/skills/diagnosing-feel/frames.swift <recording> <out-dir> --from 1.5 --to 3.5 --png --every 2
+   swift frames.swift <recording> <out-dir> --from 1.5 --to 3.5 --png --every 2
    ```
    It writes `frames.csv` (time, gap since the previous frame, change from the previous frame) plus PNGs. A long gap mid-gesture is a stall; a spike in `change` is a flash or a jump; `--region` limits the measure to one element.
 2. **Reproduce** on the right device or engine, same host, route and window size, same gesture. Record it and run `frames.swift` on that too.

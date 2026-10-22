@@ -1,10 +1,10 @@
 ---
 name: designing-flows
-description: Shapes multi-step flows (sign-up, onboarding, permissions, setup, checkout, invites) so every step has one mission and one action, value comes before asks, and nothing is lost, on every device. Use whenever a flow, wizard, form or sequence of screens is designed, built or reviewed, or the user mentions onboarding or one thing at a time. Not for single-screen layout (designing-visuals).
+description: Shapes multi-step flows (sign-up, onboarding, permissions, setup, checkout, invites) so every step has one mission and one action, value comes before asks, and nothing is lost. Use whenever a flow, wizard, form or sequence of screens is designed, built or reviewed, or the user mentions onboarding or one thing at a time. Not for single-screen layout (designing-visuals).
 license: MIT
 ---
 
-# Flow design
+# Designing flows
 
 People move through a flow to get somewhere else. They do not want to learn the product or make decisions they did not come to make. Flows that work feel like a short conversation: one question, one answer, the next, each step with a reason to exist that fits in one sentence and an answer that takes seconds. Flows that fail feel like a form: several things to do on one screen, choices nobody understands yet, permissions before value.
 

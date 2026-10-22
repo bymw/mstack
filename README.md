@@ -18,7 +18,7 @@ Good product work depends on hundreds of small decisions made the same way every
 - **Outcomes over output.** A change in what people do, not a feature shipped.
 - **Truth before polish.** Nothing shown that the data cannot back.
 - **Native to every device.** Designed for each, consistent across all.
-- **Proven, not assumed.** Measured on the device, and every fix leaves a guard.
+- **Proven, not assumed.** Measured on the device, broken on purpose before people meet it, and every fix leaves a guard.
 
 ## How it works
 
@@ -32,13 +32,13 @@ The skills work as a team. `crafting-products` is the foundation: the shared bar
 
 ```mermaid
 flowchart TB
-    PC["crafting-products<br/>the shared bar, terms and team map"]
+    CP["crafting-products<br/>the shared bar, terms and team map"]
 
     subgraph SHAPE [Shape]
         SD[shaping-direction]
         DO[defining-outcomes]
         SB[sequencing-bets]
-        PD[writing-specs]
+        WS[writing-specs]
     end
 
     subgraph DES [Design]
@@ -48,28 +48,31 @@ flowchart TB
         MS[designing-motion]
         AI[building-ai-features]
         DC[decluttering-screens]
-        CD[exploring-directions]
+        ED[exploring-directions]
     end
 
     subgraph REV [Review]
-        CS[auditing-consistency]
-        PW[walking-personas]
-        FC[diagnosing-feel]
+        AC[auditing-consistency]
+        WP[walking-personas]
+        DF[diagnosing-feel]
+        BE[breaking-experiences]
     end
 
     subgraph SHIP [Decide and ship]
-        BA[getting-sign-off]
-        DE[settling-decisions]
-        UN[unifying-patterns]
-        SA[sorting-feedback]
-        PB[writing-briefs]
+        GS[getting-sign-off]
+        SE[settling-decisions]
+        UP[unifying-patterns]
+        SF[sorting-feedback]
+        WB[writing-briefs]
     end
 
-    PC --> SHAPE
-    PC --> DES
-    PC --> REV
-    PC --> SHIP
+    CP --> SHAPE
+    CP --> DES
+    CP --> REV
+    CP --> SHIP
     SHAPE --> DES
+    DES --> REV
+    REV --> SHIP
 ```
 
 ### Common plays
@@ -85,6 +88,7 @@ flowchart TB
 | Explore an idea with no obvious answer | `exploring-directions` | `settling-decisions`, then `getting-sign-off` |
 | Get sign-off on proposed changes | `getting-sign-off` | `settling-decisions` for open rows, then build |
 | Something feels laggy, jumpy, flashy or rushed | `diagnosing-feel` | `designing-motion` |
+| Break a feature on purpose and find its edge cases | `breaking-experiences` | `walking-personas`, then the skill that owns each fix |
 | Plan or review motion | `designing-motion` | `diagnosing-feel` to prove it |
 | Find and fix inconsistency | `auditing-consistency` | `getting-sign-off`, `settling-decisions`, `unifying-patterns` |
 | Simplify a feature | `decluttering-screens` | `getting-sign-off` |
@@ -128,6 +132,7 @@ flowchart TB
 | [`auditing-consistency`](auditing-consistency/SKILL.md) | Goes from one noticed difference to every place the same job is done, on every device, measured. | An inventory per job, one proposed answer each, and the guard that stops drift returning. |
 | [`walking-personas`](walking-personas/SKILL.md) | Walks a flow as the people the demo account never is: nothing yet, thin, typical, maximum, messy. | Findings per persona, every one reproducible from a link, plus the personas the product cannot yet simulate. |
 | [`diagnosing-feel`](diagnosing-feel/SKILL.md) | Turns "it doesn't feel right" into a measured cause, a fix at that cause and a guard. | The moment named with a timestamp, the cause in one sentence with evidence, and before-and-after proof on the real device. |
+| [`breaking-experiences`](breaking-experiences/SKILL.md) | Builds the controls that put the product into any state, breaks it on purpose by combining failures, data, time, permissions and devices, and keeps every break as a test. | Simulation controls anyone can rerun, breaks grouped by severity with reproductions, and an automated check per break seen failing first. |
 
 ### Decide and ship
 
@@ -141,7 +146,7 @@ flowchart TB
 
 ## Always on
 
-[`house-rules.md`](house-rules.md) holds the short core that applies to every session, including how to work with me. It belongs in `~/.claude/CLAUDE.md`, which Claude reads at the start of every session; the skills hold the depth and load only when a task needs them.
+[`house-rules.md`](house-rules.md) is the short core I keep in `~/.claude/CLAUDE.md`, which Claude reads at the start of every session; the skills hold the depth and load only when a task needs them. It is written in my voice and includes personal preferences (no em dashes, installing builds on my devices). Treat it as an example to adapt, not a file to copy as is.
 
 ## Install
 
@@ -149,19 +154,30 @@ flowchart TB
 
 ```bash
 git clone https://github.com/bymw/skills.git ~/Github/skills
-for d in ~/Github/skills/*/; do ln -s "$d" ~/.claude/skills/; done
+for d in ~/Github/skills/*/; do [ -f "$d/SKILL.md" ] && ln -s "$d" ~/.claude/skills/; done
 ```
 
 **Codex, for all your projects.** Codex reads the same format from `~/.agents/skills`:
 
 ```bash
 mkdir -p ~/.agents/skills
-for d in ~/Github/skills/*/; do ln -s "$d" ~/.agents/skills/; done
+for d in ~/Github/skills/*/; do [ -f "$d/SKILL.md" ] && ln -s "$d" ~/.agents/skills/; done
 ```
 
 **Claude Code, for one project.** Copy the skill folders you want into the project's `.claude/skills/` folder.
 
 **Claude apps.** Zip a skill folder and upload it in the skills section of Claude's settings. Each skill works on its own; teammates it mentions are used when they are also installed.
+
+### What each host needs
+
+Every skill works anywhere the Agent Skills format is supported. A few use host features when they exist, and fall back when they do not:
+
+| Skill | Uses when available | Fallback |
+| --- | --- | --- |
+| `getting-sign-off`, `exploring-directions`, `unifying-patterns` | A published page with a data store (Claude artifacts) | A local HTML page, with answers given in chat |
+| `settling-decisions` | The host's question tool | Questions in plain text |
+| `diagnosing-feel` | macOS and Swift, for its frame-measuring script | The browser's or platform's own profiler |
+| `designing-visuals`, `walking-personas`, `breaking-experiences` | A device, simulator or browser to render and run on | Says plainly what could not be verified |
 
 **With the skills CLI**, once the repository is public:
 
@@ -178,7 +194,7 @@ The Shape skills are grounded in the public work of product leaders including Ma
 
 ## Inside a skill
 
-Every skill has the same shape, so they read as one set:
+Every specialist skill has the same shape, so they read as one set. The foundation, `crafting-products`, holds the principles, shared terms, team map and screen check instead.
 
 ```
 skill-name/
@@ -213,6 +229,7 @@ skills/
 ├── auditing-consistency/   SKILL.md, JOBS.md
 ├── walking-personas/       SKILL.md, PERSONAS.md
 ├── diagnosing-feel/        SKILL.md, MEASURE.md, frames.swift
+├── breaking-experiences/   SKILL.md, BREAKS.md
 ├── getting-sign-off/       SKILL.md, CAPTURE.md, review-page.html
 ├── settling-decisions/     SKILL.md
 ├── unifying-patterns/      SKILL.md, GUARDS.md
@@ -222,21 +239,25 @@ skills/
 
 ## Evaluations
 
-Every skill has three test scenarios and six trigger checks in [`evals/`](evals/), in the structure Anthropic recommends: a realistic request, any input files, and the behaviours a good answer must show. Each scenario runs with the skill and without it, and the output is graded against those behaviours. The trigger checks confirm each description picks its own requests and leaves its neighbours' alone. See [evals/README.md](evals/README.md) to run them.
+Every skill has three test scenarios and at least six trigger checks in [`evals/`](evals/), in the structure Anthropic recommends: a realistic request, any input files, and the behaviours a good answer must show. Each scenario runs with the skill and without it, and the output is graded against those behaviours. The trigger checks confirm each description picks its own requests and leaves its neighbours' alone. See [evals/README.md](evals/README.md) to run them.
 
-**Latest results** ([full table](evals/RESULTS.md)): with the skills, answers showed 92% of the expected behaviours, against 36% without, and 120 of 121 trigger checks picked the right skill.
+**Latest results** ([full table and limits](evals/RESULTS.md)): with the skills, answers showed 89% of the expected behaviours against 36% without (84% against 36% on the first, untuned run), and 130 of 131 trigger checks picked the right skill.
+
+## Not covered yet
+
+Honest gaps for a later version: running usability sessions with people (planning tasks, recruiting, moderating), a full accessibility audit, product-wide navigation and information architecture, and release management after sign-off.
 
 ## How the skills are written
 
 They follow [Anthropic's skill authoring best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices), its prompting guidance for current Claude models, and the open [Agent Skills specification](https://agentskills.io/specification), cross-checked against OpenAI's guidance:
 
-- **One focused job per skill.** Each description says what the skill does, when to use it and where its boundary is, with the trigger words first, so Claude or Codex picks the right one. All twenty descriptions together stay under Codex's default 8,000-character skill list, so none get cut short.
-- **Calm and specific.** Every rule carries a short reason, and every gotcha names what to do instead.
+- **One focused job per skill.** Each description says what the skill does, when to use it and where its boundary is, with the trigger words first, so Claude or Codex picks the right one. Descriptions are kept short (about 7,900 characters for all twenty-one) because hosts budget the skill list; Codex shortens descriptions first when the budget is tight, so each puts its job and trigger words up front.
+- **Calm and specific.** Rules give their reason where it is not obvious, and every gotcha names what to do instead.
 - **Explicit scope.** Rules say "every screen, not just the first".
-- **No duplication.** One vocabulary, defined once in `crafting-products`, and each idea lives in the skill that owns it.
+- **One vocabulary.** Shared terms are defined once in `crafting-products`, and each idea lives in the skill that owns it, with teammates pointing to it.
 - **Shallow references.** Reference files sit one level deep, each with a line saying when to read it.
 - **Complete reviews.** Review skills report every finding with its severity rather than filtering.
-- **Tested.** Every skill has evaluations, and changes are checked blind against the previous version on real tasks.
+- **Tested.** Every skill has evaluations, and changes are checked blind against a no-skill baseline on realistic scenarios.
 
 ## Licence
 

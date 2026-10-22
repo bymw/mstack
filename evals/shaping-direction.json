@@ -79,6 +79,11 @@
       "query": "Write the PRD for the shared shopping list we decided to build.",
       "should_trigger": false,
       "belongs_to": "writing-specs"
+    },
+    {
+      "query": "Show me three visual concepts for the new home screen so the team can pick one.",
+      "should_trigger": false,
+      "belongs_to": "exploring-directions"
     }
   ]
 }

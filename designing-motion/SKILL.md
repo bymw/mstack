@@ -1,12 +1,12 @@
 ---
 name: designing-motion
-description: Keeps every transition, animation and loading moment smooth, well timed and calm, never rushed or flashy: decides whether something should move, gives each move a named role and tokens, and audits motion in frames. Use when motion, transitions, loading states or animations are added, reviewed or tuned, or the user asks for Apple- or Linear-level motion. Not for a fault someone already felt (diagnosing-feel).
+description: Keeps every transition, animation and loading moment smooth, well timed and calm: decides whether something should move, gives each move a named role and tokens, and audits motion in frames. Use when motion, transitions, loading states or animations are added, reviewed or tuned, or the user asks for Apple- or Linear-level motion. Not for a fault someone already felt (diagnosing-feel).
 license: MIT
 ---
 
-# Motion system
+# Designing motion
 
-Good motion is felt, not noticed. Every transition is smooth, seamless and well timed: it answers at once, moves with intent, settles completely, and never feels rushed, hectic or flashy. Motion is a language only if the same act always moves the same way. One audit of a mature prototype found nine ways to push a page, Back reversing in only two of them, and about 50 durations, 17 curves and 14 springs. Each was defensible alone; together they read as a product made by several people. What replaced them is small: one duration ramp, a few curves, two springs, and a short list of named roles.
+Good motion is felt, not noticed. Every transition is smooth, seamless and well timed: it answers at once, moves with intent, settles completely, and never feels rushed, hectic or flashy. Motion is a language only if the same act always moves the same way. Left alone, a product drifts into several ways to push a page, a Back that reverses only some of them, and dozens of hand-typed durations, curves and springs. Each is defensible alone; together they read as a product made by several people. The cure is small: one duration ramp, a few curves, two springs, and a short list of named roles.
 
 This skill covers whether things move, how, and how well. Diagnosing a fault someone felt on a device is `diagnosing-feel`; its measuring kit serves both. Default values for durations, curves, springs, loading and the review checklist are in [DEFAULTS.md](DEFAULTS.md); read it whenever values are chosen or a move is reviewed. The questions that assign a role are in [ROLES.md](ROLES.md); read it when listing or naming moves.
 
@@ -19,13 +19,13 @@ This skill covers whether things move, how, and how well. Diagnosing a fault som
 
 1. **The system lives in the tokens.** Read the project's motion tokens and decisions first and cite role names; never type a duration, curve or spring by hand. A project with no tokens starts from DEFAULTS.md, written into tokens in the first change.
 2. **Purpose and frequency decide whether it moves.** A move explains a change, follows the hand or confirms input. Actions used many times a day and anything triggered from the keyboard do not animate; delight belongs only to rare moments.
-3. **Smooth, seamless, never rushed.** No hard cuts between states: content crossfades or moves into place. Small, frequent feedback is quick; transitions between states and places take their full duration and land softly on an ease-out or a critically damped spring. One calm sequence at a time, never several unrelated motions competing. Every move settles completely, with no jitter or late correction.
-4. **Loading is part of the transition.** Nothing appears for waits under about 300 ms. A loading state, once shown, stays long enough not to flicker (about 500 ms). The placeholder has the exact shape of what arrives, and the content crossfades into it in place, so nothing pops in, jumps or flashes.
+3. **Smooth, seamless, never rushed.** No hard cuts between states: content crossfades or moves into place. Small, frequent feedback is quick; transitions between states and places take the full duration of their token, never cut short, and land softly on an ease-out or a critically damped spring. One calm sequence at a time, never several unrelated motions competing. Every move settles completely, with no jitter or late correction.
+4. **Loading is part of the transition.** The pressed control answers instantly in its own state; a loading indicator appears only after about 300 ms. A loading state, once shown, stays long enough not to flicker (about 500 ms). The placeholder has the exact shape of what arrives, and the content crossfades into it in place, so nothing pops in, jumps or flashes.
 5. **Every move has a role,** named for the act it answers. A move with no act does not move.
 6. **One act, one motion, on every device.** The same role moves the same way on every screen and platform, adjusted only where the platform's own convention differs (the native push on iOS, native windows and sheets on macOS).
 7. **Answer on the first frame; leave faster than you arrive; leave the way you came.** Back plays the push in reverse; a sheet sinks the way it rose; exits run about 20% shorter than entrances.
 8. **Always interruptible.** Springs for anything a finger or pointer drags, motion starting from the value on screen, release velocity carried into the spring, input never locked during a transition.
-9. **The house rules:**
+9. **The standing rules:**
    - arrival animates once, and a revisit rests
    - nothing loops unless something is pending
    - state follows the finger during a gesture, not after it settles
@@ -40,7 +40,7 @@ This skill covers whether things move, how, and how well. Diagnosing a fault som
 
    A recorded exception lives in its decision and is cited, not re-argued.
 10. **Reduce Motion is a mode, not a deletion.** Each role carries its reduced form: travel becomes a short crossfade, press stays, loops stop. Opacity and colour changes that carry information stay.
-11. **Cheap properties, full frame rate.** Animate transform and opacity only, and hold 120 Hz on the oldest supported device.
+11. **Cheap properties, full frame rate.** Animate transform and opacity only, and hold the display's full refresh rate (8.3 ms per frame at 120 Hz, 16.7 ms at 60 Hz) on the oldest supported device.
 12. **Measured in frames.** A screenshot cannot see motion. Judge from per-frame sampling or a recording on the device that matters, at full speed and slowed down, never in a hidden preview pane.
 13. **Every fix leaves a guard:** a lint rule (no hand-typed timing, nothing animating because it mounted) or a motion sweep step, seen failing on the old code.
 
@@ -68,7 +68,7 @@ This skill covers whether things move, how, and how well. Diagnosing a fault som
 | Instead of | Do |
 | --- | --- |
 | A hard cut from loading to content | A crossfade in place into a placeholder of the same shape |
-| A spinner that flashes on a fast load | Nothing under about 300 ms; once shown, at least about 500 ms |
+| A spinner that flashes on a fast load | The press answers at once; no indicator under about 300 ms, then at least about 500 ms |
 | Everything entering at once, or several motions competing | One calm sequence; a short stagger capped at about eight items |
 | A graphic assembling itself piece by piece | The whole mark arrives as one piece, then its words |
 | Ease-in, or a linear move on interface motion | Ease-out to enter and leave, ease-in-out to move on screen |

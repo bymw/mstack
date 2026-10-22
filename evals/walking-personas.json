@@ -84,6 +84,11 @@
       "query": "Empty states look different on every tab of the recipe app. Find them all and propose one.",
       "should_trigger": false,
       "belongs_to": "auditing-consistency"
+    },
+    {
+      "query": "Build us debug controls so QA can force an expired session and a slow network, and leave tests behind.",
+      "should_trigger": false,
+      "belongs_to": "breaking-experiences"
     }
   ]
 }

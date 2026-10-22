@@ -1,6 +1,6 @@
 # Measuring feel
 
-Read this at steps 2 and 3. Every trap below produced a convincing false result at least once.
+Read this at steps 2 and 3. Each trap below can produce a convincing false result.
 
 ## iOS and iPadOS: the Simulator
 
@@ -43,10 +43,10 @@ Run this against the same route. Headless for logic and numbers; the real engine
 ## Traps that look like bugs
 
 - **The in-app preview pane, when hidden,** stalls `requestAnimationFrame` (frames every few hundred ms) and pauses CSS animations at their first frame. It can also reopen narrow and trigger mobile fallbacks. Never time anything in it. Set its size explicitly if you measure layout there.
-- **Headless touch timing.** Automated touch steps arrive about 65 ms apart under load. A flick's release velocity then depends on ±20 ms luck, and any animation still running at lift delays `touchend` by a frame. A flick that fails headless and passes in Safari is the harness, not the change.
+- **Headless touch timing.** Automated touch steps can arrive tens of milliseconds apart under load (about 65 ms in one observed setup). A flick's release velocity then depends on luck, and any animation still running at lift delays `touchend` by a frame. A flick that fails headless and passes in Safari is the harness, not the change.
 - **Glass in headless Chrome** is drawn on the CPU and does not show Safari's fade problem. It also slows touch events.
 - **Debug builds** of native apps run SwiftUI and Swift code far slower than release. Never judge smoothness on one.
-- **Cold taps on a dev server** carry 130 to 210 ms of module loading. Warm the route first.
+- **Cold taps on a dev server** carry module loading time (130 to 210 ms in one observed setup). Warm the route first.
 - **CSS animations with `fill: both`** stay in `getAnimations()` after they finish, so they look re-triggered on later taps.
 - **Press probes:** releasing a held press by moving the pointer away can drag the page, so the next control has moved and reads as "no press". Reload before each control.
 - **Motion (Framer Motion):**

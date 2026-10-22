@@ -1,6 +1,6 @@
 # The moves, in order
 
-Read this at step 3. Run the moves in this order. Each is cheaper and safer than the next, so a later move is used only when the earlier ones are not enough. Each move lists what it may cost the person, and what it must never cost.
+Read this at step 3. Run the moves in this order. Each is cheaper and safer than the next, so a later move is used only when the earlier ones are not enough; a screen still crowded after them splits. Each move lists what it may cost the person, and what it must never cost.
 
 `writing-ux-copy` holds the same idea at the scale of a string. Use it for every string the moves below touch.
 
@@ -50,19 +50,19 @@ Read this at step 3. Run the moves in this order. Each is cheaper and safer than
 
 **May cost:** a longer step.
 
-**Must not cost:** a decision. A flow made shorter by dropping a decision comes back, usually the same day. Split a screen only when it holds more than one unrelated decision, never because its explanation runs long.
+**Must not cost:** a decision. A flow made shorter by dropping a decision comes back, usually the same day. A long explanation is shortened (move 2), not split; splitting a crowded screen is the last move.
 
 **Check:** count the decisions asked before and after. The number must not fall unless a default (move 3) took one, with its reason.
 
-## 6. Land where the person started
+## 6. Land where the person started, or on what they made
 
-**What:** a flow ends where it was launched, so the person sees the result in place: a new goal lands on the list it was created from, not on a page they never visited.
+**What:** a flow ends where it was launched, or on the thing it made, so the person sees the result: a new goal lands on the list it was created from, not on a page they never visited.
 
 **May cost:** a pushed detail page the person did not ask for.
 
-**Must not cost:** the next step. A major completion still says what was done and offers the useful next action (add the first item, or later), then lands where the person began.
+**Must not cost:** the next step. A major completion still says what was done and offers the useful next action (add the first item, or later), then lands where the person began or on what they made.
 
-**Check:** after the flow, is the person looking at the place they left, with the new thing in it?
+**Check:** after the flow, is the person looking at the place they left or the thing they made, with the result visible?
 
 ## 7. Draw off as a state, not as empty
 
@@ -74,9 +74,9 @@ Read this at step 3. Run the moves in this order. Each is cheaper and safer than
 
 **Check:** would a person who has never heard of this feature understand it from this screen?
 
-## Last resort: redesign the component
+## Last resort: split the screen or redesign the component
 
-When moves 1 to 7 are not enough, the component itself is wrong for the content: a bar too narrow for any honest title, a card that cannot hold the one figure that matters. Propose the component change as its own `getting-sign-off` row, or as `exploring-directions` if there is more than one answer. In a project with a shared kit, a component change is a foundation change, made once for every caller.
+When moves 1 to 7 are not enough, a screen that is still crowded splits into steps, each with one mission; more screens beat a crowded one. Otherwise the component itself is wrong for the content: a bar too narrow for any honest title, a card that cannot hold the one figure that matters. Propose the component change as its own `getting-sign-off` row, or as `exploring-directions` if there is more than one answer. In a project with a shared kit, a component change is a foundation change, made once for every caller.
 
 ## The still-reachable checklist
 

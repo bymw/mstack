@@ -25,7 +25,7 @@ The names below are the usual vocabulary. Use the project's own names where it h
 | puts a finger on something that goes somewhere | "this is live under your finger" | press |
 | picks one option among several | "the choice moved here" | select |
 | changes a segment, period or filter, and content changes under the control | "same place, new content" | swap: a crossfade in place, no travel |
-| opens a destination | "the new page is in front; the old one is behind it" | push, and Back is its exact reverse |
+| opens a destination | "the new page is in front; the old one is behind it" | push: the platform's native transition, Back its exact reverse |
 | advances inside a flow | "next step, same task" | step |
 | opens a sheet or a menu over the page | "this sits on top and goes back where it came from" | present |
 | starts a task that takes over the screen | "you are in a task now" | flow |
@@ -48,10 +48,7 @@ A move that fits two roles is usually two moves: a press, then a push.
 
 ## The inventory
 
-Fill one row per move, from a probe or a recording, never from reading code alone.
-
-| # | Screen | Trigger | Element | Property | Measured (duration and curve, or spring) | Exit reverses it? | Reduced form | Role | Token used? |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+Fill one entry per move, from a probe or a recording, never from reading code alone: screen, trigger, element, property, measured duration and curve (or spring), whether the exit reverses it, reduced form, role, and whether a token is used.
 
 Then group the rows by role. Within a role, every row must show the same motion. A role with two motions is a finding.
 

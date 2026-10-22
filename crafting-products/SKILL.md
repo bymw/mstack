@@ -1,10 +1,10 @@
 ---
 name: crafting-products
-description: Sets the shared quality bar, vocabulary and team map for product work on iPhone, iPad, Mac and the web, held to Apple's restraint and Linear's discipline. Use before designing, reviewing, building or writing about any product, screen, flow or feature, and when the user asks for world-class or uncluttered work or says something feels off. Points to the specialist skill for each part.
+description: Sets the shared quality bar, vocabulary and team map for product work on iPhone, iPad, Mac and the web, held to Apple's restraint and Linear's discipline. Use before designing, reviewing, building or writing about any product, screen, flow or feature, and when the user asks for world-class work or says something feels off. Points to the specialist skill for each part.
 license: MIT
 ---
 
-# Product craft
+# Crafting products
 
 The bar every other skill in this set works to, the words they share, and how they work together. Read it first for any interface work; then load the specialist skill for the part in front of you. When the question is what to build at all, the Shape skills come first: a well-crafted answer to the wrong problem still fails.
 
@@ -36,7 +36,7 @@ Each principle names the skill that owns the detail.
 9. **Truth before polish.** Draw only what the data supports, in words as well as screens: no illustrative figure ("20 minutes on Sunday", "1 in 5") that the source did not give; never preselect what the system cannot know; ask where the spec is silent. Empty states say what will appear and how to start. Claims name their scope. (`building-ai-features` for AI features)
 10. **Nothing jumps.** Controls keep their width when labels change, space for results is reserved, placeholders match what arrives, and nothing on a page changes by itself.
 11. **Every state is designed.** First run, empty, loading, partial, error, offline, permission denied, a setting off at system level, light and dark, the smallest and largest size. Waits are honest, never a fake percentage. (`walking-personas`)
-12. **Measured and proven on the device.** Put a number behind taste arguments (spacing, contrast, frame timing, counts). Judge feel on the real device or simulator at scale 1, including the oldest supported hardware. (`diagnosing-feel`)
+12. **Measured and proven on the device.** Put a number behind taste arguments (spacing, contrast, frame timing, counts). Judge feel on the real device or simulator at scale 1, including the oldest supported hardware. (`diagnosing-feel`) When a device, simulator or renderer is not available, say exactly what was not verified rather than claim it.
 13. **Every fix leaves a guard, and every standard lives in the system.** A rule (type, lint, audit or test) seen failing on the old code, and the decision written as "X, not Y, because Z". Standards are encoded where people and agents build (tokens, components, templates, written rules), so the system scales intent, not just consistency. (`unifying-patterns`)
 
 ## Terms used across the set
@@ -55,6 +55,7 @@ Each principle names the skill that owns the detail.
 | canonical | The one agreed answer to a job, kept in the shared kit. |
 | role | A named kind of motion ("push", "present", "press"), with its tokens. |
 | row | One proposed change on a sign-off page. |
+| severity | High: data lost, wrong, leaked, stuck or untrue; Medium: confusing or slow; Low: cosmetic. |
 | direction | One of two to four genuinely different answers to a design problem. |
 | devices | iPhone, iPad, Mac and the web. "Every device" means all of them that the product targets. |
 | outcome | A change in what people do, measured, as opposed to an output that ships. |
@@ -81,10 +82,11 @@ Each skill does one job deeply and hands the rest on. Common plays:
 | Find and fix inconsistency | `auditing-consistency` | `getting-sign-off`, `settling-decisions`, `unifying-patterns` |
 | Simplify a feature | `decluttering-screens` | `getting-sign-off`, then build |
 | Design or ship an AI feature | `building-ai-features` | `writing-ux-copy`, `designing-flows` |
+| Break a feature on purpose, find edge cases, build a simulator | `breaking-experiences` | `walking-personas`, then the skill that owns each fix |
 | Turn feedback into actions | `sorting-feedback` | `settling-decisions`, `getting-sign-off` |
 | Explain work to a non-technical reader | `writing-briefs` | |
 
-When reviewing, tag each finding with the skill that owns its fix, and leave the detailed redesign to that skill unless the user asked for it here. Before calling any screen done, run `designing-visuals`'s check and `writing-ux-copy`'s check on it, and `designing-motion`'s checklist on anything that moves.
+When reviewing, tag each finding with the skill that owns its fix, and leave the detailed redesign to that skill unless the user asked for it here. For every screen built or changed in this task, run `designing-visuals`' check and `writing-ux-copy`'s check before calling it done, and `designing-motion`'s checklist on anything that moves, when those skills are installed.
 
 ## Working with the user
 

@@ -1,6 +1,6 @@
 # Capturing real screens for both sides
 
-Read this when you reach steps 2 and 3. The web rig below was learned on a component-based web prototype rendered inside a device canvas; native apps follow after it. Adapt the selectors to the project you are in.
+Read this when you reach steps 2 and 3. The web rig below suits a component-based web product, including one drawn inside a device canvas; native apps follow after it. Adapt the selectors to the project you are in.
 
 ## The rig on the web
 

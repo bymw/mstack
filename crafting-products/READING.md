@@ -1,8 +1,20 @@
 # How people read
 
-Read this when writing any document, report, spec, brief or long answer. People scan before they read, and structure decides what they find. Each rule below rests on research; the source is noted so the claim stays honest.
+Read this when writing any document, report, spec, brief or long answer. People scan before they read, and structure decides what they find. The rules come first; the research behind them follows, with its limits.
 
-## What the research shows
+## Rules
+
+1. **Answer first.** The headline states the point; the first lines give the answer or recommendation. Background comes after, if at all.
+2. **Headings that say something.** A heading states its section's point or names what is inside ("Sync rules", "Why not the feed, yet"), so a reader can scan headings alone and land on the right section.
+3. **Front-load.** The word that matters starts the heading, the bullet, the table cell and the link.
+4. **Chunk in threes to fives.** Group related items; split anything longer into named groups. A long flat list is a wall in disguise.
+5. **The right form for each kind of content.** Tables for comparisons and options, code blocks for data models, APIs and commands, numbered steps for procedures, short paragraphs for reasoning (the table in `crafting-products`, Working with the user).
+6. **Emphasis is a cue, not a texture.** Bold the one phrase per paragraph a scanner should catch, or the label that opens a bullet. Bold everywhere is bold nowhere.
+7. **Readable measure.** Running text sits around 50 to 75 characters a line; paragraphs stay at two to four sentences.
+8. **Complete, not padded.** Include every contract, state or number the reader needs; cut restated context, method and caveats nobody acts on. Length follows the content, structure carries it.
+
+## The research behind them
+
 
 | Finding | Source |
 | --- | --- |
@@ -14,17 +26,6 @@ Read this when writing any document, report, spec, brief or long answer. People 
 | Headings, emphasis and highlighting improve how much readers take in, when used as cues rather than decoration. | Mayer, signaling principle |
 
 Formal research comparing one writing convention with another is thin (GOV.UK's own principles say so), and line-length studies are mixed. The 50 to 75 character measure is typographic practice, not settled science.
-
-## Rules that follow
-
-1. **Answer first.** The headline states the point; the first lines give the answer or recommendation. Background comes after, if at all.
-2. **Headings that say something.** A heading states its section's point or names what is inside ("Sync rules", "Why not the feed, yet"), so a reader can scan headings alone and land on the right section.
-3. **Front-load.** The word that matters starts the heading, the bullet, the table cell and the link.
-4. **Chunk in threes to fives.** Group related items; split anything longer into named groups. A long flat list is a wall in disguise.
-5. **The right form for each kind of content.** Tables for comparisons and options, code blocks for data models, APIs and commands, numbered steps for procedures, short paragraphs for reasoning (the table in `crafting-products`, Working with the user).
-6. **Emphasis is a cue, not a texture.** Bold the one phrase per paragraph a scanner should catch, or the label that opens a bullet. Bold everywhere is bold nowhere.
-7. **Readable measure.** Running text sits around 50 to 75 characters a line; paragraphs stay at two to four sentences.
-8. **Complete, not padded.** Include every contract, state or number the reader needs; cut restated context, method and caveats nobody acts on. Length follows the content, structure carries it.
 
 ## Sources
 

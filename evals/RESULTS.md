@@ -1,53 +1,62 @@
 # Results
 
-**With the skills, answers showed 92% of the expected behaviours. Without them, 36%.** Every skill beats its baseline, and every description picks its own requests.
+**With the skills, answers showed 89% of the expected behaviours. Without them, 36%.** Leaving out the checks on each skill's own output format, which a model without the skill cannot know, the gap holds: 89% against 39%. Every skill beat its baseline.
 
-Run on Claude Opus 5.5, October 2026. 60 scenarios, each run once with the skills and once without, graded blind.
+Final run on Claude Opus 5.5, October 2026: all 21 skills, 63 scenarios, each run once with the skills and once without, graded blind.
 
 ## By skill
 
 | Skill | With skills | Without |
 | --- | --- | --- |
-| `auditing-consistency` | 100% | 50% |
-| `exploring-directions` | 100% | 28% |
-| `sequencing-bets` | 100% | 33% |
 | `settling-decisions` | 100% | 29% |
-| `sorting-feedback` | 100% | 39% |
-| `writing-specs` | 100% | 35% |
-| `writing-ux-copy` | 100% | 22% |
-| `designing-flows` | 94% | 33% |
-| `getting-sign-off` | 94% | 33% |
-| `shaping-direction` | 94% | 22% |
+| `shaping-direction` | 100% | 17% |
+| `writing-specs` | 100% | 29% |
+| `auditing-consistency` | 94% | 61% |
+| `exploring-directions` | 94% | 28% |
+| `getting-sign-off` | 94% | 28% |
+| `sequencing-bets` | 94% | 33% |
 | `crafting-products` | 89% | 33% |
-| `decluttering-screens` | 89% | 33% |
 | `defining-outcomes` | 89% | 61% |
-| `designing-motion` | 89% | 33% |
-| `diagnosing-feel` | 89% | 39% |
-| `walking-personas` | 89% | 44% |
-| `building-ai-features` | 83% | 33% |
-| `unifying-patterns` | 83% | 50% |
-| `writing-briefs` | 83% | 39% |
-| `designing-visuals` | 78% | 22% |
-| **All** | **92%** (330 of 358) | **36%** (128 of 358) |
+| `designing-flows` | 89% | 39% |
+| `designing-motion` | 89% | 44% |
+| `diagnosing-feel` | 89% | 33% |
+| `sorting-feedback` | 89% | 50% |
+| `writing-ux-copy` | 89% | 28% |
+| `building-ai-features` | 83% | 39% |
+| `designing-visuals` | 83% | 22% |
+| `walking-personas` | 83% | 33% |
+| `writing-briefs` | 83% | 44% |
+| `breaking-experiences` | 78% | 22% |
+| `decluttering-screens` | 78% | 44% |
+| `unifying-patterns` | 72% | 44% |
+| **All** | **89%** (333 of 376) | **36%** (137 of 376) |
 
 ## Trigger checks
 
-120 of 121 in the latest run (121 of 121 in the one before; the miss was an ambiguous prompt, since reworded). A fresh session saw only the twenty names and descriptions and picked a skill for each prompt: three or more that should load each skill, and three near-misses that belong to a neighbour.
+130 of 131. A fresh session saw only the twenty-one names and descriptions and picked a skill for each prompt: at least three that should load each skill, and near-misses that belong to a neighbour, including the riskiest boundaries (visuals and decluttering, walking and breaking, shaping and exploring, AI features and specs). The one miss was a prompt whose label contradicted the motion boundary; the label has since been corrected.
+
+## How the numbers came about
+
+| Run | With skills | Without | What changed before it |
+| --- | --- | --- | --- |
+| First | 84% | 36% | Nothing; the skills as first written (20 skills) |
+| After one round of fixes | 92% | 36% | Recurring misses fixed as general rules, then the affected scenarios rerun |
+| **Final** | **89%** | **36%** | Gaps from source research, a 21st skill, and two independent reviews; every scenario rerun fresh |
+
+The first run is the fairest measure of the skills as written, because nothing had been tuned against these scenarios yet. Later runs reuse the same scenarios, so they partly measure fixes made against them.
 
 ## How it was run
 
 1. **Scenarios.** Three per skill, written from the skill's own rules, each with input files where the task needs them and 4 to 6 behaviours checkable from the answer alone.
 2. **Runs.** Each scenario ran in a fresh agent with the skills, and in another with no skills. Runners never saw the expected behaviours.
-3. **Grading.** A separate agent graded each pair, labelled only A and B in shuffled order, pass or fail per behaviour with the deciding line quoted.
-4. **One round of fixes.** The first run scored 84% against 36%. Misses that recurred across scenarios were fixed in the skills as general rules (closing lines last, no invented figures, complete risk tables, output checklists for the review skills). The 22 affected scenarios were rerun and graded blind against the same baseline answers, which graded the same both times.
-5. **A second round from the sources.** Gaps found in Lenny's Podcast transcripts and talks by Marty Cagan, Katie Dill and Robby Stein were added (the four risks with a concrete viability check, rollout plans, journey walks, density by use, a release editor, AI quality from real outputs). The 39 scenarios of the 13 changed skills were rerun and graded blind: 6 rose, 3 fell (two by one point, one by two), the rest held.
+3. **Grading.** A separate agent graded each pair, labelled only A and B in shuffled order, pass or fail per behaviour, quoting the line that decided it.
+4. **Format checks.** Behaviours that check a skill's own output layout are counted in the headline and reported separately above.
 
 ## Limits worth knowing
 
-- **One run per condition.** No repeated runs, so small differences between skills are within noise.
-- **Model-graded.** The grader is a model, not a person; each verdict quotes its evidence so it can be checked.
-- **Behaviours come from the skills.** Some check the skill's own output format, which a model without the skill cannot know. The gap on substance is smaller than the headline, though still large.
-- **Some behaviours cannot pass here.** Running a guard against real code, or recording on a device, was impossible in this setup, so those fail in both conditions.
-- **One model.** Tested on Opus 5.5 only.
-
-The answers and gradings are kept outside the repository; rerun with [README.md](README.md).
+- **One run per condition,** so differences of a few points between skills are noise.
+- **Model-graded.** The grader is a model; each verdict quotes its evidence so it can be checked. Answers and gradings are kept outside the repository.
+- **Behaviours come from the skills,** so the scenarios test whether the skills do what they promise, not whether those promises are the best possible ones.
+- **Same scenarios across runs.** There is no held-out set yet; new scenarios written without reading the skills would be the next step.
+- **Some behaviours cannot pass here.** Running a guard against real code or recording on a device was not possible in this setup, so those fail in both conditions.
+- **One model.** Tested on Opus 5.5 only, not yet on Sonnet or Haiku.

@@ -4,7 +4,7 @@ description: Defines what success means before the work starts: the change in wh
 license: MIT
 ---
 
-# Define outcome
+# Defining outcomes
 
 Shipping is not success; a change in what people do is. A goal of "launch the feature" is met the day it ships whether or not anything improved, and a goal of "people use the feature" teaches the product to the test. This skill writes down, before the work, what would have to be true afterwards for it to count, and how we would know.
 
@@ -24,7 +24,7 @@ This skill covers success and how it is measured. Whether the idea is right in t
 5. **Every metric has a countermetric** with a limit: what could get worse if the primary is pushed alone (quality, trust, support load, revenue, opt-outs). Why: a metric optimised alone gets gamed, usually without anyone meaning to.
 6. **A leading signal earns its place by predicting the outcome.** An early signal (first success, activation) counts only if people who reach it go on to stay or pay; check that, and prefer a demanding signal to an easy one. Why: an easy early metric rises while retention does not.
 7. **Baseline, target, date and estimate, written before.** Today's value or "unknown, measure first", the target, by when, and the effect we expect. Why: a target set after the results always looks met, and the gap between estimate and result is how judgment improves.
-8. **Go or no-go points with actions.** At each checkpoint, the result that means continue, change or stop. Why: without a stop written in advance, work that is not working runs on for quarters.
+8. **Go or no-go points with actions.** At each checkpoint, the result that means continue, change or stop. The stop rules in `shaping-direction` and `sequencing-bets` cite these checkpoints. Why: without a stop written in advance, work that is not working runs on for quarters.
 9. **Size the evidence to the traffic.** An A/B test needs large numbers; below that, use qualitative evidence and directional measures, and say which one it is. Why: an underpowered test reports noise as a result.
 10. **Instrument first.** The events and segments needed to read the outcome ship with the feature, or before it. Why: a launch without logging cannot be diagnosed, only argued about.
 11. **Never invent a baseline or a benchmark.** Unknowns stay "unknown, measure first" or "to confirm". Why: a made-up number becomes the target someone repeats.
@@ -43,7 +43,7 @@ This skill covers success and how it is measured. Whether the idea is right in t
 
 ## Output
 
-**Structure, not length.** The first screen (the headline, the recommendation and one table) carries the whole answer, so someone who stops there can act. After that, say everything the decision needs and nothing it does not: cut restated context, method, rejected options in detail and repeated caveats. Give each kind of content its own form so the eye can scan it (see `crafting-products`, Working with the user). List only the unknowns that could change the recommendation, at most five. Open calls get one line each here and are asked afterwards with `settling-decisions`, not written up as a section.
+Structure the answer as `crafting-products` describes: the first screen carries the whole answer, then each kind of content in its own form. List at most five unknowns, only those that could change the recommendation. Open calls get one line each and are asked afterwards with `settling-decisions`.
 
 **Outcome:** one sentence: who does what differently, by when.
 **Why it matters:** the business goal it moves, in one line.
@@ -63,7 +63,6 @@ This skill covers success and how it is measured. Whether the idea is right in t
 
 | Instead of | Do |
 | --- | --- |
-| Every piece of thinking written out, or a long run of bullets | The answer on one screen, then each kind of content in its own form |
 | "Launch X" as the goal | The behaviour X should change |
 | Feature usage as success | What the person achieved because of it |
 | Five primary metrics | One primary, one value-captured, and countermetrics |

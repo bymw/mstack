@@ -1,10 +1,10 @@
 ---
 name: shaping-direction
-description: Turns a vague opportunity, feature request or stalled initiative into a direction worth testing: the person and their moment, evidence graded, two or three approaches, one hypothesis, the riskiest assumptions, and the cheapest test with its pass mark. Use when the user asks what to build, which approach to pick, whether an idea is worth it, or why something stalled. Not for metrics (defining-outcomes) or the spec (writing-specs).
+description: Turns a vague opportunity, feature request or stalled initiative into a direction worth testing: the person and their moment, graded evidence, two or three approaches, the four risks with a viability check, and the cheapest test with its pass mark. Use when the user asks what to build, which approach to pick, whether an idea is worth it, or why something stalled. Not for metrics (defining-outcomes) or specs (writing-specs).
 license: MIT
 ---
 
-# Shape direction
+# Shaping direction
 
 Most products that fail confirmed a real problem and then shipped an answer nobody switched to. Confirming the problem is quick; the work is finding an approach that is clearly better than what people do today, and learning cheaply whether it is before committing to it. This skill reduces uncertainty before it increases commitment.
 
@@ -23,10 +23,10 @@ This skill covers the direction: who, which moment, which approach, and what wou
 4. **Keep the problem framing short:** hours or days, enough to name the person, the moment and the stakes. Spend the time on approaches. Why: products rarely fail because the problem was unclear; they fail on the solution.
 5. **Compare two or three genuinely different approaches,** each saying what it bets on, then pick a first choice and a named backup. Why: with one option there is no decision, only momentum.
 6. **Beat what people do now, not just the problem.** Say why someone would switch from today's way, including doing nothing, and what anxiety or habit holds them back. Why: an answer that is only somewhat better loses to habit.
-7. **Weigh all four risks, and make viability concrete.** Value: will they choose it, and how many people have this moment. Usability: can they use it, checked with real people on a prototype before anything is built, against a task-success pass mark. Feasibility: can it be built in the time, including third parties and the cost to serve at scale. Viability: does it work for every part of the business, through the viability check below. Why: viability is the risk most often left unexamined, and it kills good ideas late.
+7. **Weigh all four risks, and make viability concrete.** Value: will they choose it, and how many people have this moment. Usability: can they use it, checked on a prototype before anything is built, with five or so people who have the moment and a task-success pass mark written first (Method, step 7). Feasibility: can it be built in the time, including third parties and the cost to serve at scale. Viability: does it work for every part of the business, through the viability check below. Why: viability is the risk most often left unexamined, and it kills good ideas late.
 8. **Test the riskiest assumption with the cheapest test that can answer it.** Rank by consequence if wrong and by uncertainty, never by ease. Climb only as high as needed: data you already have, conversations about past behaviour, a prototype or a fake door, a service run by hand, then a build. Why: most ideas fail, and finding out on paper costs least.
-9. **Write the pass mark and its action before the test, and let the test fail clearly.** For each signal, the result that means continue, change course or stop. Why: research that can only confirm is performance, and without a commitment written first, any result reads as encouragement.
-10. **Give it an appetite:** how much time the direction is worth. When it runs out, cut scope or stop; never extend it quietly. Why: the size of a bet should be a decision, not an outcome.
+9. **Write the pass mark and its action before the test, and let the test fail clearly.** For each signal, the result that means continue, change course or stop; where `defining-outcomes` has set a checkpoint, the stop cites it. Why: research that can only confirm is performance, and without a commitment written first, any result reads as encouragement.
+10. **Propose an appetite:** how much time the direction is worth. For a single direction it stands; when bets compete, it is a proposal for `sequencing-bets`, which sets the appetite for each. When it runs out, cut scope or stop; never extend it quietly. Why: the size of a bet should be a decision, not an outcome.
 11. **A point of view, not the category average.** The direction comes from this product's people and what it believes, not the most common answer in the market. Why: an interchangeable product gives nobody a reason to switch.
 
 ## The viability check
@@ -53,12 +53,12 @@ Every row ends as **Answered** (with the evidence), **Consult** (talk to that ow
 4. **Write the hypothesis** in one sentence: "If we [approach] for [person] when [moment], they will choose it over [what they do now] because [the difference]."
 5. **Run a pre-mortem:** it is six months later and this failed. List the real threats, the feared ones that are not real, and what nobody is saying. Turn the real threats into assumptions.
 6. **Rank the assumptions** by consequence and uncertainty, considering every one of the four risks; keep the top three, and say in one line why any risk without a row is low here. Run the viability check and carry every Consult row into the output.
-7. **Choose the test** for the riskiest one: the cheapest rung that answers it, who it reaches, how long it runs, the pass mark, and the action for each result.
-8. **Recommend** the first choice, the backup, the appetite, and the next decision with who owns it. Open choices the user owns go to `settling-decisions`.
+7. **Choose the test** for the riskiest one: the cheapest rung that answers it, who it reaches, how long it runs, the pass mark, and the action for each result. A usability test is three to five realistic tasks, five or so people who have the moment and a task-success pass mark written first; observe without helping, then sort the notes with `sorting-feedback`.
+8. **Recommend** the first choice, the backup, the appetite (a proposal for `sequencing-bets` when bets compete), and the next decision with who owns it. Open choices the user owns go to `settling-decisions`.
 
 ## Output
 
-**Structure, not length.** The first screen (the headline, the recommendation and one table) carries the whole answer, so someone who stops there can act. After that, say everything the decision needs and nothing it does not: cut restated context, method, rejected options in detail and repeated caveats. Give each kind of content its own form so the eye can scan it (see `crafting-products`, Working with the user). List only the unknowns that could change the recommendation, at most five. Open calls get one line each here and are asked afterwards with `settling-decisions`, not written up as a section.
+Structure the answer as `crafting-products` describes: the first screen carries the whole answer, then each kind of content in its own form. List at most five unknowns, only those that could change the recommendation. Open calls get one line each and are asked afterwards with `settling-decisions`.
 
 **Direction:** the hypothesis, in one sentence.
 
@@ -101,4 +101,5 @@ Mark the first choice "(Recommended)" and name the backup.
 - `exploring-directions`: the approaches drawn in the real interface.
 - `settling-decisions`: the choices the user owns.
 - `writing-briefs`: the direction explained to leaders.
+- `sorting-feedback`: the notes from a usability test.
 - Outside the set: Marty Cagan (the four risks and the widened viability; confirming the problem is quick and the solution is the work; why people leave or never start), Teresa Torres (continuous discovery and assumption tests), Bob Moesta (jobs to be done and the forces behind switching), Robby Stein (interviews about real moments, and the diagnosis loop), Itamar Gilad (confidence graded by evidence), Shreyas Doshi and Annie Duke (pre-mortems that end in commitments), Ryan Singer (appetite).

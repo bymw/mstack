@@ -2,11 +2,12 @@
 name: settling-decisions
 description: Settles open choices the user owns, one question at a time, each with two to four real options and one recommendation, recording every answer before anything is built. Use when work is blocked on a product, scope, priority, taste or risk decision, a spec is silent, or the user asks for options or help deciding. Not for generating design directions (exploring-directions).
 license: MIT
+compatibility: Uses the host's question tool (AskUserQuestion in Claude Code) when available; otherwise asks in plain text.
 ---
 
-# Decide
+# Settling decisions
 
-A message that lists five open questions sits unanswered. One question with a clear recommendation is answered in seconds. This way of asking once settled fourteen decisions in a few minutes after a long audit, and the user has asked for it by name ever since.
+A message that lists five open questions sits unanswered. One question with a clear recommendation is answered in seconds. The person weighs one thing, sees what you would do, and says yes or changes it; each answer then removes or reshapes the questions behind it, so a long list settles in minutes.
 
 This skill covers turning open questions into recorded decisions. It does not invent options from nothing: if a choice is visual, show it first with `getting-sign-off` or `exploring-directions`, then ask here.
 
@@ -18,7 +19,7 @@ This skill covers turning open questions into recorded decisions. It does not in
 ## Rules
 
 1. **Check before asking.** If the answer is in the spec, code, decisions log, design system or this conversation, it is not a question. Ask only what is the user's to decide. A question that belongs to someone else (legal, privacy, security, finance) is named with its owner for the user to take to them, not answered here.
-2. **One question at a time** with the AskUserQuestion tool. Up to four short, independent questions may share one call; a question whose answer changes the others goes alone, first.
+2. **One question at a time** with the host's question tool. One call may carry up to four questions only when each is short and independent, so each still reads and answers as a single question; a question whose answer changes the others goes alone, first.
 3. **Two to four real options,** each a genuine alternative whose description states its consequence. Options that differ only in wording are one option.
 4. **Exactly one "(Recommended)",** placed first, with its reason in one sentence. A recommendation is a commitment: say what you would do and why, without hedging.
 5. **Record each answer before acting on it,** where the work lives, noting when it went against the recommendation.
@@ -61,7 +62,7 @@ Mark an answer that went against the recommendation with "(not recommended)".
 
 | Instead of | Do |
 | --- | --- |
-| Five questions in one message | One question; the rest after its answer |
+| Five questions in one message | One question, or up to four short independent ones; the rest after their answers |
 | "What do you think?" | Options with consequences, one recommended |
 | The recommendation buried in the last option | First, marked "(Recommended)", reason given |
 | Asking what the code or spec already answers | Read first, and cite where you found it |

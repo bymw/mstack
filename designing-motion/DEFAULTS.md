@@ -14,12 +14,12 @@ Decide this before any value.
 
 | How often it is seen | What to do |
 | --- | --- |
-| 100+ times a day (keyboard shortcuts, command menus, core navigation, switching tabs) | No animation |
+| 100+ times a day (keyboard shortcuts, command menus, switching tabs or segments) | No animation |
 | Tens of times a day (hover, list selection) | None, or barely perceptible |
 | Occasionally (sheets, popovers, toasts, dialogs) | The standard motion for its role |
 | Rarely or once (onboarding, a first success, an empty state) | The only place for choreography or delight |
 
-**Never animated:** keyboard-triggered actions; core-action surfaces appearing; page and tab switches inside an app; filtering as you type; system menus; data the person is reading or deciding on. When motion competes with an instant answer, the instant answer wins.
+**Never animated:** keyboard-triggered actions; core-action surfaces appearing; tab and segment switches (navigation pushes use the platform's native transition); filtering as you type; system menus; data the person is reading or deciding on. When motion competes with an instant answer, the instant answer wins.
 
 ## 2. Easing
 
@@ -51,13 +51,13 @@ Default browser easings are too weak for deliberate motion.
 | Platform navigation (an iOS push) | The platform's own timing; do not restyle it |
 | Onboarding, seen once | May be slower and choreographed |
 
-- Everyday interface motion stays under 200 ms, and all interface motion under 300 ms unless there is a stated reason.
+- Everyday interface motion stays under 200 ms, and all interface motion within 300 ms, except a long sheet and the platform's own navigation timing.
 - **Leaving is faster than arriving,** by about 20%. Arrive softly, leave quickly.
 - Larger elements and longer travel take slightly longer than small, short moves.
 - **One thing arrives as one piece.** A mark, badge, illustration or card scales and fades in as a single unit; its parts (segments, strokes, letters) never appear one by one. Choreography means a few elements in a calm order (the mark, then its words), not a graphic assembling itself.
 - **Stagger** 30 to 50 ms between separate items in a list, capped at about the eighth item. Never block input while a stagger plays, and never stagger lists people scroll past all day.
-- **Distance is small.** An element rises about 4 pt (or 8 px on the web) as it appears; it does not fly in.
-- **Quick is for feedback, not for transitions.** Press and hover answer fast; a change of state or place takes its full duration and lands softly. Never shorten a transition to make the product feel faster: if it is too slow for how often it is seen, remove it; otherwise keep it calm.
+- **Distance is small.** An element rises about 4 pt (4 px on the web) as it appears; it does not fly in.
+- **Quick is for feedback, not for transitions.** Press and hover answer fast; a change of state or place takes its token's full duration, within the cap above, and lands softly. Never shorten a transition to make the product feel faster: if it is too slow for how often it is seen, remove it; otherwise keep it calm.
 
 ## 4. Springs
 
@@ -96,7 +96,7 @@ The most important property of fluid motion.
 
 ## 7. Press and gesture
 
-- **Press:** scale to 0.97 for a button and about 0.985 for a card, on pointer-down, about 120 to 160 ms on `ease-out`; release a little faster than the press. It applies to every pressable on touch.
+- **Press:** scale to 0.97 for a button and about 0.985 for a card, on pointer-down, about 120 to 160 ms on `ease-out`; release a little faster than the press. It applies to every custom pressable on touch; native controls keep the system highlight.
 - **Respond on pointer-down, commit on pointer-up.** A finger that drifts a few points keeps the press.
 - **Dismiss on distance or velocity:** past the threshold, or faster than about 0.11 px per ms. A flick is enough.
 - **Project momentum** before snapping: `project(v) = (v / 1000) × d / (1 − d)` with `d ≈ 0.998`; snap to the target nearest `current + project(v)`.
@@ -108,7 +108,7 @@ The most important property of fluid motion.
 
 The moments between states are where products feel rushed or flashy. Make them seamless.
 
-- **Under about 300 ms, show nothing.** The content simply arrives; a loading state that flashes for a frame is worse than none.
+- **The press is instant; the loading indicator waits.** The pressed control's own state changes on the first frame, always. A loading indicator appears only after about 300 ms; before that the content simply arrives, because one that flashes for a frame is worse than none.
 - **Once shown, a loading state stays about 500 ms at least,** so it never flickers on and off.
 - **Placeholders take the exact shape of what arrives** (same height, same rows, same radius), so nothing shifts when content lands.
 - **Content crossfades into place,** about 150 to 250 ms on `ease-out`, with at most a 4 pt rise. No pop, no slide from far away, no layout jump.
@@ -129,7 +129,7 @@ Reduce Motion means fewer and gentler, not zero. Each role carries its reduced f
 
 ## 11. Performance
 
-- Frame budget: 16.7 ms at 60 Hz and 8.3 ms at 120 Hz (ProMotion). Design against 120 Hz.
+- Frame budget: the display's full refresh rate (8.3 ms per frame at 120 Hz, 16.7 ms at 60 Hz).
 - Animate only `transform` and `opacity` (on Apple platforms: position, scale, rotation, opacity). Never width, height, padding, margins or `transition: all`.
 - Size changes become scale; position changes become translate; shadows become a pre-rendered layer or `drop-shadow`.
 - An inherited variable driving a child's transform recalculates every descendant. Set the transform on the element.
@@ -151,9 +151,9 @@ Before a move ships, answer each:
 6. Can it be interrupted, and does it carry velocity?
 7. Does anything around it jump?
 8. Does it feel calm: no hard cut, no flash, nothing rushed, no competing motions, and does it settle completely?
-9. Is every loading moment seamless: nothing under 300 ms, no flicker, a placeholder of the same shape, a crossfade into place?
+9. Is every loading moment seamless: the press answers at once, no indicator under about 300 ms, no flicker, a placeholder of the same shape, a crossfade into place?
 10. Does any text scale, any figure count, or any status text flick past too fast to read?
 11. Does it make sense with Reduce Motion on?
-12. Does it animate only transform and opacity, and hold 120 Hz on old hardware?
+12. Does it animate only transform and opacity, and hold the display's full refresh rate (8.3 ms per frame at 120 Hz, 16.7 ms at 60 Hz) on the oldest supported device?
 
 **Fix in this order:** delete, reduce, fix the easing, fix the origin, make it interruptible, move it to cheap properties, make the timing asymmetric, polish, then accessibility and cohesion.

@@ -157,6 +157,7 @@ const GROUPS = {
 
 const state = {};
 let db = null;
+const LOCAL_KEY = "signoff:" + document.title;
 
 function el(tag, attrs, ...kids) {
   const n = document.createElement(tag);
@@ -254,10 +255,26 @@ function choose(id, key) {
   save(id, { choice: cur === key ? null : key });
 }
 
+/* Without a store, answers are kept in this browser's localStorage, which can be blocked or cleared. */
+function loadLocal() {
+  try { return JSON.parse(localStorage.getItem(LOCAL_KEY) || "{}") || {}; } catch { return {}; }
+}
+function saveLocal() {
+  try {
+    const out = {};
+    for (const [id, s] of Object.entries(state)) if (s.local) out[id] = stripLocal(s);
+    localStorage.setItem(LOCAL_KEY, JSON.stringify(out));
+    return true;
+  } catch { return false; }
+}
+
 async function save(id, patch) {
   state[id] = { ...(state[id] || {}), ...patch, pending: !!db, local: !db };
   paint(id); tally();
-  if (!db) return;
+  if (!db) {
+    if (!saveLocal()) document.getElementById("store").textContent = "This browser cannot keep answers; they are lost on reload. Reply in chat instead.";
+    return;
+  }
   try {
     const body = { at: new Date().toISOString() };
     if ("choice" in patch) body.choice = patch.choice;
@@ -266,7 +283,9 @@ async function save(id, patch) {
     state[id].pending = false; paint(id);
   } catch (e) {
     state[id].pending = false; state[id].local = true; paint(id);
-    document.getElementById("store").textContent = "Could not save just now; your choice stays on this screen.";
+    document.getElementById("store").textContent = saveLocal()
+      ? "Could not save just now; your choice is kept in this browser."
+      : "Could not save just now; your choice is lost if the page reloads.";
   }
 }
 
@@ -281,7 +300,16 @@ render();
   try {
     db = window.claude?.use ? await window.claude.use("db") : null;
   } catch { db = null; }
-  if (!db) { store.textContent = "Answers stay on this device here; open the page in Claude to save them."; return; }
+  if (!db) {
+    for (const [id, v] of Object.entries(loadLocal())) {
+      if (!state[id]) { state[id] = { choice: v.choice || null, note: v.note || "", pending: false, local: true }; paint(id); }
+    }
+    tally();
+    store.textContent = saveLocal()
+      ? "Answers are kept in this browser only. Reply in chat with each row's answer, or open the page in Claude to save them for the team."
+      : "Answers are lost on reload here. Reply in chat with each row's answer, or open the page in Claude to save them.";
+    return;
+  }
   store.textContent = "Answers save for the team";
   db.collection("decisions").onSnapshot((snap) => {
     for (const d of snap.docs) {

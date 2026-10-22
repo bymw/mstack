@@ -3,7 +3,9 @@
   "evals": [
     {
       "id": "diagnosing-feel-1",
-      "skills": ["diagnosing-feel"],
+      "skills": [
+        "diagnosing-feel"
+      ],
       "query": "The dots on our Dayleaf onboarding carousel feel laggy on my iPhone. The swipe is fine, it's the dots. I've attached what the recording shows frame by frame and the component. What's going on and how do we fix it?",
       "files": [
         "evals/fixtures/diagnosing-feel-1-recording.md",
@@ -20,7 +22,9 @@
     },
     {
       "id": "diagnosing-feel-2",
-      "skills": ["diagnosing-feel"],
+      "skills": [
+        "diagnosing-feel"
+      ],
       "query": "Switching tabs in Simmer flashes white every time on my iPad. Frame notes and the component are attached. Can we just add a fade so it's less jarring?",
       "files": [
         "evals/fixtures/diagnosing-feel-2-recording.md",
@@ -37,7 +41,9 @@
     },
     {
       "id": "diagnosing-feel-3",
-      "skills": ["diagnosing-feel"],
+      "skills": [
+        "diagnosing-feel"
+      ],
       "query": "A beta tester says the timeline header in our Mac app Loomly is choppy when scrolling. I tried a debug build on my iMac and it looked smooth, so maybe it's their machine? Recording notes and the header code are attached.",
       "files": [
         "evals/fixtures/diagnosing-feel-3-recording.md",
@@ -54,11 +60,32 @@
     }
   ],
   "trigger_checks": [
-    { "query": "Here's a screen recording of our notes app. When the sheet opens there's a weird grey flash. Can you figure out why?", "should_trigger": true },
-    { "query": "The fitness tracker doesn't feel native when I swipe back, it sort of jumps at the end.", "should_trigger": true },
-    { "query": "Tapping a day in the team calendar has a noticeable delay before anything happens on my phone.", "should_trigger": true },
-    { "query": "Define the motion vocabulary for our reading app: durations, springs and which transitions to use where.", "should_trigger": false, "belongs_to": "designing-motion" },
-    { "query": "Check what someone with zero recipes sees on every screen of the recipe app before Friday's demo.", "should_trigger": false, "belongs_to": "walking-personas" },
-    { "query": "Pages in our meal planner push with different animations and durations. Find every variant and propose one.", "should_trigger": false, "belongs_to": "auditing-consistency" }
+    {
+      "query": "Here's a screen recording of our notes app. When the sheet opens there's a weird grey flash. Can you figure out why?",
+      "should_trigger": true
+    },
+    {
+      "query": "The fitness tracker doesn't feel native when I swipe back, it sort of jumps at the end.",
+      "should_trigger": true
+    },
+    {
+      "query": "Tapping a day in the team calendar has a noticeable delay before anything happens on my phone.",
+      "should_trigger": true
+    },
+    {
+      "query": "Define the motion vocabulary for our reading app: durations, springs and which transitions to use where.",
+      "should_trigger": false,
+      "belongs_to": "designing-motion"
+    },
+    {
+      "query": "Check what someone with zero recipes sees on every screen of the recipe app before Friday's demo.",
+      "should_trigger": false,
+      "belongs_to": "walking-personas"
+    },
+    {
+      "query": "Pages in our meal planner push with different animations and durations. Find every variant and propose one.",
+      "should_trigger": false,
+      "belongs_to": "designing-motion"
+    }
   ]
 }

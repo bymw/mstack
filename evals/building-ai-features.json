@@ -3,9 +3,13 @@
   "evals": [
     {
       "id": "building-ai-features-1",
-      "skills": ["building-ai-features"],
+      "skills": [
+        "building-ai-features"
+      ],
       "query": "Review the 'Make it shorter' action in our notes app. It's with testers now; spec and a tester's sample are attached.",
-      "files": ["evals/fixtures/building-ai-features-1-shorten-spec.md"],
+      "files": [
+        "evals/fixtures/building-ai-features-1-shorten-spec.md"
+      ],
       "expected_behavior": [
         "Structure: a one-sentence headline, findings under High, Medium and Low, an Action | Promise | Result | Decision table, and a trust check with one line each on heard/inferred/planned/did, original kept, confirmations and what leaves the device",
         "Flags the tester sample as dropping facts (9:30, the spare trowel, labelled envelopes, parking behind the library), so the action breaks its promise, and sets the decision to Hide until every fact is kept",
@@ -17,7 +21,9 @@
     },
     {
       "id": "building-ai-features-2",
-      "skills": ["building-ai-features"],
+      "skills": [
+        "building-ai-features"
+      ],
       "query": "We're adding an assistant to our team calendar app that schedules meetings from a typed request, like 'find 30 minutes with the design group next week'. How should it behave?",
       "files": [],
       "expected_behavior": [
@@ -31,9 +37,13 @@
     },
     {
       "id": "building-ai-features-3",
-      "skills": ["building-ai-features"],
+      "skills": [
+        "building-ai-features"
+      ],
       "query": "Here are five sample outputs from the episode summary feature in our podcast app. The team wants to ship Friday. Write the evaluation plan and tell me whether we can ship.",
-      "files": ["evals/fixtures/building-ai-features-3-summaries.md"],
+      "files": [
+        "evals/fixtures/building-ai-features-3-summaries.md"
+      ],
       "expected_behavior": [
         "Structure: a one-sentence headline with the result and decision, an Action | Promise | Result | Decision table, then the pass marks and test set after the main points",
         "Writes pass marks before any new results are looked at, as criteria a human can judge (facts kept, nothing invented, clearly shorter than the transcript, label honoured)",
@@ -45,11 +55,37 @@
     }
   ],
   "trigger_checks": [
-    { "query": "Is our AI rewrite feature in the notes app ready to ship?", "should_trigger": true },
-    { "query": "Which model should we use for transcribing voice memos in our journaling app?", "should_trigger": true },
-    { "query": "Design a 'Make friendlier' rewrite action for comments in our task app.", "should_trigger": true },
-    { "query": "The AI side panel looks cluttered. Fix its spacing and hierarchy.", "should_trigger": false, "belongs_to": "designing-visuals" },
-    { "query": "Write the button label and the one-line description for our new Summarise action.", "should_trigger": false, "belongs_to": "writing-ux-copy" },
-    { "query": "Add a calm looping animation while the assistant is thinking.", "should_trigger": false, "belongs_to": "designing-motion" }
+    {
+      "query": "Is our AI rewrite feature in the notes app ready to ship?",
+      "should_trigger": true
+    },
+    {
+      "query": "Which model should we use for transcribing voice memos in our journaling app?",
+      "should_trigger": true
+    },
+    {
+      "query": "Design a 'Make friendlier' rewrite action for comments in our task app.",
+      "should_trigger": true
+    },
+    {
+      "query": "The AI side panel's spacing and hierarchy feel off. Fix them.",
+      "should_trigger": false,
+      "belongs_to": "designing-visuals"
+    },
+    {
+      "query": "Write the button label and the one-line description for our new Summarise action.",
+      "should_trigger": false,
+      "belongs_to": "writing-ux-copy"
+    },
+    {
+      "query": "Add a calm looping animation while the assistant is thinking.",
+      "should_trigger": false,
+      "belongs_to": "designing-motion"
+    },
+    {
+      "query": "Write the requirements and acceptance criteria for our AI summary feature so engineering can build it.",
+      "should_trigger": false,
+      "belongs_to": "writing-specs"
+    }
   ]
 }

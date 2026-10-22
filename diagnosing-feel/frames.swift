@@ -2,6 +2,7 @@
 //
 // Usage:
 //   swift frames.swift <video> <out-dir> [--from <s>] [--to <s>] [--png] [--every <n>] [--region x,y,w,h]
+// Run it from this skill's folder, or give the script's full path. Needs macOS.
 //
 // It writes <out-dir>/frames.csv with one line per decoded frame:
 //   index, time_ms, gap_ms, change
@@ -35,7 +36,11 @@ let from = Double(opt("--from") ?? "0") ?? 0
 let to = Double(opt("--to") ?? "1e9") ?? 1e9
 let writePNG = args.contains("--png")
 let every = max(1, Int(opt("--every") ?? "1") ?? 1)
-let region: [Int]? = opt("--region")?.split(separator: ",").compactMap { Int($0) }
+let region: [Int]? = opt("--region").map { $0.split(separator: ",").compactMap { Int($0) } }
+if let r = region, r.count != 4 || r[2] <= 0 || r[3] <= 0 {
+  print("--region needs x,y,w,h as whole numbers with w and h above 0, got \(opt("--region") ?? "")")
+  exit(2)
+}
 
 try FileManager.default.createDirectory(at: out, withIntermediateDirectories: true)
 
@@ -72,12 +77,23 @@ while let sample = output.copyNextSampleBuffer() {
   CVPixelBufferLockBaseAddress(pb, .readOnly)
   let w = CVPixelBufferGetWidth(pb), h = CVPixelBufferGetHeight(pb)
   let stride = CVPixelBufferGetBytesPerRow(pb)
-  let base = CVPixelBufferGetBaseAddress(pb)!.assumingMemoryBound(to: UInt8.self)
+  guard let rawBase = CVPixelBufferGetBaseAddress(pb) else {
+    CVPixelBufferUnlockBaseAddress(pb, .readOnly)
+    continue
+  }
+  let base = rawBase.assumingMemoryBound(to: UInt8.self)
 
-  let rx = region?.count == 4 ? max(0, region![0]) : 0
-  let ry = region?.count == 4 ? max(0, region![1]) : 0
-  let rw = region?.count == 4 ? min(w - rx, region![2]) : w
-  let rh = region?.count == 4 ? min(h - ry, region![3]) : h
+  let rx = region.map { max(0, $0[0]) } ?? 0
+  let ry = region.map { max(0, $0[1]) } ?? 0
+  let rw = region.map { min(w - rx, $0[2]) } ?? w
+  let rh = region.map { min(h - ry, $0[3]) } ?? h
+  guard rw > 0, rh > 0 else {
+    print("--region \(opt("--region") ?? "") lies outside the \(w)x\(h) video frame")
+    exit(2)
+  }
+  // Sample about 120 points along the shorter side of the region (never denser than
+  // every 2nd pixel): coarse enough to stay fast at any resolution, fine enough to
+  // catch a flash or a jump.
   let step = max(2, min(rw, rh) / 120)
   var luma: [UInt8] = []
   luma.reserveCapacity((rw / step + 1) * (rh / step + 1))

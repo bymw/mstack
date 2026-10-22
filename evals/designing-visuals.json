@@ -3,9 +3,13 @@
   "evals": [
     {
       "id": "designing-visuals-1",
-      "skills": ["designing-visuals"],
+      "skills": [
+        "designing-visuals"
+      ],
       "query": "Here's the Today screen of our habit tracker (iPhone, built as HTML for now). Something about it feels off and busy but I can't say what. Can you review it?",
-      "files": ["evals/fixtures/designing-visuals-1-today-screen.html"],
+      "files": [
+        "evals/fixtures/designing-visuals-1-today-screen.html"
+      ],
       "expected_behavior": [
         "Structure: renders the screen (or states it was checked rendered) before the findings, groups every finding under High, Medium and Low as rows of what the eye sees and a fix given as a concrete value, then ends with a 1 to 5 scorecard covering hierarchy, structure, spacing, type, contrast, colour, platform fit, interaction clarity and state craft",
         "Names 'Log habit' and 'Go Premium' as two equally loud filled buttons competing for the primary action, and demotes Go Premium to a quiet or tertiary style so one primary action remains",
@@ -17,7 +21,9 @@
     },
     {
       "id": "designing-visuals-2",
-      "skills": ["designing-visuals"],
+      "skills": [
+        "designing-visuals"
+      ],
       "query": "Design the empty state for the Saved tab in our recipe app on iPhone. Today it's a grey bookmark icon, the line 'No saved recipes' and a 'Browse' button. Build it as an HTML page I can open.",
       "files": [],
       "expected_behavior": [
@@ -31,9 +37,13 @@
     },
     {
       "id": "designing-visuals-3",
-      "skills": ["designing-visuals"],
+      "skills": [
+        "designing-visuals"
+      ],
       "query": "This is the screen people see after finishing a workout in our fitness tracker. It feels flat. Make it feel more celebratory.",
-      "files": ["evals/fixtures/designing-visuals-3-workout-complete.html"],
+      "files": [
+        "evals/fixtures/designing-visuals-3-workout-complete.html"
+      ],
       "expected_behavior": [
         "Structure: the revised screen is rendered first, then two or three lines naming the focal point, the primary action, and what was left out and why",
         "Makes it richer by removing, not adding: fewer stat tiles, chips and cards than the original, and no added confetti, extra badges or extra stats",
@@ -45,11 +55,37 @@
     }
   ],
   "trigger_checks": [
-    { "query": "This dashboard looks busy and nothing stands out. Can you fix the layout?", "should_trigger": true },
-    { "query": "Build the settings screen for our notes app in SwiftUI.", "should_trigger": true },
-    { "query": "The cards on our team calendar's week view feel cramped and a bit misaligned. Take a look?", "should_trigger": true },
-    { "query": "Rewrite the button labels and error messages on our sign-up screen so they're clearer.", "should_trigger": false, "belongs_to": "writing-ux-copy" },
-    { "query": "Our onboarding is nine screens long. Restructure it so people get to the app faster.", "should_trigger": false, "belongs_to": "designing-flows" },
-    { "query": "The filter popover just pops in. Add a proper open and close transition.", "should_trigger": false, "belongs_to": "designing-motion" }
+    {
+      "query": "This dashboard looks busy and nothing stands out. Can you fix the layout?",
+      "should_trigger": true
+    },
+    {
+      "query": "Build the settings screen for our notes app in SwiftUI.",
+      "should_trigger": true
+    },
+    {
+      "query": "The cards on our team calendar's week view feel cramped and a bit misaligned. Take a look?",
+      "should_trigger": true
+    },
+    {
+      "query": "Rewrite the button labels and error messages on our sign-up screen so they're clearer.",
+      "should_trigger": false,
+      "belongs_to": "writing-ux-copy"
+    },
+    {
+      "query": "Our onboarding is nine screens long. Restructure it so people get to the app faster.",
+      "should_trigger": false,
+      "belongs_to": "designing-flows"
+    },
+    {
+      "query": "The filter popover just pops in. Add a proper open and close transition.",
+      "should_trigger": false,
+      "belongs_to": "designing-motion"
+    },
+    {
+      "query": "This settings screen has far too many things on it. Cut it down without losing anything people can do.",
+      "should_trigger": false,
+      "belongs_to": "decluttering-screens"
+    }
   ]
 }
