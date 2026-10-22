@@ -262,3 +262,5 @@ They follow [Anthropic's skill authoring best practices](https://platform.claude
 ## Licence
 
 MIT. See [LICENSE](LICENSE).
+
+Made by [Marcus Wiberg](https://www.marcuswiberg.com).
