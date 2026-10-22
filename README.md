@@ -10,12 +10,10 @@ Twenty-one Agent Skills that help Claude shape, design, build and ship excellent
 
 People who want to build excellent things, whatever their title.
 
-| You are | Start with |
-| --- | --- |
-| **Product manager or leader** | `shaping-direction`, `defining-outcomes`, `sequencing-bets`, `writing-specs` |
-| **Design engineer** | `designing-visuals`, `designing-flows`, `designing-motion`, `writing-ux-copy` |
-| **Engineer** | `breaking-experiences`, `diagnosing-feel`, `unifying-patterns`, `writing-specs` |
-| **Founder or solo builder** | `crafting-products`, then whatever the work calls for |
+- **Product manager or leader**: `shaping-direction`, `defining-outcomes`, `sequencing-bets`, `writing-specs`
+- **Design engineer**: `designing-visuals`, `designing-flows`, `designing-motion`, `writing-ux-copy`
+- **Engineer**: `breaking-experiences`, `diagnosing-feel`, `unifying-patterns`, `writing-specs`
+- **Founder or solo builder**: `crafting-products`, then whatever the work calls for
 
 ## The skills
 
@@ -23,43 +21,55 @@ Every skill does one job and hands the rest to a teammate. [`crafting-products`]
 
 ### 1 · Shape
 
-| Skill | What it does |
-| --- | --- |
-| [`shaping-direction`](shaping-direction/SKILL.md) | Turns a vague idea or feature request into a direction worth testing, weighed against all four risks, with the cheapest test to prove it wrong. |
-| [`defining-outcomes`](defining-outcomes/SKILL.md) | Defines success as a change in what people do: one metric, a countermetric and checkpoints, set before the work starts. |
-| [`sequencing-bets`](sequencing-bets/SKILL.md) | Orders more ideas than there is time for into Now, Next and Later, with a stop rule for each bet. |
-| [`writing-specs`](writing-specs/SKILL.md) | Writes the spec builders and agents work from: scope, every state, the data model and API, rollout and checks. |
+- **[`shaping-direction`](shaping-direction/SKILL.md)**  
+  Turns a vague idea or feature request into a direction worth testing, weighed against all four risks, with the cheapest test to prove it wrong.
+- **[`defining-outcomes`](defining-outcomes/SKILL.md)**  
+  Defines success as a change in what people do: one metric, a countermetric and checkpoints, set before the work starts.
+- **[`sequencing-bets`](sequencing-bets/SKILL.md)**  
+  Orders more ideas than there is time for into Now, Next and Later, with a stop rule for each bet.
+- **[`writing-specs`](writing-specs/SKILL.md)**  
+  Writes the spec builders and agents work from: scope, every state, the data model and API, rollout and checks.
 
 ### 2 · Design
 
-| Skill | What it does |
-| --- | --- |
-| [`designing-visuals`](designing-visuals/SKILL.md) | Gives a screen one focal point, a clear hierarchy and consistent spacing, and checks it rendered. |
-| [`writing-ux-copy`](writing-ux-copy/SKILL.md) | Writes interface words that get to the point without going vague. |
-| [`designing-flows`](designing-flows/SKILL.md) | Shapes multi-step flows so every step has one mission and one action, and nothing is lost. |
-| [`designing-motion`](designing-motion/SKILL.md) | Keeps transitions and loading smooth, well timed and calm, never rushed or flashy. |
-| [`building-ai-features`](building-ai-features/SKILL.md) | Makes AI features trustworthy: honest labels, nothing sent without a yes, and a quality bar before shipping. |
-| [`decluttering-screens`](decluttering-screens/SKILL.md) | Simplifies a crowded screen without removing anything people can do. |
-| [`exploring-directions`](exploring-directions/SKILL.md) | Shows two to four genuinely different directions in the real interface, and recommends one. |
+- **[`designing-visuals`](designing-visuals/SKILL.md)**  
+  Gives a screen one focal point, a clear hierarchy and consistent spacing, and checks it rendered.
+- **[`writing-ux-copy`](writing-ux-copy/SKILL.md)**  
+  Writes interface words that get to the point without going vague.
+- **[`designing-flows`](designing-flows/SKILL.md)**  
+  Shapes multi-step flows so every step has one mission and one action, and nothing is lost.
+- **[`designing-motion`](designing-motion/SKILL.md)**  
+  Keeps transitions and loading smooth, well timed and calm, never rushed or flashy.
+- **[`building-ai-features`](building-ai-features/SKILL.md)**  
+  Makes AI features trustworthy: honest labels, nothing sent without a yes, and a quality bar before shipping.
+- **[`decluttering-screens`](decluttering-screens/SKILL.md)**  
+  Simplifies a crowded screen without removing anything people can do.
+- **[`exploring-directions`](exploring-directions/SKILL.md)**  
+  Shows two to four genuinely different directions in the real interface, and recommends one.
 
 ### 3 · Review
 
-| Skill | What it does |
-| --- | --- |
-| [`auditing-consistency`](auditing-consistency/SKILL.md) | Finds every place the same job is done differently, and proposes one answer. |
-| [`walking-personas`](walking-personas/SKILL.md) | Walks a flow as a brand-new, light, heavy and messy user, on every device. |
-| [`diagnosing-feel`](diagnosing-feel/SKILL.md) | Turns "it doesn't feel right" into a measured cause, a fix and a guard. |
-| [`breaking-experiences`](breaking-experiences/SKILL.md) | Builds simulation controls, breaks the product on purpose, and keeps every break as a test. |
+- **[`auditing-consistency`](auditing-consistency/SKILL.md)**  
+  Finds every place the same job is done differently, and proposes one answer.
+- **[`walking-personas`](walking-personas/SKILL.md)**  
+  Walks a flow as a brand-new, light, heavy and messy user, on every device.
+- **[`diagnosing-feel`](diagnosing-feel/SKILL.md)**  
+  Turns "it doesn't feel right" into a measured cause, a fix and a guard.
+- **[`breaking-experiences`](breaking-experiences/SKILL.md)**  
+  Builds simulation controls, breaks the product on purpose, and keeps every break as a test.
 
 ### 4 · Decide and ship
 
-| Skill | What it does |
-| --- | --- |
-| [`getting-sign-off`](getting-sign-off/SKILL.md) | Gets approval one change at a time, with today and the proposal side by side. |
-| [`settling-decisions`](settling-decisions/SKILL.md) | Settles open questions one at a time, each with real options and one recommendation. |
-| [`unifying-patterns`](unifying-patterns/SKILL.md) | Builds an agreed consolidation so the old version can never come back. |
-| [`sorting-feedback`](sorting-feedback/SKILL.md) | Sorts what people said into what to act on, grounded in the product. |
-| [`writing-briefs`](writing-briefs/SKILL.md) | Explains work to a leader or partner who isn't technical, recommendation first. |
+- **[`getting-sign-off`](getting-sign-off/SKILL.md)**  
+  Gets approval one change at a time, with today and the proposal side by side.
+- **[`settling-decisions`](settling-decisions/SKILL.md)**  
+  Settles open questions one at a time, each with real options and one recommendation.
+- **[`unifying-patterns`](unifying-patterns/SKILL.md)**  
+  Builds an agreed consolidation so the old version can never come back.
+- **[`sorting-feedback`](sorting-feedback/SKILL.md)**  
+  Sorts what people said into what to act on, grounded in the product.
+- **[`writing-briefs`](writing-briefs/SKILL.md)**  
+  Explains work to a leader or partner who isn't technical, recommendation first.
 
 ## Install
 
