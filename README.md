@@ -2,7 +2,7 @@
 
 Twenty-one Agent Skills that help Claude shape, design, build and ship excellent products, on iPhone, iPad, Mac and the web. They work as a team, hold every piece of work to Apple's restraint and Linear's discipline, and run in Claude Code and Codex.
 
-**21 skills** · **4 stages** · **89% of expected behaviours, against 36% without the skills** · **MIT**
+**21 skills** · **4 stages** · **iPhone, iPad, Mac and the web** · **MIT**
 
 [Who it's for](#who-its-for) · [The skills](#the-skills) · [Install](#install) · [Inside a skill](#inside-a-skill) · [Evaluations](#evaluations)
 
@@ -130,7 +130,7 @@ skills/
 
 Every skill has three test scenarios and at least six trigger checks in [`evals/`](evals/), in the structure Anthropic recommends: a realistic request, any input files, and the behaviours a good answer must show. Each scenario runs with the skill and without it, and the output is graded against those behaviours. The trigger checks confirm each description picks its own requests and leaves its neighbours' alone. See [evals/README.md](evals/README.md) to run them.
 
-**Latest results** ([full table and limits](evals/RESULTS.md)): with the skills, answers showed 89% of the expected behaviours against 36% without (84% against 36% on the first, untuned run), and 130 of 131 trigger checks picked the right skill.
+Each skill is tested against a no-skill baseline. The latest results, and how they were measured, are in [evals/RESULTS.md](evals/RESULTS.md).
 
 ## Credits
 
