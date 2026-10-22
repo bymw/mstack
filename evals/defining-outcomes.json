@@ -1,0 +1,55 @@
+{
+  "skill": "defining-outcomes",
+  "evals": [
+    {
+      "id": "defining-outcomes-1",
+      "skills": ["defining-outcomes"],
+      "query": "We launch recurring tasks in our to-do app next month. The goal I've written is 'Launch recurring tasks and get 30% of users using it by end of quarter.' Can you tighten it up?",
+      "files": [],
+      "expected_behavior": [
+        "Rewrites the goal as a change in behaviour (who does what differently, by when) and says why 'launch' and '30% using it' are an output and a usage count, not an outcome",
+        "Defines one primary metric exactly: who counts, what counts and over what window, measured from the person's side (for example tasks completed on schedule without re-creating them)",
+        "Pairs the primary with a value-captured metric the business already tracks (for example retention or upgrades) and one line on how the outcome moves it",
+        "Adds at least one countermetric with a numeric limit (for example overdue-task pile-up, notification opt-outs or tasks deleted unfinished)",
+        "Leaves the baseline as 'unknown, measure first' rather than inventing a current value, and sets checkpoints with a continue, change or stop rule",
+        "Uses the output table with rows for Primary, Value captured, Leading signal and Countermetric and columns for definition, baseline to target, and date"
+      ]
+    },
+    {
+      "id": "defining-outcomes-2",
+      "skills": ["defining-outcomes"],
+      "query": "Four weeks of results for our Memories reminders are attached. Did it work? We want to call it a win at Friday's all-hands.",
+      "files": ["evals/fixtures/defining-outcomes-2-memories-results.md"],
+      "expected_behavior": [
+        "Says plainly in the opening lines that no targets were written before launch, so the result cannot be judged a win against anything",
+        "Does not treat the rise in notification opens or sessions as success, pointing out that journal entries per weekly active person stayed flat at 1.4",
+        "Identifies the jump in people turning off all notifications (210 to 690) and the slight fall in weekly active people as countermetric signals that something got worse",
+        "Flags the A/B test with 300 people per arm as too small to trust as a result, and labels any reading of it as directional",
+        "Names the instrumentation gap: entry creation is not tied to the notification that led to it, so the outcome cannot yet be read",
+        "Sets an outcome for the next checkpoint in the output table (Primary, Value captured, Leading signal, Countermetric with a limit), followed by Checkpoints with continue, change or stop rules"
+      ]
+    },
+    {
+      "id": "defining-outcomes-3",
+      "skills": ["defining-outcomes"],
+      "query": "Draft Q3 OKRs for the team on our language-learning app. Here's my first pass: Objective: make learning stick. KR1: ship speaking practice. KR2: redesign the lesson screen. KR3: increase DAU by 20%.",
+      "files": [],
+      "expected_behavior": [
+        "Identifies KR1 and KR2 as tasks rather than key results and moves them to the plan, replacing them with results that measure change in what learners do",
+        "Challenges DAU as a number that can rise while learning gets worse and replaces it with a measure from the learner's side, paired with a countermetric and its limit",
+        "Links the objective one step to a goal the business already tracks (for example 30-day retention or subscription renewals), in one line",
+        "Picks a leading signal and says it must be shown to predict retention, preferring a demanding signal (for example finishing a week of lessons) over an easy one (first lesson started)",
+        "Does not invent baselines or benchmark figures; unknown baselines are marked 'unknown, measure first' or 'to confirm'",
+        "Keeps to one primary metric for the objective rather than several competing primaries, and presents metrics in a table"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    { "query": "How will we know if the new search in our notes app actually worked?", "should_trigger": true },
+    { "query": "Help us set a north star metric for our meditation app.", "should_trigger": true },
+    { "query": "Write next quarter's OKRs for the team building our shared calendar.", "should_trigger": true },
+    { "query": "Should we even build calendar sync for our to-do app, or is something else more valuable?", "should_trigger": false, "belongs_to": "shaping-direction" },
+    { "query": "Rank these six requests for our to-do app into what we do this quarter and what waits.", "should_trigger": false, "belongs_to": "sequencing-bets" },
+    { "query": "Write acceptance criteria and the data model for the new search in our notes app.", "should_trigger": false, "belongs_to": "writing-specs" }
+  ]
+}

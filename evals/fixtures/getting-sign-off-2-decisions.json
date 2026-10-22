@@ -1,0 +1,19 @@
+{
+  "page": "Notes app: six changes to All notes and Trash",
+  "rows": [
+    { "id": "back", "change": "Note editor Back reads 'All notes' instead of a bare chevron" },
+    { "id": "search", "change": "Visible search field under the title instead of a magnifier icon" },
+    { "id": "title", "change": "Title reads 'All notes' instead of 'Notes'" },
+    { "id": "pinned", "change": "Pinned rows 64 pt like other rows (today 56 pt)" },
+    { "id": "trash", "change": "'Empty Trash' moves from the All notes toolbar to the Trash screen" },
+    { "id": "compose", "change": "New note button gets a text label" }
+  ],
+  "collection": "decisions",
+  "documents": [
+    { "id": "back", "choice": "agree", "note": "" },
+    { "id": "search", "choice": "agree", "note": "Agree, but the design is poor: the field looks cramped against the title." },
+    { "id": "title", "choice": "discuss", "note": "Not sure 'All notes' is clearer when there are folders." },
+    { "id": "pinned", "choice": "no", "note": "Pinned should stay a bit different, it's how people spot them." },
+    { "id": "trash", "choice": "discuss", "note": "Will people find it if it only lives in Trash?" }
+  ]
+}

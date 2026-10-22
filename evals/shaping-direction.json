@@ -1,0 +1,55 @@
+{
+  "skill": "shaping-direction",
+  "evals": [
+    {
+      "id": "shaping-direction-1",
+      "skills": ["shaping-direction"],
+      "query": "Customers of our team calendar app keep asking for a Gantt chart view. About 15 requests this quarter, mostly from project leads. Should we build it?",
+      "files": [],
+      "expected_behavior": [
+        "Reframes the request as the job behind it (a named person, the moment they struggle, and what they do today instead) rather than building the Gantt view as asked",
+        "States the direction as one hypothesis in the form 'If we [approach] for [person] when [moment], they will choose it over [what they do now] because [the difference]'",
+        "Compares two or three approaches that differ in what they bet on (for example a Gantt view, a lightweight milestones lane, an integration with an existing project tool) in a table, with one marked (Recommended) and a named backup",
+        "Says why someone would switch from today's way, including doing nothing or staying in their current project tool, not only why the approach solves the problem",
+        "Gives a test with a pass mark written before it runs and an action for each result: continue, change course or stop",
+        "Weighs viability alongside value, naming at least one of cost, support load, sales, legal or privacy as a risk"
+      ]
+    },
+    {
+      "id": "shaping-direction-2",
+      "skills": ["shaping-direction"],
+      "query": "Our Weekly Plan feature stalled. Notes attached. Leadership wants a third redesign with AI meal suggestions next quarter. What should we do?",
+      "files": ["evals/fixtures/shaping-direction-2-weekly-plan-notes.md"],
+      "expected_behavior": [
+        "Grades the evidence: treats the 68% 'would definitely use' survey and the competitor having a planner as weak, and the 11% second-week use as the strongest signal, marking claims as fact, inference or unknown",
+        "Points out that all six interviews are current users recruited in-app, and recommends talking to people who opened it once and never returned and to households who never opened it",
+        "Asks whether the block is execution or a missing decision about strategy, noting that two redesigns that did not move second-week use point away from a third redesign",
+        "Does not endorse the third redesign as asked; treats AI suggestions as one approach among two or three, with a first choice and a backup",
+        "Recommends the cheapest test that can answer the riskiest assumption (for example conversations about the last time they planned meals, or a hand-run service) before any build, with a pass mark and a stop result",
+        "Invents no figures, quotes or customers beyond the notes, and lists at most five unknowns marked 'to confirm'"
+      ]
+    },
+    {
+      "id": "shaping-direction-3",
+      "skills": ["shaping-direction"],
+      "query": "We run a running and cycling tracker app. Leadership says we need 'something with AI coaching' this year. What should we build?",
+      "files": [],
+      "expected_behavior": [
+        "Starts from a specific person in a specific moment (for example a runner returning after injury deciding today's session), not from 'AI coaching' as a feature",
+        "Keeps the problem framing short and spends most of the answer on two or three approaches that differ in what they bet on",
+        "Includes a riskiest-assumptions table covering value, usability, feasibility and viability, ranked by consequence if wrong and uncertainty, with viability naming safety or privacy of health data or model cost",
+        "Names an appetite (how much time the direction is worth) and says what happens when it runs out: cut scope or stop, not extend",
+        "Follows the output structure: Direction as a one-sentence hypothesis, then the person and the moment, then the approach table, then the assumptions table, then Test, Appetite and next decision with an owner, and Unknowns",
+        "Leaves open product calls as one line each to be asked afterwards, rather than settling them silently or writing a long section on them"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    { "query": "Is a shared shopping list worth building for our recipe app, or is it a distraction?", "should_trigger": true },
+    { "query": "The streaks feature in our habit app stalled after launch. Why, and what should we do now?", "should_trigger": true },
+    { "query": "Lots of people ask for offline mode in our notes app. What should we actually build?", "should_trigger": true },
+    { "query": "What metric should tell us whether offline mode in our notes app worked?", "should_trigger": false, "belongs_to": "defining-outcomes" },
+    { "query": "We have eight feature ideas for the recipe app and one quarter. What goes first?", "should_trigger": false, "belongs_to": "sequencing-bets" },
+    { "query": "Write the PRD for the shared shopping list we decided to build.", "should_trigger": false, "belongs_to": "writing-specs" }
+  ]
+}

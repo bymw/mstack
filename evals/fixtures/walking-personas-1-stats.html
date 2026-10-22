@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shelfwise: Reading stats prototype</title>
+<style>
+  body { font: 15px/1.4 -apple-system, system-ui, sans-serif; margin: 0; background: #f5f3ef; color: #1a1a1a; }
+  .sim { background: #222; color: #eee; padding: 8px 12px; font-size: 12px; }
+  .sim a { color: #9cf; margin-right: 8px; }
+  main { max-width: 390px; margin: 0 auto; padding: 16px; }
+  .card { background: #fff; border-radius: 12px; padding: 14px; margin-bottom: 12px; }
+  .hero { font-size: 34px; font-weight: 700; }
+  .row { display: flex; justify-content: space-between; padding: 8px 0; border-top: 1px solid #eee; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .btn { display: block; width: 100%; padding: 12px; border: 0; border-radius: 10px; background: #2d5bd1; color: #fff; font-size: 16px; }
+</style>
+</head>
+<body>
+<!--
+Simulation controls (the bar at the top) write the query string. Personas available:
+  ?persona=new      signed up today, no books
+  ?persona=first    joined 3 days ago, 1 book finished
+  ?persona=typical  joined 2 years ago, 38 books this year
+  ?persona=power    joined 6 years ago, 1284 books this year, 214-character longest title
+Toggle: &offline=1 makes the book request fail.
+There is no persona with failed imports or an expired library connection.
+-->
+<div class="sim" id="sim"></div>
+<main id="app"></main>
+<script>
+const q = new URLSearchParams(location.search);
+const persona = q.get("persona") || "typical";
+const offline = q.get("offline") === "1";
+const data = {
+  new:     { name: "Ada",  joinedDays: 0,    books: [], lastMonthBooks: 0, pages30: 0 },
+  first:   { name: "Ben",  joinedDays: 3,    books: ["The Quiet Orchard"], lastMonthBooks: 0, pages30: 240 },
+  typical: { name: "Cleo", joinedDays: 730,  books: Array.from({length: 38}, (_, i) => "Book " + (i + 1)), lastMonthBooks: 3, pages30: 1350 },
+  power:   { name: "Dev",  joinedDays: 2190, books: ["A Very Long Title About Lighthouses, Tides, and the Families Who Kept Them Through Three Centuries of Storms, Wars, Shipwrecks, Rescues and Quiet Winters on the Northern Coast, Volume One of Four"].concat(Array.from({length: 1283}, (_, i) => "Book " + (i + 2))), lastMonthBooks: 104, pages30: 21000 }
+}[persona];
+
+document.getElementById("sim").innerHTML =
+  ["new", "first", "typical", "power"].map(p => `<a href="?persona=${p}">${p}</a>`).join("") +
+  ` <a href="?persona=${persona}&offline=1">offline</a>`;
+
+function stats() {
+  const books = offline ? [] : data.books;
+  const thisMonth = persona === "first" ? 1 : Math.round(books.length / 10);
+  const change = Math.round(((thisMonth - data.lastMonthBooks) / Math.max(data.lastMonthBooks, 1)) * 100);
+  const perDay = (data.pages30 / 30).toFixed(1);
+  const avgPerBook = (data.pages30 / books.length).toFixed(0);
+  return `
+    <h1>Hi ${data.name}</h1>
+    <div class="card">
+      <div class="hero">${books.length}</div>
+      <div>books this year</div>
+      <div>Up ${change}% since last month</div>
+      <div>${perDay} pages a day · ${avgPerBook} pages per book</div>
+    </div>
+    <div class="card">
+      <b>Finished</b>
+      ${books.length === 0 ? "<p>No books yet. Start reading!</p>" : books.slice(0, 5).map(b => `<div class="row">${b}</div>`).join("")}
+      ${books.length > 5 ? `<a href="#all">View all</a>` : ""}
+    </div>
+    <div class="card"><b>Reading reminders</b><div class="row">Off <input type="checkbox"></div></div>
+    <button class="btn" onclick="location.hash='goal-1'">Set a yearly goal</button>`;
+}
+function goal1() {
+  return `<a href="#home">Back</a><h2>How many books this year?</h2>
+    <input type="number" value="52"> <button class="btn" onclick="location.hash='goal-2'">Next</button>`;
+}
+function goal2() {
+  return `<a href="#home">Back</a><h2>Share your goal?</h2>
+    <label><input type="checkbox" checked> Share with your first contact</label>
+    <button class="btn" onclick="location.hash='home'">Save goal</button>`;
+}
+function home() { return `<h1>Home</h1><p>Recommended for you</p>`; }
+function render() {
+  const h = location.hash.slice(1);
+  document.getElementById("app").innerHTML =
+    h === "goal-1" ? goal1() : h === "goal-2" ? goal2() : h === "home" ? home() : stats();
+}
+window.onhashchange = render; render();
+</script>
+</body>
+</html>

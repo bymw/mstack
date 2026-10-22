@@ -1,0 +1,41 @@
+/* Task list web app. Comments say what triggers each rule and how often. */
+
+/* Rows: play on every list load. The list is the home screen, opened many times a day,
+   and can hold 200 rows. JS sets --i to the row index; there is no cap. */
+.task-row {
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: rowIn 120ms ease-in forwards;
+  animation-delay: calc(var(--i) * 80ms);
+}
+@keyframes rowIn { to { opacity: 1; transform: none; } }
+
+/* Row hover */
+.task-row:hover { transform: scale(1.02); transition: transform 0.2s; }
+
+/* Command palette: opened with Cmd+K, the main way power users move around */
+.palette { animation: paletteIn 300ms ease-in-out; }
+@keyframes paletteIn { from { opacity: 0; transform: scale(0.9) translateY(-20px); } }
+
+/* Delete confirmation dialog */
+.dialog {
+  transform-origin: center;
+  animation: dialogIn 450ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes dialogIn { from { transform: scale(0); } }
+.dialog.closing { display: none; } /* removed instantly on Cancel or Delete */
+
+/* Loading the list: the spinner is added the moment the fetch starts and removed
+   when it resolves (median 180 ms). Rows then replace it instantly. */
+.spinner { animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* "Completed today" figure in the header: JS counts it up from 0 on every load */
+.counter { transition: all 0.6s; }
+
+/* Sidebar expand and collapse */
+.sidebar { transition: width 350ms ease; }
+
+/* Sync badge: pulses forever, including when everything is already synced */
+.sync-badge { animation: pulse 1.5s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: 0.4; transform: scale(1.15); } }

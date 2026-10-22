@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team calendar: Invite sheet</title>
+<style>
+  body { font-family: -apple-system, system-ui, sans-serif; max-width: 420px; margin: 24px auto; padding: 0 16px; color: #1c1c1e; }
+  h1 { font-size: 22px; margin: 0 0 8px; }
+  p { font-size: 15px; line-height: 1.4; }
+  input, select { width: 100%; padding: 10px; font-size: 15px; margin: 8px 0; box-sizing: border-box; }
+  .row { display: flex; justify-content: space-between; align-items: center; margin: 16px 0 4px; }
+  .help { font-size: 13px; color: #6e6e73; margin: 0; }
+  button { width: 100%; padding: 12px; font-size: 17px; margin-top: 16px; }
+  .status { font-size: 14px; margin-top: 8px; }
+  .footer { font-size: 13px; color: #6e6e73; margin-top: 24px; }
+</style>
+</head>
+<body>
+  <!-- Sheet opened from the "+" button in the calendar toolbar. -->
+  <h1>Welcome to Invites!</h1>
+  <p>Invite your teammates to collaborate on your calendar so that everyone can really stay in sync. It's simply the best way to work together!</p>
+
+  <!-- No visible label; the placeholder is the only hint. -->
+  <input type="text" placeholder="Enter email addresses...">
+
+  <label for="role">Collaborator permissions</label>
+  <select id="role">
+    <option>Can view</option>
+    <option>Can edit</option>
+  </select>
+
+  <div class="row">
+    <span>Smart scheduling</span>
+    <input type="checkbox" style="width:auto">
+  </div>
+  <p class="help">Enabling this option will allow the app to automatically suggest meeting times based on everyone's calendars.</p>
+
+  <button>Submit</button>
+
+  <!-- Shown the moment the button is tapped, before the server responds. -->
+  <p class="status">Invitation sent!</p>
+
+  <!-- Shown if the request fails (the client knows whether it was a timeout or an invalid address). -->
+  <p class="status">Oops! Something went wrong.</p>
+
+  <p class="footer">Want members to get reminders before events? Turn it on in Settings.</p>
+</body>
+</html>

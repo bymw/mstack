@@ -1,0 +1,55 @@
+{
+  "skill": "designing-visuals",
+  "evals": [
+    {
+      "id": "designing-visuals-1",
+      "skills": ["designing-visuals"],
+      "query": "Here's the Today screen of our habit tracker (iPhone, built as HTML for now). Something about it feels off and busy but I can't say what. Can you review it?",
+      "files": ["evals/fixtures/designing-visuals-1-today-screen.html"],
+      "expected_behavior": [
+        "Structure: renders the screen (or states it was checked rendered) before the findings, groups every finding under High, Medium and Low as rows of what the eye sees and a fix given as a concrete value, then ends with a 1 to 5 scorecard covering hierarchy, structure, spacing, type, contrast, colour, platform fit, interaction clarity and state craft",
+        "Names 'Log habit' and 'Go Premium' as two equally loud filled buttons competing for the primary action, and demotes Go Premium to a quiet or tertiary style so one primary action remains",
+        "Gives spacing fixes as values on the 4 pt scale with space inside a group clearly smaller than between groups (for example 12 inside, 24 between), and calls out the off-scale 13, 18 and 10 px values and the 8 px gap between the buttons and the screen edge (below the 16 pt minimum)",
+        "Replaces the near-invisible rgba(0,0,0,0.02) card tint and the nested bordered cards with a fill clearly one step from its ground (about 1.12:1, for example white on light grey) or a plain list separated by space, rather than adding more borders or shadows",
+        "Flags the #b8b8b8 meta and note text as failing 4.5:1 on white and says the replacement tone must be checked on the dark background too",
+        "Recommends showing 'Streak goal: 18 of 30 days' as a visual (a meter or ring) with the figure beside it instead of a line of text"
+      ]
+    },
+    {
+      "id": "designing-visuals-2",
+      "skills": ["designing-visuals"],
+      "query": "Design the empty state for the Saved tab in our recipe app on iPhone. Today it's a grey bookmark icon, the line 'No saved recipes' and a 'Browse' button. Build it as an HTML page I can open.",
+      "files": [],
+      "expected_behavior": [
+        "Structure: the HTML screen comes first at iPhone size, followed by two or three lines naming the focal point, the primary action, and what was left out and why",
+        "Replaces the icon-line-button pattern with a crafted illustration or larger symbol drawn in the product's own palette that explains saving a recipe, not a generic stock-style picture",
+        "Offers a quiet head start beside the one primary action (for example a starter collection, popular recipes or saving from a link), visibly secondary to the primary button",
+        "Centres every element on this single-focus screen and places the group slightly above the vertical middle (optical centre), not at or below it",
+        "Shows the real surroundings: a populated navigation bar and tab bar with the other tabs, not the empty state floating in a blank frame",
+        "Uses spacing values only from the 4 pt scale in the markup and one accent colour, on the primary action, with no gradients or glows"
+      ]
+    },
+    {
+      "id": "designing-visuals-3",
+      "skills": ["designing-visuals"],
+      "query": "This is the screen people see after finishing a workout in our fitness tracker. It feels flat. Make it feel more celebratory.",
+      "files": ["evals/fixtures/designing-visuals-3-workout-complete.html"],
+      "expected_behavior": [
+        "Structure: the revised screen is rendered first, then two or three lines naming the focal point, the primary action, and what was left out and why",
+        "Makes it richer by removing, not adding: fewer stat tiles, chips and cards than the original, and no added confetti, extra badges or extra stats",
+        "Keeps only the key figures (two or three, such as duration and distance, or the new 5 km best) and moves the rest behind the details action",
+        "Leaves one primary action (for example Done) with Share and View Details demoted to quiet text buttons, instead of three equal filled buttons",
+        "Uses one confident crafted mark or illustration in the product's palette as the single rich moment, and centres the whole composition at the optical centre rather than mixing left-aligned and centred text",
+        "Does not shrink type to fit content; the screen uses three levels of importance at most, each clearly different in size, weight or tone"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    { "query": "This dashboard looks busy and nothing stands out. Can you fix the layout?", "should_trigger": true },
+    { "query": "Build the settings screen for our notes app in SwiftUI.", "should_trigger": true },
+    { "query": "The cards on our team calendar's week view feel cramped and a bit misaligned. Take a look?", "should_trigger": true },
+    { "query": "Rewrite the button labels and error messages on our sign-up screen so they're clearer.", "should_trigger": false, "belongs_to": "writing-ux-copy" },
+    { "query": "Our onboarding is nine screens long. Restructure it so people get to the app faster.", "should_trigger": false, "belongs_to": "designing-flows" },
+    { "query": "The filter popover just pops in. Add a proper open and close transition.", "should_trigger": false, "belongs_to": "designing-motion" }
+  ]
+}

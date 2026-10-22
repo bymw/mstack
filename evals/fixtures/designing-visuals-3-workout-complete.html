@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fitness tracker: Workout complete</title>
+<style>
+  body { margin: 0; width: 390px; min-height: 844px; font-family: -apple-system, system-ui, sans-serif; background: #f4f4f6; color: #1c1c1e; }
+  .wrap { padding: 16px; }
+  h1 { font-size: 20px; font-weight: 700; margin: 8px 0 4px; }
+  .sub { font-size: 12px; color: #8e8e93; margin: 0 0 12px; text-align: center; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .stat { background: #fff; border-radius: 10px; padding: 8px; }
+  .stat b { display: block; font-size: 15px; }
+  .stat span { font-size: 10px; color: #8e8e93; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .chip { font-size: 11px; padding: 4px 8px; border-radius: 12px; background: #e5f6ea; color: #1f8a3b; }
+  .card { background: #fff; border-radius: 10px; padding: 10px; margin-bottom: 8px; font-size: 12px; }
+  .buttons { display: flex; gap: 8px; margin-top: 12px; }
+  .buttons button { flex: 1; padding: 12px 0; border: 0; border-radius: 10px; background: #34c759; color: #fff; font-size: 14px; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Workout complete</h1>
+    <p class="sub">Outdoor run, finished 18:42</p>
+
+    <div class="grid">
+      <div class="stat"><b>32:14</b><span>Duration</span></div>
+      <div class="stat"><b>5.2 km</b><span>Distance</span></div>
+      <div class="stat"><b>6:12 /km</b><span>Avg pace</span></div>
+      <div class="stat"><b>148 bpm</b><span>Avg heart rate</span></div>
+      <div class="stat"><b>171 bpm</b><span>Max heart rate</span></div>
+      <div class="stat"><b>412 kcal</b><span>Active energy</span></div>
+    </div>
+
+    <div class="chips">
+      <span class="chip">New 5 km best</span>
+      <span class="chip">5-day streak</span>
+      <span class="chip">Early bird</span>
+      <span class="chip">Consistency</span>
+    </div>
+
+    <div class="card">Splits: 6:20, 6:15, 6:09, 6:11, 6:05</div>
+    <div class="card">Elevation gain: 38 m</div>
+    <div class="card">Weather: 14°C, light wind</div>
+
+    <div class="buttons">
+      <button>Share</button>
+      <button>View Details</button>
+      <button>Done</button>
+    </div>
+  </div>
+</body>
+</html>

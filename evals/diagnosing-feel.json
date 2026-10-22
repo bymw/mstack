@@ -1,0 +1,64 @@
+{
+  "skill": "diagnosing-feel",
+  "evals": [
+    {
+      "id": "diagnosing-feel-1",
+      "skills": ["diagnosing-feel"],
+      "query": "The dots on our Dayleaf onboarding carousel feel laggy on my iPhone. The swipe is fine, it's the dots. I've attached what the recording shows frame by frame and the component. What's going on and how do we fix it?",
+      "files": [
+        "evals/fixtures/diagnosing-feel-1-recording.md",
+        "evals/fixtures/diagnosing-feel-1-Carousel.tsx"
+      ],
+      "expected_behavior": [
+        "States what was seen with a timestamp in one sentence, for example 'At 2.31 s card 2 is settled but dot 1 is still filled; dot 2 fills at 2.76 s'",
+        "Names the cause in one sentence with evidence: the active dot is derived from the scroll-end event, which fires about 450 ms after the scroll settles, citing the frames and Carousel.tsx with its line (onScrollEnd)",
+        "Fixes at the cause by deriving the active index during the gesture or at finger lift, and does not add a delay, fade or transition to mask it",
+        "Says proof must come from the home-screen web app on the iPhone in Safari's engine, because Chrome on a laptop and headless runs cannot show it, and asks for a before-and-after recording of the same swipe on the same device",
+        "Names a guard after the symptom (for example a probe asserting the dot changes before scroll end) that would fail on the old code and pass on the new",
+        "Uses the output sections What you saw, Cause, Fix, Proof and Only provable on a real device"
+      ]
+    },
+    {
+      "id": "diagnosing-feel-2",
+      "skills": ["diagnosing-feel"],
+      "query": "Switching tabs in Simmer flashes white every time on my iPad. Frame notes and the component are attached. Can we just add a fade so it's less jarring?",
+      "files": [
+        "evals/fixtures/diagnosing-feel-2-recording.md",
+        "evals/fixtures/diagnosing-feel-2-RecipeTabs.tsx"
+      ],
+      "expected_behavior": [
+        "Declines the fade as the fix, explaining that it would hide the flash rather than remove its cause",
+        "Identifies from the frames a spinner shown for about 110 to 120 ms followed by a hard cut, as the change spikes at 1.24 s and 1.37 s show",
+        "Names the causes in the code with file:line: the effect sets loading and refetches on every tab change although recipeCache already holds both tabs, and key={tab} remounts the grid",
+        "Fixes by showing held data immediately and never reloading what is held, showing a spinner only after about 300 ms and then for at least about 500 ms, and keeping one stable identity so content crossfades in place",
+        "Checks the fix beyond the reported case: Reduce Motion, both themes, and the other sizes that render the screen (iPhone, iPad portrait), plus the oldest supported hardware",
+        "Proves it with a before-and-after recording of the same tab switches in Safari on the iPad and names a guard for the flash"
+      ]
+    },
+    {
+      "id": "diagnosing-feel-3",
+      "skills": ["diagnosing-feel"],
+      "query": "A beta tester says the timeline header in our Mac app Loomly is choppy when scrolling. I tried a debug build on my iMac and it looked smooth, so maybe it's their machine? Recording notes and the header code are attached.",
+      "files": [
+        "evals/fixtures/diagnosing-feel-3-recording.md",
+        "evals/fixtures/diagnosing-feel-3-TimelineHeader.swift"
+      ],
+      "expected_behavior": [
+        "Classifies the report as 'choppy at 120 Hz, fine at 60 Hz' using the alternating zero-change frames in the header region while the list moves every 8.3 ms",
+        "Names the cause as the fixed 1/60 s Timer in TimelineHeader.swift sampling the scroll offset, so the header updates on every other 120 Hz frame",
+        "Fixes by driving the header from the scroll offset or the display refresh (not a fixed-rate timer), rather than adding smoothing, easing or a delay",
+        "Explains that a debug build on a 60 Hz iMac cannot show the fault and is no proof, and that the Simulator does not apply; proof needs a release build on a 120 Hz display, profiled in Instruments (for example Animation Hitches)",
+        "Includes checking on the oldest supported Mac (the 2019 60 Hz MacBook Air) and Reduce Motion as part of the fix check",
+        "Ends with What you saw, Cause, Fix, Proof and Only provable on a real device sections, with a named guard"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    { "query": "Here's a screen recording of our notes app. When the sheet opens there's a weird grey flash. Can you figure out why?", "should_trigger": true },
+    { "query": "The fitness tracker doesn't feel native when I swipe back, it sort of jumps at the end.", "should_trigger": true },
+    { "query": "Tapping a day in the team calendar has a noticeable delay before anything happens on my phone.", "should_trigger": true },
+    { "query": "Define the motion vocabulary for our reading app: durations, springs and which transitions to use where.", "should_trigger": false, "belongs_to": "designing-motion" },
+    { "query": "Check what someone with zero recipes sees on every screen of the recipe app before Friday's demo.", "should_trigger": false, "belongs_to": "walking-personas" },
+    { "query": "Pages in our meal planner push with different animations and durations. Find every variant and propose one.", "should_trigger": false, "belongs_to": "auditing-consistency" }
+  ]
+}

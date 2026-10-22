@@ -1,0 +1,54 @@
+{
+  "skill": "writing-specs",
+  "evals": [
+    {
+      "id": "writing-specs-1",
+      "skills": ["writing-specs"],
+      "query": "We've agreed the direction for shared folders in our notes app (notes attached). Write the spec two builders and a coding agent will build from.",
+      "files": ["evals/fixtures/writing-specs-1-shared-folders-notes.md"],
+      "expected_behavior": [
+        "Opens with one sentence saying what ships, followed by a problem paragraph naming a specific person and moment (not 'all users') with the 38% support-ticket figure",
+        "Defines the nouns that could drift, at least 'share' or 'shared folder' and 'sync', saying what each means here and what it does not",
+        "Lists states and edge cases per place, including offline edits, a person removed while offline, a conflicting edit, a folder at the 10-person limit, and the longest content or largest number",
+        "Sketches the technical shape in code blocks or tables: the data model (folder, membership, role, ownership), the API calls with input, result and errors, and the sync and permission rules, marked as sketches to map to the codebase's conventions",
+        "Carries the two open questions (owner account deletion, nested folders) with who decides and what each blocks, and a decision log written as 'X, not Y, because Z' (for example folders, not single notes, because groups keep 5 to 20 related notes)",
+        "Follows the ten-section structure: Problem, Outcome, Perimeter, Flow, States and edge cases, Technical shape, Appetite with rabbit holes and no-gos, Checks, Open questions, Decision log"
+      ]
+    },
+    {
+      "id": "writing-specs-2",
+      "skills": ["writing-specs"],
+      "query": "Write a spec for one change in our habit tracker: new habits should default their reminder to the time of day the person created the habit, instead of always 9:00.",
+      "files": [],
+      "expected_behavior": [
+        "Keeps the spec short, sized to a small change: problem, perimeter and checks, rather than a full ten-section document",
+        "States the perimeter explicitly, including what is out of scope (for example existing habits keep their current reminder time)",
+        "Covers the edge cases a builder would otherwise guess, such as a habit created late at night, time zone changes, and notifications turned off at system level",
+        "Writes checks a builder or agent can verify (for example 'a habit created at 21:40 shows a 21:40 reminder'), not adjectives like 'seamless' or 'intuitive'",
+        "Does not write out interface copy, visual detail or motion for the reminder picker"
+      ]
+    },
+    {
+      "id": "writing-specs-3",
+      "skills": ["writing-specs"],
+      "query": "Write the requirements and acceptance criteria for auto-tagging recipes by cuisine in our recipe app. It should feel seamless and intuitive, and success is people using the tags.",
+      "files": [],
+      "expected_behavior": [
+        "Makes an example set the acceptance: real-looking recipe inputs, each with its expected cuisine tag or pass mark, and states that the set grows as real data arrives",
+        "Gives a numeric accuracy pass mark for the tagger instead of 'seamless' or 'intuitive', and replaces those words with what exactly and how much",
+        "Replaces 'people use the tags' with an outcome (a change in what people do, such as finding a saved recipe faster) and a countermetric with a limit (for example tags people remove or correct)",
+        "Covers the states specific to AI behaviour: low confidence or no clear cuisine, fusion recipes with more than one cuisine, a person correcting a wrong tag, and recipes in other languages",
+        "Names at least one rabbit hole and one no-go (for example a full cuisine taxonomy, or tagging by diet in this version)",
+        "Uses the feature structure: an opening line on what ships, then sections including Outcome, Perimeter, States and edge cases, Checks with the example set as a table, and Open questions with who decides and what each blocks"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    { "query": "Write a PRD for shared folders in our notes app.", "should_trigger": true },
+    { "query": "Turn the offline mode direction we agreed for the recipe app into acceptance criteria and a plan a coding agent can build from.", "should_trigger": true },
+    { "query": "Spec out the requirements for streak freezes in our habit tracker.", "should_trigger": true },
+    { "query": "Which of these three approaches to shared folders should we pick for our notes app?", "should_trigger": false, "belongs_to": "shaping-direction" },
+    { "query": "Design the layout and hierarchy of the shared folder screen on iPad.", "should_trigger": false, "belongs_to": "designing-visuals" },
+    { "query": "Write a one-page summary of shared folders for the leadership team, no technical detail.", "should_trigger": false, "belongs_to": "writing-briefs" }
+  ]
+}

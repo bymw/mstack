@@ -1,0 +1,55 @@
+{
+  "skill": "sequencing-bets",
+  "evals": [
+    {
+      "id": "sequencing-bets-1",
+      "skills": ["sequencing-bets"],
+      "query": "Here's every request we have for our team calendar app (attached). One team, six weeks. What do we do first?",
+      "files": ["evals/fixtures/sequencing-bets-1-requests.md"],
+      "expected_behavior": [
+        "Opens with a one-sentence headline naming the single bet that matters most now and why",
+        "Writes a short ranked list of problems first (tied to retention of teams of 10 or more), noting that none was agreed, and maps each request to a problem or marks it as serving none",
+        "Keeps a large uncertain bet in play: focus blocks (3) get a cheap test or a speculative slot rather than losing to small items, or the answer says explicitly that Now holds only small work and what would change that",
+        "Orders by dependency and learning: the recurring events rewrite (2) comes before time zone suggestions (6) and room booking (9)",
+        "Gives each Now bet an appetite and a stop rule, and lists a Not doing section with a reason per item (for example emoji reactions, custom colours, animated tour)",
+        "Follows the output structure: Headline, Problems in order, a Now table (Bet, Problem it serves, Appetite, Stop if), Next with what each waits for, Later as direction only, Not doing, and Mix as rough shares"
+      ]
+    },
+    {
+      "id": "sequencing-bets-2",
+      "skills": ["sequencing-bets"],
+      "query": "The board wants a 12-month roadmap for our recipe app with a delivery date for every feature. Can you lay it out month by month? Features so far: meal plans, grocery delivery integration, video recipes, pantry tracking, social cooking challenges, offline mode.",
+      "files": [],
+      "expected_behavior": [
+        "Pushes back on dated features twelve months out in one or two sentences, and proposes Now, Next and Later instead",
+        "Lays it out as Now, Next and Later sections, not months, with decreasing detail: a Now table that is specific and committed, Next outlined with what each waits for, Later as direction only",
+        "Uses dates only where the world sets one (for example an external partner deadline or a seasonal moment), not on every item",
+        "Frames bets as problems and outcomes for teams to solve rather than a list of features to ship",
+        "Sizes Now bets by appetite (the most time each is worth) rather than by estimate, and gives each a stop rule",
+        "Asks for or writes the ranked list of problems before ordering the features, since the request gives none"
+      ]
+    },
+    {
+      "id": "sequencing-bets-3",
+      "skills": ["sequencing-bets"],
+      "query": "One sprint left before the holidays on our fitness class booking app. Sales wants calendar export for a prospect, support wants the waitlist bug fixed (people get booked into full classes), and design wants to redesign the home screen. I can only do one well. Which?",
+      "files": [],
+      "expected_behavior": [
+        "Answers with a recommendation in the first line and commits to it",
+        "Judges by opportunity cost (what each option displaces and whether it is the best use of the sprint) rather than scoring each for return",
+        "States the trade-off for the requests not chosen in the form 'this, if that waits', rather than a flat no",
+        "Puts the unchosen items under Next or Not doing as 'item · reason' lines, so each is answered rather than left to come back",
+        "Gives the chosen bet a stop rule or checkpoint",
+        "Leaves the priority call the user owns (for example whether the prospect deal outweighs the bug) as one line to ask afterwards, not decided silently or written up as a long section"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    { "query": "We have far more requests than capacity for Q2 on our podcast app. What goes first?", "should_trigger": true },
+    { "query": "Build us a Now, Next, Later roadmap for the habit tracker from this list of ideas.", "should_trigger": true },
+    { "query": "Sales and support want different things next sprint on our meal-planning app. How do I decide what to build first?", "should_trigger": true },
+    { "query": "Is adding voice notes to our journaling app worth doing at all?", "should_trigger": false, "belongs_to": "shaping-direction" },
+    { "query": "What should success look like for voice notes, and how do we measure it?", "should_trigger": false, "belongs_to": "defining-outcomes" },
+    { "query": "Turn these 200 app store reviews of our weather app into a list of actions.", "should_trigger": false, "belongs_to": "sorting-feedback" }
+  ]
+}

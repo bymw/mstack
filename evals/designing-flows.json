@@ -1,0 +1,84 @@
+{
+  "skill": "designing-flows",
+  "evals": [
+    {
+      "id": "designing-flows-1",
+      "skills": [
+        "designing-flows"
+      ],
+      "query": "Here's our fitness tracker's sign-up flow on iPhone. A lot of people drop off before they reach the dashboard. Can you redesign it?",
+      "files": [
+        "evals/fixtures/designing-flows-1-signup-flow.md"
+      ],
+      "expected_behavior": [
+        "Structure: opens with a one-sentence headline giving the step count before and after, then a Step | Mission | Action table with one line per step, then each step (screen or step card with its copy and branches), then open questions each with a recommendation",
+        "Moves the notification, location and health prompts out of sign-up to the moment each is needed, one at a time with one sentence on what it enables, and asks for only the health data types in use",
+        "Replaces the 'Location is required' dead end with a product that still works without location, says what is missing, and links to the exact system setting",
+        "Uses the platform's sign-in (Sign in with Apple or passkeys) and infers time zone, country and units from the device instead of asking, deferring height, weight and gender until a feature needs them",
+        "Removes the 'Step N of 8' chips (no progress, or a few named stages), stops the carousel advancing on its own, validates each field inline as it is finished, and keeps input when Back is pressed",
+        "Ends somewhere alive instead of an empty dashboard (for example the first workout or the goals just chosen, with one next step), and does not show 'You're ready!' while device pairing is still syncing"
+      ]
+    },
+    {
+      "id": "designing-flows-2",
+      "skills": [
+        "designing-flows"
+      ],
+      "query": "Design the flow for inviting someone to a shared list in our grocery list app. It runs on iPhone and Mac.",
+      "files": [],
+      "expected_behavior": [
+        "Structure: a one-sentence headline, a Step | Mission | Action table, then a step card for every step with Mission, Action, Asks, Defaults, Skippable and Copy, then open questions with recommendations",
+        "Each step has one primary action in the same place; alternatives (share a link, cancel) are quiet text buttons or rows, never a second prominent button",
+        "Needs no permission for the main path (for example a share link), and if it offers picking from contacts, asks for contacts access only at that moment with one sentence on what it enables and a path that works if refused",
+        "Designs the branches: invitee who has the app and one who does not, invite declined or expired, sending while offline, and opening the invite on a second device",
+        "On Mac, the flow is keyboard first (Return to continue, Escape to cancel, visible focus) and the extra width becomes margin or context, not more fields per step",
+        "Ends back on the shared list with the invite visible as pending and one next step, not on a standalone success screen"
+      ]
+    },
+    {
+      "id": "designing-flows-3",
+      "skills": [
+        "designing-flows"
+      ],
+      "query": "For our journaling app, the team wants a five-screen feature tour on first launch (prompts, mood tags, search, reminders, sync), then sign-up, then the editor. Can you design the onboarding?",
+      "files": [],
+      "expected_behavior": [
+        "Replaces the read-about tour with doing: the person writes or starts a first entry from a prompt and sees the result, one use case per screen",
+        "Still shows all the key use cases rather than only the first (for example mood tags and search shown through the person's own entry), with reminders and sync moved to the moment they are needed",
+        "Moves sign-up after the first value (after the first entry, which is kept), using the platform's sign-in",
+        "Makes onboarding skippable and says where it can be found again later",
+        "The person sets the pace: nothing advances on its own, Continue waits until the step is complete, and there is no dot per step or numbered chip",
+        "Structure: a one-sentence headline, a Step | Mission | Action table with one line per step, then each step, then open questions each with a recommendation"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    {
+      "query": "Our checkout takes six screens in the event-ticket app. Can you restructure the steps?",
+      "should_trigger": true
+    },
+    {
+      "query": "Design the onboarding for a meditation app, one thing at a time.",
+      "should_trigger": true
+    },
+    {
+      "query": "When should our plant identification app ask for camera and location access?",
+      "should_trigger": true
+    },
+    {
+      "query": "This one settings screen looks cluttered and the rows don't line up. Can you fix it?",
+      "should_trigger": false,
+      "belongs_to": "designing-visuals"
+    },
+    {
+      "query": "Make the text on each of our onboarding screens shorter and clearer.",
+      "should_trigger": false,
+      "belongs_to": "writing-ux-copy"
+    },
+    {
+      "query": "Add slide transitions between the onboarding steps and make Back reverse them.",
+      "should_trigger": false,
+      "belongs_to": "designing-motion"
+    }
+  ]
+}

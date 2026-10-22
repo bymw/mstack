@@ -1,0 +1,91 @@
+{
+  "skill": "designing-motion",
+  "evals": [
+    {
+      "id": "designing-motion-1",
+      "skills": [
+        "designing-motion"
+      ],
+      "query": "Audit the motion in our task list web app. All of it is in this one CSS file; the comments say what triggers each rule.",
+      "files": [
+        "evals/fixtures/designing-motion-1-tasklist.css"
+      ],
+      "expected_behavior": [
+        "Structure: a one-sentence headline counting the moves and what is wrong with them, findings under High, Medium and Low each as one line (what moves and when, what is wrong, the fix), then an inventory with trigger, frequency, role and values, then any new roles to decide and a proof section naming a guard such as a lint rule against hand-typed timing",
+        "Removes the Cmd+K palette animation entirely because it is keyboard-triggered and used all day, rather than retuning its duration or curve",
+        "Removes the per-row entrance on the home list or replaces it with one short crossfade of the whole list, with no 40 px travel, no ease-in and no uncapped stagger",
+        "Fixes the dialog to start from about 0.95 to 0.97 scale with opacity instead of scale(0), with no overshoot (surfaces never bounce) on an ease-out curve, and closing by reversing its entrance about 20% faster instead of a hard cut",
+        "For the 180 ms median load, shows nothing under about 300 ms, keeps any shown loading state at least about 500 ms, and uses a placeholder in the exact shape of the rows that the content crossfades into",
+        "Stops the count-up on the 'Completed today' figure (it updates in place) and stops the sync badge pulse when nothing is pending, and replaces the width transition and 'transition: all' with transform and opacity"
+      ]
+    },
+    {
+      "id": "designing-motion-2",
+      "skills": [
+        "designing-motion"
+      ],
+      "query": "Review the motion in our notes app's editor sheet. The SwiftUI is attached. It feels bouncy and a bit cheap.",
+      "files": [
+        "evals/fixtures/designing-motion-2-NoteEditorSheet.swift"
+      ],
+      "expected_behavior": [
+        "Structure: a one-sentence headline, findings under High, Medium and Low, an inventory giving each move a role (press, present, wait and so on), and proof by recording on a device at full speed and slowed down, with a guard",
+        "Replaces the dampingFraction 0.5 and 0.4 springs with a critically damped spring (dampingFraction 1, response about 0.3 to 0.4, or .smooth) defined once as a token and cited by role, not typed inline",
+        "Makes the sheet follow the finger during the drag (update the offset in onChanged), decide dismissal by release velocity or distance, and carry the velocity into the spring so it stays interruptible",
+        "Makes dismissal leave the way it came (moving down out through the bottom, not fading) and run about 20% shorter than the entrance, on ease-out rather than easeIn",
+        "Removes the scale pop on the 'Save' label and the counting-up word count: the label changes by a plain crossfade or instant swap, the count appears in place, and the 0.4 s 'Saved' toast is shown about one second or not at all",
+        "Gives each role a Reduce Motion form (sheet travel becomes a short crossfade, press stays) read from accessibilityReduceMotion, instead of either ignoring it or removing all animation"
+      ]
+    },
+    {
+      "id": "designing-motion-3",
+      "skills": [
+        "designing-motion"
+      ],
+      "query": "In our recipe web app, pressing 'Generate meal plan' takes 2 to 8 seconds, then seven day cards appear. Design the motion for the press, the wait and the cards arriving. We have no motion tokens yet. Also, could the weekly calorie total count up when the plan lands? Feels fun.",
+      "files": [],
+      "expected_behavior": [
+        "Names a role for each move (press, wait, resolve or arrival) and writes the values as tokens taken from the defaults, using the exact ease-out curve cubic-bezier(0.23, 1, 0.32, 1), rather than inline numbers per component",
+        "Press: scales to about 0.97 on pointer-down in about 120 to 160 ms on ease-out, responds on the first frame, and releases slightly faster",
+        "Wait is the only looping move and stays honest: a status word, an indicator after about 1 s, reassurance at about 3 s and 10 s, no fake percentage",
+        "Cards arrive into placeholders of the exact same shape and crossfade in place in about 150 to 250 ms with at most a small rise (about 8 px), staggered 30 to 50 ms (seven cards, under the cap of about eight), without blocking input",
+        "Declines the count-up: the calorie total appears in place, with at most the changed digits rolling on tabular figures",
+        "Gives each role its Reduce Motion form (travel becomes a short crossfade, press stays, overshoot goes) rather than one global switch that removes everything"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    {
+      "query": "Add a transition for when the filter panel opens in our web app.",
+      "should_trigger": true
+    },
+    {
+      "query": "Animations feel inconsistent across our fitness app's screens. Can you audit the motion?",
+      "should_trigger": true
+    },
+    {
+      "query": "The loading state on our recipe feed flashes for a split second. Make it smoother.",
+      "should_trigger": false,
+      "belongs_to": "diagnosing-feel"
+    },
+    {
+      "query": "On my iPhone the gallery scroll stutters when I open it. Find out why.",
+      "should_trigger": false,
+      "belongs_to": "diagnosing-feel"
+    },
+    {
+      "query": "Pick the spacing and type sizes for the profile screen.",
+      "should_trigger": false,
+      "belongs_to": "designing-visuals"
+    },
+    {
+      "query": "Our corner radii and button heights differ from screen to screen. Find every inconsistency.",
+      "should_trigger": false,
+      "belongs_to": "auditing-consistency"
+    },
+    {
+      "query": "We're adding a loading state to the recipe feed. What should it look like while results arrive?",
+      "should_trigger": true
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "skill": "decluttering-screens",
+  "evals": [
+    {
+      "id": "decluttering-screens-1",
+      "skills": ["decluttering-screens"],
+      "query": "The Today tab in our habit tracker Streakly feels cluttered and people say it's a lot to take in. The current screen is attached as HTML, with its other states in the comment at the bottom. Can you propose a simpler version without losing anything?",
+      "files": ["evals/fixtures/decluttering-screens-1-today.html"],
+      "expected_behavior": [
+        "Opens with a one-sentence headline carrying counts (elements before and after, decisions, and that nothing was removed), and includes a Still reachable table with Capability, Before, After and Taps columns",
+        "Includes an element inventory that gives each element a job (decides, informs, acts, navigates or nothing) and marks facts shown twice, such as the 'Today' title repeating the selected tab, '4 / 6' and '67%' restated in the summary sentence, and the list description restating its heading",
+        "Replaces the uncounted 'View all' with a short preview plus a counted row (for example 'All habits · 6') and notes that the two habits not yet done were hidden behind it",
+        "Cuts the 'You just checked off...' banner as narration of what the person just watched, and reduces the four-figure summary to one figure with one line of context, moving the rest behind a row",
+        "Moves secondary facts ('Member since', the 'Gold streaker' badge, 'Daily'/'Weekdays' chips) off the surface, and turns the filled 'Undo' buttons into plain accent rows or controls so 'Add a habit' stays the one primary action",
+        "Covers the other states, not only the happy path: reminders off drawn as a state with what it is and how to start it, the empty state's 'NaN%' fixed, the load error no longer reading as 'No habits for today', and the 25-habit maximum"
+      ]
+    },
+    {
+      "id": "decluttering-screens-2",
+      "skills": ["decluttering-screens"],
+      "query": "Our Plantly 'Set a care goal' flow has five steps and feels long. One reviewer wants to collapse frequency and reminder time into a single 'Smart reminders' switch to get it to three. The flow is described in the attached file. Simplify it, and tell me if the switch idea is good.",
+      "files": ["evals/fixtures/decluttering-screens-2-goal-flow.md"],
+      "expected_behavior": [
+        "Rejects or reshapes the single 'Smart reminders' switch because it would turn changeable choices (how often, what time) into one switch that cannot be changed, losing decisions",
+        "Defaults what the system can know (the plant the flow was launched from, the frequency from the species' recommended interval) and says why the system can know each one, while keeping every value visible and changeable",
+        "Removes the preselected household member (Robin) on the share step, because a recipient is a choice the system cannot know and must start empty",
+        "Counts decisions asked before and after and shows the count does not fall except where a default took a decision with its stated reason; also reports steps and taps to the main job before and after",
+        "Makes the flow end where it was launched (the plant's detail page, with the new goal in it) instead of the Goals tab, while still offering a next step after completion",
+        "Ends with a 'For you to decide' section listing the defaults or merges that need a product call, each with a recommendation"
+      ]
+    },
+    {
+      "id": "decluttering-screens-3",
+      "skills": ["decluttering-screens"],
+      "query": "Settings > Shared lists in our grocery app Pantrybook has too much on it. All four states are in the attached HTML. Please simplify it.",
+      "files": ["evals/fixtures/decluttering-screens-3-sync-settings.html"],
+      "expected_behavior": [
+        "Redraws the off state as the full screen with the switch off, saying what shared lists are and how to start, rather than a near-empty page with a 'Learn more' link",
+        "Does not name the household 'Home' in the off state, because it only exists once the switch is turned on",
+        "Flags that moving or hiding 'Sync status' or 'Last synced' would contradict recorded decision D-14, and raises it as a question for settling-decisions rather than silently moving them",
+        "Cuts repetition such as the title repeating 'Shared lists', the description restating the feature name and the redundant 'Members' count beside the member rows, and keeps the member list behind or within a counted row with the 12-member maximum considered",
+        "Keeps every capability reachable (invite, remove a member, leave household, turn the feature on and off) and proves it in a Still reachable table with taps before and after",
+        "Treats each state (off, on but empty, populated, sync error) separately with element counts before and after for each"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    { "query": "Our recipe detail screen has way too much on it. Can you simplify it without dropping any features?", "should_trigger": true },
+    { "query": "The notes app settings page feels cluttered, there's a lot of stuff nobody reads. Make it simpler.", "should_trigger": true },
+    { "query": "Can you cut down the noise on the workout summary screen? It shows like eight numbers after every run.", "should_trigger": true },
+    { "query": "The delete button on the notes screen looks different from the one in settings. Can you check where else that happens?", "should_trigger": false, "belongs_to": "auditing-consistency" },
+    { "query": "Design the sign-up flow for our new team calendar app from scratch, from first launch to the first event.", "should_trigger": false, "belongs_to": "designing-flows" },
+    { "query": "Rewrite the error message shown when a recipe photo fails to upload so it's clearer.", "should_trigger": false, "belongs_to": "writing-ux-copy" }
+  ]
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simmer: Browse</title>
+<style>
+  :root {
+    --ground: #f4f2ee; --card: #ffffff; --ink: #1b1a17; --ink-2: #6b6760;
+    --accent: #c4552b; --radius-card: 14px; --radius-pill: 999px;
+    --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px;
+    --type-title: 600 22px/1.2 -apple-system, system-ui, sans-serif;
+    --type-body: 400 15px/1.4 -apple-system, system-ui, sans-serif;
+    --type-label: 600 13px/1.2 -apple-system, system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --ground: #141311; --card: #1f1d1a; --ink: #f3f1ec; --ink-2: #a39e95; --accent: #e07a52; }
+  }
+  body { margin: 0; background: var(--ground); color: var(--ink); font: var(--type-body); }
+  .top { padding: var(--space-4); display: flex; justify-content: space-between; align-items: center; }
+  .top h1 { font: var(--type-title); margin: 0; }
+  .search { margin: 0 var(--space-4); padding: var(--space-3); background: var(--card); border-radius: var(--radius-card); color: var(--ink-2); }
+  .tabs { display: flex; gap: var(--space-2); padding: var(--space-3) var(--space-4); overflow: hidden; white-space: nowrap; }
+  .tab { font: var(--type-label); padding: var(--space-2) var(--space-3); border-radius: var(--radius-pill); background: var(--card); max-width: 110px; overflow: hidden; text-overflow: ellipsis; }
+  .tab.on { background: var(--ink); color: var(--ground); }
+  .filter { margin-left: auto; font: var(--type-label); color: var(--accent); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); padding: 0 var(--space-4); }
+  .recipe { background: var(--card); border-radius: var(--radius-card); height: 180px; padding: var(--space-3); display: flex; align-items: flex-end; }
+</style>
+</head>
+<body>
+<!-- Simmer is a recipe app. Browse tab. Real tokens above; components: .tab (pill), .search, .recipe card. -->
+<div class="top"><h1>Browse</h1><span>Profile</span></div>
+<div class="search">Search recipes</div>
+<div class="tabs">
+  <span class="tab on">All</span>
+  <span class="tab">Quick dinners</span>
+  <span class="tab">Vegetarian favourites</span>
+  <span class="tab">Desserts</span>
+  <span class="filter">Filters (2)</span>
+</div>
+<div class="grid">
+  <div class="recipe">Lemon orzo</div>
+  <div class="recipe">Miso aubergine</div>
+  <div class="recipe">Weeknight dal</div>
+  <div class="recipe">Plum crumble</div>
+</div>
+<!--
+Measured on iPhone SE (375 pt wide):
+- "Vegetarian favourites" truncates to "Vegetarian fa..." and "Desserts" is cut off at the screen edge.
+- "Filters (2)" sits off screen to the right; people have to swipe the tab row to find it, and 2 active filters are invisible at rest.
+- In German the category names run about 30% longer.
+Fixed: the four categories and their order; the Filters sheet itself; the recipe grid.
+Decisions log D-7 (March): "Active filters stay visible at rest on Browse, never only behind a button, because people forgot they had filters on."
+-->
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pantrybook: Shared lists settings</title>
+<style>
+  body { font: 15px/1.4 -apple-system, system-ui, sans-serif; margin: 0; background: #f2f2f7; }
+  section.state { margin: 24px 0; }
+  .label { font: 600 12px system-ui; color: #888; margin: 0 16px; text-transform: uppercase; }
+  .screen { background: #fff; margin: 8px 16px; border-radius: 12px; padding: 16px; max-width: 375px; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: #666; font-size: 13px; }
+  .row { display: flex; justify-content: space-between; padding: 10px 0; border-top: 1px solid #eee; }
+  .btn { background: #2a7a5a; color: #fff; border: 0; border-radius: 8px; padding: 6px 12px; }
+</style>
+</head>
+<body>
+<!-- Pantrybook is a grocery and pantry app. Screen: Settings > Shared lists. -->
+
+<section class="state">
+  <div class="label">State: off (never turned on)</div>
+  <div class="screen">
+    <h1>Shared lists settings</h1>
+    <p class="sub">Shared lists</p>
+    <p><a href="#learn">Learn more about shared lists</a></p>
+  </div>
+</section>
+
+<section class="state">
+  <div class="label">State: on, nobody invited yet</div>
+  <div class="screen">
+    <h1>Shared lists settings</h1>
+    <p class="sub">Shared lists let you share your lists with other people.</p>
+    <div class="row"><span>Shared lists</span><span>On</span></div>
+    <div class="row"><span>Your household "Home"</span><span></span></div>
+    <div class="row"><span>Members</span><span>0</span></div>
+    <div class="row"><span>Invite someone</span><button class="btn">Invite</button></div>
+    <div class="row"><span>Lists shared</span><span>0</span></div>
+    <div class="row"><span>Last synced</span><span>Just now</span></div>
+    <div class="row"><span>Sync status</span><span>Up to date</span></div>
+  </div>
+</section>
+
+<section class="state">
+  <div class="label">State: on, 3 members, 5 shared lists</div>
+  <div class="screen">
+    <h1>Shared lists settings</h1>
+    <p class="sub">Shared lists let you share your lists with other people.</p>
+    <div class="row"><span>Shared lists</span><span>On</span></div>
+    <div class="row"><span>Your household "Home"</span><span></span></div>
+    <div class="row"><span>Members</span><span>3</span></div>
+    <div class="row"><span>Alex (you)</span><span>Owner</span></div>
+    <div class="row"><span>Jordan</span><button class="btn">Remove</button></div>
+    <div class="row"><span>Sam</span><button class="btn">Remove</button></div>
+    <div class="row"><span>Invite someone</span><button class="btn">Invite</button></div>
+    <div class="row"><span>Lists shared</span><span>5</span></div>
+    <div class="row"><span>Last synced</span><span>2 min ago</span></div>
+    <div class="row"><span>Sync status</span><span>Up to date</span></div>
+    <div class="row"><span>Leave household</span><button class="btn">Leave</button></div>
+  </div>
+</section>
+
+<section class="state">
+  <div class="label">State: sync error</div>
+  <div class="screen">
+    <h1>Shared lists settings</h1>
+    <p class="sub">Shared lists let you share your lists with other people.</p>
+    <div class="row"><span>Shared lists</span><span>On</span></div>
+    <div class="row"><span>Members</span><span>3</span></div>
+    <div class="row"><span>Lists shared</span><span>5</span></div>
+    <div class="row"><span>Last synced</span><span>Yesterday</span></div>
+    <div class="row"><span>Sync status</span><span>Error</span></div>
+  </div>
+</section>
+
+<!--
+Notes:
+- The household "Home" is created automatically the moment the switch is turned on. It does not exist while the feature is off.
+- Decisions log, entry D-14 (agreed in June): "Sync status and Last synced stay visible on the Shared lists settings screen at all times, because support relies on people reading them out."
+- Maximum: a household holds up to 12 members.
+-->
+</body>
+</html>

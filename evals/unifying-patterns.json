@@ -1,0 +1,55 @@
+{
+  "skill": "unifying-patterns",
+  "evals": [
+    {
+      "id": "unifying-patterns-1",
+      "skills": ["unifying-patterns"],
+      "query": "The sign-off page for the grocery list app came back. Build what was agreed. Here's the relevant code and the decisions export.",
+      "files": ["evals/fixtures/unifying-patterns-1-codebase.md"],
+      "expected_behavior": [
+        "Builds only the destructive row and lists icon-size (Discuss) and link-colour (Not this) under rows not built, with why",
+        "Deletes DangerButton.tsx and the tone prop from the kit Button type outright, rather than deprecating them or switching a default",
+        "Moves the hand-rolled red button in AccountScreen.tsx, found by its visual signature (bg-red-600 classes), as well as the named callers, and states the count of callers moved (3: ListSettings, ItemRowMenu, AccountScreen)",
+        "Leaves the onboarding Start over button as it is, with its D-21 reason kept beside it in the code",
+        "Uses a guard that combines the deleted type (asking for the old answer fails to compile) with a lint rule for hand-rolled red button classes, and reports it failing on the old code with an offender count that matches the caller count",
+        "Opens with a headline and a table with the columns Job, Canonical, Callers moved and Guard, and includes a decision entry written as 'X, not Y, because Z' plus the design-system button page in the same change"
+      ]
+    },
+    {
+      "id": "unifying-patterns-2",
+      "skills": ["unifying-patterns"],
+      "query": "The old green pill toggles are back on the new Watering reminders screen in the plant care app. We consolidated toggles in August. Fix it so this can't happen again.",
+      "files": ["evals/fixtures/unifying-patterns-2-codebase.md"],
+      "expected_behavior": [
+        "Names the cause: the legacy appearance was kept in the kit 'for now' instead of being deleted, and no guard was added",
+        "Deletes the legacy value of the appearance prop (or the prop itself) and the greenPill styles from the kit, so asking for the old toggle fails to compile, rather than only changing the two WateringReminders calls",
+        "Sees the guard fail on the old code by running it in a scratch worktree of origin/main (not a bare git stash) and reports the count, for example 'fails 2 times on main'",
+        "Adds any lint rule to the existing scripts/ui-rules.mjs rather than a parallel check, with a header naming the fault, its date and where it was seen, and what the rule cannot see",
+        "Updates the August decision entry and the toggle's design-system page in the same change",
+        "Opens with the pull request link (or a plain statement that the change is not yet pushed) and a headline, followed by the Job, Canonical, Callers moved, Guard table"
+      ]
+    },
+    {
+      "id": "unifying-patterns-3",
+      "skills": ["unifying-patterns"],
+      "query": "Make card corners consistent everywhere in the recipe app using the kit card radius. Design agreed it yesterday; the row is in the decisions export.",
+      "files": ["evals/fixtures/unifying-patterns-3-codebase.md"],
+      "expected_behavior": [
+        "Finds MealPlanCard's inline style borderRadius: 10 by its visual signature, not only callers by component name, and lists the card callers to move with a count",
+        "Leaves PhotoViewer square with its D-09 reason kept beside it, and if the guard needs an escape, marks that line with a visible marker naming the reason",
+        "Shows the guard passing on rounded elements that are not cards (Avatar and FilterChip rounded-full) as well as failing on the old card radii",
+        "Reports that moving MealPlanCard to the kit Card would change its padding from 12 to 16 inside a fixed 88 pt height, and asks or keeps the padding rather than shipping a layout shift nobody agreed",
+        "Keeps each caller's content and data unchanged so only the corner radius changes",
+        "Ends with the headline, the Job, Canonical, Callers moved, Guard table, and a 'Then' section listing what was deleted, exceptions kept with reasons and what was verified (iPhone, iPad and web)"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    { "query": "The design lead agreed one empty-state style for the notes app. Move every screen to it and delete the two old empty-state components.", "should_trigger": true },
+    { "query": "We fixed the mismatched sheet headers in the team calendar last month and now a new screen has the old header again. Make it stick this time.", "should_trigger": true },
+    { "query": "Make the segmented control consistent everywhere in the fitness tracker and get rid of the old pill-style variant.", "should_trigger": true },
+    { "query": "The chips on the Browse and Search screens of the recipe app look slightly different. Can you check where else this happens and what the one right answer should be?", "should_trigger": false, "belongs_to": "auditing-consistency" },
+    { "query": "Before anyone changes code, show the design lead the old and new chip side by side so she can approve it.", "should_trigger": false, "belongs_to": "getting-sign-off" },
+    { "query": "The plant care app's plant detail screen has far too much on it. Simplify it without losing anything.", "should_trigger": false, "belongs_to": "decluttering-screens" }
+  ]
+}

@@ -1,0 +1,295 @@
+<!-- getting-sign-off review page. Copy this file, fill PAIRS, GROUPS, the header and the footer, publish with capabilities {"db":{}} and the images under img/. Every {{...}} is a placeholder to replace. -->
+<title>{{Page name, 2 to 4 words}}</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: one decision per row, the text beside two screens at one size, Today then Proposed. */
+:root {
+  --bg: #f4f4f1;
+  --panel: #ffffff;
+  --ink: #17191a;
+  --ink-2: #4a4f52;
+  --ink-3: #6b7175;
+  --line: #e2e2dc;
+  --accent: #1f5c46;
+  --accent-soft: #e2f0e8;
+  --discuss: #1d4f91;
+  --discuss-soft: #e3ecf8;
+  --no: #6a2d2d;
+  --no-soft: #f6e6e4;
+  --ring: #e5484d;
+  --screen-bg: #e9e9e4;
+  --font-body: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131515; --panel: #1b1e1e; --ink: #eef0ee; --ink-2: #c3c8c6; --ink-3: #9aa19e; --line: #2c3130;
+    --accent: #7fd1ad; --accent-soft: #1d3a2f; --discuss: #9cc0f2; --discuss-soft: #1c2a3d; --no: #f0b4ad; --no-soft: #3a2422;
+    --ring: #ff6b6f; --screen-bg: #222626; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131515; --panel: #1b1e1e; --ink: #eef0ee; --ink-2: #c3c8c6; --ink-3: #9aa19e; --line: #2c3130;
+  --accent: #7fd1ad; --accent-soft: #1d3a2f; --discuss: #9cc0f2; --discuss-soft: #1c2a3d; --no: #f0b4ad; --no-soft: #3a2422;
+  --ring: #ff6b6f; --screen-bg: #222626; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 1240px; margin: 0 auto; padding-block: 40px 80px; }
+h1 { font-size: clamp(30px, 4vw, 44px); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 14px; text-wrap: balance; font-weight: 700; }
+.lede { font-size: 18px; color: var(--ink-2); max-width: 70ch; margin: 0; }
+.how { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 18px; font-size: 15px; color: var(--ink-2); }
+.how b { color: var(--ink); font-weight: 600; }
+.bar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; margin-top: 28px;
+  background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line); padding-block: 12px; display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center;
+}
+.tally { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill { font-size: 13px; font-weight: 600; padding: 4px 11px; border-radius: 999px; background: var(--panel); border: 1px solid var(--line); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.pill.agree { color: var(--accent); }
+.pill.no { color: var(--no); }
+.pill.discuss { color: var(--discuss); }
+.store { font-size: 13px; color: var(--ink-3); margin-left: auto; }
+.group { margin-top: 56px; }
+.group > h2 { font-size: 24px; letter-spacing: -0.01em; margin: 0 0 4px; }
+.group > p { margin: 0; color: var(--ink-3); font-size: 15px; }
+.row {
+  display: grid; grid-template-columns: minmax(0, 1fr) 300px 300px; gap: 28px; align-items: start;
+  padding-block: 32px; border-bottom: 1px solid var(--line);
+}
+.info { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.num { font-family: var(--font-mono); font-size: 13px; color: var(--ink-3); }
+.info h3 { font-size: 22px; line-height: 1.25; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+.cmp { display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; font-size: 15px; color: var(--ink-2); }
+.cmp dt { font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; padding-top: 3px; color: var(--ink-3); }
+.cmp dd { margin: 0; }
+.also { font-size: 14px; color: var(--ink-3); }
+.flag { font-size: 14px; color: var(--discuss); background: var(--discuss-soft); border-radius: 10px; padding: 8px 12px; }
+.choices { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.choices button {
+  font: inherit; font-size: 15px; font-weight: 600; min-height: 44px; padding: 0 18px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--panel); color: var(--ink); cursor: pointer;
+}
+.choices button:focus-visible, textarea:focus-visible { outline: 2px solid var(--discuss); outline-offset: 2px; }
+.choices button[aria-pressed="true"].agree { background: var(--accent); border-color: var(--accent); color: var(--panel); }
+.choices button[aria-pressed="true"].no { background: var(--no-soft); border-color: var(--no); color: var(--no); }
+.choices button[aria-pressed="true"].discuss { background: var(--discuss-soft); border-color: var(--discuss); color: var(--discuss); }
+textarea {
+  font: inherit; font-size: 15px; width: 100%; min-height: 64px; resize: vertical; padding: 10px 12px; border-radius: 12px;
+  border: 1px solid var(--line); background: var(--panel); color: var(--ink);
+}
+.saved { font-size: 13px; color: var(--ink-3); min-height: 18px; }
+figure { container-type: inline-size; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.cap { display: flex; align-items: baseline; gap: 8px; font-size: 13px; }
+.cap .tag { font-family: var(--font-mono); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+.today .tag { background: var(--panel); color: var(--ink-2); border: 1px solid var(--line); }
+.prop .tag { background: var(--accent-soft); color: var(--accent); }
+.cap .sub { color: var(--ink-3); }
+.screen { position: relative; width: 100%; aspect-ratio: var(--screen-ratio); border-radius: calc(var(--screen-radius-ratio, 0.1) * 100cqw); overflow: hidden; background: var(--screen-bg); }
+.screen img { display: block; width: 100%; height: 100%; }
+.ring { position: absolute; border: 3px solid var(--ring); pointer-events: none; box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 20%, transparent); }
+.foot { margin-top: 64px; display: grid; gap: 14px; max-width: 78ch; color: var(--ink-2); font-size: 15px; }
+.foot h2 { font-size: 20px; margin: 0; color: var(--ink); }
+.foot a { color: var(--discuss); }
+@media (max-width: 1080px) {
+  .row { grid-template-columns: 1fr 1fr; }
+  .info { grid-column: 1 / -1; }
+}
+@media (max-width: 520px) {
+  .row { gap: 16px 12px; }
+  .cap { flex-direction: column; gap: 4px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .choices button { transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease; }
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>{{Page name}}</h1>
+    <p class="lede">{{How many changes, where they came from, and how to read a row: today on the left, proposed on the right, the difference ringed. Say whether anything has been built.}}</p>
+    <div class="how">
+      <span><b>Agree</b> and I build it.</span>
+      <span><b>Not this</b> and it stays as it is.</span>
+      <span><b>Discuss</b> and I bring it to our next conversation.</span>
+      <span>Notes are optional. Answers save as you go.</span>
+    </div>
+  </header>
+
+  <div class="bar" role="status" aria-live="polite">
+    <div class="tally" id="tally"></div>
+    <span class="store" id="store">Connecting…</span>
+  </div>
+
+  <main id="list"></main>
+
+  <section class="foot">
+    <h2>Not on this page</h2>
+    <p>{{Findings with no single screen to pair, and open questions, in a short list. Link the evidence if it lives elsewhere.}}</p>
+    <p>{{How the screens were made: e.g. the left side is captured from the running product at its true size; the right side is the same screen with the change applied in the page, using the product's own components. Where the proposal is an existing screen, the right side says so.}}</p>
+  </section>
+</div>
+
+<script>
+/* One object per change. Rings are [x, y, w, h] in screen points on a SCREEN_W x SCREEN_H capture.
+   Set SCREEN_W/SCREEN_H to the captured frame in points: 375x812 for a small iPhone, 1180x820 for an iPad landscape window,
+   the window size for a Mac app, the viewport for the web. SCREEN_RADIUS is the corner radius in points (about 40 for an iPhone, 18 for an iPad, 10 for a Mac window, 0 for a browser viewport).
+   g: group heading · id: short stable id (also the store's doc id and the image names img/b-<id>.jpg today, img/a-<id>.jpg proposed)
+   title: the change as a statement · today / prop: one sentence each · also: where else it applies (optional)
+   flag: a question the reviewer must answer, with your recommendation (optional) · sub: caption when the proposed side is an existing screen (optional)
+   b / a: rings on today / proposed · aImg: reuse another row's proposed image (optional) */
+const SCREEN_W = 375, SCREEN_H = 812, SCREEN_RADIUS = 40;
+const PAIRS = [
+  { g: "{{Group}}", id: "example", title: "{{The change, stated plainly}}",
+    today: "{{What the screen does today, one sentence}}",
+    prop: "{{What changes, one sentence}}",
+    also: "{{Where else this applies}}",
+    b: [[16,56,40,40]], a: [[16,56,40,40]] },
+];
+
+const GROUPS = {
+  "{{Group}}": "{{One line on what the group covers}}",
+};
+
+const state = {};
+let db = null;
+
+function el(tag, attrs, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (k === "class") n.className = v; else if (k === "text") n.textContent = v; else n.setAttribute(k, v);
+  }
+  for (const c of kids) if (c) n.append(c);
+  return n;
+}
+
+function screen(img, rings, label) {
+  const box = el("div", { class: "screen" }, el("img", { src: "img/" + img + ".jpg", alt: label, loading: "lazy" }));
+  for (const [x, y, w, h] of rings) {
+    const r = el("div", { class: "ring" });
+    const round = w < 70 && h < 70;
+    r.style.left = `calc(${(x / SCREEN_W) * 100}% - 5px)`;
+    r.style.top = `calc(${(y / SCREEN_H) * 100}% - 5px)`;
+    r.style.width = `calc(${(w / SCREEN_W) * 100}% + 10px)`;
+    r.style.height = `calc(${(h / SCREEN_H) * 100}% + 10px)`;
+    r.style.borderRadius = round ? "999px" : "12px";
+    box.append(r);
+  }
+  return box;
+}
+
+function render() {
+  const list = document.getElementById("list");
+  list.textContent = "";
+  let n = 0, group = null, sec = null;
+  for (const p of PAIRS) {
+    n++;
+    if (p.g !== group) {
+      group = p.g;
+      sec = el("section", { class: "group" }, el("h2", { text: group }), el("p", { text: GROUPS[group] }));
+      list.append(sec);
+    }
+    const row = el("article", { class: "row", id: p.id, "aria-labelledby": "t-" + p.id });
+    const cmp = el("dl", { class: "cmp" },
+      el("dt", { text: "Today" }), el("dd", { text: p.today }),
+      el("dt", { text: "Proposed" }), el("dd", { text: p.prop }));
+    const info = el("div", { class: "info" },
+      el("span", { class: "num", text: String(n).padStart(2, "0") + " of " + PAIRS.length }),
+      el("h3", { id: "t-" + p.id, text: p.title }), cmp,
+      p.also ? el("div", { class: "also", text: p.also }) : null,
+      p.flag ? el("div", { class: "flag", text: p.flag }) : null);
+    const choices = el("div", { class: "choices", role: "group", "aria-label": "Your decision on " + p.title });
+    const saved = el("div", { class: "saved", id: "s-" + p.id });
+    const note = el("textarea", { id: "n-" + p.id, placeholder: "A note, if you want one", "aria-label": "Note on " + p.title });
+    note.hidden = true;
+    for (const [key, label] of [["agree", "Agree"], ["no", "Not this"], ["discuss", "Discuss"]]) {
+      const b = el("button", { class: key, type: "button", "aria-pressed": "false", "data-k": key, text: label });
+      b.addEventListener("click", () => choose(p.id, key));
+      choices.append(b);
+    }
+    const addNote = el("button", { type: "button", class: "", text: "Add a note" });
+    addNote.addEventListener("click", () => { note.hidden = false; addNote.hidden = true; note.focus(); });
+    choices.append(addNote);
+    note.addEventListener("change", () => save(p.id, { note: note.value }));
+    info.append(choices, note, saved);
+    const today = el("figure", { class: "today" },
+      el("figcaption", { class: "cap" }, el("span", { class: "tag", text: "Today" })),
+      screen("b-" + p.id, p.b, "Today: " + p.title));
+    const capP = el("figcaption", { class: "cap" }, el("span", { class: "tag", text: "Proposed" }), p.sub ? el("span", { class: "sub", text: p.sub }) : null);
+    const prop = el("figure", { class: "prop" }, capP, screen(p.aImg || ("a-" + p.id), p.a, "Proposed: " + p.title));
+    row.append(info, today, prop);
+    sec.append(row);
+    paint(p.id);
+  }
+  tally();
+}
+
+function paint(id) {
+  const row = document.getElementById(id);
+  if (!row) return;
+  const s = state[id] || {};
+  for (const b of row.querySelectorAll(".choices button[data-k]")) b.setAttribute("aria-pressed", String(b.dataset.k === s.choice));
+  const note = document.getElementById("n-" + id);
+  if (s.note && note && document.activeElement !== note) { note.value = s.note; note.hidden = false; const add = row.querySelector(".choices button:not([data-k])"); if (add) add.hidden = true; }
+  const saved = document.getElementById("s-" + id);
+  if (saved) saved.textContent = s.choice ? (s.pending ? "Saving…" : s.local ? "Chosen on this device only" : "Saved") : "";
+}
+
+function tally() {
+  const c = { agree: 0, no: 0, discuss: 0 };
+  for (const p of PAIRS) { const k = state[p.id]?.choice; if (k) c[k]++; }
+  const open = PAIRS.length - c.agree - c.no - c.discuss;
+  const t = document.getElementById("tally");
+  t.textContent = "";
+  t.append(el("span", { class: "pill agree", text: c.agree + " agreed" }), el("span", { class: "pill no", text: c.no + " not this" }),
+    el("span", { class: "pill discuss", text: c.discuss + " to discuss" }), el("span", { class: "pill", text: open + " open" }));
+}
+
+function choose(id, key) {
+  const cur = state[id]?.choice;
+  save(id, { choice: cur === key ? null : key });
+}
+
+async function save(id, patch) {
+  state[id] = { ...(state[id] || {}), ...patch, pending: !!db, local: !db };
+  paint(id); tally();
+  if (!db) return;
+  try {
+    const body = { at: new Date().toISOString() };
+    if ("choice" in patch) body.choice = patch.choice;
+    if ("note" in patch) body.note = patch.note;
+    await db.doc("decisions/" + id).set({ ...(stripLocal(state[id])), ...body });
+    state[id].pending = false; paint(id);
+  } catch (e) {
+    state[id].pending = false; state[id].local = true; paint(id);
+    document.getElementById("store").textContent = "Could not save just now; your choice stays on this screen.";
+  }
+}
+
+function stripLocal(s) { const { pending, local, ...rest } = s || {}; return rest; }
+
+document.documentElement.style.setProperty("--screen-ratio", SCREEN_W + " / " + SCREEN_H);
+document.documentElement.style.setProperty("--screen-radius-ratio", String(SCREEN_RADIUS / SCREEN_W));
+render();
+
+(async () => {
+  const store = document.getElementById("store");
+  try {
+    db = window.claude?.use ? await window.claude.use("db") : null;
+  } catch { db = null; }
+  if (!db) { store.textContent = "Answers stay on this device here; open the page in Claude to save them."; return; }
+  store.textContent = "Answers save for the team";
+  db.collection("decisions").onSnapshot((snap) => {
+    for (const d of snap.docs) {
+      const v = d.data() || {};
+      state[d.id] = { choice: v.choice || null, note: v.note || "", pending: false, local: false };
+      paint(d.id);
+    }
+    tally();
+  }, () => { store.textContent = "Saved answers could not load; new ones still save."; });
+})();
+</script>

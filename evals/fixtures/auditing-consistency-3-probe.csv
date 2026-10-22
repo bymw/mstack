@@ -1,0 +1,20 @@
+flow,step,device,close_glyph,close_side,back_glyph_shown,primary_action_position,title_text
+New event,1,iPhone,x,trailing,no,top trailing (Save),New event
+New event,2,iPhone,x,trailing,no,top trailing (Save),Invite people
+New event,1,iPad,x,trailing,no,top trailing (Save),New event
+New event,1,web,x,trailing,no,top trailing (Save),New event
+Edit event,1,iPhone,x,trailing,no,top trailing (Done),Edit event
+Edit event,1,iPad,x,trailing,no,top trailing (Done),Edit event
+Edit event,1,web,x,leading,no,top trailing (Done),Edit event
+Create team,1,iPhone,x,leading,no,bottom full width (Continue),Name your team
+Create team,2,iPhone,arrow,leading,yes,bottom full width (Continue),Add members
+Create team,3,iPhone,arrow,leading,yes,bottom full width (Create),Pick a colour
+Create team,1,iPad,x,leading,no,bottom full width (Continue),Name your team
+Create team,1,web,x,leading,no,bottom full width (Continue),Name your team
+Book room,1,iPhone,x,trailing,no,top trailing (Next),Book a room
+Book room,2,iPhone,arrow+x,leading+trailing,yes,top trailing (Book),Choose a time
+Book room,1,web,x,trailing,no,top trailing (Next),Book a room
+Scan invite,1,iPhone,x,trailing,no,none,Scan invite
+Agenda tab,-,iPhone,-,-,-,-,Upcoming
+Agenda tab,-,web,-,-,-,-,Scheduled
+Home widget,-,iPad,-,-,-,-,Upcoming events

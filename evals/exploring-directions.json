@@ -1,0 +1,88 @@
+{
+  "skill": "exploring-directions",
+  "evals": [
+    {
+      "id": "exploring-directions-1",
+      "skills": [
+        "exploring-directions"
+      ],
+      "query": "On small phones the category tabs on our recipe app's Browse screen truncate and the Filters button ends up off screen. I don't think there's one obvious fix. Can you show me a few concepts to compare? The screen, its tokens and our notes are in the attached HTML.",
+      "files": [
+        "evals/fixtures/exploring-directions-1-browse.html"
+      ],
+      "expected_behavior": [
+        "Frames the problem before building, quoting the measured faults (truncation and Filters off screen at 375 pt) and the fixed constraints (the four categories, their order, the Filters sheet, the grid)",
+        "Shows today as the first panel at the same size, state and theme as the directions, followed by two to four directions, each with a letter and a named idea (for example 'B · Category menu') and the axis it sits on",
+        "Gives each direction one trade-off stated from the person's side, and marks exactly one as recommended with a one-sentence reason",
+        "Any direction that hides active filters behind a button names decision D-7 as the one it would overrule, or is dropped",
+        "Builds each direction from the product's own tokens and components (the .tab pill, var(--space-*), var(--type-label)) rather than new styles, and checks it in the hardest context: 375 pt, dark theme, and German labels about 30% longer",
+        "Stops at the choice and writes no product code: it ends with the canvas and a line in the form 'Today plus A to C. I recommend ..., because ...', with a pick to become getting-sign-off rows"
+      ]
+    },
+    {
+      "id": "exploring-directions-2",
+      "skills": [
+        "exploring-directions"
+      ],
+      "query": "In Huddle, our team calendar, people keep hitting Add when they mean Today in the week view toolbar. Should Add sit leading or trailing? Put the options side by side on a page the team can vote on. Toolbar attached.",
+      "files": [
+        "evals/fixtures/exploring-directions-2-toolbar.html"
+      ],
+      "expected_behavior": [
+        "Treats it as a binary question and shows exactly two directions (leading and trailing) plus today, rather than padding to three or four with tints",
+        "Includes the best existing answer in the product (trailing, as on Tasks and Notes) as one of the directions and says so",
+        "Shows the hardest contexts the choice depends on: the iPhone at its smallest width as well as the 1180 pt iPad bar and a wide web window",
+        "Builds the vote page with one answer button per direction plus Keep today and Discuss, storing answers in the collection 'decisions' with the problem id as the document id, 'choice' as the letter, 'today' or 'discuss', plus 'note', published with capabilities {\"db\": {}}",
+        "Names exactly one recommendation with its reason and keeps 'Keep today' as a valid answer",
+        "Each direction carries its letter, a name, one line for the idea and one line for the trade-off"
+      ]
+    },
+    {
+      "id": "exploring-directions-3",
+      "skills": [
+        "exploring-directions"
+      ],
+      "query": "The team answered on the Simmer directions canvas. I exported the store, it's attached. What happens next? Go ahead and do it.",
+      "files": [
+        "evals/fixtures/exploring-directions-3-decisions-export.json"
+      ],
+      "expected_behavior": [
+        "Quotes every note from the store, not only the choices",
+        "Treats 'B, but with A's two-line labels on iPad' as a hybrid, a new direction to capture and confirm, not as a straight pick of B to build",
+        "Sends the Discuss answer on shopping-handoff to settling-decisions instead of choosing for the team",
+        "Turns the clear pick (recipe-save A) into getting-sign-off rows, one per screen it changes, and carries the light-photo concern into the check for that row",
+        "Does not write or edit product code from the canvas",
+        "Presents a table with the columns Problem, Pick, Note and Next step, one row per problem"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    {
+      "query": "Give me three different concepts for the empty state of our notes app so we can compare them.",
+      "should_trigger": true
+    },
+    {
+      "query": "Where should the timer controls go in our fitness tracker? There are a few reasonable answers, show me them side by side.",
+      "should_trigger": true
+    },
+    {
+      "query": "I want options for how the reading app's progress bar could work, real UI, with your pick.",
+      "should_trigger": true
+    },
+    {
+      "query": "Change the card padding on the recipe list from 12 to 16 and make me a before-and-after page to approve.",
+      "should_trigger": false,
+      "belongs_to": "getting-sign-off"
+    },
+    {
+      "query": "Which of these five problems in our team calendar should we work on next quarter?",
+      "should_trigger": false,
+      "belongs_to": "sequencing-bets"
+    },
+    {
+      "query": "The habit tracker home screen has too much on it. Simplify it without removing anything.",
+      "should_trigger": false,
+      "belongs_to": "decluttering-screens"
+    }
+  ]
+}

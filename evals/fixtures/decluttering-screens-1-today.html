@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Streakly: Today tab</title>
+<style>
+  body { font: 15px/1.4 -apple-system, system-ui, sans-serif; margin: 0; background: #f2f2f7; color: #111; }
+  header { padding: 16px; background: #fff; }
+  h1 { font-size: 28px; margin: 0; }
+  .sub { color: #666; font-size: 13px; }
+  .card { background: #fff; margin: 12px 16px; border-radius: 12px; padding: 14px; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .stat b { display: block; font-size: 20px; }
+  .banner { background: #e6f4ea; color: #1e6b34; margin: 12px 16px; padding: 10px 14px; border-radius: 10px; }
+  .row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-top: 1px solid #eee; }
+  .row:first-child { border-top: 0; }
+  .chip { font-size: 11px; background: #eef; padding: 2px 6px; border-radius: 6px; margin-left: 6px; }
+  .btn { background: #3a5bd9; color: #fff; border: 0; border-radius: 8px; padding: 6px 12px; }
+  .primary { display: block; width: calc(100% - 32px); margin: 12px 16px; padding: 14px; background: #3a5bd9; color: #fff; border: 0; border-radius: 12px; font-size: 16px; }
+  .link { color: #3a5bd9; }
+  nav { position: fixed; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-around; background: #fff; padding: 10px 0; border-top: 1px solid #ddd; }
+  nav .on { color: #3a5bd9; font-weight: 600; }
+</style>
+</head>
+<body>
+<!-- State shown: established person, 6 habits, 4 done today. -->
+<header>
+  <h1>Today</h1>
+  <div class="sub">Your habits for today, Thursday 22 October</div>
+  <div class="sub">Member since March 2024 <span class="chip">Gold streaker</span></div>
+</header>
+
+<div class="banner">You just checked off "Drink water". Nice work!</div>
+
+<section class="card">
+  <div class="stats">
+    <div class="stat"><b>4 / 6</b>Done today</div>
+    <div class="stat"><b>67%</b>Completion today</div>
+    <div class="stat"><b>12</b>Day streak</div>
+    <div class="stat"><b>81%</b>30-day average</div>
+  </div>
+  <p class="sub">You have completed 4 of your 6 habits today, which is 67%.</p>
+</section>
+
+<section class="card">
+  <h2 style="font-size:17px;margin:0 0 6px">Today's habits</h2>
+  <p class="sub">These are the habits scheduled for today.</p>
+  <div class="row"><span>Drink water <span class="chip">Done</span><span class="chip">Daily</span></span><button class="btn">Undo</button></div>
+  <div class="row"><span>Stretch 10 min <span class="chip">Done</span><span class="chip">Daily</span></span><button class="btn">Undo</button></div>
+  <div class="row"><span>Read 20 pages <span class="chip">Done</span><span class="chip">Weekdays</span></span><button class="btn">Undo</button></div>
+  <div class="row"><span>Walk 8,000 steps <span class="chip">Done</span><span class="chip">Daily</span></span><button class="btn">Undo</button></div>
+  <a class="link" href="#all">View all</a>
+  <!-- Hidden behind View all: "Journal" and "No screens after 22:00", both not done. -->
+</section>
+
+<section class="card">
+  <h2 style="font-size:17px;margin:0 0 6px">Reminders</h2>
+  <p class="sub">Reminders help you remember your habits.</p>
+  <div class="row"><span>Reminders are on</span><button class="btn">Edit reminders</button></div>
+</section>
+
+<button class="primary">Add a habit</button>
+
+<nav><span class="on">Today</span><span>Habits</span><span>Insights</span><span>Profile</span></nav>
+
+<!--
+Other states of this screen:
+  Off (reminders never turned on): the Reminders card reads "Reminders are off" and nothing else.
+  Empty (no habits yet): the page shows only the header, the stats card with "0 / 0", "NaN%", and the Add a habit button.
+  Error (habits failed to load): the list card reads "No habits for today."
+  Maximum (25 habits): the list shows the first 4 and View all.
+Capabilities on this screen: check off or undo a habit; open the full list; edit reminders; add a habit; open a habit (tap its name).
+-->
+</body>
+</html>

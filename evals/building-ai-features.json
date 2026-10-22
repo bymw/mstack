@@ -1,0 +1,55 @@
+{
+  "skill": "building-ai-features",
+  "evals": [
+    {
+      "id": "building-ai-features-1",
+      "skills": ["building-ai-features"],
+      "query": "Review the 'Make it shorter' action in our notes app. It's with testers now; spec and a tester's sample are attached.",
+      "files": ["evals/fixtures/building-ai-features-1-shorten-spec.md"],
+      "expected_behavior": [
+        "Structure: a one-sentence headline, findings under High, Medium and Low, an Action | Promise | Result | Decision table, and a trust check with one line each on heard/inferred/planned/did, original kept, confirmations and what leaves the device",
+        "Flags the tester sample as dropping facts (9:30, the spare trowel, labelled envelopes, parking behind the library), so the action breaks its promise, and sets the decision to Hide until every fact is kept",
+        "Flags 'Your notes never leave your device' as false because the note is sent to the model provider, and replaces it with exactly what leaves and where it goes",
+        "Requires keeping the original and the current version, showing the change rather than silently replacing the text, and an Undo that restores the original",
+        "Moves the model call off the client: no API key in the app bundle, calls through the product's server with per-person limits and abuse protection, tester builds included",
+        "Requires an exam before shipping: pass marks written before results, a held-out set of real and adversarial notes, a blind comparison judged by the owner and a dated decision, noting the demo is not evidence; also flags the 'This already reads well' dead end and the sparkle gradient"
+      ]
+    },
+    {
+      "id": "building-ai-features-2",
+      "skills": ["building-ai-features"],
+      "query": "We're adding an assistant to our team calendar app that schedules meetings from a typed request, like 'find 30 minutes with the design group next week'. How should it behave?",
+      "files": [],
+      "expected_behavior": [
+        "Structure: a one-sentence headline, the loop (input, first-frame signal, streaming, result, accept, regenerate, undo, back to the original), every state, then a trust check with one line each",
+        "Shows heard, inferred, planned and did separately: the typed request, what it understood (which group, which dates, how long), the proposed slots, and what it has actually done",
+        "Asks a 'Did you mean…?' question when the request is ambiguous (for example two groups named design, or which week) instead of guessing",
+        "Sends no invite to anyone without an explicit yes; the proposal stays a draft until confirmed, and other changes are undoable instead of confirmed",
+        "Designs first use (what calendar data leaves the device and where it goes, with access scoped and revocable) and the failed, offline, no-free-slot and access-declined states",
+        "Starts from the workflow: deterministic slot finding where a rule is enough, the model only where it does better (such as reading the request), and drafts or suggestions first, with autonomy widened only on evidence"
+      ]
+    },
+    {
+      "id": "building-ai-features-3",
+      "skills": ["building-ai-features"],
+      "query": "Here are five sample outputs from the episode summary feature in our podcast app. The team wants to ship Friday. Write the evaluation plan and tell me whether we can ship.",
+      "files": ["evals/fixtures/building-ai-features-3-summaries.md"],
+      "expected_behavior": [
+        "Structure: a one-sentence headline with the result and decision, an Action | Promise | Result | Decision table, then the pass marks and test set after the main points",
+        "Writes pass marks before any new results are looked at, as criteria a human can judge (facts kept, nothing invented, clearly shorter than the transcript, label honoured)",
+        "Flags sample B (nearly as long as the transcript) as weaker than its label and sample C (the guest's advice reversed) as an invented fact, both failures rather than 'fine'",
+        "The test set is held out and includes real plus adversarial cases (long episodes, mixed languages as in D, names and numbers, ambiguous content, content that should be refused), with a blind old-versus-new comparison judged by the owner and every correction becoming a new test case",
+        "Flags the identical result on pressing again (E) and the 9 s blank spinner: pressing again must give a fresh result, and a signal must appear within about 100 ms with the summary streamed as stable text",
+        "Decides Hide, not Friday, unless the owner records 'Ship below the bar, because…' as an explicit written decision, and records the decision with a date"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    { "query": "Is our AI rewrite feature in the notes app ready to ship?", "should_trigger": true },
+    { "query": "Which model should we use for transcribing voice memos in our journaling app?", "should_trigger": true },
+    { "query": "Design a 'Make friendlier' rewrite action for comments in our task app.", "should_trigger": true },
+    { "query": "The AI side panel looks cluttered. Fix its spacing and hierarchy.", "should_trigger": false, "belongs_to": "designing-visuals" },
+    { "query": "Write the button label and the one-line description for our new Summarise action.", "should_trigger": false, "belongs_to": "writing-ux-copy" },
+    { "query": "Add a calm looping animation while the assistant is thinking.", "should_trigger": false, "belongs_to": "designing-motion" }
+  ]
+}

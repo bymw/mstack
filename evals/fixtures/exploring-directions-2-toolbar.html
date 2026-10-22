@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Huddle: Week view toolbar</title>
+<style>
+  :root { --bar: #ffffff; --ink: #15171a; --ink-2: #6a6f76; --accent: #2f6fdf; --hit: 44px; --space-4: 16px; }
+  body { margin: 0; font: 15px/1.4 -apple-system, system-ui, sans-serif; background: #f3f4f6; color: var(--ink); }
+  .bar { display: flex; align-items: center; height: 52px; padding: 0 var(--space-4); background: var(--bar); border-bottom: 1px solid #e3e5e8; }
+  .bar .title { flex: 1; text-align: center; font-weight: 600; }
+  .icon { width: var(--hit); height: var(--hit); display: grid; place-items: center; color: var(--accent); }
+  .week { padding: var(--space-4); }
+</style>
+</head>
+<body>
+<!-- Huddle is a team calendar app (iPhone, iPad, web). Week view. -->
+<div class="bar">
+  <span class="icon" title="Add event">+</span>
+  <span class="icon" title="Today">Today</span>
+  <span class="title">Week 43</span>
+  <span class="icon" title="Search">Search</span>
+  <span class="icon" title="Settings">Gear</span>
+</div>
+<div class="week">Mon to Sun grid of events here.</div>
+<!--
+Today: "Add event" sits leading, beside "Today". Support notes say people tap Add when they mean Today (3 of the last 20 tickets).
+On iPad the bar is 1180 pt wide; on the web it can be 1600 px wide.
+Every other screen in Huddle with an add action (Tasks, Notes) puts it trailing.
+-->
+</body>
+</html>

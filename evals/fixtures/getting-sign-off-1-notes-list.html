@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- Notes app, "All notes" screen, iPhone 375x812, persona: typical (14 notes, 2 pinned). Served by the dev server at http://localhost:5173/notes?persona=typical -->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  :root { --bg: #fff; --text: #1c1c1e; --muted: #8e8e93; --accent: #0a7aff; --row-h-pinned: 56px; --row-h: 64px; --gap: 16px; --font: -apple-system, system-ui, sans-serif; }
+  body { margin: 0; font-family: var(--font); background: #e5e5ea; }
+  .screen { width: 375px; height: 812px; background: var(--bg); position: relative; overflow: hidden; }
+  .nav { height: 96px; display: flex; align-items: flex-end; justify-content: space-between; padding: 0 var(--gap) 8px; }
+  .nav h1 { font-size: 34px; margin: 0; }
+  .icon-btn { width: 44px; height: 44px; border: 0; background: none; color: var(--accent); font-size: 20px; }
+  .section { font-size: 13px; color: var(--muted); text-transform: uppercase; padding: 16px var(--gap) 6px; }
+  .row { display: flex; flex-direction: column; justify-content: center; padding: 0 var(--gap); border-bottom: 1px solid #e5e5ea; }
+  .row.pinned { height: var(--row-h-pinned); }
+  .row.other { height: var(--row-h); }
+  .row .t { font-size: 17px; }
+  .row .s { font-size: 15px; color: var(--muted); }
+  .toolbar { position: absolute; bottom: 0; left: 0; right: 0; height: 83px; display: flex; justify-content: space-between; padding: 8px var(--gap); border-top: 1px solid #e5e5ea; }
+  .toolbar .danger { color: #ff3b30; background: none; border: 0; font-size: 17px; }
+  .toolbar .compose { color: var(--accent); background: none; border: 0; font-size: 22px; }
+</style>
+</head>
+<body>
+<div class="screen" data-screen="notes">
+  <header class="nav">
+    <h1>Notes</h1>
+    <button class="icon-btn" aria-label="Search">&#9906;</button>
+  </header>
+  <div class="section">Pinned</div>
+  <div class="row pinned"><span class="t">Groceries</span><span class="s">Oat milk, lemons, rice</span></div>
+  <div class="row pinned"><span class="t">Trip packing</span><span class="s">Charger, boots, map</span></div>
+  <div class="section">Notes</div>
+  <div class="row other"><span class="t">Book club picks</span><span class="s">Three titles for spring</span></div>
+  <div class="row other"><span class="t">Garden plan</span><span class="s">Tomatoes by the fence</span></div>
+  <div class="row other"><span class="t">Meeting notes</span><span class="s">Move standup to 10:00</span></div>
+  <footer class="toolbar">
+    <button class="danger">Empty Trash</button>
+    <button class="compose" aria-label="New note">&#9998;</button>
+  </footer>
+</div>
+</body>
+</html>

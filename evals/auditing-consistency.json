@@ -1,0 +1,64 @@
+{
+  "skill": "auditing-consistency",
+  "evals": [
+    {
+      "id": "auditing-consistency-1",
+      "skills": ["auditing-consistency"],
+      "query": "In our notes app Inkwell, the delete-note confirmation looks totally different from the archive one. Can you check where else this happens and what we should standardise on? The components I know about and our design notes are attached. Don't change any code yet.",
+      "files": [
+        "evals/fixtures/auditing-consistency-1-DeleteNoteDialog.tsx",
+        "evals/fixtures/auditing-consistency-1-ArchiveSheet.tsx",
+        "evals/fixtures/auditing-consistency-1-EmptyTrash.tsx",
+        "evals/fixtures/auditing-consistency-1-RemoveTag.tsx",
+        "evals/fixtures/auditing-consistency-1-notes.md"
+      ],
+      "expected_behavior": [
+        "Names the job ('confirm a destructive choice') rather than a component, and treats Dialog, ConfirmSheet and the hand-rolled RemoveTag div as answers to that one job, including the hand-rolled lookalike",
+        "Lists each instance with its measured values from the code (presentation type, radius 8/14/16/28, padding 20/24, button variant and height 40/44/48, red link versus button), not impressions",
+        "Proposes the existing ConfirmSheet with a danger button as the canonical and says why it wins on quality, rather than inventing a new design",
+        "States what gets deleted so the old answer cannot be asked for again (for example the Dialog card variant for confirmations, or the danger-outline variant) and a guard worded so it would fail on today's code",
+        "Puts the web sign-out confirm() under 'Kept on purpose' with decision D-3 as its reason, and notes that the kit README describing Dialog as web-only has itself drifted",
+        "Includes a Coverage section stating that only code was read and the running product was not walked on iPhone, iPad or web, makes no code edits, and offers the getting-sign-off page while waiting for the user"
+      ]
+    },
+    {
+      "id": "auditing-consistency-2",
+      "skills": ["auditing-consistency"],
+      "query": "In our fitness tracker Pacer, the Add workout sheet's content starts lower than on the other sheets. Every sheet is in the attached Swift file. Is this a one-off?",
+      "files": ["evals/fixtures/auditing-consistency-2-sheets.swift"],
+      "expected_behavior": [
+        "Generalises from the one instance to the job 'open a sheet' and states that it is not a one-off, giving the number of different answers",
+        "Measures, for each sheet, the distance from the sheet's top edge to the first card or text and whether the grabber is paid for inside that distance (for example Add workout landing at 61 pt with the grabber not counted)",
+        "Checks the neighbouring jobs on the same pass: sheet headings (.headline versus .title3), grabber presence (Share route has none) and horizontal insets (16 versus 20)",
+        "Proposes one opening line with separate values for a card first and text first, with the grabber counted inside, and names which existing sheet already meets it",
+        "Reports the rest timer's disabled swipe-to-dismiss as kept on purpose under D-11 rather than as drift",
+        "Uses a jobs table with the columns Job, Answers today, Proposed and Why it wins, and touches no source"
+      ]
+    },
+    {
+      "id": "auditing-consistency-3",
+      "skills": ["auditing-consistency"],
+      "query": "We ran a probe across every flow in Huddle, our team calendar, on iPhone, iPad and web. Output and decisions log attached. Turn it into a design QA audit with recommendations.",
+      "files": [
+        "evals/fixtures/auditing-consistency-3-probe.csv",
+        "evals/fixtures/auditing-consistency-3-decisions.md"
+      ],
+      "expected_behavior": [
+        "Opens with a one-sentence headline naming how many jobs drift and how many answers each has",
+        "Groups 'leave a flow' into its answers with counts (× trailing, × leading, ← after the first step, ← and × together on Book room step 2) and the locations of each",
+        "Chooses × leading on the first step and ← after it as canonical even though trailing × is the majority, because a trailing × sits beside the top-trailing primary action, and says it chose on quality rather than count",
+        "Keeps Scan invite's trailing × under 'Kept on purpose' citing D-21, and notes that the design system page (D-25) records the canonical but has not been applied",
+        "Reports 'Upcoming' versus 'Scheduled' versus 'Upcoming events' as a separate 'one name per concept' job instead of ignoring it as copy",
+        "States the coverage gaps from the probe (Typical persona only, light theme only, left-to-right only) and lists any job with two defensible answers under 'Decisions for you' with a recommendation"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    { "query": "The back button on the recipe detail page looks different from the one on the shopping list. Is that happening elsewhere?", "should_trigger": true },
+    { "query": "Can you do a design QA pass on our notes app and find everywhere the same thing is done different ways?", "should_trigger": true },
+    { "query": "Section headers in the fitness tracker seem to have different gaps on different tabs. Check all of them.", "should_trigger": true },
+    { "query": "We agreed every confirmation should be the inset bottom sheet. Replace all the old dialogs with it and delete the card variant.", "should_trigger": false, "belongs_to": "unifying-patterns" },
+    { "query": "The settings screen in our reading app is crammed. Simplify it but keep every option.", "should_trigger": false, "belongs_to": "decluttering-screens" },
+    { "query": "Tighten the spacing and alignment on this one recipe card, it looks a bit loose.", "should_trigger": false, "belongs_to": "designing-visuals" }
+  ]
+}

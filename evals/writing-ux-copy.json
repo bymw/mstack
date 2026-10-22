@@ -1,0 +1,55 @@
+{
+  "skill": "writing-ux-copy",
+  "evals": [
+    {
+      "id": "writing-ux-copy-1",
+      "skills": ["writing-ux-copy"],
+      "query": "Can you review the copy on the invite sheet in our team calendar app? HTML attached, the comments say when each string shows.",
+      "files": ["evals/fixtures/writing-ux-copy-1-invite-screen.html"],
+      "expected_behavior": [
+        "Structure: states the screen's mission in one sentence, lists every change under High, Medium and Low in a Today | Proposed | Why table, then lists new or changed glossary terms and anything that needs a product decision",
+        "Picks one name for the invited people (teammates, collaborators and members are all used today), applies it to the title, label and footer, and records it as a glossary term",
+        "Replaces 'Invitation sent!', shown before the server responds, with a state-matched pair such as 'Sending…' then 'Sent', noting the tense must match what is confirmed",
+        "Replaces 'Turn it on in Settings' with the exact place (the path to the setting) or a button that opens it",
+        "Adds a visible 'Email' field label because the placeholder is the only label today, and uses the ellipsis character rather than three dots if any ellipsis remains",
+        "Rewrites 'Submit' as a 1 to 3 word Title Case verb naming the result (for example 'Send Invites'), and the error as what failed plus how to recover, using the known cause (timeout or invalid address) rather than a generic line"
+      ]
+    },
+    {
+      "id": "writing-ux-copy-2",
+      "skills": ["writing-ux-copy"],
+      "query": "Our notes app is adding reminders on notes. Write the copy for the Reminders list when it's empty, and for the moment we ask for notification permission. It ships on phone, tablet and desktop.",
+      "files": [],
+      "expected_behavior": [
+        "Structure: opens with each screen's mission in one sentence, then lays the copy out the way it appears on screen (title, body, controls in order) rather than as a loose list of strings",
+        "The empty state is a title plus one sentence saying what will appear and how to start, then the primary action and a quiet head start such as an example reminder",
+        "The permission copy is one sentence on what it enables for the person (for example 'Get a notification when a reminder is due'), placed at the moment the first reminder is set, with no 'We'd love to' or general benefit pitch",
+        "Buttons are 1 to 3 words in Title Case naming what pressing does now (for example 'Add Reminder', 'Turn On', 'Not Now'), never 'OK', 'Yes' or 'Submit'",
+        "Gives one set of words for phone, tablet and desktop, without a longer variant for larger screens",
+        "Contains no exclamation marks, intensifiers ('just', 'simply', 'really'), welcome or reassurance lines, and every title is 2 to 6 words with no full stop"
+      ]
+    },
+    {
+      "id": "writing-ux-copy-3",
+      "skills": ["writing-ux-copy"],
+      "query": "We're building the sign-up screen for our recipe app: email and password fields, plus Sign in with Apple. Attached is a screen from a hiking app we like. Reuse its wording where it fits, and also give me a longer version of the copy for the iPad layout since there's more room.",
+      "files": ["evals/fixtures/writing-ux-copy-3-reference-screen.md"],
+      "expected_behavior": [
+        "Writes fresh copy from this screen's mission and reuses none of the reference's strings ('adventure', 'explorers', 'Let's go', 'Already exploring?'), saying the reference is used for structure and tone only",
+        "The title names the task and starts with a verb (for example 'Create your account'), 2 to 6 words with no full stop",
+        "Has no description, or one that adds only what the title cannot carry; no 'It only takes a minute' style reassurance or social-proof slogan",
+        "Declines the longer iPad version and gives the same words on every device, explaining that a larger screen gets more space around the words, not more words",
+        "Field labels are visible nouns ('Email', 'Password') rather than placeholder-only, and the primary button is Title Case with no arrow",
+        "Structure: the mission comes first, then the copy laid out in on-screen order (title, fields, primary button, Sign in with Apple, sign-in link)"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    { "query": "The wording on our settings page feels long-winded. Can you tighten it?", "should_trigger": true },
+    { "query": "What should the confirmation say when someone deletes an album in our photo app?", "should_trigger": true },
+    { "query": "Write the error messages for the file upload component in our notes app.", "should_trigger": true },
+    { "query": "Draft a short brief for stakeholders explaining why we're redesigning the recipe editor.", "should_trigger": false, "belongs_to": "writing-briefs" },
+    { "query": "The empty state on our projects page looks bare and unbalanced. Fix the layout.", "should_trigger": false, "belongs_to": "designing-visuals" },
+    { "query": "Our 'Summarise' AI action returns text about as long as the input. Is it ready to ship?", "should_trigger": false, "belongs_to": "building-ai-features" }
+  ]
+}

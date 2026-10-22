@@ -1,0 +1,55 @@
+{
+  "skill": "writing-briefs",
+  "evals": [
+    {
+      "id": "writing-briefs-1",
+      "skills": ["writing-briefs"],
+      "query": "Our VP of Product asked me 'Is the sync thing serious, and do we need to move the launch?' Here's the engineer's note. Write me a one-pager she can read before Thursday.",
+      "files": ["evals/fixtures/writing-briefs-1-sync-finding.md"],
+      "expected_behavior": [
+        "Answers the launch question in the first one or two sentences with a single recommendation and the one reason that matters most to her",
+        "Leaves out the '5% of users' guess or marks it 'to confirm', and marks the 2 to 3 week estimate and the link between the four tickets and this bug as unconfirmed",
+        "Uses none of the system language from the note (last-writer-wins, SyncEngine.merge, ticket numbers such as TCK-1182, QA) and explains the fault as what a person sees",
+        "Includes exactly one visual that carries the argument, such as an options table with one marked Recommended or a before and after of the two devices",
+        "Includes a 'What we need from you' section naming the decision and by when, and a 'To confirm' section naming who can confirm each open figure",
+        "Uses plain one-line titles that name the point, and puts any method or history last or behind details"
+      ]
+    },
+    {
+      "id": "writing-briefs-2",
+      "skills": ["writing-briefs"],
+      "query": "The head of support sent me this. Can you help me reply? I'll paste it straight into chat.",
+      "files": ["evals/fixtures/writing-briefs-2-support-message.md"],
+      "expected_behavior": [
+        "Starts with a line for the user only (not for sending) saying what she is really asking, separate from the reply",
+        "Opens the reply by answering her first question directly: the reorder was not on purpose",
+        "Tells her what to say to readers, including that nothing is lost and that Sort > My order puts a list back",
+        "Promises no release date, saying the fix is ready for review and the date will follow",
+        "Avoids system words such as default sort value, regression, PR, merge or deploy",
+        "Keeps the reply short enough to read on a phone between meetings, a few short sentences ready to paste"
+      ]
+    },
+    {
+      "id": "writing-briefs-3",
+      "skills": ["writing-briefs"],
+      "query": "I'm presenting the new scheduling flow for the team calendar to the leadership group next Tuesday. Make me the slides. My notes are attached.",
+      "files": ["evals/fixtures/writing-briefs-3-session-notes.md"],
+      "expected_behavior": [
+        "Produces a deck outline in text rather than built or styled slides, and asks for the user's slide template before building any slides",
+        "Has no slide that recaps the problem the group has already seen in the last two sessions, and leads with what is new or needs them (the yes to ship this quarter)",
+        "Gives each slide a title that states its point, one named visual and one 'Say' line for the speaker",
+        "Ends with a 'Parked for the written follow-up' list holding the open questions (plan placement, calendar import, naming)",
+        "Leaves out the 'about 30% fewer reschedules' figure or marks it 'to confirm', while using the sourced 5 of 6 participants result",
+        "Uses titles that, read in order, tell the whole story in plain words with no system language"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    { "query": "Explain to our head of marketing, in plain words, why the habit tracker's reminders were late last week and what we're doing about it.", "should_trigger": true },
+    { "query": "Write a one-pager for the leadership team recommending we pause the recipe app's meal-plan feature.", "should_trigger": true },
+    { "query": "Outline a deck for Thursday's partner session about the notes app's sharing launch.", "should_trigger": true },
+    { "query": "Here's the transcript of the partner call. Which of the things they mentioned should we act on?", "should_trigger": false, "belongs_to": "sorting-feedback" },
+    { "query": "Rewrite the error messages and empty states in the team calendar so they're shorter and clearer.", "should_trigger": false, "belongs_to": "writing-ux-copy" },
+    { "query": "Write the spec the engineers will build the shared notebooks feature from, with every state and the checks that prove it done.", "should_trigger": false, "belongs_to": "writing-specs" }
+  ]
+}

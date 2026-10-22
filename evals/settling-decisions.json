@@ -1,0 +1,54 @@
+{
+  "skill": "settling-decisions",
+  "evals": [
+    {
+      "id": "settling-decisions-1",
+      "skills": ["settling-decisions"],
+      "query": "The audit of the fitness tracker's workout screens is done and these are the open questions. Help me settle them. The question tool isn't available in this session, so just ask me here in chat.",
+      "files": ["evals/fixtures/settling-decisions-1-open-questions.md"],
+      "expected_behavior": [
+        "Asks exactly one question in this reply, not a list of the open questions",
+        "Asks first whether to keep the Quick start tab, because its answer can remove the icon and default-duration questions",
+        "Strikes the primary button colour and rest timer vibration questions as already answered, citing the design system's Buttons page and the spec's Rest timer section",
+        "Gives two to four numbered options that are real alternatives, each with a description stating its consequence",
+        "Marks exactly one option '(Recommended)', places it first, and gives its reason in one sentence without hedging",
+        "Closes with an instruction to reply with a number or say what to change"
+      ]
+    },
+    {
+      "id": "settling-decisions-2",
+      "skills": ["settling-decisions"],
+      "query": "Looks great, honestly I love all of it. Just go with your recommendations on all three questions in the plan. No question tool here, reply in chat.",
+      "files": ["evals/fixtures/settling-decisions-2-plan.md"],
+      "expected_behavior": [
+        "Records each of the three answers as 'recommended, accepted in bulk' in the plan's Decisions table",
+        "Lists the answers back in a table with the columns Question, Answer and Recorded in",
+        "Does not treat 'love all of it' as approval to lock the plan or start batch 1",
+        "Asks the lock question explicitly, last and on its own, in plain text with numbered options and one marked '(Recommended)'",
+        "Does not start building the edit sheet in this reply"
+      ]
+    },
+    {
+      "id": "settling-decisions-3",
+      "skills": ["settling-decisions"],
+      "query": "Build cook mode for the recipe app from this spec. There's no question tool in this session; if you need anything from me, ask in chat.",
+      "files": ["evals/fixtures/settling-decisions-3-cook-mode-spec.md"],
+      "expected_behavior": [
+        "Names at least one gap the spec is silent on that the user owns (for example whether the screen stays awake, or whether reopening Cook mode resumes at the last step) rather than choosing a default silently",
+        "Asks only one question in this reply, in plain words that name Cook mode and end with a question mark",
+        "Does not ask about anything the spec already settles (one step per screen, inline timers, timers running across steps, voice control or scaling being out of scope)",
+        "Gives two to four numbered options, each stating its consequence, with exactly one '(Recommended)' placed first and a one-sentence reason",
+        "Ends with an instruction to reply with a number or say what to change",
+        "Does not present a finished build that settles the open question, and says the answer will be recorded (in the spec or decisions log) before that part is built"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    { "query": "The spec for the team calendar doesn't say what happens to an event when its organiser leaves the team. Help me decide.", "should_trigger": true },
+    { "query": "I've got six open questions left after the review of the plant care app. Walk me through them so we can settle each one.", "should_trigger": true },
+    { "query": "Should the notes app's trash empty itself after 30 days or keep everything until I clear it? Give me the options and your recommendation.", "should_trigger": true },
+    { "query": "Mock up two or three different directions for the onboarding screen of the habit tracker so I can see them side by side.", "should_trigger": false, "belongs_to": "exploring-directions" },
+    { "query": "Here's the transcript of yesterday's review with the product lead. What should we actually act on?", "should_trigger": false, "belongs_to": "sorting-feedback" },
+    { "query": "Put the five proposed changes to the reading app's library screen on a page with today and proposed side by side.", "should_trigger": false, "belongs_to": "getting-sign-off" }
+  ]
+}

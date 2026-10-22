@@ -1,0 +1,55 @@
+{
+  "skill": "crafting-products",
+  "evals": [
+    {
+      "id": "crafting-products-1",
+      "skills": ["crafting-products"],
+      "query": "Here's the Save recipe screen from our recipe app (HTML attached). Something about it feels off and cheap. Review it against a world-class bar and tell me what to fix.",
+      "files": ["evals/fixtures/crafting-products-1-recipe-save.html"],
+      "expected_behavior": [
+        "Opens with a one-line verdict or headline before any detail, and groups findings under High, Medium and Low headings",
+        "Flags the 'Saved by 2,400 cooks this week' badge as a claim the data cannot back (the app does not record who saved a recipe or when) and ranks it at the highest severity, above the visual clutter",
+        "Flags the preselected 'Dinner' collection, the pre-checked 'Share with friends' and the preset 5-star rating as defaults the system cannot know, and proposes no default or an honest one instead",
+        "Calls out the two equally prominent primary buttons ('Save' and 'Save & Start Cooking') and recommends one primary action, with the other quieter or moved to the next step",
+        "Names at least two non-visual issues from the screen check: the delete link reachable only on hover, and the status text appearing below the buttons so the layout shifts on save",
+        "Hands off to named specialist skills for the detail (for example designing-visuals, writing-ux-copy, decluttering-screens) rather than redesigning everything inline"
+      ]
+    },
+    {
+      "id": "crafting-products-2",
+      "skills": ["crafting-products"],
+      "query": "Our notes app is iPhone-only. We want an iPad version by next month. Plan is to just scale the iPhone layout up so it ships fast and stays consistent. Good plan?",
+      "files": [],
+      "expected_behavior": [
+        "Answers in the first line that scaling up the phone layout is the wrong plan, then gives the fix in one or two sentences rather than hedging",
+        "Recommends iPad-native structure: a sidebar or split view for navigation and content side by side, and popovers rather than sheets for small choices",
+        "Covers every size class: full screen, split view, slide over and Stage Manager windows, in both orientations",
+        "Includes pointer and keyboard support: hover effects as hints only, keyboard shortcuts for frequent actions, working focus",
+        "Separates what must stay the same across devices (the same task names, meaning and outcome) from what adapts (layout, input, chrome), so consistency does not mean identical layout",
+        "Uses a table of four columns or fewer, or a short numbered plan, for the iPad layout decisions instead of a long run of bullets"
+      ]
+    },
+    {
+      "id": "crafting-products-3",
+      "skills": ["crafting-products"],
+      "query": "We're adding shared lists to our grocery app on iPhone, Mac and the web. The team's excited. Where do we start, which skills should lead each part, and what bar should we hold it to?",
+      "files": [],
+      "expected_behavior": [
+        "States that if whether to build shared lists, or for whom, is not settled, shaping-direction comes first, before any screen design",
+        "Maps the parts of the work to the lead skill and the follow-on skills (for example defining-outcomes for success, writing-specs for the spec, designing-flows for the invite flow, walking-personas for states)",
+        "States the bar concretely: a person understands each screen in three seconds and knows the one thing to do next, with one primary action per screen",
+        "Requires the feature to ship on iPhone, Mac and the web in the same change, with the same name and outcome on each, and each device getting its own layout",
+        "Lists the states the feature must design beyond the happy path, including at least empty, offline and error, and a permission or sharing-denied case",
+        "Presents the skill map as a table of four columns or fewer, with the answer in the opening line"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    { "query": "This settings screen in our journaling app feels cluttered and off. Make it world-class.", "should_trigger": true },
+    { "query": "What quality bar should we hold our new habit tracker to on iPhone, iPad and Mac before we start designing?", "should_trigger": true },
+    { "query": "We're about to build a workout logger. Which of the design and product skills should lead each part of the work?", "should_trigger": true },
+    { "query": "Pick the duration and easing for the sheet that slides up in our podcast app.", "should_trigger": false, "belongs_to": "designing-motion" },
+    { "query": "Write the empty-state message for the plant list in our plant care app.", "should_trigger": false, "belongs_to": "writing-ux-copy" },
+    { "query": "How should we measure whether the new onboarding in our language app worked?", "should_trigger": false, "belongs_to": "defining-outcomes" }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "skill": "walking-personas",
+  "evals": [
+    {
+      "id": "walking-personas-1",
+      "skills": [
+        "walking-personas"
+      ],
+      "query": "We're demoing Reading stats in Shelfwise to the whole team on Friday. Before then, can you check what a brand-new user sees, and anyone else we should worry about? The prototype (with its simulation bar) and the spec are attached.",
+      "files": [
+        "evals/fixtures/walking-personas-1-stats.html",
+        "evals/fixtures/walking-personas-1-spec.md"
+      ],
+      "expected_behavior": [
+        "Chooses Nothing yet, Thin, Typical, Maximum and Messy with a reason for each, and gives each walked persona a reopenable link taken from the simulation bar (for example ?persona=first) plus what confirms it on the first screen",
+        "Reports the Messy persona (failed imports, expired library connection) under 'Cannot simulate' as a simulation gap rather than hand-editing data or inventing a URL",
+        "Flags the offline state showing 'No books yet. Start reading!' as failure read as empty, against spec item 7",
+        "Flags impossible or false figures: 'Up 100% since last month' for the Thin persona with no previous month, NaN or Infinity pages per book, and pages a day divided by 30 for someone who joined 3 days ago",
+        "Walks the goal flow to its end and Back, finding that Back and Save land on Home instead of Stats and that sharing preselects 'your first contact'; and at Maximum flags the uncounted 'View all', the unformatted 1284 and the truncated long title",
+        "Groups findings under High, Medium and Low, one line each with screen, what the persona meets, the fix and every persona it affects (merging repeats), raises the spec's silence on pre-first-book figures as a question, and ends with a walk records table (Persona, Link, Devices, Findings) and a 'Not walked' line naming iPad if it was not walked"
+      ]
+    },
+    {
+      "id": "walking-personas-2",
+      "skills": [
+        "walking-personas"
+      ],
+      "query": "What does someone see in Forkful's shopping list sync if they never turned it on, or turned it on and then off again? Screens, spec and controls are in the attached file. Just tell me what's wrong, don't fix anything.",
+      "files": [
+        "evals/fixtures/walking-personas-2-screens.md"
+      ],
+      "expected_behavior": [
+        "Walks both the never-on and turned-off-again personas as separate personas, plus the on-with-two-members state as the Typical baseline, each with its link from the debug menu (for example /plan?sync=off-after-on)",
+        "Flags the never-on Settings screen (a switch and nothing else) and the empty 'Shared list' page as off drawn as empty, with a proposed fix, written in the finding and not applied, that explains the feature and how to start it",
+        "Flags strings that are untrue for the person: 'Synced with 0 people' when sync was never on, and 'Synced with 2 people' after it was turned off",
+        "Raises what happens to the 14 items and the two members after turning sync back on as a question grounded in the spec's silence and D-4, to go to settling-decisions, rather than declaring it a bug",
+        "Walks every screen including the turn-back-on path and states which of iPhone, iPad and web were walked, with gaps under 'Not walked'",
+        "Proposes no code changes and closes by offering to build the getting-sign-off page from the findings"
+      ]
+    },
+    {
+      "id": "walking-personas-3",
+      "skills": [
+        "walking-personas"
+      ],
+      "query": "Our researcher says she couldn't get a Repwise account that's set up but has no workouts, so she couldn't test the first-workout experience. We have a usability round next week. Can you walk it before then? Notes attached.",
+      "files": [
+        "evals/fixtures/walking-personas-3-sim-controls.md"
+      ],
+      "expected_behavior": [
+        "Walks the reported persona (set up, no workouts) first, before the core five",
+        "Reports that persona under 'Cannot simulate' as a simulation gap, because onboarding always adds a Sample workout, and does not suggest deleting the sample workout or composing a link like ?workouts=0 to get there",
+        "Flags the auto-added Sample workout and 'Keep it up!' as an impossible state: history the person could not have, which also means the spec's 'Start your first workout' screen is never shown",
+        "Also covers Messy (failed syncs, streak break) as a persona the presets cannot reach, and walks Maximum with the Power preset's 30 routines (the cap) for overflow and an explained cap",
+        "Uses preset links copied from the panel (repwise://sim?preset=new, active, power) in a walk records table with Persona, Link, Devices and Findings columns, covering iPhone and iPad",
+        "Opens with a headline sentence giving the personas walked, the devices, the fault counts per persona and the number of personas that cannot be simulated"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    {
+      "query": "What does a brand-new user see when they open the meal planner for the first time? Check every state.",
+      "should_trigger": true
+    },
+    {
+      "query": "Before sign-off, walk the notes app's sharing flow as someone with no notes, one note, and thousands.",
+      "should_trigger": true
+    },
+    {
+      "query": "We have a usability round on the fitness tracker next week. Check the onboarding works for everyone, not just our demo account.",
+      "should_trigger": true
+    },
+    {
+      "query": "Swiping between days in the calendar feels laggy and the title updates late, here's a recording.",
+      "should_trigger": false,
+      "belongs_to": "diagnosing-feel"
+    },
+    {
+      "query": "Design the onboarding flow for our new reading tracker, screen by screen.",
+      "should_trigger": false,
+      "belongs_to": "designing-flows"
+    },
+    {
+      "query": "Empty states look different on every tab of the recipe app. Find them all and propose one.",
+      "should_trigger": false,
+      "belongs_to": "auditing-consistency"
+    }
+  ]
+}

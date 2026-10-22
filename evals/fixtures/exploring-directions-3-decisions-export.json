@@ -1,0 +1,23 @@
+{
+  "canvas": "Simmer concept directions, round 1",
+  "problems": {
+    "browse-filters": {
+      "panels": ["today", "A · Two-line tabs", "B · Category menu, filter chips row", "C · Filters in the search field"],
+      "recommended": "B"
+    },
+    "recipe-save": {
+      "panels": ["today", "A · Heart on the photo", "B · Save in the bottom bar", "C · Save in the share sheet"],
+      "recommended": "A"
+    },
+    "shopping-handoff": {
+      "panels": ["today", "A · Add all to list", "B · Pick ingredients first"],
+      "recommended": "B"
+    }
+  },
+  "collection": "decisions",
+  "documents": [
+    { "id": "browse-filters", "choice": "B", "note": "B, but with A's two-line labels on iPad where there's room.", "by": "design lead" },
+    { "id": "recipe-save", "choice": "A", "note": "Heart on the photo. Make sure it still reads on very light photos.", "by": "product lead" },
+    { "id": "shopping-handoff", "choice": "discuss", "note": "Depends on whether we keep pantry tracking next quarter. Can't pick yet.", "by": "design lead" }
+  ]
+}

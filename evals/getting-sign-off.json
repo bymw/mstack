@@ -1,0 +1,55 @@
+{
+  "skill": "getting-sign-off",
+  "evals": [
+    {
+      "id": "getting-sign-off-1",
+      "skills": ["getting-sign-off"],
+      "query": "Here's the All notes screen from our notes app (the HTML is what the dev server renders at localhost:5173/notes?persona=typical) and the fix list from Tuesday's review. Build me a sign-off page so the design lead can approve these before anyone touches the code.",
+      "files": ["evals/fixtures/getting-sign-off-1-notes-list.html", "evals/fixtures/getting-sign-off-1-fix-list.md"],
+      "expected_behavior": [
+        "Splits fix 1 into two separate rows (the visible search field and the title rename), so no row asks two things",
+        "Puts the error-message tone finding (fix 4) in the short list at the end of the page, not on a row, because it has no single screen",
+        "Makes each proposed side from the real screen (a CSS override or DOM edits of the rendered page, or the product's own markup and classes) at the same 375 by 812 size, persona and state as today, not a freehand mock",
+        "Gives every row one plain sentence for Today, written from the person's side, and one sentence for Proposed saying what changes",
+        "Gives rows short stable ids and groups them by where the person meets them along their path, not by severity",
+        "Ends with the page link and one line saying how many rows there are and how to answer (Agree, Not this or Discuss), and builds nothing yet"
+      ]
+    },
+    {
+      "id": "getting-sign-off-2",
+      "skills": ["getting-sign-off"],
+      "query": "The reviewer has finished going through the sign-off page for the notes app. This is what came back from the decisions store. What happens now? Go ahead with whatever's ready.",
+      "files": ["evals/fixtures/getting-sign-off-2-decisions.json"],
+      "expected_behavior": [
+        "Opens with one tally line: 2 Agree, 1 Not this, 2 Discuss, 1 unanswered (compose)",
+        "Presents a table with the columns Row, Choice, Note and Next step, with one line for each of the six rows including the unanswered compose row",
+        "Quotes every reviewer note in the reviewer's own words rather than paraphrasing it",
+        "Builds or plans to build only the back row; treats search ('Agree, but the design is poor') as a redesign to republish with its choice cleared and ask again, not as something to build",
+        "Takes the two Discuss rows to settling-decisions one at a time (asks about only one now, with a recommendation) and does not build compose, which has no answer",
+        "Says the shipped screen will be recaptured after the build and the same page republished with the built image in place of the proposed one"
+      ]
+    },
+    {
+      "id": "getting-sign-off-3",
+      "skills": ["getting-sign-off"],
+      "query": "Our designer wants list rows in the fitness tracker to go from 10px to 14px vertical padding. It touches Workouts, History, Settings, Exercise picker and Friends. I need the design lead to approve it before we change the token. Show her a before and after.",
+      "files": ["evals/fixtures/getting-sign-off-3-row-padding.md"],
+      "expected_behavior": [
+        "Makes one row for the padding change, not five, showing the most representative screen (Workouts) and listing the other four screens under 'Also'",
+        "Makes the proposed side by injecting a CSS override of --row-pad-y: 14px into the running page, not by drawing it and not by editing tokens.css before agreement",
+        "Captures both sides with the same persona and seed query parameters, device size, state and scroll position, so only the padding differs",
+        "Places the rings from element frames read in screen points (bounding rect minus the screen element's rect), not guessed from pixels",
+        "Saves answers to the page's store (collection decisions, document id equal to the row id) and says the token changes only if the row is agreed",
+        "Replies with the page link and one line saying how many rows there are and how to answer"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    { "query": "Before we build the three fixes from the audit, can you show me each one as today versus proposed so I can approve them one by one?", "should_trigger": true },
+    { "query": "I want a before and after of the new empty state on the Saved tab of the recipe app for the team to approve.", "should_trigger": true },
+    { "query": "We simplified the habit tracker's settings screen. Put the changes on a page where my cofounder can say yes or no to each.", "should_trigger": true },
+    { "query": "Show me three genuinely different ways the home screen of the reading app could work so we can pick a direction.", "should_trigger": false, "belongs_to": "exploring-directions" },
+    { "query": "Buttons look different on the Plan and History screens of the fitness app. Find every place this happens and propose one answer.", "should_trigger": false, "belongs_to": "auditing-consistency" },
+    { "query": "The agreed row says one red button everywhere. Move all the callers to the kit variant and delete the old ones.", "should_trigger": false, "belongs_to": "unifying-patterns" }
+  ]
+}

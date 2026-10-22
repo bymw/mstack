@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Save recipe</title>
+<style>
+  body { font-family: -apple-system, system-ui, sans-serif; margin: 0; background: #fff; color: #222; }
+  header { padding: 12px 16px; background: linear-gradient(90deg, #ff7a59, #ffb347); color: #fff; }
+  .card { margin: 16px; padding: 16px; border: 1px solid #ddd; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,.15); }
+  .badge { display: inline-block; background: #ffe9a8; color: #7a5a00; padding: 4px 8px; border-radius: 8px; font-size: 12px; }
+  .row { display: flex; gap: 8px; margin-top: 12px; }
+  .btn-primary { background: #ff5a36; color: #fff; border: 0; padding: 12px 16px; border-radius: 10px; font-weight: 700; }
+  .btn-primary.alt { background: #2f7cf6; }
+  .delete { visibility: hidden; color: #c00; }
+  .card:hover .delete { visibility: visible; }
+  #status { font-size: 13px; color: #888; }
+</style>
+</head>
+<body>
+<header><h1>Save Recipe</h1></header>
+<div class="card">
+  <h2>Lemon Garlic Pasta</h2>
+  <span class="badge">Saved by 2,400 cooks this week!</span>
+  <p>Add this recipe to your collection so you can find it again later when you want to cook it.</p>
+
+  <label>Collection
+    <select>
+      <option>Breakfast</option>
+      <option selected>Dinner</option>
+      <option>Desserts</option>
+    </select>
+  </label>
+
+  <label><input type="checkbox" checked> Share with friends</label>
+  <label><input type="checkbox"> Add ingredients to shopping list</label>
+  <label><input type="checkbox"> Remind me to cook this</label>
+  <label>Notes <textarea placeholder="Notes"></textarea></label>
+  <label>Rating
+    <select><option>1</option><option>2</option><option>3</option><option>4</option><option selected>5</option></select>
+  </label>
+
+  <div class="row">
+    <button class="btn-primary" onclick="document.getElementById('status').textContent='Saving...'">Save</button>
+    <button class="btn-primary alt">Save &amp; Start Cooking</button>
+  </div>
+  <p id="status"></p>
+  <a class="delete" href="#">Delete recipe</a>
+</div>
+<!-- Data note: the app stores which collection a recipe is in and whether it is shared. It does not record who saved a recipe or when. -->
+</body>
+</html>

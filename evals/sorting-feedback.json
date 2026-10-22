@@ -1,0 +1,55 @@
+{
+  "skill": "sorting-feedback",
+  "evals": [
+    {
+      "id": "sorting-feedback-1",
+      "skills": ["sorting-feedback"],
+      "query": "Here's the transcript from today's sign-off session on the team calendar app, plus some product context. What should we actually do with all this?",
+      "files": ["evals/fixtures/sorting-feedback-1-transcript.md"],
+      "expected_behavior": [
+        "Opens with 'What's being asked' in two or three sentences before any list",
+        "Sorts items into the five groups (Do now, Ask, Park, Not doing, Already handled), each with a short quote of the line that raised it",
+        "Puts public booking links under Not doing, citing the 2 September decision, even though the sales lead pushed for it twice",
+        "Puts the time-zone point under Already handled, pointing to release 1.4's time zone label and toggle",
+        "Surfaces the quiet empty-week line (new teams thinking it is broken) as Do now or Ask rather than dropping it, and prefers small changes (Today button, a changed-event marker) over the suggested week view redesign",
+        "Does not invent a figure the source did not give, such as an effort or cost for the admin console, and shows Do now as a table with the columns Change, Where, Why (the line) and Effort"
+      ]
+    },
+    {
+      "id": "sorting-feedback-2",
+      "skills": ["sorting-feedback"],
+      "query": "We ran five usability sessions on the recipe app yesterday. Here are my notes. What do we fix?",
+      "files": ["evals/fixtures/sorting-feedback-2-usability-notes.md"],
+      "expected_behavior": [
+        "Identifies the servings control not reading as a button as the real signal, quoting P2 and P4",
+        "Proposes a small change that clears the confusion (for example making the servings control look tappable) under Do now, rather than a redesign",
+        "Puts the video tutorial idea under Not doing, weighing P2's confusion as evidence but not their proposed solution",
+        "Puts the mood-board restyle (P3) under Not doing or Park with a one-line reason",
+        "Uses only counts the notes support (2 of 5 struggled with servings) and invents no percentages or extra participants",
+        "Ends by offering the Do now items as a sign-off page with getting-sign-off, and any open choice (such as asking for servings before Start cooking) as a question for settling-decisions"
+      ]
+    },
+    {
+      "id": "sorting-feedback-3",
+      "skills": ["sorting-feedback"],
+      "query": "This is the thread with the scale maker we're talking to for the fitness tracker. I have a call with her on Friday. What is she actually asking for, and what should we do?",
+      "files": ["evals/fixtures/sorting-feedback-3-partner-thread.md"],
+      "expected_behavior": [
+        "Decodes the ask in two or three sentences: she is setting conditions for a directory listing and asking what is realistic for the next release, not asking for everything to be built",
+        "Does not adopt the 'Lumen Sync' wording across the app, because nothing is signed and only changes true for any scale maker should be made now; puts it under Ask or Not doing with that reason",
+        "Treats the 24-month retention rule as the partner's own rule, weighs it as such, and flags the conflict with keeping history forever as an Ask item rather than deciding it",
+        "Puts 'a bit fragile' under Ask (which failures, how often) rather than inventing a cause, while noting the silent give-up after three retries as a provider-neutral fix",
+        "Parks body-composition support and says what it waits for (a signed agreement or a decision on new fields and a chart)",
+        "Uses the five-group structure with the line behind each item, and offers to draft the Friday reply with writing-briefs"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    { "query": "Here are my notes from the call with the plant care app's partner nursery. What are they really asking for?", "should_trigger": true },
+    { "query": "The product lead left twenty comments on the notes app review doc. Which ones do we act on?", "should_trigger": true },
+    { "query": "I pasted the transcript of this morning's usability round on the habit tracker. Turn it into what we fix, what we ask and what we drop.", "should_trigger": true },
+    { "query": "Write a short reply to the head of support explaining why the shopping list order changed. She isn't technical.", "should_trigger": false, "belongs_to": "writing-briefs" },
+    { "query": "We agreed to make the servings control look tappable. Show the team the current screen and the change side by side for approval.", "should_trigger": false, "belongs_to": "getting-sign-off" },
+    { "query": "We have twelve requests from customers and room for three this quarter. What goes first?", "should_trigger": false, "belongs_to": "sequencing-bets" }
+  ]
+}
