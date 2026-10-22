@@ -4,6 +4,15 @@ Twenty-one Agent Skills that help Claude shape, design, build and ship excellent
 
 The bar is Apple's restraint and Linear's discipline, grounded in the public work of product leaders such as Marty Cagan, Teresa Torres and Katie Dill.
 
+**21 skills** · **4 stages** · **89% of expected behaviours, against 36% without the skills** · **MIT**
+
+[Who it's for](#who-its-for) · [The team](#the-team) · [Common plays](#common-plays) · [All skills](#the-skills) · [Install](#install) · [Evaluations](#evaluations)
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/team-dark.svg">
+  <img src="assets/team-light.svg" alt="The team: crafting-products as the foundation, then four stages. Shape: shaping-direction, defining-outcomes, sequencing-bets, writing-specs. Design: designing-visuals, writing-ux-copy, designing-flows, designing-motion, building-ai-features, decluttering-screens, exploring-directions. Review: auditing-consistency, walking-personas, diagnosing-feel, breaking-experiences. Decide and ship: getting-sign-off, settling-decisions, unifying-patterns, sorting-feedback, writing-briefs." width="100%">
+</picture>
+
 ## Who it's for
 
 People who want to build excellent things, whatever their title.
@@ -31,74 +40,15 @@ Good products depend on hundreds of small decisions made the same way every time
 - **Native to every device.** Designed for each, consistent across all.
 - **Proven, not assumed.** Measured on the device, broken on purpose before people meet it, and every fix leaves a guard.
 
-## How it works
+## The team
+
+The skills work as a team, in the four stages shown above. `crafting-products` is the foundation: the shared bar, the shared vocabulary and the map of who leads what. Each specialist does one job deeply and hands the rest to a teammate.
 
 Skills load in layers, so Claude only reads what a task needs:
 
 1. **Descriptions** of every skill are always visible to Claude, so it knows what each one is for.
 2. **A skill's instructions** load when a task matches it.
 3. **Reference files** (motion values, platform conventions, techniques) load only when the skill points to them.
-
-The skills work as a team. `crafting-products` is the foundation: the shared bar, the shared vocabulary and the map of who leads what. Each specialist does one job deeply and hands the rest to a teammate.
-
-```mermaid
-flowchart TB
-    CP["crafting-products<br/>the shared bar, terms and team map"]
-
-    subgraph SHAPE [1 · Shape]
-        SD[shaping-direction]
-        DO[defining-outcomes]
-        SB[sequencing-bets]
-        WS[writing-specs]
-    end
-
-    subgraph DES [2 · Design]
-        VD[designing-visuals]
-        UX[writing-ux-copy]
-        FD[designing-flows]
-        MS[designing-motion]
-        AI[building-ai-features]
-        DC[decluttering-screens]
-        ED[exploring-directions]
-    end
-
-    subgraph REV [3 · Review]
-        AC[auditing-consistency]
-        WP[walking-personas]
-        DF[diagnosing-feel]
-        BE[breaking-experiences]
-    end
-
-    subgraph SHIP [4 · Decide and ship]
-        GS[getting-sign-off]
-        SE[settling-decisions]
-        UP[unifying-patterns]
-        SF[sorting-feedback]
-        WB[writing-briefs]
-    end
-
-    CP --> SHAPE
-    CP --> DES
-    CP --> REV
-    CP --> SHIP
-
-    classDef base fill:#1C1C1E,stroke:#8E8E93,color:#F5F5F7
-    classDef shape fill:#FFFFFF,stroke:#7C83FD,color:#2E2A6B
-    classDef design fill:#FFFFFF,stroke:#34C38F,color:#0F4D36
-    classDef review fill:#FFFFFF,stroke:#F5A524,color:#6B3E00
-    classDef ship fill:#FFFFFF,stroke:#EC6FA8,color:#6E1D45
-
-    class CP base
-    class SD,DO,SB,WS shape
-    class VD,UX,FD,MS,AI,DC,ED design
-    class AC,WP,DF,BE review
-    class GS,SE,UP,SF,WB ship
-
-    style SHAPE fill:#F0F1FF,stroke:#C9CCFF,color:#2E2A6B
-    style DES fill:#EEFAF4,stroke:#B8E8D2,color:#0F4D36
-    style REV fill:#FFF7E8,stroke:#F8DCA6,color:#6B3E00
-    style SHIP fill:#FFF0F6,stroke:#F6C5DB,color:#6E1D45
-```
 
 ### Common plays
 
@@ -238,6 +188,7 @@ skills/
 ├── README.md
 ├── LICENSE
 ├── house-rules.md
+├── assets/                 the team map, light and dark
 ├── evals/                  three scenarios and six trigger checks per skill
 ├── crafting-products/      SKILL.md, PLATFORMS.md, READING.md
 ├── shaping-direction/      SKILL.md
