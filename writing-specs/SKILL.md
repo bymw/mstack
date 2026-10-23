@@ -86,6 +86,7 @@ The spec holds what builders would otherwise guess: scope, behaviour, states and
 
 ## Works with
 
+- `optimizing-discoverability`: crawlability, metadata and crawler policy as requirements for public pages.
 - `crafting-products`: the bar, the shared terms, and the states every spec covers.
 - `shaping-direction`: the direction this spec builds out; go back when the problem paragraph will not write.
 - `defining-outcomes`: the success section.

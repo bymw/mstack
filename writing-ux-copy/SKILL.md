@@ -99,6 +99,7 @@ Then new or changed glossary terms, and anything that needs a product decision (
 
 ## Works with
 
+- `optimizing-discoverability`: page titles, meta descriptions, headings and alt text that search engines and AI assistants read.
 - `crafting-products`: the bar and terms this skill works to.
 - `designing-visuals`: words and layout are one hierarchy; the title is usually the focal point. Run its check alongside this one.
 - `designing-flows`: each step's mission, which this skill's copy serves.

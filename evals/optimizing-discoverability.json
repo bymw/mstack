@@ -1,0 +1,55 @@
+{
+  "skill": "optimizing-discoverability",
+  "evals": [
+    {
+      "id": "optimizing-discoverability-1",
+      "skills": ["optimizing-discoverability"],
+      "query": "Audit our landing page for SEO and for showing up in AI answers like ChatGPT and Perplexity. The built HTML and the team's notes are attached. The founder wants llms.txt and more FAQ schema first. What should we actually fix, in what order?",
+      "files": ["evals/fixtures/optimizing-discoverability-1-index.html", "evals/fixtures/optimizing-discoverability-1-notes.md"],
+      "expected_behavior": [
+        "Rates as High that the page's main content, headings and links exist only after JavaScript runs (an empty root div in the server HTML), and recommends server rendering or pre-rendering so crawlers that do not run JavaScript can read it",
+        "Flags robots.txt blocking OAI-SearchBot and PerplexityBot as removing the site from ChatGPT search and Perplexity answers, separates search agents from training agents (GPTBot, ClaudeBot), and treats allowing training as the owner's decision",
+        "Flags the vague title 'Home', the missing meta description and the missing Open Graph tags, the duplicate host (tallyhabit.app also serving a 200), and the SVG-only favicon, with concrete fixes",
+        "Flags the hero as a CSS background image (not indexed and slow) and the lazy-loaded largest image, recommending an eager <img> with fetchpriority=\"high\", width and height, and AVIF or WebP, tied to the poor mobile LCP of 4.6 s and CLS of 0.22",
+        "Says FAQ rich results no longer show and FAQ schema is not a lever for AI answers, and that llms.txt is optional and not used by Google Search, so neither should come first",
+        "Groups findings under High, Medium and Low with a fix for each, and dates or sources the guidance it relies on"
+      ]
+    },
+    {
+      "id": "optimizing-discoverability-2",
+      "skills": ["optimizing-discoverability"],
+      "query": "We want our product site to show up in ChatGPT, Claude, Perplexity and Google's AI Overviews, but we don't want our content used to train AI models. We're behind Cloudflare. Write our robots.txt and tell us anything else we need to do.",
+      "files": [],
+      "expected_behavior": [
+        "Allows the search agents by their current names (at least Googlebot, Bingbot, OAI-SearchBot, Claude-SearchBot and PerplexityBot) and disallows training agents (at least GPTBot, ClaudeBot, Google-Extended and CCBot)",
+        "Explains that Google-Extended controls Gemini training and grounding but does not keep the site out of AI Overviews or AI Mode, and that those follow normal Search eligibility (with nosnippet, noindex or Search Console's control as the only opt-outs)",
+        "Tells them to check Cloudflare's bot or AI crawler settings as well as robots.txt, because the CDN can block AI search bots regardless of robots.txt",
+        "Notes that user-triggered fetchers (such as ChatGPT-User, Perplexity-User or Google's user-triggered agents) may ignore robots.txt, so robots.txt is not a complete control",
+        "Gets robots.txt mechanics right: includes a Sitemap line, does not rely on crawl-delay for Google, and does not claim robots.txt removes pages from the index",
+        "Dates the crawler names or advises rechecking each vendor's documentation because agent names change"
+      ]
+    },
+    {
+      "id": "optimizing-discoverability-3",
+      "skills": ["optimizing-discoverability"],
+      "query": "Our growth contractor proposed this AI visibility sprint for our docs site. Give us a clear yes or no on each item, and what to do instead where it's a no.",
+      "files": ["evals/fixtures/optimizing-discoverability-3-docs-plan.md"],
+      "expected_behavior": [
+        "Says no to rewriting pages into tiny question chunks, citing that Google names chunking and writing specially for AI as unnecessary, and recommends clear sections and headings instead",
+        "Says no to generating 600 near-duplicate pages per query variant, naming it as scaled content abuse risk, and recommends one strong page per intent",
+        "Says no to FAQPage schema on every page for rich results or AI citations, because FAQ rich results ended and structured data is not required for AI answers",
+        "Says no to updating dates weekly without changes, because engines treat cosmetic date changes as a warning sign, and recommends updating dates only when content changes, with accurate lastmod",
+        "Says no to site-wide noarchive, because at Bing NOARCHIVE keeps pages out of Copilot and grounding, which contradicts their goal",
+        "Treats llms.txt as optional and harmless for a docs site that coding agents may read, but not a discoverability lever, and recommends measuring with Search Console and Bing Webmaster Tools instead of a third-party AI visibility score"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    { "query": "Audit our landing page for SEO before we launch next week.", "should_trigger": true },
+    { "query": "How do we get our site cited in ChatGPT and Perplexity answers?", "should_trigger": true },
+    { "query": "Write a robots.txt that keeps us in AI search but out of model training.", "should_trigger": true },
+    { "query": "Write the headline and subheadline for our landing page hero.", "should_trigger": false, "belongs_to": "writing-ux-copy" },
+    { "query": "Our landing page stutters when I scroll on my phone. Recording attached.", "should_trigger": false, "belongs_to": "diagnosing-feel" },
+    { "query": "Help me choose keywords and screenshots for our App Store listing.", "should_trigger": false, "belongs_to": "none" }
+  ]
+}
