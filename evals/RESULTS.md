@@ -31,6 +31,14 @@ Final run on Claude Opus 5.5, October 2026: all 21 skills, 63 scenarios, each ru
 | `unifying-patterns` | 72% | 44% |
 | **All** | **89%** (333 of 376) | **36%** (137 of 376) |
 
+## Added after the final run
+
+| Skill | With skills | Without |
+| --- | --- | --- |
+| `optimizing-discoverability` | 100% | 83% |
+
+`optimizing-discoverability` was tested on its three scenarios the same way, against a baseline that could also search the web; the gap is smaller because current SEO advice is easy to find, and the skill's edge is completeness and dated sources. `framing-problems` was evaluated in its own session.
+
 ## Trigger checks
 
 130 of 131. A fresh session saw only the twenty-one names and descriptions and picked a skill for each prompt: at least three that should load each skill, and near-misses that belong to a neighbour, including the riskiest boundaries (visuals and decluttering, walking and breaking, shaping and exploring, AI features and specs). The one miss was a prompt whose label contradicted the motion boundary; the label has since been corrected.

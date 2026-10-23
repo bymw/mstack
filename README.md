@@ -1,8 +1,8 @@
 # Skills for Product Builders
 
-Twenty-one Agent Skills that help Claude shape, design, build and ship excellent products, on iPhone, iPad, Mac and the web. They work as a team, hold every piece of work to Apple's restraint and Linear's discipline, and run in Claude Code and Codex.
+Twenty-three Agent Skills that help Claude shape, design, build and ship excellent products, on iPhone, iPad, Mac and the web. They work as a team, hold every piece of work to Apple's restraint and Linear's discipline, and run in Claude Code and Codex.
 
-**21 skills** · **4 stages** · **iPhone, iPad, Mac and the web** · **MIT**
+**23 skills** · **4 stages** · **iPhone, iPad, Mac and the web** · **MIT**
 
 [Who it's for](#who-its-for) · [The skills](#the-skills) · [Install](#install) · [Inside a skill](#inside-a-skill) · [Evaluations](#evaluations)
 
@@ -10,10 +10,10 @@ Twenty-one Agent Skills that help Claude shape, design, build and ship excellent
 
 People who want to build excellent things, whatever their title.
 
-- **Product manager or leader**: `shaping-direction`, `defining-outcomes`, `sequencing-bets`, `writing-specs`
+- **Product manager or leader**: `framing-problems`, `shaping-direction`, `defining-outcomes`, `sequencing-bets`, `writing-specs`
 - **Design engineer**: `designing-visuals`, `designing-flows`, `designing-motion`, `writing-ux-copy`
 - **Engineer**: `breaking-experiences`, `diagnosing-feel`, `unifying-patterns`, `writing-specs`
-- **Founder or solo builder**: `crafting-products`, then whatever the work calls for
+- **Founder or solo builder**: `crafting-products`, `optimizing-discoverability`, then whatever the work calls for
 
 ## The skills
 
@@ -21,6 +21,8 @@ Every skill does one job and hands the rest to a teammate. [`crafting-products`]
 
 ### 1 · Shape
 
+- **[`framing-problems`](framing-problems/SKILL.md)**  
+  Turns raw material (an export, logs, a handover, people's accounts) into a problem statement anyone understands in one read, every number checked.
 - **[`shaping-direction`](shaping-direction/SKILL.md)**  
   Turns a vague idea or feature request into a direction worth testing, weighed against all four risks, with the cheapest test to prove it wrong.
 - **[`defining-outcomes`](defining-outcomes/SKILL.md)**  
@@ -70,6 +72,8 @@ Every skill does one job and hands the rest to a teammate. [`crafting-products`]
   Sorts what people said into what to act on, grounded in the product.
 - **[`writing-briefs`](writing-briefs/SKILL.md)**  
   Explains work to a leader or partner who isn't technical, recommendation first.
+- **[`optimizing-discoverability`](optimizing-discoverability/SKILL.md)**  
+  Makes a site easy to find, read and cite by search engines and AI assistants, checked against current official guidance.
 
 ## Install
 
@@ -108,6 +112,7 @@ skills/
 ├── house-rules.md
 ├── evals/                  three scenarios and six trigger checks per skill
 ├── crafting-products/      SKILL.md, PLATFORMS.md, READING.md
+├── framing-problems/       SKILL.md
 ├── shaping-direction/      SKILL.md
 ├── defining-outcomes/      SKILL.md
 ├── sequencing-bets/        SKILL.md
@@ -127,7 +132,8 @@ skills/
 ├── settling-decisions/     SKILL.md
 ├── unifying-patterns/      SKILL.md, GUARDS.md
 ├── sorting-feedback/       SKILL.md
-└── writing-briefs/         SKILL.md, SHAPES.md
+├── writing-briefs/         SKILL.md, SHAPES.md
+└── optimizing-discoverability/  SKILL.md, SIGNALS.md, CRAWLERS.md
 ```
 
 ## Evaluations

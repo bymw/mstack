@@ -29,7 +29,7 @@ A behaviour passes only if the output clearly shows it. Return JSON:
 
 ## Running the trigger checks
 
-Give a fresh session only the twenty-one skill names and descriptions, then each trigger query, and ask which skill it would load (or none). A check passes when a `should_trigger: true` query picks this skill, and a `should_trigger: false` query picks the neighbour named in `belongs_to` or none.
+Give a fresh session only the twenty-three skill names and descriptions, then each trigger query, and ask which skill it would load (or none). A check passes when a `should_trigger: true` query picks this skill, and a `should_trigger: false` query picks the neighbour named in `belongs_to` or none.
 
 ## Results
 

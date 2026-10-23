@@ -69,6 +69,7 @@ Each skill does one job deeply and hands the rest on. Common plays:
 
 | The work | Lead | Then |
 | --- | --- | --- |
+| Understand what is really going on from raw material (data, logs, a handover, a brief) | `framing-problems` | `shaping-direction`, `writing-briefs` |
 | Decide what to build, or whether an idea is worth it | `shaping-direction` | `defining-outcomes`, `exploring-directions`, `settling-decisions` |
 | Set goals or say how success is measured | `defining-outcomes` | `settling-decisions` |
 | Order more ideas than there is time for | `sequencing-bets` | `settling-decisions`, `writing-briefs` |
@@ -83,6 +84,7 @@ Each skill does one job deeply and hands the rest on. Common plays:
 | Simplify a feature | `decluttering-screens` | `getting-sign-off`, then build |
 | Design or ship an AI feature | `building-ai-features` | `writing-ux-copy`, `designing-flows` |
 | Break a feature on purpose, find edge cases, build a simulator | `breaking-experiences` | `walking-personas`, then the skill that owns each fix |
+| Make a public page easy to find and cite by search engines and AI assistants | `optimizing-discoverability` | `writing-ux-copy` for titles and descriptions, `designing-visuals` for images and speed |
 | Turn feedback into actions | `sorting-feedback` | `settling-decisions`, `getting-sign-off` |
 | Explain work to a non-technical reader | `writing-briefs` | |
 
