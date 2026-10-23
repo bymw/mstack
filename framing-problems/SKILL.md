@@ -24,9 +24,9 @@ This skill covers what is true and what the problem is. What to do about it is `
 5. **Check how a number is made before trusting it:** what is counted, from which events, since when. Look for duplicate rows, double counting, tracking changes and records that failed to link. Why: a moved metric is a measurement change more often than people expect.
 6. **Every written rule is a test.** Spec lines, decisions, policies and promises are each checked against what the data or the system shows; a broken rule is a finding, with both sources quoted. Where documents disagree, the later decision is the current word, marked to confirm with its owner. Why: the most serious problems are rules already agreed and quietly broken.
 7. **Records over accounts.** Build timelines and counts from logs and data, then check each person's account against them, saying where it is right and where it is wrong, with the line that proves it. Why: an account is memory plus a theory; a record is neither.
-8. **Mark every finding fact, inference or unknown,** with the check that produced it. Never invent a cause, figure or quote; an unexplained change stays unknown rather than being pinned on the nearest event. Why: a guess written like a fact becomes the fact someone repeats.
+8. **Mark every finding fact, inference or unknown,** with the check that produced it. A rate needs its denominator, and a conclusion drawn from matching counts or timing is an inference, not a fact. Never invent a cause, figure or quote; an unexplained change stays unknown rather than being pinned on the nearest event. Why: a guess written like a fact becomes the fact someone repeats.
 9. **The problem first, on its own.** Who is affected, what goes wrong, since when and what it costs, in numbers. Next steps come after, in a short separate section, each with an owner; designing the fix belongs to the next skill. Why: fixes mixed into the explanation hide the problem and start a debate about the fix before the facts are agreed.
-10. **Explain in layers:** one sentence, then the story in numbered steps, then terms, then findings, then open questions. The reader can stop at any layer and still be right. Why: readers stop early, so the first layer must carry the whole answer.
+10. **Explain in layers, and say each thing once:** the problem in one sentence, then the story in numbered steps, then terms, then only the findings the story did not already carry, then open questions. Each layer adds; nothing is restated. The reader can stop at any layer and still be right. Why: readers stop early, so the first layer must carry the whole answer, and a point said three times makes the answer three times as long without making it truer.
 11. **Every open question names who can answer it.** Why: a question with no owner is never answered.
 
 ## Method
@@ -38,14 +38,14 @@ This skill covers what is true and what the problem is. What to do about it is `
 4. **Reconcile the records:** duplicates, double counts, unlinked rows, tracking changes. Recount with them fixed, and say how much the picture moved.
 5. **Test every rule** against the records, and **check every account** against them.
 6. **Mark each finding** fact, inference or unknown, with its check.
-7. **Write the problem statement:** one paragraph, in numbers. If it will not write, say what is still unknown and who can close it.
+7. **Write the problem statement:** one sentence, in numbers; it opens the answer. If it will not write, say what is still unknown and who can close it.
 8. **Layer the answer** in the output below, then hand on: what to do goes to `shaping-direction`, the measure of success to `defining-outcomes`, a version for a leader to `writing-briefs`.
 
 ## Output
 
 Structure the answer as `crafting-products` describes. The first line carries the whole answer.
 
-**In one sentence:** what is really going on.
+**The problem:** one sentence: who is affected, what goes wrong, since when, what it costs, in numbers. Detail belongs to the layers below.
 
 **What happened:** three to six numbered steps, in order.
 
@@ -55,15 +55,13 @@ Structure the answer as `crafting-products` describes. The first line carries th
 | Finding | Evidence | Fact, inference or unknown |
 | --- | --- | --- |
 
-**The problem:** one paragraph: who, what goes wrong, since when, what it costs, in numbers.
-
 | Next step | Owner |
 | --- | --- |
 
 | Open question | Who can answer |
 | --- | --- |
 
-Leave out an empty section rather than filling it.
+Findings already told in the story are not repeated in the table. Leave out an empty section rather than filling it.
 
 ## Gotchas
 
@@ -76,6 +74,9 @@ Leave out an empty section rather than filling it.
 | An unexplained change pinned on the nearest event | Marked unknown, with who can find out |
 | Fixes woven through the explanation | The problem on its own, then next steps with owners |
 | One long answer at a single depth | Layers the reader can stop at |
+| The same point in the summary, the story and the findings | Each layer adds; nothing is said twice |
+| The later decision picked silently | The later decision as the current word, marked to confirm with its owner |
+| A rate from counts whose total is unknown, labelled fact | The counts as fact, the rate as unknown until the total is found |
 
 ## Works with
 

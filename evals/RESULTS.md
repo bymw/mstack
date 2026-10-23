@@ -36,8 +36,10 @@ Final run on Claude Opus 5.5, October 2026: all 21 skills, 63 scenarios, each ru
 | Skill | With skills | Without |
 | --- | --- | --- |
 | `optimizing-discoverability` | 100% | 83% |
+| `framing-problems` | 94% | 28% |
+| `building-ai-features`, new scenario 4 only | 5 of 6 | 2 of 6 |
 
-`optimizing-discoverability` was tested on its three scenarios the same way, against a baseline that could also search the web; the gap is smaller because current SEO advice is easy to find, and the skill's edge is completeness and dated sources. `framing-problems` was evaluated in its own session.
+`optimizing-discoverability` was tested on its three scenarios the same way, against a baseline that could also search the web; the gap is smaller because current SEO advice is easy to find, and the skill's edge is completeness and dated sources. `framing-problems` and the fourth `building-ai-features` scenario (AI acting for an organisation) were also run against the 21 skills before them, which scored 44% and 3 of 6: the existing set routed these prompts to `shaping-direction`, `writing-briefs` and `sorting-feedback` and still missed the checks. Graded blind, the answers with the new skill were also the most accurate (4 factual slips against 5 with the 21 skills and 7 with none), but the longest. Rule 10 was then tightened to say each thing once, opening with the problem in one sentence; two reruns were judged faster to read, and scored 4 to 6 of 6 per scenario, within the noise of single runs.
 
 ## Trigger checks
 
