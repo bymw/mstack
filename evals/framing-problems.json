@@ -1,0 +1,94 @@
+{
+  "skill": "framing-problems",
+  "evals": [
+    {
+      "id": "framing-problems-1",
+      "skills": [
+        "framing-problems"
+      ],
+      "query": "Conversion in our fitness tracker app dropped over the last three weeks and the head of product wants to know why by Friday. Export and notes attached. What is actually going on?",
+      "files": [
+        "evals/fixtures/framing-problems-1-conversion-export.csv",
+        "evals/fixtures/framing-problems-1-notes.md"
+      ],
+      "expected_behavior": [
+        "Structure: opens with the answer in one sentence, then layers a reader can stop at (the story in a few numbered steps, the terms, then the findings), and ends with open questions, each naming who can answer it",
+        "Defines the terms before judging and flags that the growth dashboard (paid / trials) and finance (paid / installs) mean different things by 'conversion', which is why their numbers disagree",
+        "Finds that Android trials roughly doubled from W38 while Android paid conversions stayed flat at about 180 a week, matches this to the 4.2 release firing both trial events, and concludes most of the drop is measurement: real Android conversion is still about 15%",
+        "Catches the duplicated W36 iOS row and removes it before computing any total",
+        "Treats the pricing explanation as unsupported, because the price change was web-only and the export holds no web data, and reports the small real iOS dip (about 16% to 15%) as unexplained and marked unknown rather than attributing it",
+        "Marks each finding as fact, inference or unknown with the check behind it, invents no figure, and states the problem on its own (who is affected, what goes wrong, in numbers) before any next steps, which come in a separate section, each with an owner"
+      ]
+    },
+    {
+      "id": "framing-problems-2",
+      "skills": [
+        "framing-problems"
+      ],
+      "query": "I'm taking over the Shared Availability project in our team calendar app from a PM who left. This is everything she handed over. Help me understand where it really stands. Today is 3 November.",
+      "files": [
+        "evals/fixtures/framing-problems-2-handover.md"
+      ],
+      "expected_behavior": [
+        "Structure: opens with where the project stands in one sentence, then the story in a few numbered steps, the terms, the findings with their sources, and open questions, each naming who decides",
+        "Flags 'Busy' as defined two ways (the spec: accepted events only; the engineering thread and SA-107: tentative and out-of-office included) and asks who decides, instead of picking one",
+        "Tests the written rules against the backlog: SA-103 (event title on hover, Done) breaks 'titles are never shown to anyone but the owner', and the beta runs without the opt-in the 20 August decision requires (SA-102 not started), so availability is visible today without consent",
+        "Names the contradiction between the spec ('visible to everyone in the team') and the decisions log (opt-in, off by default), treats the later decision as the current word, and marks it to confirm with its owner",
+        "Finds that SA-101, SA-105 and SA-106 describe the same overlay and gives the number of distinct work items (8, not 10)",
+        "Surfaces the 15 November partner deadline against SA-108 not started (12 days away) and the unconfirmed 'should be fine', and states the problem on its own before any next steps, which come in a separate section, each with an owner"
+      ]
+    },
+    {
+      "id": "framing-problems-3",
+      "skills": [
+        "framing-problems"
+      ],
+      "query": "Last night our recipe app sent some people the same push notification up to six times. Logs and three people's notes are attached. I'm not technical: tell me what actually happened.",
+      "files": [
+        "evals/fixtures/framing-problems-3-incident.md"
+      ],
+      "expected_behavior": [
+        "Structure: one plain sentence on what happened, then the story as numbered steps in time order, then where each person's account is right and wrong, then open questions, each naming who can answer it",
+        "Explains every technical term it uses (push provider, timeout, retry, duplicate key) in one plain line, because the reader said they are not technical",
+        "Builds the timeline from the log, not from the accounts: the 19:02 deploy cut the provider timeout from 10 s to 2 s, the provider was slow (about 3 s) but not down, so sends were retried, and each retry was a new notification, up to six per device",
+        "Shows each account as partly wrong with the line that proves it: no outage was posted (only elevated latency), it is not an Android app bug, and it was not Android-only (1,980 iOS and 2,140 Android devices, 4,120 in total)",
+        "Explains why complaints were mostly from Android (33 of 37 tickets) only as an inference marked as such, not as fact",
+        "States the problem in numbers on its own first; any fixes follow in a separate section of next steps, each naming an owner, rather than mixed into the explanation"
+      ]
+    }
+  ],
+  "trigger_checks": [
+    {
+      "query": "Our churn numbers look off and I don't understand this export. What is actually going on?",
+      "should_trigger": true
+    },
+    {
+      "query": "I just joined the payments team and got the spec, the backlog and a data dump. Help me understand the problem we're solving.",
+      "should_trigger": true
+    },
+    {
+      "query": "Here are the logs and three people's accounts of yesterday's outage. What really happened?",
+      "should_trigger": true
+    },
+    {
+      "query": "We know churn comes from failed card renewals. What should we build about it?",
+      "should_trigger": false,
+      "belongs_to": "shaping-direction"
+    },
+    {
+      "query": "Here's the transcript of our call with a customer. What should we act on?",
+      "should_trigger": false,
+      "belongs_to": "sorting-feedback"
+    },
+    {
+      "query": "Explain this finding about failed renewals to our CEO in a one-pager.",
+      "should_trigger": false,
+      "belongs_to": "writing-briefs"
+    },
+    {
+      "query": "What metric should tell us the renewal fix worked?",
+      "should_trigger": false,
+      "belongs_to": "defining-outcomes"
+    }
+  ]
+}

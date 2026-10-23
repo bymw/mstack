@@ -52,6 +52,24 @@
         "Flags the identical result on pressing again (E) and the 9 s blank spinner: pressing again must give a fresh result, and a signal must appear within about 100 ms with the summary streamed as stable text",
         "Decides Hide, not Friday, unless the owner records 'Ship below the bar, because…' as an explicit written decision, and records the decision with a date"
       ]
+    },
+    {
+      "id": "building-ai-features-4",
+      "skills": [
+        "building-ai-features"
+      ],
+      "query": "Our support agents edit AI-drafted replies all day in our bike-sharing app. Operations wants the AI to send replies on its own. The log is attached. Which replies can it send by itself?",
+      "files": [
+        "evals/fixtures/building-ai-features-4-reply-log.md"
+      ],
+      "expected_behavior": [
+        "Structure: a one-sentence headline, a table of reply types with what each one says, the evidence from the log and a decision (sends alone, draft for review, never alone), then a trust check",
+        "Decides by what a reply says, not by model confidence: rejects the single 94% figure because it averages reply types with very different edit rates, and points to refund drafts (mean confidence 0.93, edited 176 of 220) as proof that confidence is not evidence",
+        "Lets only low-consequence types the log supports send alone (receipt resent, photos received) and keeps refunds and amounts, statements about damage charges, and injury reports never alone, however accurate they become",
+        "Flags the 'Your account is unlocked' drafts as claiming an action the system has not done, keeping what is planned separate from what was done",
+        "Requires a standing approval from a named accountable owner for each reply type that sends alone, with every send logged, a regular sample reviewed by people, a threshold that returns the type to drafts, and a kill switch, starting with one or two types",
+        "Treats the intake bot's booking and bike numbers as inferred (7 and 2 wrong in 50 sampled chats) and requires them checked before any reply that sends alone relies on them"
+      ]
     }
   ],
   "trigger_checks": [
@@ -65,6 +83,10 @@
     },
     {
       "query": "Design a 'Make friendlier' rewrite action for comments in our task app.",
+      "should_trigger": true
+    },
+    {
+      "query": "Operations wants our AI to answer customer chats without an agent checking first. Which replies can it send on its own?",
       "should_trigger": true
     },
     {

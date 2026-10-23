@@ -18,10 +18,10 @@ This skill covers the behaviour, interface and quality gate of AI features. Labe
 ## Rules
 
 **Trust**
-1. **Keep heard, inferred, planned and did separate.** The interface shows what the person provided, what the AI understood, what it proposes and what it has done. When unsure, it asks ("Did you mean…?") rather than guessing.
+1. **Keep heard, inferred, planned and did separate.** The interface shows what the person provided, what the AI understood, what it proposes and what it has done. When unsure, it asks ("Did you mean…?") rather than guessing. An AI output passed to another system or another AI (an extracted number, a transcribed name) stays marked as inferred there, and is checked before anything consequential relies on it.
 2. **The label is a promise.** An action does exactly what its name says, strongly enough that the difference is obvious. A result weaker than the label is a product bug.
 3. **Never lose the person's work.** Keep the original and the current version, Undo restores the original, closing never deletes. A rewrite keeps every fact and the person's voice unless the action says otherwise; restructuring keeps their framing (a list keeps its title and intent).
-4. **Confirm anything consequential or visible to others.** Nothing is sent, published, purchased or deleted without an explicit yes; everything else is undoable instead of confirmed.
+4. **Confirm anything consequential or visible to others.** Nothing is sent, published, purchased or deleted without an explicit yes; everything else is undoable instead of confirmed. When AI acts for an organisation toward its customers, the yes can be a standing approval: a named, accountable owner approves one kind of output in advance, every action is logged, people read a regular sample, a written threshold returns the kind to drafts, and a kill switch stops it. Promises, money, liability, legal and safety matters never get a standing approval, however accurate the drafts.
 5. **Suggestions stay separate from accepted edits.** Never overwrite a correction silently.
 6. **Transparency by default.** Say exactly what leaves the device and where it goes, including the unflattering parts. Access to personal context is earned, scoped and revocable; where it helps, people can see the instructions behind an action.
 
@@ -32,7 +32,7 @@ This skill covers the behaviour, interface and quality gate of AI features. Labe
 
 **Quality**
 10. **Every AI feature passes an exam before it ships, built from real outputs.** Start from the spec's example set; after the first build, read a sample of real outputs, note the first thing that went wrong in each, and group and count the failure types; then write pass-or-fail checks for the most common ones. Pass marks are frozen before every later round, against a held-out set of real and adversarial cases, with blind old-versus-new comparisons judged by the owner. An AI judge is trusted only once it agrees with the owner's own labels where they differ, and real use is sampled again after launch. A feature that fails stays hidden; shipping below the bar is an explicit, written product decision. Every correction a person makes becomes a new test case.
-11. **Autonomy is earned, and accuracy sets the interaction.** Often wrong: a suggestion. Usually right: a draft to review. Almost always right: an action with Undo. Roll out as drafts first, log every accept, edit and reject, and widen autonomy only as that evidence supports it. A confidence score is not proof.
+11. **Autonomy is earned per kind of output, by what it says and what a mistake would cost.** Sort outputs by what they say (an acknowledgement, a request for a document, a fact from the system, a promise, an amount), never by model confidence or one overall accuracy figure, which averages kinds that behave very differently. Often wrong: a suggestion. Usually right: a draft to review. Almost always right, and a mistake is cheap and fixable: an action with Undo, or sent alone under a standing approval (rule 4). Roll out as drafts first, log every accept, edit and reject per kind, and widen autonomy only as that evidence supports it. A confidence score is not proof.
 
 **Engineering**
 12. **Start from the workflow, not the model.** A rule sometimes beats an agent: cheaper, predictable and auditable. Use AI where it clearly does better.
@@ -56,7 +56,14 @@ This skill covers the behaviour, interface and quality gate of AI features. Labe
 | --- | --- | --- | --- |
 | Simplify | Shorter, plainer, every fact kept | Passes 8 of 8 | Ship |
 
-**Trust check,** one line each: heard, inferred, planned and did kept separate; original kept; confirmations in place; what leaves the device stated. Pass marks and the test set follow, after the main points. For a review, findings go under High, Medium and Low headings, every one included.
+For a decision about what may act alone, one row per kind of output:
+
+| Kind of output | What it says | Evidence | Decision |
+| --- | --- | --- | --- |
+| Order status | A fact from the system | 1,180 of 1,200 sent unchanged | Sends alone, under a standing approval |
+| Goodwill credit | An amount and a promise | 64 of 90 edited | Never alone |
+
+**Trust check,** one line each: heard, inferred, planned and did kept separate; original kept; confirmations or standing approvals in place, each with its owner, log, sample, threshold and kill switch; what leaves the device stated. Pass marks and the test set follow, after the main points. For a review, findings go under High, Medium and Low headings, every one included.
 
 ## Gotchas
 
@@ -68,6 +75,7 @@ This skill covers the behaviour, interface and quality gate of AI features. Labe
 | Shipping because the demo looked good | Checks from real failures, frozen pass marks, a blind comparison, a recorded decision |
 | One large model for every job | The smallest model that passes each job |
 | Gradients, glows or sparkles to mark AI | The same calm interface as the rest of the product |
+| One accuracy figure to justify sending alone | Edit rates per kind of output, and a never-alone list |
 
 ## Works with
 
