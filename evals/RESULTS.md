@@ -41,6 +41,8 @@ Final run on Claude Opus 5.5, October 2026: all 21 skills, 63 scenarios, each ru
 
 ## Trigger checks
 
+With all 23 skills, 145 of 145 (2026-10-23), including the near-misses for `framing-problems` and `optimizing-discoverability`. The run before the two new skills, with 21:
+
 130 of 131. A fresh session saw only the twenty-one names and descriptions and picked a skill for each prompt: at least three that should load each skill, and near-misses that belong to a neighbour, including the riskiest boundaries (visuals and decluttering, walking and breaking, shaping and exploring, AI features and specs). The one miss was a prompt whose label contradicted the motion boundary; the label has since been corrected.
 
 ## How the numbers came about
