@@ -1,6 +1,6 @@
 ---
 name: optimizing-discoverability
-description: "Makes websites, web apps and landing pages easy to find, read and cite by search engines and AI assistants (Google, Bing, ChatGPT, Claude, Perplexity): content readable without JavaScript, deliberate crawler policy, titles and metadata, structured data, images and speed, checked against current official guidance. Use when building, launching or auditing a public page, or asked about SEO, AI search or llms.txt. Not for App Store listings."
+description: "Makes websites and landing pages easy for search engines and AI assistants (Google, ChatGPT, Perplexity) to find, read and cite: content readable without JavaScript, crawler policy, metadata, structured data and speed. Use when building, launching or auditing a public page, or asked about SEO, AI search, robots.txt or llms.txt. Not for App Store listings."
 license: MIT
 ---
 

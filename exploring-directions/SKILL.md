@@ -1,6 +1,6 @@
 ---
 name: exploring-directions
-description: "Shows two to four genuinely different directions for one design problem, built in the real interface at true device size, each with its trade-off and one recommended. Writes no product code. Use when the user asks for concepts or options to compare, or a problem has more than one defensible answer. Not for one proposed change (getting-sign-off)."
+description: "Shows two to four genuinely different directions for one design problem, built in the real interface at device size, each with its trade-off and one recommended. Writes no product code. Use when asked for concepts or options to compare, or a problem has more than one defensible answer. Not for one proposed change (getting-sign-off)."
 license: MIT
 compatibility: "Publishing the comparison page uses Claude artifacts with a data store when available; otherwise a local HTML page."
 ---

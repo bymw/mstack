@@ -1,6 +1,6 @@
 ---
 name: decluttering-screens
-description: "Simplifies an existing feature radically without removing anything a person can do: inventories every element, applies the cheapest moves first, and proves every capability is still reachable, with before-and-after counts. Use when the user says a screen is cluttered or has too much on it, or asks to simplify. Not for inconsistency across screens (auditing-consistency)."
+description: "Simplifies a screen radically without removing anything a person can do: inventories every element, applies the cheapest moves first, proves every capability still reachable, and counts before and after. Use when a screen is cluttered, has too much on it, or needs simplifying. Not for inconsistency across screens (auditing-consistency)."
 license: MIT
 ---
 

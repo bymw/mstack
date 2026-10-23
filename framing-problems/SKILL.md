@@ -1,6 +1,6 @@
 ---
 name: framing-problems
-description: "Turns raw material (a data export, logs, a handover folder, written rules, a brief, people's accounts) into a problem statement anyone can understand in one read: the ask decoded, a plain glossary, every number checked and marked fact, inference or unknown, sources reconciled, and open questions with owners. Use when the user asks what is really going on, why a number moved, where a project stands or what happened, or says they do not understand the material. Not for deciding what to build (shaping-direction) or sorting what people said (sorting-feedback)."
+description: "Turns raw material (data exports, logs, handover folders, people's accounts) into a problem statement anyone grasps in one read: every number marked fact, inference or unknown, and open questions with owners. Use when asked what is really going on, why a number moved, where a project stands or what happened. Not for what to build (shaping-direction) or acting on feedback (sorting-feedback)."
 license: MIT
 ---
 

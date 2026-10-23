@@ -1,6 +1,6 @@
 ---
 name: designing-motion
-description: "Keeps every transition, animation and loading moment smooth, well timed and calm: decides whether something should move, gives each move a named role and tokens, and audits motion in frames. Use when motion, transitions, loading states or animations are added, reviewed or tuned, or the user asks for Apple- or Linear-level motion. Not for a fault someone already felt (diagnosing-feel)."
+description: "Makes every transition, animation and loading moment smooth, well timed and calm: decides whether something should move, gives each move a named role and tokens, and audits motion in frames. Use when motion, transitions, loading states or animations are added, reviewed, audited or tuned. Not for a fault someone already felt (diagnosing-feel)."
 license: MIT
 ---
 

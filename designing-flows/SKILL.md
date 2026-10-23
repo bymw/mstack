@@ -1,6 +1,6 @@
 ---
 name: designing-flows
-description: "Shapes multi-step flows (sign-up, onboarding, permissions, setup, checkout, invites) so every step has one mission and one action, value comes before asks, and nothing is lost. Use whenever a flow, wizard, form or sequence of screens is designed, built or reviewed, or the user mentions onboarding or one thing at a time. Not for single-screen layout (designing-visuals)."
+description: "Shapes multi-step flows (sign-up, onboarding, permissions, setup, checkout, invites) so each step has one mission and one action, value comes before asks, and nothing is lost. Use whenever a flow, wizard, form or sequence of screens is designed, built or reviewed. Not for single-screen layout (designing-visuals)."
 license: MIT
 ---
 

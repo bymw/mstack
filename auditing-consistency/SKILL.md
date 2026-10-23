@@ -1,6 +1,6 @@
 ---
 name: auditing-consistency
-description: "Starts from one noticed inconsistency, finds every place the same job is done on every device, measures each, and proposes one canonical answer per job plus a guard against drift. Read-only. Use when the user says something differs here and there, or asks for a consistency or design QA audit. Not for building the fix (unifying-patterns) or motion audits (designing-motion)."
+description: "Finds every place one job is done differently across screens and devices, measures each, and proposes one canonical answer plus a guard against drift. Read-only. Use when something differs here and there, or the user asks for a consistency or design QA audit. Not for building the fix (unifying-patterns) or motion audits (designing-motion)."
 license: MIT
 ---
 

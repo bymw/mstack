@@ -1,6 +1,6 @@
 ---
 name: defining-outcomes
-description: "Defines what success means before the work starts: the change in what people do, one primary metric with baseline, target and date, a leading signal, countermetrics, and go or no-go points. Use when the user asks how to measure success, sets goals, OKRs or a north star, or asks whether a launch worked. Not for testing whether an idea is right (shaping-direction)."
+description: "Defines success before the work starts: the change in behaviour, one primary metric with baseline, target and date, a leading signal, countermetrics, and go or no-go points. Use when asked how to measure success or whether a launch worked, or to set goals, OKRs or a north star. Not for whether an idea is worth it (shaping-direction)."
 license: MIT
 ---
 

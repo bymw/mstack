@@ -1,6 +1,6 @@
 ---
 name: sequencing-bets
-description: "Orders more ideas than there is capacity for into Now, Next and Later against ranked problems, judged by opportunity cost, evidence and what unblocks learning, with a stop rule per bet and a Not doing list. Use when the user asks what to build first or next, plans a quarter or roadmap, or faces competing requests. Not for shaping one direction (shaping-direction)."
+description: "Orders more ideas than capacity into Now, Next and Later against ranked problems, by opportunity cost, evidence and what unblocks learning, with a stop rule per bet and a Not doing list. Use when asked what to build first or next, planning a quarter or roadmap, or facing competing requests. Not for shaping one idea (shaping-direction)."
 license: MIT
 ---
 

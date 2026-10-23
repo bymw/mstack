@@ -1,6 +1,6 @@
 ---
 name: writing-briefs
-description: "Explains work to a smart reader who is not technical (a leader, stakeholder or partner), recommendation first, in plain words with one visual: a brief, a reply or a deck outline, with no unconfirmed figures. Use when the user asks to explain something simply, write a one-pager, reply to someone or outline a deck. Not for deciding what to act on from feedback (sorting-feedback)."
+description: "Explains work to a smart reader who is not technical (a leader, stakeholder or partner), recommendation first, in plain words with one visual and no unconfirmed figures. Use when asked to explain something simply, write a brief or one-pager, reply to someone or outline a deck. Not for what to act on from feedback (sorting-feedback)."
 license: MIT
 ---
 

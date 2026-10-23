@@ -1,6 +1,6 @@
 ---
 name: shaping-direction
-description: "Turns a vague opportunity, feature request or stalled initiative into a direction worth testing: the person and their moment, graded evidence, two or three approaches, the four risks with a viability check, and the cheapest test with its pass mark. Use when the user asks what to build, which approach to pick, whether an idea is worth it, or why something stalled. Not for working out what is true from raw material (framing-problems), metrics (defining-outcomes) or specs (writing-specs)."
+description: "Turns a vague opportunity, feature request or stalled initiative into a direction worth testing: graded evidence, two or three approaches, the four risks and the cheapest test. Use when asked what to build, which approach to pick, whether an idea is worth it, or why something stalled. Not for raw material (framing-problems), metrics (defining-outcomes) or specs (writing-specs)."
 license: MIT
 ---
 
