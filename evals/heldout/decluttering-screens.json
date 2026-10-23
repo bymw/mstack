@@ -1,0 +1,40 @@
+{
+  "skill": "decluttering-screens",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "decluttering-screens-h1",
+      "skills": [
+        "decluttering-screens"
+      ],
+      "query": "The issue detail page in our bug tracker (attached) is way too busy. People tell us they can't find the comment box. Simplify it, but our power users use everything on it.",
+      "files": [
+        "evals/heldout/fixtures/decluttering-screens-h1-issue-detail.html"
+      ],
+      "expected_behavior": [
+        "Starts from a complete inventory of what is on the page (every action and every piece of information) before changing it.",
+        "Keeps every capability reachable and says where each moved element now lives (for example in a menu or behind a disclosure).",
+        "Makes commenting easy to find, answering the stated complaint.",
+        "Uses grouping or progressive disclosure rather than deletion for rarely used actions, and keeps keyboard access for power users.",
+        "Reports a before and after count of visible elements or actions.",
+        "Delivers the revised page as HTML or a precise layout."
+      ]
+    },
+    {
+      "id": "decluttering-screens-h2",
+      "skills": [
+        "decluttering-screens"
+      ],
+      "query": "People say they can't find anything in our photo journal app's Settings. It's one long list with no sections, in this order: Theme, Daily reminder, Sign out, Upload quality, Passcode lock, Name, Dark mode, Export all entries, Reminder time, Show weather on entries, Face ID, App icon, Weekend reminder, Clear cache, Email, Keep original photos, Notifications, Show location on entries, Rate the app, Font size, Start week on, Sync now, Lock after, Debug logs, Change password, Upload over cellular, Hide previews in app switcher, Import, Last synced, Help, Default journal, 'On this day' notifications, Licenses, Delete account, Version, Contact us. Make it simpler.",
+      "files": [],
+      "expected_behavior": [
+        "Accounts for every one of the 36 original settings in the new structure, with none silently dropped.",
+        "Groups settings by what people are trying to do, with clear section names.",
+        "Moves rarely used or advanced settings one level deeper while keeping the common ones near the top.",
+        "Merges overlapping settings only when nothing a person can do is lost, and says which (for example Theme and Dark mode, Sync now and Last synced, Notifications and the reminder toggles).",
+        "Gives before and after counts (for example items on the first screen).",
+        "Shows the new structure as a clear outline or mockup."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "skill": "breaking-experiences",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "breaking-experiences-h1",
+      "skills": [
+        "breaking-experiences"
+      ],
+      "query": "We launch shared shopping lists next week in our grocery app: several people in a household edit the same list, online or offline. Our merge logic is attached. Help me break it before our users do.",
+      "files": [
+        "evals/heldout/fixtures/breaking-experiences-h1-merge.ts"
+      ],
+      "expected_behavior": [
+        "Finds that remove() drops the item instead of keeping a deletion marker, so a removed item comes back when merged with a device that still has it (and that merge() also drops markers).",
+        "Finds the reliance on each device's own clock (Date.now) for last-write-wins, and shows how a device with a wrong clock wins or loses every conflict.",
+        "Lists further concrete break cases (for example two people checking and renaming the same item at once, both adding 'milk', a phone offline for days, hundreds of items, very long or emoji names).",
+        "Builds a way to simulate them (for example fake clocks per device, controllable offline periods and sync order, seeded lists) rather than only listing ideas.",
+        "Writes automated tests for the breaks that fail on the current code, and says they fail before the fix.",
+        "Prioritises the breaks by impact on users and proposes fixes for the top ones."
+      ]
+    },
+    {
+      "id": "breaking-experiences-h2",
+      "skills": [
+        "breaking-experiences"
+      ],
+      "query": "Members of our co-working space book meeting rooms in our app. We've had double bookings, and a few people booked the wrong hour after they travelled. The booking endpoint is attached. Build me something that finds all the ways this breaks, and keep it so it can't happen again.",
+      "files": [
+        "evals/heldout/fixtures/breaking-experiences-h2-bookings.ts"
+      ],
+      "expected_behavior": [
+        "Identifies the race between the clash check and the insert (two requests at once can both succeed) and proposes a database-level guard (an exclusion constraint, or a transaction with a lock).",
+        "Identifies that the app's retries can create duplicate bookings, and proposes an idempotency key.",
+        "Identifies that times without a zone are parsed in the server's time zone, so travellers and daylight saving changes shift bookings, and proposes storing times with an explicit zone (the room's).",
+        "Provides a way to simulate the conditions: concurrent requests, delayed responses with retries, a client in another time zone, and a daylight saving boundary.",
+        "Writes automated tests for these cases that fail on the current code before the fix.",
+        "Also checks input edge cases such as an end before the start, zero-length bookings or unknown rooms."
+      ]
+    }
+  ]
+}

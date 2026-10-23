@@ -1,0 +1,42 @@
+{
+  "skill": "sorting-feedback",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "sorting-feedback-h1",
+      "skills": [
+        "sorting-feedback"
+      ],
+      "query": "Here's the transcript of a user interview from yesterday for our plant-care app (attached). What should we do with it?",
+      "files": [
+        "evals/heldout/fixtures/sorting-feedback-h1-interview.md"
+      ],
+      "expected_behavior": [
+        "Turns the interview into a short, prioritised list of actions, each saying what to do with it (for example build, investigate further, or set aside).",
+        "Quotes or points to the transcript line behind each item.",
+        "Notices requests the app already covers (household sharing, the reminder time setting) and treats them as a discoverability problem rather than new features.",
+        "Separates what the person asked for from the underlying need (for example handing over care while travelling, knowing how much water to give).",
+        "Notes that this is one person and says what would confirm a pattern before building.",
+        "Flags that the 'tells you why a plant looks unhealthy' answer came from a leading question and is weaker evidence."
+      ]
+    },
+    {
+      "id": "sorting-feedback-h2",
+      "skills": [
+        "sorting-feedback"
+      ],
+      "query": "Here are our store reviews for this month (attached). What's actionable?",
+      "files": [
+        "evals/heldout/fixtures/sorting-feedback-h2-reviews.md"
+      ],
+      "expected_behavior": [
+        "Groups the reviews into themes with how many reviews raise each.",
+        "Separates bugs (metronome lag with wireless audio, the tab import crash on Android 15) from requests, pricing complaints and praise.",
+        "Puts the most serious or widespread problem first with a concrete next step (for example reproduce the wireless lag and add latency compensation).",
+        "Notices that left-handed mode already exists and treats it as a discoverability problem.",
+        "Quotes or cites the review behind each item.",
+        "Notes the limits of 14 reviews as evidence."
+      ]
+    }
+  ]
+}

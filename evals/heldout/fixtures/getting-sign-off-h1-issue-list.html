@@ -1,0 +1,29 @@
+<!-- Bug tracker web app, issue list today. -->
+<!doctype html>
+<html>
+<head>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 0; font-size: 14px; color: #1f2328; }
+  .toolbar { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid #ddd; }
+  .chip { padding: 4px 10px; border: 1px solid #ccc; border-radius: 999px; font-size: 13px; }
+  .new { margin-left: auto; padding: 6px 12px; background: #1f883d; color: #fff; border: 0; border-radius: 6px; }
+  table { width: 100%; border-collapse: collapse; }
+  td, th { height: 56px; padding: 0 16px; border-bottom: 1px solid #eee; text-align: left; }
+  .prio { font-size: 12px; padding: 2px 8px; border-radius: 4px; background: #f1f1f1; }
+  .avatar { width: 24px; height: 24px; border-radius: 12px; background: #c7d2fe; display: inline-block; }
+</style>
+</head>
+<body>
+  <div class="toolbar">
+    <span class="chip">Status</span><span class="chip">Assignee</span><span class="chip">Priority</span>
+    <span class="chip">Label</span><span class="chip">Milestone</span>
+    <button class="new">New issue</button>
+  </div>
+  <table>
+    <tr><th>Title</th><th>Priority</th><th>Updated</th><th>Assignee</th></tr>
+    <tr><td>#4821 Export to CSV drops rows with commas</td><td><span class="prio">High</span></td><td>2 h ago</td><td><span class="avatar"></span></td></tr>
+    <tr><td>#4817 Dark mode: chart labels unreadable</td><td><span class="prio">Medium</span></td><td>Yesterday</td><td><span class="avatar"></span></td></tr>
+    <tr><td>#4790 Typo on billing page</td><td><span class="prio">Low</span></td><td>Oct 12</td><td><span class="avatar"></span></td></tr>
+  </table>
+</body>
+</html>

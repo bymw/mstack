@@ -1,0 +1,38 @@
+{
+  "skill": "designing-flows",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "designing-flows-h1",
+      "skills": [
+        "designing-flows"
+      ],
+      "query": "Our book club app's sign-up asks for email, password, name, birthday, favourite genres and contacts access, all before you see a single club. 55% of people quit before finishing. Redesign the sign-up and first-run flow.",
+      "files": [],
+      "expected_behavior": [
+        "Lets people see value (browse clubs, see what a club is reading) before asking for an account, or explains why not.",
+        "Gives each step one purpose and one primary action, set out step by step.",
+        "Removes or defers questions not needed to start (for example birthday and genres) and says when, or whether, each is asked later.",
+        "Asks for contacts access only at the moment of inviting friends, explains why first, and keeps a working path if the person says no.",
+        "Keeps what people entered if they leave, go back or are interrupted.",
+        "Says how to tell whether the new flow works (for example completion per step against today's 55% drop)."
+      ]
+    },
+    {
+      "id": "designing-flows-h2",
+      "skills": [
+        "designing-flows"
+      ],
+      "query": "Here's the booking flow in our pottery studio app (iPhone):\n1. Class list, tap a class.\n2. One long form: name, email, phone, home address, emergency contact, experience level, how did you hear about us, an 800-word waiver with a checkbox, create password, confirm password.\n3. Tap Book. If anything is wrong, the page reloads with a red banner at the top, 'Please fix the errors', and the password fields are cleared.\n4. A screen that says 'Success!'\nPeople keep calling the studio to ask if their booking went through. Redesign it.",
+      "files": [],
+      "expected_behavior": [
+        "Splits the long form into steps that each have one job, or justifies a shorter single screen, and removes or defers fields not needed to book (for example home address, how did you hear about us).",
+        "Does not force account creation to book (guest booking, or an account offered after booking).",
+        "Validates next to each field as people go and never clears what they typed.",
+        "Replaces 'Success!' with a confirmation that states class, date, time, place, what to bring and how to cancel, plus a confirmation sent by email or added to the calendar.",
+        "Handles the class filling up or changing while the person is booking.",
+        "Presents the new flow as numbered steps, each with what the screen shows and its primary action."
+      ]
+    }
+  ]
+}

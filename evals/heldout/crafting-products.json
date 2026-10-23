@@ -1,0 +1,40 @@
+{
+  "skill": "crafting-products",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "crafting-products-h1",
+      "skills": [
+        "crafting-products"
+      ],
+      "query": "I'm a solo builder. Next I'm adding shared packing lists to my travel planner app (iPhone, iPad, Mac and web): two people on the same trip can add items, tick them off and see who packed what. I want this to be genuinely world-class, not just working. How should I go about it, start to finish?",
+      "files": [],
+      "expected_behavior": [
+        "Opens with the recommended approach in brief before any detail.",
+        "Starts from the people and their moment (for example packing the night before, or offline at the airport) and states what the feature must achieve for them before discussing UI.",
+        "Treats each device on its own terms with at least one concrete native difference per device (for example iPad side by side, Mac keyboard shortcuts and menus, web without an install).",
+        "Lists states to design beyond the happy path, including at least an empty list, offline or failed sync, two people changing the same item, and a person removed from the trip.",
+        "Proposes seeing and judging the whole journey before building (a prototype or mockups) and a concrete check before calling it done (for example used on real devices, in light and dark).",
+        "Defines what world-class means for this feature in concrete, testable terms rather than adjectives only."
+      ]
+    },
+    {
+      "id": "crafting-products-h2",
+      "skills": [
+        "crafting-products"
+      ],
+      "query": "Something about the Today screen in our habit tracker iPhone app feels off and a bit amateur, but I can't say what. The HTML is attached. What would make it excellent? Be specific.",
+      "files": [
+        "evals/heldout/fixtures/crafting-products-h2-today.html"
+      ],
+      "expected_behavior": [
+        "Leads with the single most important problem and its fix before the full list.",
+        "Ties each issue to a specific element of the attached screen (names it, quotes its text or class), not generic advice.",
+        "Identifies the competing emphasis (three equally loud coloured buttons, the promo banner, the oversized date) and names one primary action for the screen.",
+        "Flags at least one accessibility problem with a concrete value (for example the 22 px icon targets below 44 pt, or the contrast of the light grey text).",
+        "Raises states the static screen does not show (for example no habits yet, a long habit name, dark mode or larger text sizes).",
+        "Points out that the gestures are only explained in a tip line (hidden actions) and proposes a visible or standard alternative without removing any action."
+      ]
+    }
+  ]
+}

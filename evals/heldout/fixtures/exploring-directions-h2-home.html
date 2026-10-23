@@ -1,0 +1,36 @@
+<!-- Room booking web app for a co-working space, home page today. Used on laptops and phones. 3 floors, 24 rooms. -->
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { font-family: system-ui, sans-serif; margin: 0; color: #222; }
+  header { display: flex; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid #e5e5e5; }
+  .picker { padding: 16px 20px; display: flex; gap: 12px; align-items: center; }
+  table { width: calc(100% - 40px); margin: 0 20px; border-collapse: collapse; }
+  th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid #eee; }
+  .book { padding: 6px 12px; background: #2563eb; color: #fff; border: 0; border-radius: 6px; }
+</style>
+</head>
+<body>
+  <header><strong>Rooms</strong><span>My bookings · Account</span></header>
+  <div class="picker">
+    <label>Date <input type="date" value="2026-10-23"></label>
+    <label>From <select><option>09:00</option></select></label>
+    <label>To <select><option>10:00</option></select></label>
+    <button>Search</button>
+  </div>
+  <table>
+    <tr><th>Room</th><th>Floor</th><th>Seats</th><th>Screen</th><th></th></tr>
+    <tr><td>Acacia</td><td>2</td><td>4</td><td>Yes</td><td><button class="book">Book</button></td></tr>
+    <tr><td>Alder</td><td>1</td><td>2</td><td>No</td><td><button class="book">Book</button></td></tr>
+    <tr><td>Ash</td><td>3</td><td>10</td><td>Yes</td><td><button class="book">Book</button></td></tr>
+    <tr><td>Aspen</td><td>1</td><td>6</td><td>Yes</td><td><button class="book">Book</button></td></tr>
+    <tr><td>Beech</td><td>2</td><td>4</td><td>No</td><td><button class="book">Book</button></td></tr>
+    <tr><td>Birch</td><td>3</td><td>2</td><td>No</td><td><button class="book">Book</button></td></tr>
+    <tr><td>Cedar</td><td>1</td><td>8</td><td>Yes</td><td><button class="book">Book</button></td></tr>
+    <tr><td colspan="5"><i>... 17 more rooms, alphabetical ...</i></td></tr>
+  </table>
+  <p style="padding: 0 20px; color: #666;">Pressing Book on a room that is taken at the chosen time shows "Not available".</p>
+</body>
+</html>

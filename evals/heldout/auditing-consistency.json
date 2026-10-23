@@ -1,0 +1,40 @@
+{
+  "skill": "auditing-consistency",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "auditing-consistency-h1",
+      "skills": [
+        "auditing-consistency"
+      ],
+      "query": "The empty states in our bug tracker web app look a bit different on every page. Can you check them? The four I know of are in the attached file. There may be more in the codebase, but this is what I have.",
+      "files": [
+        "evals/heldout/fixtures/auditing-consistency-h1-empty-states.tsx"
+      ],
+      "expected_behavior": [
+        "Lists every empty state in the file with its location and measures the differences in a table (icon or image size, heading size and level, padding, copy tone, action type).",
+        "Separates differences justified by a different job (for example no search results versus nothing created yet) from accidental ones.",
+        "Proposes one canonical empty state (structure, sizes, spacing, copy pattern, action style), with variants only where the job differs.",
+        "Says how to find the other instances (for example a search pattern) rather than treating the four as all of them.",
+        "Proposes a guard against drift, such as one shared component plus a lint rule or check.",
+        "Ends with a clear proposal and next step (for example agree the canonical version, then migrate) rather than only listing differences."
+      ]
+    },
+    {
+      "id": "auditing-consistency-h2",
+      "skills": [
+        "auditing-consistency"
+      ],
+      "query": "In our project app, swiping left on a row deletes it in Inbox, archives it in Projects, and does nothing in Comments. On the web there's a trash icon on hover in Inbox and a '...' menu everywhere else. The iPad app works like the iPhone one. A user just complained they deleted something by accident. Should all of these be the same, and what exactly should they be?",
+      "files": [],
+      "expected_behavior": [
+        "Gives a direct answer first: which behaviours should be the same and which may differ.",
+        "Maps every place mentioned (Inbox, Projects, Comments; iPhone, iPad and web) to its proposed behaviour, in a table.",
+        "Treats delete and archive as different jobs and gives each a consistent, distinct gesture or control rather than forcing one.",
+        "Keeps each device native (for example swipe actions on iPhone and iPad, pointer and context menu on iPad, hover plus right-click or keyboard on web).",
+        "Protects destructive actions with undo or confirmation, addressing the accidental delete.",
+        "Suggests how to keep it consistent later (for example one shared row-actions definition or component)."
+      ]
+    }
+  ]
+}

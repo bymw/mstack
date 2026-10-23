@@ -1,0 +1,40 @@
+{
+  "skill": "exploring-directions",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "exploring-directions-h1",
+      "skills": [
+        "exploring-directions"
+      ],
+      "query": "We want readers to see their reading streak in our reading tracker iPhone app. Today there's a Library tab (your books) and a Stats tab (charts). I'm not sure where the streak goes or what it should look like. Show me some options.",
+      "files": [],
+      "expected_behavior": [
+        "Shows two to four directions that differ in concept or placement, not colour or style variants of one idea.",
+        "Makes each direction concrete enough to judge at iPhone size (a mockup, code or a precise screen description within the existing tabs).",
+        "States each direction's trade-off, including who it serves best and what it risks (for example streak anxiety, or clutter in Library).",
+        "Recommends one direction and says why.",
+        "Considers what each shows when the streak breaks or is zero.",
+        "Presents the options so they are easy to compare (side by side or a comparison table)."
+      ]
+    },
+    {
+      "id": "exploring-directions-h2",
+      "skills": [
+        "exploring-directions"
+      ],
+      "query": "This is the home page of our room booking web app for a co-working space (attached). Most people want 'a room for 4, now or in the next hour'. We can't agree whether home should be a floor map, a list of free time slots, or something else. Give me directions to compare.",
+      "files": [
+        "evals/heldout/fixtures/exploring-directions-h2-home.html"
+      ],
+      "expected_behavior": [
+        "Offers two to four directions with a different core idea each, including at least one not in the user's list (for example an instant 'best room now' suggestion).",
+        "Builds each direction from the real page's content (its rooms, floors, seats, booking action), shown as a mockup or code.",
+        "Judges each direction against the stated main job (a room for 4, now or soon), for example the steps or taps to book.",
+        "States the trade-off and who loses with each direction (for example people booking for next week, or phone users with a floor map).",
+        "Recommends one and says how to check it quickly with real users or booking data.",
+        "Presents the directions side by side or in a comparison table."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "skill": "optimizing-discoverability",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "optimizing-discoverability-h1",
+      "skills": [
+        "optimizing-discoverability"
+      ],
+      "query": "We launch the marketing site for our plant-care app next week. The HTML, our robots.txt and notes on what the page contains are attached. Is it ready for search engines and AI assistants? What should I fix?",
+      "files": [
+        "evals/heldout/fixtures/optimizing-discoverability-h1-site.md"
+      ],
+      "expected_behavior": [
+        "Catches that robots.txt blocks every crawler (Disallow: /) and puts fixing it first.",
+        "Catches that the content only appears after JavaScript runs and recommends serving the main content in the HTML (static generation or server rendering).",
+        "Gives a specific title and meta description for the page instead of 'App'.",
+        "Recommends structured data that fits the page (for example the app and the organisation) with an example.",
+        "Addresses images and speed: the 3.2 MB hero image needs compressing and sizing, and images need alt text, including the store badges.",
+        "Treats AI crawler access as a deliberate choice and says to check details against current official documentation."
+      ]
+    },
+    {
+      "id": "optimizing-discoverability-h2",
+      "skills": [
+        "optimizing-discoverability"
+      ],
+      "query": "Two questions about the public API docs site for our bug tracker. Should we add an llms.txt? And should we block AI crawlers in robots.txt? We want developers to find our docs through AI assistants, but we'd rather our docs weren't used for model training.",
+      "files": [],
+      "expected_behavior": [
+        "Answers both questions directly at the top.",
+        "Describes llms.txt accurately: a proposed convention, not an official standard, not used by major search engines for ranking, cheap to add and of uncertain benefit.",
+        "Distinguishes crawlers that collect training data from those that fetch pages for search answers or for a user's request, and explains that blocking one kind need not block the other.",
+        "Gives a concrete robots.txt example that matches their goal (found in AI answers, not used for training), and notes that robots.txt is voluntary.",
+        "Says crawler names and rules change and should be checked against each provider's current official documentation.",
+        "Also covers what actually helps docs get found and cited (for example content in the HTML, clear titles, a sitemap, stable URLs)."
+      ]
+    }
+  ]
+}

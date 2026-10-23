@@ -1,0 +1,38 @@
+{
+  "skill": "writing-briefs",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "writing-briefs-h1",
+      "skills": [
+        "writing-briefs"
+      ],
+      "query": "Write a short note to our CEO, who isn't technical, explaining why we need six weeks to move our photo journal app's database to a new provider before we build any new features. My notes: the current provider ends support for our plan on March 31; we're at 85% of our storage limit and growing about 4% a month; two outages last month (3 hours and 50 minutes), both caused by the provider; plan: 2 weeks to set up and copy, 2 weeks running both side by side, 2 weeks to switch and clean up; risk: a few minutes of read-only mode during the switch; hosting cost goes from 1,200 to 1,900 a month.",
+      "files": [],
+      "expected_behavior": [
+        "Opens with the recommendation and the decision needed from the CEO in the first one or two sentences.",
+        "Explains why in terms the CEO cares about (outages people noticed, the March 31 deadline, running out of space) without technical jargon, or defines any term it uses.",
+        "Uses only the figures given, and any arithmetic from them is correct (for example 85% growing about 4% a month reaches the limit in roughly four months, before March 31).",
+        "States what happens if the work is not done, and the cost and risk of doing it.",
+        "Includes one simple visual or structured element (for example a timeline of the three phases).",
+        "Is short enough to read in about a minute."
+      ]
+    },
+    {
+      "id": "writing-briefs-h2",
+      "skills": [
+        "writing-briefs"
+      ],
+      "query": "A school that uses our language-learning app emailed: 'Our students' progress reports this week show far more lessons than usual. Several parents asked if the data is wrong. What's going on?' What happened: a bug counted each completed lesson twice from Monday to Wednesday. We fixed it Wednesday night, and corrected numbers will be in the reports by Friday. No other data was affected. Draft my reply.",
+      "files": [],
+      "expected_behavior": [
+        "Answers the question in the first sentence: the numbers are too high because of a bug, now fixed.",
+        "Says plainly what was affected and when (lessons counted twice, Monday to Wednesday) and that nothing else was affected.",
+        "Tells the school what to expect and whether they need to do anything (corrected reports by Friday; nothing to do).",
+        "Gives them a line they can pass on to parents, or offers one.",
+        "Owns the mistake with a brief apology, without over-apologising or technical detail.",
+        "Is short and promises nothing beyond the facts given."
+      ]
+    }
+  ]
+}

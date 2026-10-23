@@ -1,0 +1,40 @@
+{
+  "skill": "settling-decisions",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "settling-decisions-h1",
+      "skills": [
+        "settling-decisions"
+      ],
+      "query": "Engineering can't start on shared trips until the open questions in this spec are settled (attached). I own the product decisions. Help me get through them.",
+      "files": [
+        "evals/heldout/fixtures/settling-decisions-h1-spec.md"
+      ],
+      "expected_behavior": [
+        "Finds every open question in the spec (permissions, leaving, offline conflicts, the limit, notifications, inviting others, the name).",
+        "Puts the questions that block engineering first (for example offline conflicts and permissions) and notes dependencies between them.",
+        "For each question it raises, gives two to four real options with their trade-offs and one recommendation.",
+        "Leaves the decision to the user (asks for an answer) rather than declaring the decisions made.",
+        "Keeps, or proposes, a record of what is decided and what is still open.",
+        "Lets the user answer one question at a time instead of facing everything at once."
+      ]
+    },
+    {
+      "id": "settling-decisions-h2",
+      "skills": [
+        "settling-decisions"
+      ],
+      "query": "Three things are holding up the sleep timer in our podcast player. Should it fade out or stop abruptly? Should the timer apply to this episode only, or keep going across episodes? And if the episode ends before the timer runs out, should the next episode play? I'd like to decide today.",
+      "files": [],
+      "expected_behavior": [
+        "Treats the three questions separately, each with its own answer.",
+        "Gives each question at least two real options with the trade-off of each.",
+        "Gives one clear recommendation per question, with a reason rooted in how people use a sleep timer (falling asleep, not losing their place).",
+        "Notices how the answers interact (for example 'stop at end of episode' as a timer option and whether the next episode plays).",
+        "Covers getting back to the right place after the timer stops (for example saving the position, or rewinding a little).",
+        "Ends with the decisions in a compact list the user can confirm or change."
+      ]
+    }
+  ]
+}

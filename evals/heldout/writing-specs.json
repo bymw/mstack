@@ -1,0 +1,38 @@
+{
+  "skill": "writing-specs",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "writing-specs-h1",
+      "skills": [
+        "writing-specs"
+      ],
+      "query": "Write the spec for recurring chores in our household chores app. Today a chore is a one-off with an assignee and a due date. We want chores to repeat (daily, weekly on chosen days, every N days, monthly) and optionally rotate between household members. Our two engineers and a coding agent will build from this spec, on iPhone, Android and web.",
+      "files": [],
+      "expected_behavior": [
+        "Defines the key nouns precisely (for example a chore versus each occurrence, and what a rotation is) so builders cannot read them two ways.",
+        "States scope and what is explicitly out of scope for this version.",
+        "Covers edge cases: editing one occurrence versus the whole series, a member leaving mid-rotation, skipped or overdue occurrences, monthly on the 31st, and time zones or daylight saving.",
+        "Includes a data model and API or sync changes concrete enough to implement (fields and types, or endpoints), including what happens to existing one-off chores.",
+        "Gives acceptance criteria that can be tested (given, when, then, or checkable statements).",
+        "Lists open questions or decisions with an owner instead of silently deciding product choices."
+      ]
+    },
+    {
+      "id": "writing-specs-h2",
+      "skills": [
+        "writing-specs"
+      ],
+      "query": "Turn my rough notes into a spec my iOS team can build from.\n\nNotes: offline downloads for the podcast player. download button on episode. auto download new eps for followed shows (setting). delete after played? storage limit setting. wifi only by default. show progress. what if storage full.",
+      "files": [],
+      "expected_behavior": [
+        "Defines 'played' precisely for auto-delete (for example reached the last N seconds, or marked as played) and resolves other ambiguous terms.",
+        "Specifies every state of a download (for example not downloaded, queued, downloading with progress, waiting for Wi-Fi, failed, downloaded) and what the person sees in each.",
+        "Handles storage full and the storage limit concretely: what happens to new downloads, which episodes go first, and what the person is told.",
+        "Covers interruptions: the app killed or backgrounded mid-download, the network changing, and the publisher replacing or removing the episode.",
+        "Includes acceptance criteria an engineer or QA could test.",
+        "Lists the decisions the notes leave open as questions rather than presenting guesses as requirements."
+      ]
+    }
+  ]
+}
