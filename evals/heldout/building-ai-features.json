@@ -1,0 +1,40 @@
+{
+  "skill": "building-ai-features",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "building-ai-features-h1",
+      "skills": [
+        "building-ai-features"
+      ],
+      "query": "We're adding a 'Reply for me' button to the support inbox in our help desk tool for small online shops. One click and the AI reads the conversation and sends a reply to the customer. Leadership wants it in four weeks. Design how it should work.",
+      "files": [],
+      "expected_behavior": [
+        "Changes the flow so nothing reaches the customer until the support agent has seen and approved the draft (or argues for narrow exceptions with safeguards).",
+        "Makes the button label match what it does (for example 'Draft reply' if it drafts).",
+        "Grounds replies in the shop's own information (orders, policies) and shows the agent what the draft is based on, flagging when it is unsure.",
+        "Designs the waiting and failure states honestly (progress while drafting, what happens on an error, never a silent empty draft).",
+        "Defines how quality will be judged before launch: a set of real past conversations, criteria, and a pass bar that must be met to ship.",
+        "Addresses customer data (what is sent to the model and kept) and lets agents edit and report bad drafts."
+      ]
+    },
+    {
+      "id": "building-ai-features-h2",
+      "skills": [
+        "building-ai-features"
+      ],
+      "query": "Leadership wants to ship AI meeting summaries in our notes app next week. I reviewed 20 sample summaries against the recordings; my notes are attached. Is it ready?",
+      "files": [
+        "evals/heldout/fixtures/building-ai-features-h2-review-notes.md"
+      ],
+      "expected_behavior": [
+        "Gives a direct answer first: ready or not, and on what condition.",
+        "Counts the problems in the notes and separates the serious ones (two invented action items, one wrong owner, one missed decision) from the minor ones, with rates (for example 4 serious in 20).",
+        "Points out that 20 short internal meetings with good audio is too small and narrow a sample, and names conditions not tested (for example long meetings, crosstalk, poor audio, customers' meetings, other languages).",
+        "Proposes a pass bar and an evaluation set that would make the answer yes.",
+        "Proposes product safeguards for the errors that will remain (for example labelling as AI-generated, linking each action item to the moment in the recording, review before sharing).",
+        "Does not overstate certainty from 20 samples."
+      ]
+    }
+  ]
+}

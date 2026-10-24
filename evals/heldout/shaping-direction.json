@@ -1,0 +1,38 @@
+{
+  "skill": "shaping-direction",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "shaping-direction-h1",
+      "skills": [
+        "shaping-direction"
+      ],
+      "query": "Our CEO wants to add a social feed to our language-learning app: learners post their progress, follow friends and comment. The CEO thinks it will fix retention (30-day retention is 18%). Engineering estimates three months. I'm the PM. Should we build it?",
+      "files": [],
+      "expected_behavior": [
+        "Gives a clear position early (build, do not build, or test first) rather than only a list of considerations.",
+        "Reframes the request around the underlying problem (why learners stop before day 30) and says what evidence would show a feed addresses it.",
+        "Offers at least two alternative approaches to the retention problem besides a full feed (for example study partners, lightweight sharing, better streak recovery).",
+        "Covers risks beyond whether people want it: whether they can use it, the cost to build and run it (including moderation, and privacy for learners who may be minors), and whether it fits the business.",
+        "Proposes a cheap test that takes days or weeks rather than the three-month build, with a stated pass or fail threshold.",
+        "Separates what is known (18% retention) from what is assumed (that social features drive retention for these learners)."
+      ]
+    },
+    {
+      "id": "shaping-direction-h2",
+      "skills": [
+        "shaping-direction"
+      ],
+      "query": "Shared lists in our grocery list app have been flat for six months: about 9% of active households use them, and two redesigns of the sharing screen didn't move it. The team is tired of it. What should we do next?",
+      "files": [],
+      "expected_behavior": [
+        "Opens with a recommendation for the next step.",
+        "Questions whether the sharing screen is the real problem and offers specific hypotheses about why households don't share (for example one person does all the shopping, households already coordinate in a messaging app, the invited person never installs the app).",
+        "Proposes learning from real households before another redesign (for example talking to sharing and non-sharing households, or measuring each step of the invite funnel).",
+        "Lays out two or three distinct directions, including stopping or parking the feature as a real option.",
+        "Gives the recommended next step a time box and a pass mark that decides whether to continue.",
+        "Distinguishes what the 9% figure shows from what it does not (for example whether sharing households retain better or shop more)."
+      ]
+    }
+  ]
+}

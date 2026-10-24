@@ -1,0 +1,43 @@
+{
+  "skill": "framing-problems",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "framing-problems-h1",
+      "skills": [
+        "framing-problems"
+      ],
+      "query": "Our head of product says week-1 retention fell off a cliff after the September 8 redesign of our podcast player and wants to roll it back. The export and the notes that came with it are attached. What's actually going on?",
+      "files": [
+        "evals/heldout/fixtures/framing-problems-h1-retention.csv",
+        "evals/heldout/fixtures/framing-problems-h1-notes.md"
+      ],
+      "expected_behavior": [
+        "Opens with a plain one or two sentence statement of what is going on that someone who is not an analyst could follow.",
+        "Tests the redesign claim by comparing old and new versions within the same channel and week, and reports that they retain about the same (for example organic Sep 8: 41.0% against 40.7%).",
+        "Identifies the paid campaign's low-retention sign-ups (around 14 to 16%) as a main driver of the blended drop, with numbers.",
+        "Catches the September 15 change in what counts as active and says weeks before and after it are not directly comparable.",
+        "Marks which statements are facts from the data, which are inferences and what is unknown, and lists open questions with who could answer each.",
+        "Says the data does not support rolling back the redesign, or does not recommend a rollback on this evidence."
+      ]
+    },
+    {
+      "id": "framing-problems-h2",
+      "skills": [
+        "framing-problems"
+      ],
+      "query": "I'm taking over the offline sync project for our field inspection app from a colleague who left last week. Their handover notes are attached. I've read them twice and still don't get where things stand. What's actually going on?",
+      "files": [
+        "evals/heldout/fixtures/framing-problems-h2-handover.md"
+      ],
+      "expected_behavior": [
+        "Starts with a short plain-language status: what the project is, where it stands and the biggest risk, in a few sentences.",
+        "Explains the jargon and abbreviations in the notes in plain words (for example the outbox queue and last-write-wins).",
+        "Reconciles the three failure figures, noting they measure different things and stating what each is (3 of 40 is 7.5% of pilot inspectors; 212 of 9,800 is about 2.2% of sync attempts; the 12% has no stated source or basis).",
+        "Flags that the November 15 promise does not fit the release dates in the notes (cuts on Nov 3 and Nov 24) and that photos, the subject of the promise, are the unfinished part.",
+        "Flags the unreported photo overwrite problem and the untested iPad save path as risks.",
+        "Separates what is confirmed from what is assumed or undecided (for example the photo compression decision) and lists open questions with the person who should answer each."
+      ]
+    }
+  ]
+}

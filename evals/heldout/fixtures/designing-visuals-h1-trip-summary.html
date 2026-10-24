@@ -1,0 +1,57 @@
+<!-- Travel planner, iPhone app, "Trip summary" screen. Shown in a 390 x 844 web view. -->
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { font-family: -apple-system, system-ui, sans-serif; margin: 0; background: #f4f4f4; color: #111; }
+  .header { padding: 13px 20px 9px; text-align: center; background: #fff; }
+  .header h1 { font-size: 28px; font-weight: 800; margin: 0; }
+  .header .dates { font-size: 11px; color: #aaa; margin-top: 2px; }
+  .header .travellers { font-size: 14px; font-weight: 700; color: #0a84ff; margin-top: 7px; }
+  .stats { display: flex; gap: 6px; padding: 10px 16px; }
+  .stat { flex: 1; background: #fff; border-radius: 6px; padding: 12px 6px; text-align: center; }
+  .stat b { display: block; font-size: 22px; font-weight: 800; color: #e0245e; }
+  .stat span { font-size: 10px; color: #b0b0b0; text-transform: uppercase; letter-spacing: .08em; }
+  .map { margin: 4px 20px; height: 150px; border-radius: 18px; background: #cfe3d5; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #4b7a5a; }
+  .section-title { font-size: 18px; font-weight: 800; margin: 22px 16px 6px; }
+  .day { background: #fff; margin: 0 13px 8px; padding: 10px 12px; border-radius: 10px; display: flex; justify-content: space-between; }
+  .day .n { font-weight: 800; color: #0a84ff; font-size: 13px; }
+  .day .title { font-size: 15px; font-weight: 700; }
+  .day .detail { font-size: 12px; color: #bbb; }
+  .day .weather { font-size: 13px; font-weight: 700; color: #ff9f0a; }
+  .buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 18px 16px 30px; }
+  .buttons button { padding: 13px; font-size: 15px; font-weight: 700; border: 0; border-radius: 12px; color: #fff; }
+  .edit { background: #0a84ff; } .share { background: #30d158; } .invite { background: #bf5af2; } .export { background: #ff9f0a; }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>Lisbon &amp; Porto</h1>
+    <div class="dates">Fri 13 Nov to Sun 22 Nov 2026 · 10 days</div>
+    <div class="travellers">You + 2 travellers</div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>10</b><span>Days</span></div>
+    <div class="stat"><b>2</b><span>Cities</span></div>
+    <div class="stat"><b>14</b><span>Bookings</span></div>
+    <div class="stat"><b>3</b><span>To do</span></div>
+  </div>
+
+  <div class="map">Map: route Lisbon to Porto</div>
+
+  <div class="section-title">Itinerary</div>
+  <div class="day"><div><div class="n">DAY 1</div><div class="title">Arrive in Lisbon</div><div class="detail">Flight lands 10:35 · Check in at 15:00</div></div><div class="weather">19°</div></div>
+  <div class="day"><div><div class="n">DAY 2</div><div class="title">Alfama walking tour</div><div class="detail">Meet 09:30 at the cathedral</div></div><div class="weather">18°</div></div>
+  <div class="day"><div><div class="n">DAY 3</div><div class="title">Day trip to Sintra</div><div class="detail">Train 08:11 · Tickets not booked yet</div></div><div class="weather">16°</div></div>
+  <div class="day"><div><div class="n">DAY 4</div><div class="title">Free day</div><div class="detail">Nothing planned</div></div><div class="weather">20°</div></div>
+
+  <div class="buttons">
+    <button class="edit">Edit trip</button>
+    <button class="share">Share</button>
+    <button class="invite">Invite</button>
+    <button class="export">Export PDF</button>
+  </div>
+</body>
+</html>

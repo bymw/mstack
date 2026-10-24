@@ -1,0 +1,72 @@
+<!-- Bug tracker web app, issue detail page. Desktop browser, 1440 px wide. -->
+<!doctype html>
+<html>
+<head>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 0; font-size: 14px; color: #1f2328; }
+  .banner { background: #fff8c5; padding: 8px 16px; font-size: 13px; }
+  .top { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid #ddd; flex-wrap: wrap; }
+  .top h1 { font-size: 20px; margin: 0 12px 0 0; }
+  .top button { padding: 6px 10px; border: 1px solid #ccc; background: #f6f8fa; border-radius: 6px; }
+  .layout { display: grid; grid-template-columns: 1fr 300px 260px; gap: 16px; padding: 16px; }
+  .tabs span { margin-right: 14px; padding-bottom: 6px; }
+  .tabs .on { border-bottom: 2px solid #0969da; font-weight: 600; }
+  .toolbar span { display: inline-block; width: 24px; height: 24px; margin-right: 2px; background: #eee; border-radius: 4px; font-size: 11px; text-align: center; line-height: 24px; }
+  textarea { width: 100%; height: 60px; }
+  .field { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f0f0f0; }
+  .side h3 { font-size: 12px; text-transform: uppercase; color: #666; margin: 16px 0 6px; }
+</style>
+</head>
+<body>
+  <div class="banner">New! Press ? to see keyboard shortcuts. Press G then I to go to issues. <a href="#">Dismiss</a></div>
+
+  <div class="top">
+    <h1>#4821 Export to CSV drops rows with commas in the title</h1>
+    <button>Edit</button><button>Assign to me</button><button>Close issue</button><button>Duplicate</button>
+    <button>Move</button><button>Copy link</button><button>Print</button><button>Export PDF</button>
+    <button>Subscribe</button><button>Pin</button><button>Lock conversation</button><button style="color:#cf222e">Delete</button>
+  </div>
+
+  <div class="layout">
+    <main>
+      <div class="tabs"><span class="on">Comments (14)</span><span>History</span><span>Linked issues (2)</span><span>Attachments (3)</span><span>Time log</span><span>Commits (5)</span></div>
+      <h2>Description</h2>
+      <p>When a title contains a comma, the row is missing from the exported file. Steps: 1. Create an issue titled "Login, then crash". 2. Export the project to CSV. 3. The row is missing.</p>
+      <p><i>14 comments are shown here, newest at the bottom (about 2,000 px of scrolling).</i></p>
+      <h3>Add a comment</h3>
+      <div class="toolbar">
+        <span>B</span><span>I</span><span>U</span><span>S</span><span>H1</span><span>H2</span><span>"</span><span>&lt;&gt;</span><span>link</span><span>img</span><span>ul</span><span>ol</span><span>task</span><span>@</span><span>:)</span><span>tbl</span>
+      </div>
+      <textarea placeholder="Leave a comment"></textarea>
+      <button>Comment</button> <button>Comment and close</button> <button>Save draft</button> <button>Preview</button>
+    </main>
+
+    <aside class="fields">
+      <div class="field"><span>Status</span><select><option>In progress</option></select></div>
+      <div class="field"><span>Priority</span><select><option>High</option></select></div>
+      <div class="field"><span>Severity</span><select><option>Major</option></select></div>
+      <div class="field"><span>Assignee</span><span>Unassigned</span></div>
+      <div class="field"><span>Reporter</span><span>J. Doe</span></div>
+      <div class="field"><span>Labels</span><span>export, csv, bug</span></div>
+      <div class="field"><span>Milestone</span><span>v3.2</span></div>
+      <div class="field"><span>Sprint</span><span>Sprint 41</span></div>
+      <div class="field"><span>Due date</span><span>None</span></div>
+      <div class="field"><span>Estimate</span><span>3 pts</span></div>
+      <div class="field"><span>Component</span><span>Exports</span></div>
+      <div class="field"><span>Environment</span><span>Web, Chrome</span></div>
+      <div class="field"><span>Watchers</span><span>6</span></div>
+      <div class="field"><span>Created</span><span>Oct 2, 2026</span></div>
+      <div class="field"><span>Updated</span><span>2 hours ago</span></div>
+    </aside>
+
+    <aside class="side">
+      <h3>Similar issues</h3>
+      <p>#4410 CSV export missing header<br>#3982 Export timeout on large projects<br>#4102 Quotes break CSV</p>
+      <h3>Activity this week</h3>
+      <p>Chart: comments per day</p>
+      <h3>Rate this page</h3>
+      <p>How useful is the new issue page? ★★★★★</p>
+    </aside>
+  </div>
+</body>
+</html>

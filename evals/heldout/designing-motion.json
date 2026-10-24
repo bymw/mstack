@@ -1,0 +1,40 @@
+{
+  "skill": "designing-motion",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "designing-motion-h1",
+      "skills": [
+        "designing-motion"
+      ],
+      "query": "Our designer wants every row in the task list of our project app to bounce in with a stagger when the list loads, and a confetti burst every time a task is completed. I'm building it in SwiftUI. Is this a good idea, and how should I build it?",
+      "files": [],
+      "expected_behavior": [
+        "Gives a clear position early, with the reason.",
+        "Argues against celebration motion on an action people repeat many times a day, and proposes a quieter confirmation (for example a quick check animation or a light haptic), possibly keeping a bigger moment for a rare milestone.",
+        "Drops or limits the staggered entrance because it delays content people want to scan, or restricts it to a first appearance.",
+        "Gives concrete timing values (durations or spring parameters) for the motion it keeps.",
+        "Respects Reduce Motion with a defined alternative.",
+        "Includes SwiftUI code for the recommended approach."
+      ]
+    },
+    {
+      "id": "designing-motion-h2",
+      "skills": [
+        "designing-motion"
+      ],
+      "query": "Here's how search results load in our team wiki web app today (attached). Most responses take about 80 ms, slow ones up to 2 s. Design the loading behaviour so search feels calm and fast, and give me the code.",
+      "files": [
+        "evals/heldout/fixtures/designing-motion-h2-search.md"
+      ],
+      "expected_behavior": [
+        "Keeps the previous results visible (or a stable placeholder) until new ones arrive, instead of clearing the list on every keystroke.",
+        "Delays any loading indicator so fast responses show none, and keeps it visible long enough not to flash once it appears.",
+        "Shortens the entrance (for example 200 ms or less, ease-out rather than ease-in) and removes or caps the 120 ms per-item stagger.",
+        "Animates only opacity and transform, not max-height or margin, so results don't shift the layout.",
+        "Debounces input or ignores out-of-order responses so stale results never replace newer ones.",
+        "Honours prefers-reduced-motion."
+      ]
+    }
+  ]
+}

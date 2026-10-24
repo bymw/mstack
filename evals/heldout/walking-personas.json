@@ -1,0 +1,42 @@
+{
+  "skill": "walking-personas",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "walking-personas-h1",
+      "skills": [
+        "walking-personas"
+      ],
+      "query": "We demo the new Stats tab of our meditation app to the team on Friday. The spec of what it shows is attached. Walk through it as different kinds of users and tell me what breaks before someone else finds it.",
+      "files": [
+        "evals/heldout/fixtures/walking-personas-h1-stats-spec.md"
+      ],
+      "expected_behavior": [
+        "Walks through at least a brand-new user with no sessions, a light or irregular user, a heavy long-term user and a messy case (for example travel across time zones, a 9-hour background session, deleted sessions).",
+        "Describes what each sees on specific elements of the spec (for example the streak, the 70-minute ring, the mood chart without check-ins), not generic advice.",
+        "Finds that the always-on 'Great job, keep it up!' is wrong for some users (for example zero sessions or a broken streak).",
+        "Checks the layout at extremes on the target devices: very large numbers, larger text sizes, a small iPhone versus iPad.",
+        "Ranks the findings by severity with a concrete fix for each.",
+        "Presents the findings in a scannable structure (for example a table per persona or one ranked table)."
+      ]
+    },
+    {
+      "id": "walking-personas-h2",
+      "skills": [
+        "walking-personas"
+      ],
+      "query": "Here's our invite-a-teammate flow for our whiteboard app, as built today (attached). Walk it end to end as the people who will actually go through it and tell me what goes wrong.",
+      "files": [
+        "evals/heldout/fixtures/walking-personas-h2-invite-flow.md"
+      ],
+      "expected_behavior": [
+        "Walks the flow step by step as several distinct people (for example brand new, already signed up under another email, on a phone, opening the link after 48 hours).",
+        "Catches that after sign-up and verification the new person lands on 'Create your first board' instead of the team they were invited to.",
+        "Catches the dead ends: 'Invalid link' after expiry with no way forward, and the silent failure when there are no free seats.",
+        "Catches the phone problem: links open in the mobile browser and the full-screen 'Get the app' page blocks the person, with the app unable to take them to the team.",
+        "Covers the admin's side too (no pending invites shown, no word when an invite is accepted, expires or fails).",
+        "Ranks the problems by severity with a fix for each."
+      ]
+    }
+  ]
+}

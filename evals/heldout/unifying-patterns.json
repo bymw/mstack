@@ -1,0 +1,42 @@
+{
+  "skill": "unifying-patterns",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "unifying-patterns-h1",
+      "skills": [
+        "unifying-patterns"
+      ],
+      "query": "We agreed in design review: one Button component with three variants (primary, secondary, destructive) and two sizes. Our codebase has three button components and some hand-rolled buttons (overview attached). Do the consolidation.",
+      "files": [
+        "evals/heldout/fixtures/unifying-patterns-h1-codebase.md"
+      ],
+      "expected_behavior": [
+        "Defines the one canonical Button (variants, sizes, loading, full width) by extending the existing src/ui/Button.tsx rather than adding a fourth component.",
+        "Migrates every caller in the overview, showing each change, including the three hand-rolled buttons.",
+        "Deletes PrimaryButton, BigButton and the legacy .btn-blue and .big-btn styles once nothing uses them.",
+        "Maps old props and behaviour to the new API so nothing changes by accident (onPress and label, loading, disabled, fullWidth), and calls out any visual change.",
+        "Adds a guard that stops old buttons coming back (for example a lint rule banning the old imports and raw button elements outside the component) and shows it would fail on the old code.",
+        "Ends with a summary of what changed and how it was checked."
+      ]
+    },
+    {
+      "id": "unifying-patterns-h2",
+      "skills": [
+        "unifying-patterns"
+      ],
+      "query": "Last quarter we standardised dates in our task app on formatDate() ('Oct 23', with the year only when it isn't this year). Three months later other formats have crept back in (attached). Fix it, and make sure it can't happen again.",
+      "files": [
+        "evals/heldout/fixtures/unifying-patterns-h2-dates.md"
+      ],
+      "expected_behavior": [
+        "Finds every non-standard date formatting in the attachment (TaskRow, Export, DayHeader, ReminderSheet) and replaces each with the shared helper.",
+        "Extends the helper to cover what the callers legitimately needed (for example a weekday and time for reminders, a machine-readable format for export) instead of leaving a reason to bypass it.",
+        "Adds an automated guard (for example a lint rule or test) that fails on direct date formatting outside the helper.",
+        "Shows or states that the guard fails on the current code before the fix and passes after.",
+        "Explains why the formats came back (nothing stopped them) and where the rule now lives.",
+        "Removes the moment dependency once Export no longer uses it."
+      ]
+    }
+  ]
+}

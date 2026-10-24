@@ -1,0 +1,38 @@
+{
+  "skill": "defining-outcomes",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "defining-outcomes-h1",
+      "skills": [
+        "defining-outcomes"
+      ],
+      "query": "Next month we're launching smart watering reminders in our plant-care app: instead of a fixed schedule, it nudges you when a plant probably needs water, based on the plant type, pot size and local weather. How should we measure whether it worked?",
+      "files": [],
+      "expected_behavior": [
+        "Defines success as a change in what people do or achieve (for example watering at the right time, fewer plants dying), not reminders sent or opened.",
+        "Names one primary metric with how it is measured, its baseline (or how to capture it before launch), a target and a date.",
+        "Includes a leading signal that can be read in the first week or two.",
+        "Includes at least one countermetric that would reveal harm (for example notification opt-outs, uninstalls, or over-watering).",
+        "States in advance which result means keep, change or roll back, and when that decision is made.",
+        "Proposes a comparison that separates the feature's effect from seasonality and weather, such as a holdout group or staged rollout."
+      ]
+    },
+    {
+      "id": "defining-outcomes-h2",
+      "skills": [
+        "defining-outcomes"
+      ],
+      "query": "Can you review my team's OKR for next quarter? We build a bug tracker for small software teams.\n\nObjective: Delight our users.\nKR1: Ship 5 new features.\nKR2: NPS above 50.\nKR3: Increase daily active users.",
+      "files": [],
+      "expected_behavior": [
+        "Points out that KR1 measures output (features shipped) rather than a change in what users do.",
+        "Points out that KR3 has no baseline, target or date and so cannot be judged.",
+        "Rewrites the objective to name the users and the change wanted, instead of 'delight'.",
+        "Proposes key results that are behavioural outcomes with baseline, target and date, using placeholders where numbers are unknown rather than invented figures.",
+        "Adds a countermetric or guardrail so a key result cannot be hit in a harmful way.",
+        "Presents the revised OKR in a compact form that could be pasted into a planning doc."
+      ]
+    }
+  ]
+}

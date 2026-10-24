@@ -1,0 +1,40 @@
+{
+  "skill": "designing-visuals",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "designing-visuals-h1",
+      "skills": [
+        "designing-visuals"
+      ],
+      "query": "Here's the trip summary screen from our travel planner's iPhone app (HTML attached). It feels messy. Can you make it look better? Send back the improved HTML.",
+      "files": [
+        "evals/heldout/fixtures/designing-visuals-h1-trip-summary.html"
+      ],
+      "expected_behavior": [
+        "Chooses one focal point for the screen and says what it is.",
+        "Reduces the competing emphasis so there is one primary action, with the other actions visibly secondary instead of four equally loud coloured buttons.",
+        "Replaces the mixed padding and margin values with a consistent spacing scale (for example multiples of 4 or 8) and applies it in the code.",
+        "Fixes the low-contrast grey text with specific colour values that meet contrast for their size.",
+        "Returns complete revised HTML that keeps every piece of content and every action from the original.",
+        "States plainly whether the result was rendered and looked at, and names what still needs checking (for example dark mode or larger text sizes)."
+      ]
+    },
+    {
+      "id": "designing-visuals-h2",
+      "skills": [
+        "designing-visuals"
+      ],
+      "query": "We're bringing our podcast player to the Mac. Design the Settings window: Playback (skip back and forward intervals, playback speed, continuous play), Downloads (auto-download new episodes, storage limit, download location), Notifications (new episodes, per show), and Account (signed-in email, sign out, delete account). Give me SwiftUI and explain the layout.",
+      "files": [],
+      "expected_behavior": [
+        "Uses the macOS settings conventions (a Settings scene with a toolbar tab per section) rather than an iPhone-style navigation list.",
+        "Lays out each pane as a form with labels and controls aligned in consistent columns and spacing.",
+        "Picks native controls that fit each setting (for example pop-up menus for intervals, a folder picker for the download location, checkboxes or toggles for on and off) with sensible defaults.",
+        "Separates the destructive account actions from the rest and asks for confirmation before deleting the account.",
+        "Addresses the window size across panes (a fixed width, or pane heights that adapt) instead of leaving it to chance.",
+        "Provides SwiftUI code using real APIs, with a short explanation of the layout choices."
+      ]
+    }
+  ]
+}

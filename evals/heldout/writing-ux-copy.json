@@ -1,0 +1,38 @@
+{
+  "skill": "writing-ux-copy",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "writing-ux-copy-h1",
+      "skills": [
+        "writing-ux-copy"
+      ],
+      "query": "When a photo fails to upload, our photo backup app shows: 'Error 0x80042: The operation could not be completed due to an unexpected server-side condition. Please try again later or contact support if the problem persists.' Rewrite it, and write versions for these cases too: no internet connection, the account's storage is full, and the file is over 2 GB.",
+      "files": [],
+      "expected_behavior": [
+        "Each message says what happened and what the person can do next, in plain words, with no error code in the main text.",
+        "Each message is specific to its cause (server problem, no internet, storage full, file over 2 GB) rather than one generic message reworded.",
+        "Button labels are specific verbs that match the next step (for example 'Try again', 'Get more storage') rather than 'OK'.",
+        "Titles and bodies are short: a title of a few words and a body of one or two short sentences.",
+        "Uses one consistent term for the thing being uploaded (photo, file or item) across all messages.",
+        "Presents the messages in a form that is easy to compare, such as a table with title, body and buttons per case."
+      ]
+    },
+    {
+      "id": "writing-ux-copy-h2",
+      "skills": [
+        "writing-ux-copy"
+      ],
+      "query": "Write all the copy for our meditation app's onboarding: three intro screens, the screen before we ask for notification permission, and the free trial screen of the paywall (7-day free trial, then 59.99 a year).",
+      "files": [],
+      "expected_behavior": [
+        "Each intro screen carries one idea, with a short title and at most one or two short sentences.",
+        "The notification screen names a concrete benefit and says it can be changed later, before the system prompt appears.",
+        "The trial screen states plainly the price, the trial length, when billing starts and how to cancel.",
+        "Primary buttons say what happens next where it matters (permission and trial), and every screen that asks for something offers a clear way to decline or skip.",
+        "Avoids hype and filler (for example 'amazing', 'unlock your potential') and keeps one voice across the screens.",
+        "Lays the copy out screen by screen with title, body and buttons clearly separated."
+      ]
+    }
+  ]
+}

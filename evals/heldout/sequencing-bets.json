@@ -1,0 +1,38 @@
+{
+  "skill": "sequencing-bets",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "sequencing-bets-h1",
+      "skills": [
+        "sequencing-bets"
+      ],
+      "query": "We're four engineers and a designer on a habit tracker app (iPhone and Android, about 60,000 monthly active users). Our goal this year is to improve 90-day retention, which is 11%. We have room for roughly three of these next quarter. What should we do, in what order?\n\n1. Apple Watch app (top request in reviews, about 120 mentions)\n2. Dark mode for Android (partly there; 40 support tickets)\n3. Fix reminders not firing on some Android phones (the top complaint from churned users who answered the exit survey: 18% of answers)\n4. Habit templates library (the designer's idea, no data yet)\n5. Social challenges with friends (the CEO's idea; large)\n6. CSV export (3 requests, one from a journalist who wrote about us)\n7. Rewrite the sync engine (engineering says it slows every feature; 2 sync outages this year)\n8. Home screen widgets for Android (22% of iOS users use our iOS widgets, and they retain twice as well)\n9. Onboarding redesign (34% of new users never create a second habit)",
+      "files": [],
+      "expected_behavior": [
+        "Gives a clear Now, Next, Later (or ranked) answer up front, with about three items in Now.",
+        "Ties each Now choice to the retention goal and to the evidence given (for example reminders failing for churned users, the second-habit drop-off), not to who asked loudest.",
+        "Considers cost and dependencies, including whether the sync rewrite blocks or speeds up the other items, rather than ranking by value alone.",
+        "Gives each Now item a stop rule or checkpoint: what result, by when, would make the team stop or change course.",
+        "Includes an explicit not-doing or later list with a one-line reason per deferred item, including the CEO's idea.",
+        "Notes that the widget figure may be self-selection (engaged users add widgets) and how to firm up weak evidence before betting on it."
+      ]
+    },
+    {
+      "id": "sequencing-bets-h2",
+      "skills": [
+        "sequencing-bets"
+      ],
+      "query": "We're six people building a whiteboard app for teams. This cycle there's room for one big thing. Sales wants single sign-on because two large prospects say they won't buy without it. Design wants to fix onboarding, where 40% of new teams drop at the 'invite your team' step. Engineering wants to fix the sync bugs behind about two incidents a month. I need to pick one and explain it to all three groups. Help.",
+      "files": [],
+      "expected_behavior": [
+        "Picks one and says so in the first lines.",
+        "Compares the three on impact, strength of evidence and cost of delay (what happens if each waits one cycle).",
+        "Questions the evidence behind each claim (for example how firm the two prospects are, what the incidents cost users, whether the invite step is the cause or a symptom).",
+        "Gives the chosen bet a stop rule or checkpoint within the cycle.",
+        "Offers each deferred group something concrete: a smaller step, a date or a condition under which it moves up.",
+        "Includes a short explanation for sales, design and engineering, each in their own terms."
+      ]
+    }
+  ]
+}

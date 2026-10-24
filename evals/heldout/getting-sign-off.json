@@ -1,0 +1,41 @@
+{
+  "skill": "getting-sign-off",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "getting-sign-off-h1",
+      "skills": [
+        "getting-sign-off"
+      ],
+      "query": "I've redesigned parts of the issue list in our bug tracker. My lead has to approve before anything ships. Last time they approved 'the redesign' in a meeting and then objected to half of it after launch. The current screen and my list of changes are attached. Prepare what I should send my lead.",
+      "files": [
+        "evals/heldout/fixtures/getting-sign-off-h1-changes.md",
+        "evals/heldout/fixtures/getting-sign-off-h1-issue-list.html"
+      ],
+      "expected_behavior": [
+        "Gives one item per change so each can be approved or rejected on its own, and splits change 4 (moving the button and renaming it) into two.",
+        "Shows today and the proposal side by side for each item (images, rendered HTML, or precise before and after of the same area).",
+        "Asks for an explicit answer per item (for example approve, reject, discuss) and records it, so a blanket approval is not possible.",
+        "Flags risks the lead should weigh on specific items (for example priority shown by colour alone, the date only on hover not working on tablets).",
+        "Makes clear that only approved items will ship.",
+        "Is quick to answer in one sitting: a scannable page or table, not a long memo."
+      ]
+    },
+    {
+      "id": "getting-sign-off-h2",
+      "skills": [
+        "getting-sign-off"
+      ],
+      "query": "Every design review for our app's new onboarding goes in circles: eight people comment on everything at once and we leave without decisions. Next week I present the redesign again. How should I run it so we actually leave with decisions?",
+      "files": [],
+      "expected_behavior": [
+        "Breaks the redesign into separate, specific decisions instead of presenting it as one whole.",
+        "Shows the current and proposed version of each change next to each other.",
+        "Frames a specific question per item with set answers (for example approve, reject, needs work) and records each answer.",
+        "Says who decides, or the decision rule, so eight opinions don't block a decision.",
+        "Uses the time before and after the meeting (for example a pre-read with a response per item, and a written record of decisions sent afterwards).",
+        "Gives the plan as a short sequence of steps."
+      ]
+    }
+  ]
+}

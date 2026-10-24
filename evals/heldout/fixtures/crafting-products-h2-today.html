@@ -1,0 +1,47 @@
+<!-- Habit tracker, iPhone app, "Today" tab. Shown in a 390 x 844 web view. -->
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { font-family: -apple-system, system-ui, sans-serif; margin: 0; background: #fff; color: #222; text-align: center; }
+  .date { font-size: 44px; font-weight: 800; margin: 18px 0 4px; }
+  .sub { font-size: 13px; color: #b5b5b5; }
+  .promo { background: #ffe9a8; margin: 12px; padding: 10px; border-radius: 4px; font-size: 12px; }
+  .ring { width: 120px; height: 120px; border-radius: 60px; border: 10px solid #e33; margin: 16px auto; line-height: 120px; font-size: 30px; font-weight: 700; }
+  .habit { display: flex; align-items: center; justify-content: space-between; margin: 6px 10px; padding: 9px 14px; border: 1px solid #ddd; border-radius: 14px; text-align: left; }
+  .habit .name { font-size: 15px; font-weight: 600; }
+  .habit .meta { font-size: 11px; color: #c2c2c2; }
+  .icons span { display: inline-block; width: 22px; height: 22px; margin-left: 6px; background: #eee; border-radius: 4px; }
+  .check { width: 24px; height: 24px; border-radius: 12px; border: 2px solid #999; margin-left: 10px; }
+  .actions { display: flex; gap: 8px; margin: 20px 12px; }
+  .actions button { flex: 1; padding: 14px; border: 0; border-radius: 10px; font-size: 15px; font-weight: 700; color: #fff; }
+  .add { background: #2a7; } .share { background: #37e; } .stats { background: #e63; }
+  .tip { font-size: 12px; color: #aaa; margin: 20px 30px; font-style: italic; }
+</style>
+</head>
+<body>
+  <div class="date">Friday</div>
+  <div class="sub">October 23 · Week 43 · Day 296 of 2026</div>
+  <div class="promo">Go Premium! Unlock unlimited habits, themes, and more! Tap here!</div>
+  <div class="ring">2/5</div>
+
+  <div class="habit"><div><div class="name">Drink water</div><div class="meta">8 glasses · streak 12</div></div>
+    <div class="icons"><span title="edit"></span><span title="skip"></span><span title="note"></span></div><div class="check"></div></div>
+  <div class="habit"><div><div class="name">Read 20 pages</div><div class="meta">streak 3</div></div>
+    <div class="icons"><span title="edit"></span><span title="skip"></span><span title="note"></span></div><div class="check"></div></div>
+  <div class="habit"><div><div class="name">Walk</div><div class="meta">8,000 steps · streak 0</div></div>
+    <div class="icons"><span title="edit"></span><span title="skip"></span><span title="note"></span></div><div class="check"></div></div>
+  <div class="habit"><div><div class="name">Stretch</div><div class="meta">done 07:40</div></div>
+    <div class="icons"><span title="edit"></span><span title="skip"></span><span title="note"></span></div><div class="check" style="background:#2a7;border-color:#2a7"></div></div>
+  <div class="habit"><div><div class="name">No phone after 22:00</div><div class="meta">done yesterday</div></div>
+    <div class="icons"><span title="edit"></span><span title="skip"></span><span title="note"></span></div><div class="check" style="background:#2a7;border-color:#2a7"></div></div>
+
+  <div class="actions">
+    <button class="add">+ Add</button>
+    <button class="share">Share</button>
+    <button class="stats">Stats</button>
+  </div>
+  <div class="tip">Tip: Long-press a habit to reorder it. Swipe right to complete, left to skip. Double tap to add a note.</div>
+</body>
+</html>

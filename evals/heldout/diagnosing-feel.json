@@ -1,0 +1,42 @@
+{
+  "skill": "diagnosing-feel",
+  "set": "heldout",
+  "evals": [
+    {
+      "id": "diagnosing-feel-h1",
+      "skills": [
+        "diagnosing-feel"
+      ],
+      "query": "Pull to refresh on the Library tab of our reading tracker iPhone app feels janky: things jump around. My frame-by-frame notes from a screen recording and the view code are attached. What's wrong?",
+      "files": [
+        "evals/heldout/fixtures/diagnosing-feel-h1-refresh.md"
+      ],
+      "expected_behavior": [
+        "Links each symptom in the recording to a specific cause in the code (the list emptying at frame 19 to `books = []`, the second spinner to the custom ProgressView, the frame 43 jump to the header's font changing with isLoading).",
+        "Uses the frame numbers to explain the timing (for example 18 frames at 60 fps is the 300 ms sleep before anything happens).",
+        "Gives fixed code that keeps the old rows until new data arrives, relies on the system refresh indicator only, and keeps the header's size stable.",
+        "Says how to confirm the fix (for example record again and step through the same frames) and what result counts as fixed.",
+        "Proposes a guard against the problem returning (for example a UI or snapshot test, or a rule against clearing data before a refresh).",
+        "Separates confirmed causes from suspected ones."
+      ]
+    },
+    {
+      "id": "diagnosing-feel-h2",
+      "skills": [
+        "diagnosing-feel"
+      ],
+      "query": "Scrolling the gallery in the web version of our photo journal stutters on mid-range Android phones. It's fine on my laptop. The component is attached. What's wrong and how do I fix it?",
+      "files": [
+        "evals/heldout/fixtures/diagnosing-feel-h2-Gallery.jsx"
+      ],
+      "expected_behavior": [
+        "Identifies the scroll handler as a main cause: setting React state on every scroll event re-renders every tile, and reading getBoundingClientRect then writing styles for each tile forces layout on every event.",
+        "Identifies the image cost: full-size originals with no thumbnails or dimensions, and all photos rendered at once without virtualisation or lazy loading.",
+        "Says how to measure on the affected kind of phone (for example remote debugging with a performance trace, or CPU throttling) and what number shows it is fixed (frame time or dropped frames).",
+        "Gives fixed code, with the changes ordered by impact (for example no scroll state, a passive listener or IntersectionObserver, resized images with srcset and sizes, lazy loading, virtualisation).",
+        "Proposes a guard so it doesn't come back (for example a performance budget or automated trace in CI).",
+        "Separates confirmed causes from likely ones until measured."
+      ]
+    }
+  ]
+}
