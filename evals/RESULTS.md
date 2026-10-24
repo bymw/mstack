@@ -1,6 +1,6 @@
 # Results
 
-**With the skills, answers showed 89% of the expected behaviours. Without them, 36%.** Leaving out the checks on each skill's own output format, which a model without the skill cannot know, the gap holds: 89% against 39%. Every skill beat its baseline. On a [held-out set](#held-out-set) written without reading the skills, the gap is 4 points on Opus 5.5 and 2 on Sonnet 5.5, and Haiku 5.5 does slightly worse with the skills.
+**Read the held-out set first (below): on 46 scenarios written without reading the skills, the gap is small and within chance on every model.** The tables here measure something narrower, whether each skill does what it promises: with the skills, answers showed 89% of the expected behaviours. Without them, 36%. Leaving out the checks on each skill's own output format, which a model without the skill cannot know, the gap holds: 89% against 39%. Every skill beat its baseline. On a [held-out set](#held-out-set) written without reading the skills, the gap is 4 points on Opus 5.5 and 2 on Sonnet 5.5, and Haiku 5.5 does slightly worse with the skills.
 
 Final run on Claude Opus 5.5, October 2026: all 21 skills, 63 scenarios, each run once with the skills and once without, graded blind.
 
