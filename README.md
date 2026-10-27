@@ -80,7 +80,7 @@ Every skill does one job and hands the rest to a teammate. [`crafting-products`]
 **Claude Code, for all your projects:**
 
 ```bash
-git clone https://github.com/bymw/skills.git ~/Github/skills
+git clone https://github.com/bymw/mstack.git ~/Github/skills
 mkdir -p ~/.claude/skills
 for d in ~/Github/skills/skills/*/; do [ -f "$d/SKILL.md" ] && ln -s "$d" ~/.claude/skills/; done
 ```
