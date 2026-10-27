@@ -21,7 +21,7 @@ Each scenario runs in a fresh agent per model and condition. Runners never see t
 
 | Condition | What the runner reads |
 | --- | --- |
-| With skills | `crafting-products/SKILL.md`, the named skill's `SKILL.md`, any file in those two folders they point to, then the request |
+| With skills | `skills/crafting-products/SKILL.md`, the named skill's `SKILL.md`, any file in those two folders they point to, then the request |
 | Without skills | The request only |
 
 Both runners get the same rules: only read and write files, no commands, web or skill loading; no questions back (state the assumption and answer); put any page or code in full in the answer; never mention the instructions or a skill by name.
